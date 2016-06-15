@@ -1,0 +1,95 @@
+#contactForm {
+  padding: 120px 0;
+  position: relative;
+  z-index: 400;
+  display: none;
+  @include flex;
+  @include flex-align(center, middle);
+  height: calc(100vh - 80px);
+  width: 100%;
+  max-width: 100%;
+  .row {
+    width: 100%;
+  }
+}
+form {
+  .field {
+    margin-bottom: 6px;
+  }
+  input[type="text"], input[type="email"]  {
+    border-bottom: 1px solid rgba($white, 0.6)!important;
+    padding: 0!important;
+    color: $white;
+    &:focus {
+      padding-left: 12px!important;
+      color: $black;
+    }
+    &:valid, &.valid{
+      color: $white;
+      border-bottom: none;
+      &:focus {
+        color: $black;
+      }
+    }
+    &.float-input {
+      margin: 0 0 4px;
+      & + label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: left;
+        color: $white;
+        transform: translate(-100px, 0);
+        transition: all 0.25s ease;
+        opacity: 0;
+        &.float {
+          transform: translate(0, 0);
+          opacity: 1;
+          display: block!important;
+        }
+      }
+    }
+    &.float-input:focus + label {
+      transform: translate(0, 0);
+      opacity: 1;
+      display: block!important;
+    }
+  }
+  input.button {
+    border: 1px solid $white!important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  textarea {
+    resize: none;
+    margin: 12px 0 1px!important;
+    padding-left: 0!important;
+    color: $black;
+    &:focus {
+      background: $white;
+      height: 10em;
+      padding-left: 12px!important;
+    }
+    &.valid {
+      background: $white;
+      height: 10em;
+      padding-left: 12px!important;
+    }
+  }
+}
+
+#closeForm {
+  position: absolute;
+  height: 40px; width: 40px;
+  left: 0; right: 0;
+  bottom: 40px;
+  margin: 0 auto;
+  transform: translate(0, 100px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  &.visible {
+    transform: translate(0, 0px);
+    opacity: 1;
+  }
+}

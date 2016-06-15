@@ -1,0 +1,82 @@
+#footer-container {
+	position: relative;
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+	padding: 60px 20px;
+
+
+	#footer {
+		@include grid-row();
+		h2 {
+			font-size: 32px;
+			line-height: 38px;
+			font-weight: 300;
+			color: rgba($white, 0.85);
+			margin-bottom: 30px;
+
+			@include breakpoint(medium) {
+				font-size: 42px;
+				line-height: 48px;
+			}
+
+			@include breakpoint(large) {
+				font-size: 52px;
+				line-height: 58px;
+			}
+		}
+		.footer-info {
+			margin-right: 40px;
+
+			@include breakpoint(large) {
+				margin-right: 100px;
+			}
+
+			span {
+				color: rgba($white, 0.75)
+			}
+			a {
+				font-weight: 400;
+				color: rgba($white, 0.85);
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+		.footer-nav {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			li {
+				a {
+					color: rgba($white, 0.85);
+					font-weight: 600;
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+		// Social
+		.social-nav {
+		  float: left;
+			margin-top: 24px;
+
+		  @include breakpoint(large) {
+		    float: right;
+		    margin-top: 0;
+		  }
+		  a {
+		    font-size: 20px;
+		    color: rgba($white, 0.85);
+		    margin: 0 18px 0 0;
+		    @include breakpoint(large) {
+		      margin: 0 0 0 18px;
+		    }
+		    &:hover {
+		      color: $white;
+		    }
+		  }
+		}
+	}
+}

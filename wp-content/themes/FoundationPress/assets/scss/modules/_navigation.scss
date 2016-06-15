@@ -1,0 +1,159 @@
+.home-link {
+  cursor: pointer;
+}
+.slide-down {}
+
+/* Mobile menu */
+.off-canvas {
+ > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+  }
+}
+
+#mobileMenu {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: $primary-color;
+  position: relative;
+  z-index: 400;
+  ul {
+    background: none;
+    height: calc(100vh - 80px);
+    padding: 60px 0;
+    @include flex;
+    @include flex-align(center, middle);
+    flex-flow:column;
+    li {
+      @include flex;
+      @include flex-align(center, middle);
+      flex-flow:column;
+
+      flex: 1 1 auto;
+      text-align: center;
+      transform: translate(0, 25px);
+      opacity: 0;
+      transition: all 0.25s ease;
+      &.fade-in {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      a {
+        flex: 0 1 auto;
+        display: block;
+        color: rgba($white, 0.85);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 32px;
+        font-weight: 600;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.title-bar {
+  height: 80px;
+}
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: $black;
+  }
+}
+
+/* Tablet and desktop menu */
+#masthead {
+  width: 100%;
+  z-index: 200;
+}
+.top-bar {
+  height: 80px;
+  position: relative;
+  z-index: 800;
+  ul {
+    background: none!important;
+  }
+  #menu-primary {
+    justify-content: flex-end;
+  }
+  .menu .home a {
+    font-size: 1rem;
+    color: $black;
+  }
+  .menu a {
+    display: block;
+    line-height: 80px;
+    color: $dark-gray;
+    text-transform: uppercase;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 1px;
+    &:hover:not(.button) {
+      background-color: none;
+    }
+  }
+
+  .menu>li:not(.menu-text)>a { padding: 1rem; }
+
+  .dropdown.menu .submenu {
+    background-color: #121212;
+    color: #e6e6e6;
+    border: 0;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+
+  .dropdown.menu:first-child >
+    li.is-dropdown-submenu-parent >
+    a::after {
+      display: none;
+    }
+
+}
+
+/* LOAD BAR */
+#loadBar {
+  position: relative;;
+  z-index: 20;
+  height: 7px;
+  width: 100%;
+  background-color: $black;
+  transition: all 0.25s ease;
+  > span {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  &.hover {
+    height: 11px;
+  }
+}
+
+/* Navigation breakpoints */
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+.desktop-menu {
+  float: right;
+  @include flex-align(right);
+}
+
+.top-bar-left {
+  flex: 1 1 auto!important;
+}
+.top-bar-right {
+  flex: 1 1 auto!important;
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+}

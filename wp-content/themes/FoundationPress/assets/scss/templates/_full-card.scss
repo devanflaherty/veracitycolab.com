@@ -1,0 +1,44 @@
+#fullCard {
+  @include flex-grid-row();
+  @include flex-grid-row-align(center, middle);
+
+  .main-content {
+    padding:40px 20px!important;
+    margin-top: 0;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 20;
+    transform: translate(0, 0);
+    @include flex-grid-column(11);
+
+    @include breakpoint(medium) {
+      padding: 40px!important;
+    }
+    #tagline {
+      background: $alert-color;
+      padding: 40px;
+      h1 {
+        font-size: 38px;
+        color: white;
+        margin: 0;
+      }
+    }
+    .entry-content {
+      background: $white;
+      padding: 40px;
+    }
+    #cta {
+      h2 {
+        margin: 25px 0;
+        padding: 0 40px;
+      }
+      .button {
+        font-size: 32px;
+        padding: 40px 0;
+        background: $light-gray;
+        color: $dark-gray;
+      }
+    }
+  }
+
+}

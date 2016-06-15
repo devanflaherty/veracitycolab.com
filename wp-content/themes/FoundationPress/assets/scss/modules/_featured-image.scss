@@ -1,0 +1,111 @@
+@include breakpoint(small) {
+	#featured-hero {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin: 0;
+		position: relative;
+		z-index: 20;
+		height: rem-calc(350);
+		width: 100%!important;
+		transition: all 1s ease;
+		opacity: 0;
+		overflow: hidden;
+		@include flex();
+		@include flex-align(center, middle);
+		&.hidden {
+			height:0!important;
+		}
+		&.animate-in {
+			opacity: 1;
+			height: rem-calc(250);
+		}
+		&.video-reveal {
+			height: 100vh!important;
+		}
+		.feature-overlay {
+			opacity: 0;
+			transition: all 0.5s ease;
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			&.animate-in {
+				opacity: 1;
+			}
+		}
+		&:hover {
+			.feature-overlay {
+				opacity: 0.75;
+				&.animate-in {
+					opacity: 1;
+				}
+			}
+			.feature-play {
+				opacity: 1;
+				transform: scale(1);
+				cursor: pointer;
+				i {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
+		.feature-play {
+			border-radius: 100px;
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			z-index: 50;
+			margin: auto;
+			text-align: center;
+			line-height: 120px;
+			opacity: 0;
+			transform: scale(0.25);
+			transition: all 0.5s ease;
+			background: rgba($white, 0.5);
+			&:hover {
+				animation: pulse 2s infinite;
+			}
+			i {
+				font-size: 40px;
+				opacity: 0;
+				margin-left: 4px;
+				transform: scale(0.25);
+				transition: all 0.5s ease;
+				transition-delay: 0.15s;
+				color: $white;
+			}
+		}
+	}
+	.no-featured-image-set {
+		height: rem-calc(16) !important;
+	}
+	#featureVideo {
+		position: relative;
+		z-index: 60;
+		flex: 1 1 100%;
+		@include breakpoint(medium down) {
+				max-width: 100%;
+		}
+		.flex-video {
+			margin: 0;
+		}
+		.wistia_embed {
+			position: relative;
+			z-index: 200;
+			width: 100%;
+			cursor: default;
+		}
+	}
+}
+
+@include breakpoint(medium) {
+	#featured-hero {
+		height: rem-calc(600);
+		&.animate-in {
+			height: rem-calc(500);
+		}
+	}
+}
