@@ -8047,9 +8047,11 @@ a {
 #contentBody .content .columns > :first-child:not(header) {
   margin-top: 40px !important; }
 
-#contentBody h1 a, #contentBody h2 a, #contentBody h3 a, #contentBody h4 a, #contentBody h5 a {
-  cursor: text;
-  color: #0a0a0a; }
+#contentBody h1, #contentBody h2, #contentBody h3, #contentBody h4, #contentBody h5, #contentBody h6 {
+  margin-top: 40px; }
+  #contentBody h1 a, #contentBody h2 a, #contentBody h3 a, #contentBody h4 a, #contentBody h5 a, #contentBody h6 a {
+    cursor: text;
+    color: #0a0a0a; }
 
 #contentBody p {
   width: 100%;

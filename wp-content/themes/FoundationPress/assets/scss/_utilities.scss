@@ -142,20 +142,12 @@ $margin: 40px;
       margin-top: $margin!important;
     }
   }
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: $margin;
     a {
       cursor: text;
       color: $black;
     }
-  }
-  h2 {
-
-  }
-  h3 {
-
-  }
-  h4 {
-
   }
   p {
     width: 100%;

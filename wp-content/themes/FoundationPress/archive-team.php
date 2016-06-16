@@ -27,7 +27,7 @@ get_header(); ?>
 				<div class="row button-group filter-button-group">
 					<button data-filter="*" class="is-checked">All</button>
 					<?php
-						$taxonomies = get_the_terms( $post->ID, 'team-filters');
+						$taxonomies = get_terms('team-filters');
 						foreach($taxonomies as $term) {
 							$slug = $term->slug;
 							echo "<button data-filter=\".$slug\">$slug</button> ";
