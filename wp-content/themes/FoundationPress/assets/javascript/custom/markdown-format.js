@@ -28,3 +28,21 @@ $(".flex-wrap").each(function(i) {
   $(this).has( "br" ).find("br").remove();
 });
 $(".youtube-video").addClass("flex-video widescreen");
+
+
+$(function() {
+  $('img[src$=".gif"]').each(function() {
+    var src = $(this).attr("src");
+    $(this).attr("src", src.replace(/\.gif$/i, ".jpg"));
+    $(this).addClass("gif");
+  });
+  $('.gif').hover(function() {
+        var src = $(this).attr("src");
+        $(this).attr("src", src.replace(/\.jpg$/i, ".gif"));
+      },
+      function()
+      {
+        var src = $(this).attr("src");
+        $(this).attr("src", src.replace(/\.gif$/i, ".jpg"));
+      });
+});
