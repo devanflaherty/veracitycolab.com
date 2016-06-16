@@ -8,37 +8,30 @@
 
 get_header(); ?>
 
-<div id="single-post" role="main">
+<?php get_template_part( 'template-parts/featured-image' ); ?>
 
-<?php do_action( 'foundationpress_before_content' ); ?>
+<section id="single-post" class="wrapper align-center" role="main">
+
 <?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
-		</header>
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
+		data-0="margin-top: -120px;"
+    data-end="margin-top: -800px;">
+		<div id="contentBody" class="entry-content">
+			<header id="contentHeader">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
 
-		<?php
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail();
-			endif;
-		?>
+			<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
+			<?php the_content(); ?>
 
-		<?php the_content(); ?>
+			<footer id="contentFooter"></div>
 		</div>
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 			<p><?php the_tags(); ?></p>
 		</footer>
-		<?php do_action( 'foundationpress_post_before_comments' ); ?>
-		<?php comments_template(); ?>
-		<?php do_action( 'foundationpress_post_after_comments' ); ?>
 	</article>
 <?php endwhile;?>
 
-<?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
-</div>
+</section>
 <?php get_footer();

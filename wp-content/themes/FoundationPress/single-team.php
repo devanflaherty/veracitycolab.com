@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<article class="main-content" id="teamContent"
 		    data-0="transform: translate(0, 0px);"
-		    data-top-bottom="transform: translate(0, -200px)">
+		    data-end="transform: translate(0, -200px)">
 				<header class="text-center">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<h4 class="entry-title"><?php the_field('title'); ?></h4>
