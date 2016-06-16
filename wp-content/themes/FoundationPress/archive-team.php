@@ -19,11 +19,11 @@ get_header(); ?>
 		data-249="transform: translate(0px, -50px)"
 		data-250="transform: translate(0px, -250px)">
 		<div class="row align-center">
-			<div class="columns">
+			<div class="columns small-12 medium-6">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
 			</div>
 
-			<div class="columns flex">
+			<div class="columns small-12 medium-6 flex">
 				<div class="row button-group filter-button-group">
 					<button data-filter="*" class="is-checked">All</button>
 					<?php
@@ -39,11 +39,11 @@ get_header(); ?>
 	</header>
 	<!-- CLOSE HEADLINE -->
 
-	<article class="main-content pad"
+	<article class="main-cards pad"
 	data-500-end="transform: translate(0px, 0px)"
 	data-end="transform: translate(0px, -100px)">
 	<?php if ( have_posts() ) : ?>
-		<div class="row small-up-2 team-grid grid">
+		<div class="row small-up-1 medium-up-2 team-grid grid">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		  <div class="column

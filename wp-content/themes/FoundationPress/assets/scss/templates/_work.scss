@@ -2,17 +2,11 @@
   @include flex-grid-row();
   .main-content {
     background: $white;
-    padding:40px 20px!important;
-    margin-top: 0;
-    margin-bottom: 60px;
-    transform: translate(0, 0);
+    transition: none;
     @include grid-column(12);
 
     @include breakpoint(medium) {
-      padding: 40px!important;
-      margin-top: -60px;
       @include grid-column(11);
-      transform: translate(0, 100px);
     }
     @include breakpoint(large) {
       @include grid-column(8);
@@ -34,6 +28,11 @@
         font-weight: 400
       }
     }
+  }
+}
+#archiveWork {
+  .main-content {
+    margin-top: 0;
   }
 }
 

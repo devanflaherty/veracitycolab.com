@@ -13,9 +13,7 @@ get_header(); ?>
 <section id="single-post" class="wrapper align-center" role="main">
 
 <?php while ( have_posts() ) : the_post(); ?>
-	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
-		data-0="margin-top: -120px;"
-    data-end="margin-top: -800px;">
+	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<div id="contentBody" class="entry-content">
 			<header id="contentHeader">
 				<h1 class="entry-title"><?php the_title(); ?></h1>

@@ -245,13 +245,34 @@ blockquote {
   }
 }
 .wrapper {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  @include breakpoint(medium) {
+    margin: 3rem 0;
+  }
 }
 .main-content {
   position: relative;
   z-index: 100;
-  padding:40px 20px!important;
+  padding:40px;
+  transform: translate(0px, 0px);
+  @include breakpoint(medium) {
+    padding:40px;
+    margin-top: -140px;
+    margin-bottom: 60px;
+    transform: translate(0, 100px);
+  }
+  @include breakpoint(large) {
+  }
+}
+.main-cards {
+  position: relative;
+  z-index: 100;
+  margin-top: 0!important;
+  transform: translate(0px, 0px);
+  @include breakpoint(medium) {
+    transform: translate(0, 100px);
+  }
+  @include breakpoint(large) {
+  }
 }
 .headline {
   position: fixed;

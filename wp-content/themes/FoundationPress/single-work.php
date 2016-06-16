@@ -14,9 +14,7 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); // While we have a post let's show it off?>
 
 	<!-- MAIN CONTENT : Skrollr animation set to parralax the article up -->
-	<article class="main-content" id="post-<?php the_ID(); ?>"
-    data-0="margin-top: -120px;"
-    data-620="margin-top: -400px;">
+	<article class="main-content" id="post-<?php the_ID(); ?>">
 		<div id="contentBody" class="entry-content">
 			<?php
 				$clients = get_field('client');

@@ -16,7 +16,9 @@ $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
   if(newSize ==  "medium") {
     if(oldSize == "small") {
       $('#mobileMenu').slideUp();
-      $('body').hasClass("mobile-nav").removeClass("fixed mobile-nav");
+      if ($('body').hasClass("mobile-nav")) {
+        $(this).removeClass("fixed mobile-nav");
+      }
     }
   }
 });

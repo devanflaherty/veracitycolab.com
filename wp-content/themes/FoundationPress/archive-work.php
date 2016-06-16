@@ -63,9 +63,9 @@ get_header(); ?>
 	<!-- CLOSE HEADLINE -->
 
 
-	<article class="main-content pad" id="workPosts"
-	data-500-end="transform: translate(0px, 0px)"
-	data-end="transform: translate(0px, -100px)">
+	<article class="main-cards pad" id="workPosts"
+		data-500-end="transform: translate(0px, 0px)"
+		data-end="transform: translate(0px, -100px)">
 	<?php query_posts($query_string."&featured=yes"); ?>
 	<?php if ( have_posts() ) : // If we have posts let's begin ?>
 		<div class="row post-grid">
@@ -115,7 +115,7 @@ get_header(); ?>
 	<?php wp_reset_query(); ?>
 
 	<?php if ( have_posts() ) :  // If we have posts let's begin ?>
-		<div class="row small-up-2 medium-up-2 post-grid">
+		<div class="row small-up-1 medium-up-2 post-grid">
 
 		<?php while ( have_posts() ) : the_post(); // Let's loop through all our posts at output each one while we have posts ?>
 			<?php
@@ -138,8 +138,8 @@ get_header(); ?>
 				<a href="<?php the_permalink(); ?>" class="permalink">
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
-						<h3><?= $client ?></h3>
-						<h4><span class="float-right"><?php the_title(); ?></span></h4>
+						<h3><?php the_title(); ?></h3>
+						<h4><span class="float-right"><?= $client ?></span></h4>
 					</div>
 				</a>
 				<div class="post-block">

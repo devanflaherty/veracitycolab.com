@@ -21,7 +21,7 @@ get_header(); ?>
 		<?php do_action( 'foundationpress_before_content' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<article class="main-content" id="teamContent"
+			<article class="main-content cards" id="teamContent"
 		    data-0="transform: translate(0, 0px);"
 		    data-end="transform: translate(0, -200px)">
 				<header class="text-center">

@@ -8,8 +8,6 @@
   }
   .main-content {
     background: $white;
-    padding: 40px 20px;
-    transform: translate(0, 0);
     margin-top: -30px;
     h1 {
       font-size: 46px;
@@ -32,13 +30,11 @@
 
     @include breakpoint(medium) {
       margin: -60px 60px inherit;
-      padding: 40px;
-      transform: translate(0, 100px);
+      padding: 80px 40px!important;
     }
     @include breakpoint(large) {
       margin: 60px;
-      padding: 80px 40px;
-      transform: translate(0, 100px);
+      padding: 80px 60px;
     }
     &.animate-in {
       transition: all 1s ease;

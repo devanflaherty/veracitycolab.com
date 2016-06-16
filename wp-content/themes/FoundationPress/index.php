@@ -46,11 +46,11 @@ get_header(); ?>
 	</header>
 	<!-- CLOSE HEADLINE -->
 
-	<article class="main-content pad"
+	<article class="main-cards pad"
 	data-500-end="transform: translate(0px, 0px)"
 	data-end="transform: translate(0px, -100px)">
 	<?php if ( have_posts() ) : ?>
-		<div class="row post-grid collapse present">
+		<div class="row post-grid present">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php
 				// Setting up some variabels to make life a little easier
