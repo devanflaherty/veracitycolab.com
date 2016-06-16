@@ -1,1 +1,3 @@
-$('.headline').parent().css("padding-top","150px");
+$( window ).resize(function() {
+  $('.headline').parent().css("padding-top","150px");
+});
