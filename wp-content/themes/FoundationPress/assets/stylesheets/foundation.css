@@ -6571,21 +6571,26 @@ a::after {
         float: right; } }
 
 #contactForm {
-  padding: 120px 0;
   position: relative;
+  top: 0px;
   z-index: 400;
-  display: none;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-  height: calc(100vh - 80px);
+  height: 0px;
+  overflow: hidden;
   width: 100%;
-  max-width: 100%; }
+  max-width: 100%;
+  transition: all 1s ease;
+  border: none; }
   #contactForm .row {
     width: 100%; }
+  #contactForm.reveal {
+    padding: 120px 0;
+    height: calc(100vh - 80px); }
 
 form .field {
   margin-bottom: 6px; }
@@ -6653,13 +6658,13 @@ form textarea {
   right: 0;
   bottom: 40px;
   margin: 0 auto;
-  -ms-transform: translate(0, 100px);
-      transform: translate(0, 100px);
+  -ms-transform: translate(0px, 100px);
+      transform: translate(0px, 100px);
   opacity: 0;
   transition: all 0.5s ease; }
   #closeForm.visible {
-    -ms-transform: translate(0, 0px);
-        transform: translate(0, 0px);
+    -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
     opacity: 1; }
 
 #featured-hero {
@@ -8029,8 +8034,6 @@ a {
     -ms-transform: scale(1.2);
         transform: scale(1.2);
     opacity: 0; }
-    .parallax-parent .parallax-bg.animate-in {
-      transition: all 0.5s ease; }
 
 #contentBody .content .columns > p:last-of-type {
   margin-bottom: 0; }
@@ -8143,6 +8146,9 @@ blockquote {
   blockquote strong {
     font-weight: bold; }
 
+.animate-in {
+  transition: all 0.5s ease; }
+
 .present {
   transition: all 1s ease;
   -ms-transform: translate(0, 200px);
@@ -8192,13 +8198,7 @@ blockquote {
 .main-cards {
   position: relative;
   z-index: 100;
-  margin-top: 0 !important;
-  -ms-transform: translate(0px, 0px);
-      transform: translate(0px, 0px); }
-  @media screen and (min-width: 40em) {
-    .main-cards {
-      -ms-transform: translate(0, 100px);
-          transform: translate(0, 100px); } }
+  margin-top: 0 !important; }
 
 .headline {
   position: fixed;

@@ -9,7 +9,6 @@ $('#mobileToggle').click(function(){
         $(this).addClass('fade-in');
       });
   });
-  // TODO : take fadein class off on hide
 });
 
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){

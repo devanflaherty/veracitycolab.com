@@ -43,7 +43,7 @@ get_header(); ?>
 	data-500-end="transform: translate(0px, 0px)"
 	data-end="transform: translate(0px, -100px)">
 	<?php if ( have_posts() ) : ?>
-		<div class="row small-up-1 medium-up-2 team-grid grid">
+		<div class="row small-up-1 medium-up-2 team-grid grid present">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		  <div class="column

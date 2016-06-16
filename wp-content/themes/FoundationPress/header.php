@@ -96,7 +96,7 @@
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
 	<!-- Contact -->
-	<section id="contactForm" style="background-color: <?= $primaryColor ?>; display: none;">
+	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
 		<div class="row align-center">
 			<div class="small-10 medium-6 large-4 columns text-center">
 				<h5 class="contrast-text upper"><strong>Pleased to meet you</strong></h5>

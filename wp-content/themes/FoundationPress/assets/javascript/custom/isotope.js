@@ -1,13 +1,13 @@
 if ($("body").hasClass("post-type-archive-team")){
 // init Isotope
-var $grid = $('.grid').isotope({
-  itemSelector: '.column',
-  layoutMode: 'fitRows',
-});
 
 // layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.isotope('layout');
+var $grid = $('.grid').imagesLoaded( function() {
+  // init Isotope after all images have loaded
+  $grid.isotope({
+    itemSelector: '.column',
+    layoutMode: 'fitRows',
+  });
 });
 
 // filter items on button click

@@ -1,7 +1,5 @@
 // CONTACT
 // Hide form
-$('#contactForm').hide();
-
 // Change loadbar size on contact hover
 $('a[href=#contact]').hover(
   function() {
@@ -15,7 +13,6 @@ $('a[href=#contact]').hover(
 $('a[href=#contact]').click(function(){
   // Set a class so we can see test the state of the form
   $('body').toggleClass("contact");
-  //Toggle the overlay
   $('.overlay').toggleClass('visible');
 
   // If clicked while form is hidden
@@ -25,13 +22,11 @@ $('a[href=#contact]').click(function(){
       scrollTop: 0
      }, 600);
      // Slidedown form
-     $('#contactForm').slideDown( 800, function() {
-       // after slide has finished animate in closeForm button
-       $('#closeForm').addClass('visible');
-     });
+     $('#contactForm').addClass('reveal');
+     $('#closeForm').addClass('visible');
   } else {
     $('#closeForm').removeClass('visible');
-    $('#contactForm').slideUp( 800, function() {});
+    $('#contactForm').removeClass('reveal');
   }
 
   if (!$('body').hasClass('mobile-nav')) {
@@ -41,9 +36,9 @@ $('a[href=#contact]').click(function(){
 
 // Close Form Button
 $('#closeForm').click(function(){
-  $('#contactForm').slideUp( 800, function() {});
-  $('.overlay').removeClass('visible');
   $('#closeForm').removeClass('visible');
+  $('.overlay').removeClass('visible');
+  $('#contactForm').removeClass('reveal');
   $('body').removeClass("contact");
 
   if (!$('body').hasClass('mobile-nav')) {
@@ -51,25 +46,7 @@ $('#closeForm').click(function(){
   }
 });
 
-$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
-  if(newSize ==  "medium") {
-    if (oldSize == "small") {
-      $('#contactForm').slideUp();
-      $('body').removeClass("fixed");
-      $('#closeForm').removeClass('visible');
-      $('.overlay').removeClass('visible');
-    }
-  }
-  if(newSize ==  "small") {
-    if (oldSize == "medium") {
-      $('#contactForm').slideUp();
-      $('body').removeClass("fixed");
-      $('#closeForm').removeClass('visible');
-      $('.overlay').removeClass('visible');
-    }
-  }
 
-});
 
 ////////////////////////////////////////
 // Validation

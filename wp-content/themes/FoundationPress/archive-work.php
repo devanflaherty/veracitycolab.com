@@ -68,7 +68,7 @@ get_header(); ?>
 		data-end="transform: translate(0px, -100px)">
 	<?php query_posts($query_string."&featured=yes"); ?>
 	<?php if ( have_posts() ) : // If we have posts let's begin ?>
-		<div class="row post-grid">
+		<div class="row post-grid present">
 
 		<?php while ( have_posts() ) : the_post(); // Let's loop through all our posts at output each one while we have posts ?>
 			<?php
@@ -87,7 +87,7 @@ get_header(); ?>
 					}
 				}
 			?>
-			<div class="columns small-12 feature-post present">
+			<div class="columns small-12 feature-post">
 				<a href="<?php the_permalink(); ?>" class="permalink">
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
@@ -115,7 +115,7 @@ get_header(); ?>
 	<?php wp_reset_query(); ?>
 
 	<?php if ( have_posts() ) :  // If we have posts let's begin ?>
-		<div class="row small-up-1 medium-up-2 post-grid">
+		<div class="row small-up-1 medium-up-2 post-grid present">
 
 		<?php while ( have_posts() ) : the_post(); // Let's loop through all our posts at output each one while we have posts ?>
 			<?php

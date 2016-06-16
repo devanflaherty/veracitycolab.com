@@ -1,15 +1,21 @@
 #contactForm {
-  padding: 120px 0;
   position: relative;
+  top: 0px;
   z-index: 400;
-  display: none;
   @include flex;
   @include flex-align(center, middle);
-  height: calc(100vh - 80px);
+  height: 0px;
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
+  transition: all 1s ease;
+  border: none;
   .row {
     width: 100%;
+  }
+  &.reveal {
+    padding: 120px 0;
+    height: calc(100vh - 80px);
   }
 }
 form {
@@ -85,11 +91,11 @@ form {
   left: 0; right: 0;
   bottom: 40px;
   margin: 0 auto;
-  transform: translate(0, 100px);
+  transform: translate(0px, 100px);
   opacity: 0;
   transition: all 0.5s ease;
   &.visible {
-    transform: translate(0, 0px);
+    transform: translate(0px, 0px);
     opacity: 1;
   }
 }
