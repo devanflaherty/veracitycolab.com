@@ -54,7 +54,7 @@ get_header(); ?>
 	    <?php if( have_rows('work_ctas', "option") ) : ?>
 	      <div class="small-12 medium-4 columns button-jar">
 	      <?php while ( have_rows('work_ctas', "option") ) : the_row(); ?>
-	        <a href="<?php the_sub_field('button_url'); ?>" class="button radius large"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
+	        <a class="headline-link" href="<?php the_sub_field('button_url'); ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
 	      <?php endwhile; ?>
 	      </div>
 	    <?php endif; ?>
@@ -66,11 +66,22 @@ get_header(); ?>
 	<article class="main-cards pad" id="workPosts"
 		data-500-end="transform: translate(0px, 0px)"
 		data-end="transform: translate(0px, -100px)">
-	<?php query_posts($query_string."&featured=yes"); ?>
-	<?php if ( have_posts() ) : // If we have posts let's begin ?>
+
+		<?php
+			$posts = get_posts(array(
+				'numberposts'	=> -1,
+				'post_type'		=> 'work',
+				'meta_key'		=> 'visibility',
+				'meta_value'	=> 'featured'
+			));
+
+			if( $posts ):
+		?>
 		<div class="row post-grid present">
 
-		<?php while ( have_posts() ) : the_post(); // Let's loop through all our posts at output each one while we have posts ?>
+			<?php foreach( $posts as $post ):
+				setup_postdata( $post )
+			?>
 			<?php
 				// Setting up some variabels to make life a little easier
 				$setColor =  get_field('primary_color');
@@ -108,16 +119,27 @@ get_header(); ?>
 					</a>
 				</div>
 			</div>
-		<?php endwhile; ?>
+		<?php endforeach; ?>
 
 		</div>
+		<?php wp_reset_postdata(); ?>
 		<?php endif; // End have_posts() check. ?>
-	<?php wp_reset_query(); ?>
 
-	<?php if ( have_posts() ) :  // If we have posts let's begin ?>
+		<?php
+			$posts = get_posts(array(
+				'numberposts'	=> -1,
+				'post_type'		=> 'work',
+				'meta_key'		=> 'visibility',
+				'meta_value'	=> 'default'
+			));
+
+			if( $posts ):
+		?>
 		<div class="row small-up-1 medium-up-2 post-grid present">
+			<?php foreach( $posts as $post ):
+				setup_postdata( $post )
+			?>
 
-		<?php while ( have_posts() ) : the_post(); // Let's loop through all our posts at output each one while we have posts ?>
 			<?php
 				// Setting up some variabels to make life a little easier
 				$setColor =  get_field('primary_color');
@@ -155,9 +177,10 @@ get_header(); ?>
 					</a>
 				</div>
 			</div>
-		<?php endwhile; ?>
+		<?php endforeach; ?>
 
 		</div>
+		<?php wp_reset_postdata(); ?>
 		<?php endif; // End have_posts() check. ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>

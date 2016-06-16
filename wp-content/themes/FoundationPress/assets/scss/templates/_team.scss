@@ -60,24 +60,6 @@
 }
 
 #archiveTeam {
-  .button-group {
-    @include flex-grid-row-align(center, middle);
-    margin: 0;
-    height: 100%;
-    button {
-      font-size: 24px;
-      color: $medium-gray;
-      margin: 0 6px;
-      text-transform: capitalize;
-      transition: all 0.25s ease;
-      &:hover {
-        color: $dark-gray;
-      }
-      &.is-checked {
-        color: $primary-color;
-      }
-    }
-  }
   .team-grid {
     width: 100%;
     .team-block {

@@ -13,14 +13,6 @@
  * @since FoundationPress 1.0.0
  */
 
-if (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
-	$primaryColor = get_field( 'primary_color' );
-	$secondaryColor = get_field( 'secondary_color' );
- } else {
-	 $primaryColor = get_field( 'global_primary_color', 'options' );
-	 $secondaryColor = get_field( 'global_secondary_color', 'options' );
- }
-
 get_header(); ?>
 
 <section id="blog" class="wrapper" role="main">
@@ -31,17 +23,20 @@ get_header(); ?>
 			data-249="transform: translate(0px, -50px)"
 			data-250="transform: translate(0px, -250px)">
 		<div class="row align-center">
-			<div class="small-12 medium-8 columns">
-				<h2>Headline</h2>
+			<div class="small-12 medium-4 columns">
+				<h2>Our Blog</h2>
 			</div>
-
-			<?php if( have_rows('work_ctas', "option") ) : ?>
-				<div class="small-12 medium-4 columns button-jar">
-				<?php while ( have_rows('work_ctas', "option") ) : the_row(); ?>
-					<a href="<?php the_sub_field('button_url'); ?>" class="button radius large"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
-				<?php endwhile; ?>
-				</div>
-			<?php endif; ?>
+			<div class="small-12 medium-8 columns button-jar">
+			<?php
+				$taxonomies = get_categories();
+				foreach($taxonomies as $term) {
+					if ($term->slug != 'uncategorized') {
+						$slug = $term->slug;
+						echo "<a class='headline-link' href=\"/category/$slug\">$slug</a> ";
+					}
+				}
+			?>
+			</div>
 		</div>
 	</header>
 	<!-- CLOSE HEADLINE -->
@@ -53,6 +48,14 @@ get_header(); ?>
 		<div class="row post-grid present">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php
+				// Set Post Colors
+				if (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
+					$primaryColor = get_field( 'primary_color' );
+					$secondaryColor = get_field( 'secondary_color' );
+				 } else {
+					 $primaryColor = get_field( 'global_primary_color', 'options' );
+					 $secondaryColor = get_field( 'global_secondary_color', 'options' );
+				 }
 				// Setting up some variabels to make life a little easier
 				$setColor =  $primaryColor;
 				$color = $setColor;
@@ -71,7 +74,7 @@ get_header(); ?>
 			?>
 			<div class="columns small-12">
 				<a href="<?php the_permalink(); ?>" class="permalink bloglink">
-					<div class="hover-indicator" style="background: <?= $primaryColor; ?>"></div>
+					<div class="hover-indicator" style="background-color: <?= $primaryColor; ?>"></div>
 					<div class="post-meta">
 						<h3><?php the_title(); ?></h3>
 						<h4><span class="float-right"><?= $slug; ?></span></h4>

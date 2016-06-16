@@ -23,8 +23,7 @@ get_header(); ?>
 				<h2><?php the_field("team_headline", "option"); ?></h2>
 			</div>
 
-			<div class="columns small-12 medium-6 flex">
-				<div class="row button-group filter-button-group">
+			<div class="columns small-12 medium-6 filter-button-group button-jar">
 					<button data-filter="*" class="is-checked">All</button>
 					<?php
 						$taxonomies = get_terms('team-filters');
@@ -33,7 +32,6 @@ get_header(); ?>
 							echo "<button data-filter=\".$slug\">$slug</button> ";
 						}
 					?>
-				</div>
 			</div>
 		</div>
 	</header>

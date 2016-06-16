@@ -25,7 +25,7 @@ h5 {
 .upper {
   text-transform: uppercase;
 }
-a {
+a, button {
   transition: all 0.5s ease-in-out;
 }
 
@@ -58,7 +58,9 @@ a {
   @include flex-align(right, middle);
   a {
     flex: 0 1 auto;
-    margin-left: 4px;
+    &.button {
+      margin-left: 4px;
+    }
   }
 }
 
@@ -268,21 +270,52 @@ blockquote {
   @include breakpoint(large) {
   }
 }
+
 .headline {
   position: fixed;
   top: 100px;
   left: 0; right: 0;
   margin: auto;
   z-index:1;
+  h2 {
+    font-size: 36px;
+    margin: 0;
+    color: $black;
+  }
   .row {
     padding: 0 20px;
     .columns {
       padding: 30px;
       background: $light-gray;
     }
+    @include breakpoint(small only) {
+      .columns:first-of-type {
+        padding: 30px 30px 5px 30px;
+      }
+      .columns:last-of-type {
+        padding: 5px 30px 30px 30px;
+      }
+    }
   }
   .button {
     margin: 0;
+  }
+  .headline-link, button {
+    font-size: 16px;
+    margin-right: 24px;
+    color: $medium-gray;
+    text-transform: capitalize;
+    @include breakpoint(medium) {
+      font-size: 24px;
+      margin-right: 0;
+      margin-left: 32px;
+    }
+    &:hover {
+      color: $dark-gray;
+    }
+    &.is-checked {
+      color: $primary-color;
+    }
   }
 }
 
