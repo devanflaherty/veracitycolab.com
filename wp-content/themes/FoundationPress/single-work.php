@@ -25,7 +25,8 @@ get_header(); ?>
 				}
 			?>
 			<header id="contentHeader">
-				<h1 class="entry-title"><?php the_title(); ?> <span style="color: #ccc"><?= $client; ?></span></h1>
+				<h6><?= $client; ?></h6>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
 
 			<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->

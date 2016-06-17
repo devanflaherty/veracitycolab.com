@@ -48,6 +48,9 @@
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+    <!-- WISTIA EMBED CODE -->
+    <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+
     <?php if ( is_post_type_archive('team'))  : ?>
       <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
       <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
@@ -69,8 +72,8 @@
         background: <?= $primaryColor ?>;
         box-shadow: 0 7px 0 <?= $primaryColor ?>, 0 14px 0 <?= $primaryColor ?>;
       }
-			h1 {
-				color: <?= $primaryColor ?>
+			#contentBody h1, #contentBody h6 {
+				color: <?= $primaryColor ?>!important;
 			}
       .main-content blockquote {
         border-color: <?= $primaryColor ?>
