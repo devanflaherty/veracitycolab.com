@@ -7673,7 +7673,7 @@ form textarea {
       #fullCard .main-content {
         padding: 40px !important; } }
     #fullCard .main-content #tagline {
-      background: #ec5840;
+      background: #ffd145;
       padding: 40px; }
       #fullCard .main-content #tagline h1 {
         font-size: 38px;
@@ -7953,10 +7953,17 @@ a, button {
 .button-jar {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   -ms-flex-align: center;
       align-items: center; }
+  @media screen and (min-width: 40em) {
+    .button-jar {
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+      -ms-flex-align: center;
+          -ms-grid-row-align: center;
+          align-items: center; } }
   .button-jar a {
     -ms-flex: 0 1 auto;
         flex: 0 1 auto; }

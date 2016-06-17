@@ -55,7 +55,11 @@ a, button {
 }
 .button-jar {
   @include flex();
-  @include flex-align(right, middle);
+  @include flex-align(left, middle);
+  @include breakpoint(medium) {
+    @include flex-align(right, middle);
+
+  }
   a {
     flex: 0 1 auto;
     &.button {

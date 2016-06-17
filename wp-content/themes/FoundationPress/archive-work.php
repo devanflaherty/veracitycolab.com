@@ -42,17 +42,16 @@ get_header(); ?>
 <section id="archiveWork" class="wrapper" role="main">
 	<!-- HEADLINE -->
 	<header class="headline pad"
-	data-0="transform: translate(0px, 0px)"
-	data-200="transform: translate(0px, -50px)"
-	data-249="transform: translate(0px, -50px)"
-	data-250="transform: translate(0px, -250px)">
+	data-0="transform: translate(0px, 0px);opacity: 1;"
+	data-200="transform: translate(0px, -50px); opacity: 1;"
+	data-300="transform: translate(0px, -50px); opacity: 0;">
 	  <div class="row align-center">
-	    <div class="small-12 medium-8 columns">
+	    <div class="small-12 medium-6 columns">
 	      <h2><?php the_field("work_headline", "option"); ?></h2>
 	    </div>
 
 	    <?php if( have_rows('work_ctas', "option") ) : ?>
-	      <div class="small-12 medium-4 columns button-jar">
+	      <div class="small-12 medium-6 columns button-jar">
 	      <?php while ( have_rows('work_ctas', "option") ) : the_row(); ?>
 	        <a class="headline-link" href="<?php the_sub_field('button_url'); ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
 	      <?php endwhile; ?>

@@ -14,16 +14,15 @@ get_header(); ?>
 <section id="archiveTeam" class="wrapper" role="main">
 	<!-- HEADLINE -->
 	<header class="headline pad"
-		data-0="transform: translate(0px, 0px)"
-		data-200="transform: translate(0px, -50px)"
-		data-249="transform: translate(0px, -50px)"
-		data-250="transform: translate(0px, -250px)">
+		data-0="transform: translate(0px, 0px);opacity: 1;"
+		data-200="transform: translate(0px, -50px); opacity: 1;"
+		data-300="transform: translate(0px, -50px); opacity: 0;">
 		<div class="row align-center">
-			<div class="columns small-12 medium-6">
+			<div class="columns small-12 medium-4">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
 			</div>
 
-			<div class="columns small-12 medium-6 filter-button-group button-jar">
+			<div class="columns small-12 medium-8 filter-button-group button-jar">
 					<button data-filter="*" class="is-checked">All</button>
 					<?php
 						$taxonomies = get_terms('team-filters');
