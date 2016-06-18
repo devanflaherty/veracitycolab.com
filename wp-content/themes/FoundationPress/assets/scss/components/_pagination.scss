@@ -1,0 +1,30 @@
+.pagination-centered {
+  @include flex;
+  @include flex-align(center, middle);
+  .pagination {
+    margin-bottom: 3rem;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+    li {
+      border-radius: 30px;
+      padding: 0;
+      a {
+        height: 38px;
+        width: 38px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 30px;
+        border: 2px solid $light-gray;
+        background: none;
+      }
+    }
+    li.current {
+      a {
+        color: $white;
+        background: none;
+        border: 2px solid transparent;
+      }
+    }
+  }
+}

@@ -84,6 +84,12 @@
       .feature-overlay {
         background: <?= $primaryColor ?>;
       }
+      .pagination .current {
+        background: <?= $secondaryColor ?>!important;
+      }
+      .pagination a:hover {
+        border-color: <?= $secondaryColor ?>!important;
+      }
     </style>
 	</head>
 	<body <?php body_class(); ?>>

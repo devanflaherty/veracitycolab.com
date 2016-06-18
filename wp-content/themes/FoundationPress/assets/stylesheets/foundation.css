@@ -7051,6 +7051,34 @@ pre {
     padding: 0;
     color: #8148eb; }
 
+.pagination-centered {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .pagination-centered .pagination {
+    margin-bottom: 3rem; }
+    @media screen and (min-width: 40em) {
+      .pagination-centered .pagination {
+        margin-bottom: 0; } }
+    .pagination-centered .pagination li {
+      border-radius: 30px;
+      padding: 0; }
+      .pagination-centered .pagination li a {
+        height: 38px;
+        width: 38px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 30px;
+        border: 2px solid #e6e6e6;
+        background: none; }
+    .pagination-centered .pagination li.current a {
+      color: #fefefe;
+      background: none;
+      border: 2px solid transparent; }
+
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
   background-size: cover;
@@ -7991,6 +8019,7 @@ pre {
         display: block; } }
 
 #archiveTeam .team-grid {
+  min-height: 400px;
   width: calc(100% - 40px);
   max-width: calc(75rem - 40px);
   margin: auto; }
@@ -8000,16 +8029,17 @@ pre {
   #archiveTeam .team-grid .grid-item {
     width: 50%;
     float: left;
-    padding: 0 1.5%; }
+    padding: 0 1.5%;
+    margin-bottom: 36px; }
     @media screen and (min-width: 40em) {
       #archiveTeam .team-grid .grid-sizer,
       #archiveTeam .team-grid .grid-item {
         width: 33.3333%; } }
   #archiveTeam .team-grid .team-block {
-    position: relative;
-    border-radius: 600px;
-    background: #f9f9f9;
-    margin-bottom: 24px; }
+    position: relative; }
+    #archiveTeam .team-grid .team-block .avatar {
+      border-radius: 600px;
+      background: #f9f9f9; }
     #archiveTeam .team-grid .team-block .thumbnail-overlay {
       height: 100%;
       width: 100%;

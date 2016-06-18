@@ -58,22 +58,24 @@ get_header(); ?>
 				?>">
 					<div class="team-block">
 						<a href="<?php the_permalink(); ?>">
-							<div class="thumbnail-overlay" style="background-color: <?php echo $primary; ?>">
-								<?php
-									if (get_field( 'avatar' )) {
-										$avatar = get_field( 'avatar' );
-									} else {
-										$avatar = get_field( 'team_default_avatar', 'option' );
-									}
-									if (get_field( 'avatar_hover' )) {
-										$avatarHover = get_field( 'avatar_hover' );
-									} else {
-										$avatarHover = get_field( 'team_default_avatar_hover', 'option' );
-									}
-								?>
-								<img src="<?= $avatarHover; ?>" alt="<?php the_title(); ?>">
+							<div class="avatar">
+								<div class="thumbnail-overlay" style="background-color: <?php echo $primary; ?>">
+									<?php
+										if (get_field( 'avatar' )) {
+											$avatar = get_field( 'avatar' );
+										} else {
+											$avatar = get_field( 'team_default_avatar', 'option' );
+										}
+										if (get_field( 'avatar_hover' )) {
+											$avatarHover = get_field( 'avatar_hover' );
+										} else {
+											$avatarHover = get_field( 'team_default_avatar_hover', 'option' );
+										}
+									?>
+									<img src="<?= $avatarHover; ?>" alt="<?php the_title(); ?>">
+								</div>
+								<img src="<?= $avatar; ?>" alt="<?php the_title(); ?>">
 							</div>
-							<img src="<?= $avatar; ?>" alt="<?php the_title(); ?>">
 							<div class="team-meta row align-middle">
 								<div class="columns">
 									<h4 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_title(); ?></h4>
@@ -89,19 +91,16 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		</div>
 
-
 		<?php endif; // End have_posts() check. ?>
 
-
-		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-			</nav>
-		<?php } ?>
-
 	</article>
+	<?php /* Display navigation to next/previous pages when applicable */ ?>
+	<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+		<nav id="post-nav">
+			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+		</nav>
+	<?php } ?>
 </section>
 
 <?php get_footer();
