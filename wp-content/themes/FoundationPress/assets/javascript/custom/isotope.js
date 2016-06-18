@@ -5,9 +5,16 @@ if ($("body").hasClass("post-type-archive-team")){
 var $grid = $('.grid').imagesLoaded( function() {
   // init Isotope after all images have loaded
   $grid.isotope({
-    itemSelector: '.column',
+    itemSelector: '.grid-item',
     layoutMode: 'fitRows',
+    percentPosition: true
   });
+});
+
+$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
+  if(newSize ==  "small" || newSize ==  "mediun" || newSize ==  "large" ) {
+    $grid.isotope('layout');
+  }
 });
 
 // filter items on button click

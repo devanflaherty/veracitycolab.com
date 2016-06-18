@@ -7991,81 +7991,55 @@ pre {
         display: block; } }
 
 #archiveTeam .team-grid {
-  width: 100%; }
+  width: calc(100% - 40px);
+  max-width: calc(75rem - 40px);
+  margin: auto; }
+  #archiveTeam .team-grid img {
+    width: 100%; }
+  #archiveTeam .team-grid .grid-sizer,
+  #archiveTeam .team-grid .grid-item {
+    width: 50%;
+    float: left;
+    padding: 0 1.5%; }
+    @media screen and (min-width: 40em) {
+      #archiveTeam .team-grid .grid-sizer,
+      #archiveTeam .team-grid .grid-item {
+        width: 33.3333%; } }
   #archiveTeam .team-grid .team-block {
-    overflow: hidden;
     position: relative;
-    height: 200px; }
+    border-radius: 600px;
+    background: #f9f9f9;
+    margin-bottom: 24px; }
     #archiveTeam .team-grid .team-block .thumbnail-overlay {
       height: 100%;
       width: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      background: rgba(33, 153, 232, 0.6);
       transition: all 0.5s ease;
       opacity: 0; }
-      #archiveTeam .team-grid .team-block .thumbnail-overlay .play {
-        height: 50%; }
-        #archiveTeam .team-grid .team-block .thumbnail-overlay .play .columns {
-          position: relative; }
-      #archiveTeam .team-grid .team-block .thumbnail-overlay span {
-        width: 20px;
-        height: 20px;
-        color: white;
-        font-size: 24px;
-        text-align: center;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        opacity: 0;
-        -ms-transform: scale(0.25, 0.25);
-            transform: scale(0.25, 0.25);
-        transition: all 0.5s ease;
-        transition-delay: 0.2s; }
     #archiveTeam .team-grid .team-block .team-meta {
-      position: absolute;
       width: 100%;
       height: 34px;
-      left: 0;
-      bottom: 0;
-      margin: 0;
-      padding: 8px 0;
-      background: rgba(254, 254, 254, 0.9);
-      text-align: center;
-      transition: all 0.5s ease; }
-      #archiveTeam .team-grid .team-block .team-meta h2 {
-        font-size: 26px;
-        margin-bottom: 0;
-        -ms-transform: translate(0, 75%);
-            transform: translate(0, 75%);
-        transition: all 0.5s ease;
-        transition-delay: 0.125s; }
-        @media screen and (min-width: 40em) {
-          #archiveTeam .team-grid .team-block .team-meta h2 {
-            font-size: 36px; } }
+      margin: 12px auto;
+      text-align: center; }
       #archiveTeam .team-grid .team-block .team-meta h4 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 0;
+        transition: all 0.5s ease; }
+      #archiveTeam .team-grid .team-block .team-meta h5 {
         font-size: 14px;
         font-weight: 800;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        letter-spacing: 0;
+        opacity: 0.5; }
     #archiveTeam .team-grid .team-block:hover .thumbnail-overlay {
       opacity: 1; }
       #archiveTeam .team-grid .team-block:hover .thumbnail-overlay span {
-        opacity: 1;
-        -ms-transform: scale(1);
-            transform: scale(1); }
-    #archiveTeam .team-grid .team-block:hover .team-meta {
-      height: 50%;
-      padding: 24px 0; }
-      #archiveTeam .team-grid .team-block:hover .team-meta h2 {
-        -ms-transform: translate(0, 0);
-            transform: translate(0, 0); }
+        opacity: 1; }
+    #archiveTeam .team-grid .team-block:hover .team-meta h4 {
+      letter-spacing: 2px; }
 
 /* Utilities */
 html, body {

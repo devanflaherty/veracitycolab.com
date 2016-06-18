@@ -15,8 +15,8 @@ get_header(); ?>
 	<!-- HEADLINE -->
 	<header class="headline pad"
 		data-0="transform: translate(0px, 0px);opacity: 1;"
-		data-100="transform: translate(0px, -50px); opacity: 1;"
-		data-200="transform: translate(0px, -50px); opacity: 0;">
+		data-200="transform: translate(0px, -50px); opacity: 1;"
+		data-300="transform: translate(0px, -50px); opacity: 0;">
 		<div class="row align-center">
 			<div class="columns small-12 medium-4">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
@@ -39,56 +39,48 @@ get_header(); ?>
 	<!-- CLOSE HEADLINE -->
 
 	<article class="main-cards pad"
-		data-500-end="transform: translate(0px, 0px)"
-		data-end="transform: translate(0px, -100px)">
+	data-500-end="transform: translate(0px, 0px)"
+	data-end="transform: translate(0px, -100px)">
 	<?php if ( have_posts() ) : ?>
-		<div class="grid team-grid present">
-			<div class="grid-sizer"></div>
+		<div class="row small-up-1 medium-up-2 team-grid grid present">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		  <div class="grid-item
-				<?php
-					$taxonomies = get_the_terms( $post->ID, 'team-filters');
-					if ($taxonomies) {
-						foreach($taxonomies as $term) {
-							$slug = $term->slug;
-							echo $slug . " ";
-						}
+		  <div class="column
+			<?php
+				$taxonomies = get_the_terms( $post->ID, 'team-filters');
+				if ($taxonomies) {
+					foreach($taxonomies as $term) {
+						$slug = $term->slug;
+						echo $slug . " ";
 					}
-				?>">
-					<div class="team-block">
-						<a href="<?php the_permalink(); ?>">
-							<div class="thumbnail-overlay" style="background-color: <?php echo $primary; ?>">
-								<?php
-									if (get_field( 'avatar' )) {
-										$avatar = get_field( 'avatar' );
-									} else {
-										$avatar = get_field( 'team_default_avatar', 'option' );
-									}
-									if (get_field( 'avatar_hover' )) {
-										$avatarHover = get_field( 'avatar_hover' );
-									} else {
-										$avatarHover = get_field( 'team_default_avatar_hover', 'option' );
-									}
-								?>
-								<img src="<?= $avatarHover; ?>" alt="<?php the_title(); ?>">
-							</div>
-							<img src="<?= $avatar; ?>" alt="<?php the_title(); ?>">
-							<div class="team-meta row align-middle">
+				}
+			?>">
+				<div class="team-block">
+					<a href="<?php the_permalink(); ?>">
+						<div class="thumbnail-overlay" style="background-color: <?php echo $primary; ?>">
+							<div class="play row align-middle">
 								<div class="columns">
-									<h4 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_title(); ?></h4>
-									<h5 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_field('title'); ?></h5>
 								</div>
 							</div>
-						</a>
-					</div>
+						</div>
+						<div class="team-meta row align-middle">
+							<div class="columns">
+								<h4 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_title(); ?></h4>
+							</div>
+						</div>
+						<?php
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail();
+							}
+						?>
+					</a>
 				</div>
-			<?php endwhile; ?>
+			</div>
+		<?php endwhile; ?>
 
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		<?php else : ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		</div>
-
 
 		<?php endif; // End have_posts() check. ?>
 
