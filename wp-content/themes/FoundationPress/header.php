@@ -30,6 +30,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="D75mcBbFpurEh5x_YA2-r91ntoWT4_SZxcXTSiTLcUQ">
 
+		<?php wp_head(); ?>
+		<script src="https://use.typekit.net/kud3sdw.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- WISTIA EMBED CODE -->
+    <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -42,14 +48,19 @@
     fbq('track', "PageView");
     </script>
     <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=613751512109020&amp;ev=PageView&amp;noscript=1"/&gt;</noscript>
-    <!-- End Facebook Pixel Code -->
-
-		<?php wp_head(); ?>
-		<script src="https://use.typekit.net/kud3sdw.js"></script>
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-    <!-- WISTIA EMBED CODE -->
-    <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+    <!-- Hotjar Tracking Code for http://www.veracitycolab.com -->
+    <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:232315,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- CALL RAIL -->
+    <script src="//cdn.callrail.com/companies/176691639/d7e924485e706ce162f8/12/swap.js"></script>
 
     <?php if ( is_post_type_archive('team'))  : ?>
       <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
@@ -94,91 +105,94 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<div id="skrollr-body">
-	<?php do_action( 'foundationpress_after_body' ); ?>
+  	<?php do_action( 'foundationpress_after_body' ); ?>
 
-	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
-	<div class="off-canvas-wrapper">
-		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-	<?php endif; ?>
+  	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
+  	<div class="off-canvas-wrapper">
+  		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+  		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
+  	<?php endif; ?>
 
-	<?php do_action( 'foundationpress_layout_start' ); ?>
+  	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<!-- Contact -->
-	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
-		<div class="row align-center">
-			<div class="small-10 medium-6 large-4 columns text-center">
-				<h5 class="contrast-text upper"><strong>Pleased to meet you</strong></h5>
-				<br><br>
-				<form>
-					<div class="inputs">
-						<div class="field">
-							<input id="contactName" class="float-input" type="text" name="name" placeholder="Full Name" />
-							<label for="name">Full Name</label>
-						</div>
-						<div class="field">
-							<input id="contactEmail" class="float-input" type="email" name="email" placeholder="Email Address" />
-							<label for="email">Email Address</label>
-						</div>
-						<textarea id="contactMessage" placeholder="I'm Contacting Because..."></textarea>
-					</div>
-					<input id="formSubmit" value="Send" name="send" class="button white hollow expanded disabled" />
-				</form>
-				<button class="button round secondary" id="closeForm">X</button>
-			</div>
-		</div>
-	</section>
+  	<!-- Contact -->
+  	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
+  		<div class="row align-center">
+  			<div class="small-10 medium-6 large-4 columns text-center">
+  				<h5 id="message" class="contrast-text upper"><strong>Pleased to meet you</strong></h5>
+  				<br><br>
 
-  <section id="mobileMenu" class="menu" style="display:none;">
-    <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-      <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-    <?php endif; ?>
-  </section>
-
-  <div id="navBar" data-sticky-container style="height:87px">
-  	<header id="masthead" class="site-header" role="banner" data-sticky data-options="marginTop:0;">
-      <div id="loadBar">
-    		<span style="background-color: <?= $primaryColor ?>;width: 0">&nbsp;</span>
-    	</div>
-  		<div class="title-bar" data-responsive-toggle="site-navigation">
-  			<div class="title-bar-title">
-          <a class="home-link" href="/home">
-            <svg width="26px" height="35px" viewBox="0 0 26 35">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
-                        <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
-                    </g>
-                </g>
-            </svg>
-          </a>
+  				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
+  					<div class="inputs">
+  						<div class="field" id="nameInput">
+  							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
+  							<label for="name">Full Name</label>
+  						</div>
+  						<div class="field" id="emailInput">
+  							<input id="contactEmail" class="float-input" type="email" name="email" placeholder="Email Address" />
+  							<label for="email">Email Address</label>
+  						</div>
+              <div class="field" id="commentInput">
+    						<textarea id="contactMessage" placeholder="I'm Contacting Because..." name="comment"></textarea>
+              </div>
+  					</div>
+  					<button type="submit" id="formSubmit" name="send" class="button white hollow expanded disabled" />Send</button>
+  				</form>
+  				<button class="button round secondary" id="closeForm">X</button>
   			</div>
-        <button id="mobileToggle" class="menu-icon" type="button"></button>
   		</div>
+  	</section>
 
-  		<nav id="site-navigation" class="main-navigation top-bar" role="navigation" style="width:100%">
-  			<div class="top-bar-left">
-  				<ul class="menu">
-  					<li class="home-link">
-  						<!-- LOGO -->
-  						<a href="/home">
-  							<svg width="26px" height="35px" viewBox="0 0 26 35">
-  							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-  							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
-  							            <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
-  							        </g>
-  							    </g>
-  							</svg>
-  						</a>
-  				  </li>
-  				</ul>
-  			</div>
-  			<div class="top-bar-right">
-  				<?php foundationpress_top_bar_r(); ?>
-  			</div>
-  		</nav>
-  	</header>
-  </div>
+    <section id="mobileMenu" class="menu" style="display:none;">
+      <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+        <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+      <?php endif; ?>
+    </section>
 
-	<section class="container">
-		<div class="overlay"></div>
-		<?php do_action( 'foundationpress_after_header' );
+    <div id="navBar" data-sticky-container style="height:87px">
+    	<header id="masthead" class="site-header" role="banner" data-sticky data-options="marginTop:0;">
+        <div id="loadBar">
+      		<span style="background-color: <?= $primaryColor ?>;width: 0">&nbsp;</span>
+      	</div>
+    		<div class="title-bar" data-responsive-toggle="site-navigation">
+    			<div class="title-bar-title">
+            <a class="home-link" href="/home">
+              <svg width="26px" height="35px" viewBox="0 0 26 35">
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
+                          <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
+                      </g>
+                  </g>
+              </svg>
+            </a>
+    			</div>
+          <button id="mobileToggle" class="menu-icon" type="button"></button>
+    		</div>
+
+    		<nav id="site-navigation" class="main-navigation top-bar" role="navigation" style="width:100%">
+    			<div class="top-bar-left">
+    				<ul class="menu">
+    					<li class="home-link">
+    						<!-- LOGO -->
+    						<a href="/home">
+    							<svg width="26px" height="35px" viewBox="0 0 26 35">
+    							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
+    							            <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
+    							        </g>
+    							    </g>
+    							</svg>
+    						</a>
+    				  </li>
+    				</ul>
+    			</div>
+    			<div class="top-bar-right">
+    				<?php foundationpress_top_bar_r(); ?>
+    			</div>
+    		</nav>
+    	</header>
+    </div>
+
+  	<section class="container">
+  		<div class="overlay"></div>
+  		<?php do_action( 'foundationpress_after_header' );

@@ -12,16 +12,24 @@
 get_header(); ?>
 
 <?php
-	// Get Video ID for first post */
-	if ( have_posts() ) : $i = 0; ?>
-	<?php while ( have_posts() ) : the_post(); $i++; ?>
-		<?php
+	$posts = get_posts(array(
+		'numberposts'	=> 1,
+		'post_type'		=> 'work',
+		'meta_key'		=> 'visibility',
+		'meta_value'	=> 'featured'
+	));
+
+	if( $posts ) {
+		foreach( $posts as $post ) {
+			$i++;
+			setup_postdata( $post );
 			if ($i == 1) {
-				$initVideo = get_field('video_id');
+				$initVideo = 'o3wjbaj9xc';
 			}
-		?>
-	<?php endwhile; ?>
-<?php endif; ?>
+		}
+	}
+	wp_reset_postdata();
+?>
 
 <!-- VIDEO CONTAINER -->
 <header id="featured-hero" class="hidden" role="banner" style="background-color:#222">
@@ -30,7 +38,6 @@ get_header(); ?>
 	<div id="featureVideo" class="row collapse video-container align-center">
 		<div class="large-11 columns">
 			<div class="flex-video widescreen">
-				<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 				<div class="wistia_embed wistia_async_<?php echo $initVideo; ?> videoFoam=true" style="height:720px;width:1280px">&nbsp;</div>
 			</div>
 		</div>
@@ -102,7 +109,7 @@ get_header(); ?>
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
 						<h3><?php the_title(); ?></h3>
-						<h4><span class="float-right"><?= $client ?></span></h4>
+						<h4 class="show-for-medium"><span class="float-right"><?= $client ?></span></h4>
 					</div>
 				</a>
 				<div class="post-block">
@@ -160,7 +167,7 @@ get_header(); ?>
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
 						<h3><?php the_title(); ?></h3>
-						<h4><span class="float-right"><?= $client ?></span></h4>
+						<h4 class="show-for-medium"><span class="float-right"><?= $client ?></span></h4>
 					</div>
 				</a>
 				<div class="post-block">

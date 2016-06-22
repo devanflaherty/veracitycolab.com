@@ -1,5 +1,52 @@
 // CONTACT
-// Hide form
+$(document).ready(function(){
+$('#contact').on('submit', function(e){
+  $('.field').removeClass('has-error'); // remove the error class
+  $('.help-block').remove(); // remove the error text
+
+  var formData="";
+  x=$("#contact").serializeArray();
+  $.each(x, function(i, field){
+      formData+=i>0?"&":"";
+      formData+=field.name + "=" + field.value;
+  });
+
+  $.ajax({
+      type:'POST',
+      url: '/wp-content/themes/FoundationPress/form-submit.php',
+      data: formData,
+      dataType : 'json' // what type of data do we expect back from the server
+  })// using the done promise callback
+  .done(function(data) {
+      // here we will handle errors and validation messages
+      if ( ! data.success) {
+        // handle errors for name ---------------
+        if (data.errors.firstname) {
+          $('#nameInput').addClass('has-error'); // add the error class to show red input
+          $('#nameInput').append('<div class="help-block">' + data.errors.firstname + '</div>'); // add the actual error message under our input
+        }
+
+        // handle errors for email ---------------
+        if (data.errors.email) {
+          $('#emailInput').addClass('has-error'); // add the error class to show red input
+          $('#emailInput').append('<div class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
+        }
+
+        // handle errors for superhero alias ---------------
+        if (data.errors.comment) {
+          $('#commentInput').addClass('has-error'); // add the error class to show red input
+          $('#commentInput').append('<div class="help-block">' + data.errors.comment + '</div>'); // add the actual error message under our input
+        }
+      } else {
+        $("#contact").fadeOut();
+        $("#message").fadeOut(function() {
+          $(this).text("Thank you!");
+        }).fadeIn();
+      }
+    });
+    return false;
+  });
+});
 // Change loadbar size on contact hover
 $('a[href=#contact]').hover(
   function() {

@@ -6470,7 +6470,7 @@ a::after {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 20px; }
+  padding: 60px 0; }
   #footer-container #footer {
     max-width: 75rem;
     margin-left: auto;
@@ -7867,8 +7867,12 @@ pre {
     #fullCard .main-content #tagline {
       background: #ffd145;
       padding: 40px; }
+      @media screen and (max-width: 39.9375em) {
+        #fullCard .main-content #tagline {
+          margin-top: -90px; } }
       #fullCard .main-content #tagline h1 {
         font-size: 38px;
+        line-height: 40px;
         color: white;
         margin: 0; }
     #fullCard .main-content .entry-content {
@@ -7876,12 +7880,22 @@ pre {
       padding: 40px; }
     #fullCard .main-content #cta h2 {
       margin: 25px 0;
-      padding: 0 40px; }
+      padding: 0 40px;
+      font-size: 22px;
+      line-height: 22px; }
+      @media screen and (min-width: 40em) {
+        #fullCard .main-content #cta h2 {
+          font-size: 32px;
+          line-height: 32px; } }
     #fullCard .main-content #cta .button {
       font-size: 32px;
       padding: 40px 0;
       background: #e6e6e6;
-      color: #808080; }
+      color: #808080;
+      margin: 0; }
+      #fullCard .main-content #cta .button:hover {
+        background: #808080;
+        color: #fefefe; }
 
 #singleWork {
   max-width: 75rem;
@@ -8034,7 +8048,7 @@ pre {
     @media screen and (min-width: 40em) {
       #archiveTeam .team-grid .grid-sizer,
       #archiveTeam .team-grid .grid-item {
-        width: 33.3333%; } }
+        width: 25%; } }
   #archiveTeam .team-grid .team-block {
     position: relative; }
     #archiveTeam .team-grid .team-block .avatar {
@@ -8247,12 +8261,15 @@ a, button {
   margin-top: 0 !important; }
 
 .headline {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 1; }
+  position: relative; }
+  @media screen and (min-width: 40em) {
+    .headline {
+      position: fixed;
+      top: 100px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 1; } }
   .headline h2 {
     font-size: 36px;
     margin: 0;

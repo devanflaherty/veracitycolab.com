@@ -17,8 +17,12 @@
     #tagline {
       background: $secondary-color;
       padding: 40px;
+      @include breakpoint(small only) {
+        margin-top: -90px;
+      }
       h1 {
         font-size: 38px;
+        line-height: 40px;
         color: white;
         margin: 0;
       }
@@ -31,12 +35,23 @@
       h2 {
         margin: 25px 0;
         padding: 0 40px;
+        font-size: 22px;
+        line-height: 22px;
+        @include breakpoint(medium) {
+          font-size: 32px;
+          line-height: 32px;
+        }
       }
       .button {
         font-size: 32px;
         padding: 40px 0;
         background: $light-gray;
         color: $dark-gray;
+        margin: 0;
+        &:hover {
+          background: $dark-gray;
+          color: $white;
+        }
       }
     }
   }

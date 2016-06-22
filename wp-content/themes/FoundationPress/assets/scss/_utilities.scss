@@ -197,11 +197,14 @@ a, button {
 }
 
 .headline {
-  position: fixed;
-  top: 100px;
-  left: 0; right: 0;
-  margin: auto;
-  z-index:1;
+  position: relative;
+  @include breakpoint(medium) {
+    position: fixed;
+    top: 100px;
+    left: 0; right: 0;
+    margin: auto;
+    z-index:1;
+  }
   h2 {
     font-size: 36px;
     margin: 0;

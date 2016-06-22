@@ -46,13 +46,13 @@
        </div>
      </div>
 
-     <div id="cta" class="row collapse"
+     <div id="cta" class="row collapse align-stretch"
        data-0="margin-top: 0px;"
        data-end="margin-top: 120px;">
-       <div class="columns medium-9">
+       <div class="medium-8 columns flex">
          <h2><?php the_field( 'cta' ); ?></h2>
        </div>
-       <div class="columns medium-3">
+       <div class="medium-4 columns flex">
         <a class="button expanded secondary" href="<?php the_field( 'cta_button_url' ); ?>"><?php the_field( 'cta_button_value' ); ?></a>
        </div>
      </div>
