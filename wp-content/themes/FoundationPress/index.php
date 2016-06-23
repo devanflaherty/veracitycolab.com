@@ -97,9 +97,7 @@ get_header(); ?>
 				</a>
 			</div>
 		<?php endwhile; ?>
-
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		</div>
 
 		<?php endif; // End have_posts() check. ?>
 
