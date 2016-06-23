@@ -103,7 +103,6 @@ get_header(); ?>
 
 		<?php endif; // End have_posts() check. ?>
 
-		<div id="contentFooter">
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
 			<nav id="post-nav">
@@ -111,7 +110,6 @@ get_header(); ?>
 				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 			</nav>
 		<?php } ?>
-		</div>
 
 	</article>
 </section>
