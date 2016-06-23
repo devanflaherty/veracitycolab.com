@@ -6312,20 +6312,15 @@ table.hover tr:nth-of-type(even):hover {
 .home-link {
   cursor: pointer; }
 
-/* Mobile menu */
-.off-canvas > ul.menu {
-  height: 100vh;
-  padding: 1rem; }
-
 #mobileMenu {
   width: 100%;
-  height: calc(100vh - 80px);
   background: #2199e8;
   position: relative;
-  z-index: 400; }
+  z-index: 400;
+  height: calc(100vh - 80px); }
   #mobileMenu ul {
-    background: none;
     height: calc(100vh - 80px);
+    background: none;
     padding: 60px 0;
     display: -ms-flexbox;
     display: flex;
@@ -6366,6 +6361,9 @@ table.hover tr:nth-of-type(even):hover {
         font-weight: 600; }
         #mobileMenu ul li a:hover {
           color: #fefefe; }
+
+.iphone #mobileMenu, .iphone #mobileMenu ul {
+  height: calc(100vh - 150px); }
 
 .title-bar {
   height: 80px;
@@ -6667,6 +6665,9 @@ form textarea {
         transform: translate(0px, 0px);
     opacity: 1; }
 
+.iphone #closeForm {
+  bottom: 95px; }
+
 #featured-hero {
   background-size: cover;
   background-position: center;
@@ -6813,13 +6814,23 @@ form textarea {
       .post-grid > .column .permalink .post-meta, .post-grid > .columns .permalink .post-meta {
         padding: 30px 20px 20px; }
         .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
+          font-size: 28px;
+          line-height: 32px;
           display: inline;
           color: #808080;
-          padding: 0; }
+          padding: 0;
+          margin: 0; }
+          @media screen and (min-width: 40em) {
+            .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
+              font-size: 32px;
+              line-height: 36px; } }
           .post-grid > .column .permalink .post-meta h3 span, .post-grid > .columns .permalink .post-meta h3 span {
             color: #e6e6e6; }
-        .post-grid > .column .permalink .post-meta h4, .post-grid > .columns .permalink .post-meta h4 {
-          display: inline; }
+        .post-grid > .column .permalink .post-meta h5, .post-grid > .columns .permalink .post-meta h5 {
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          font-size: 15px;
+          margin: 0; }
       .post-grid > .column .permalink.bloglink:hover .thumbnail-overlay, .post-grid > .columns .permalink.bloglink:hover .thumbnail-overlay {
         opacity: 1; }
   .post-grid .feature-post .post-block {
@@ -6832,7 +6843,16 @@ form textarea {
   .post-grid .post-block {
     overflow: hidden;
     position: relative;
-    max-height: 300px; }
+    max-height: 400px;
+    width: 100%;
+    background: black;
+    background-position: center;
+    background-size: cover !important; }
+    .post-grid .post-block:after {
+      padding-top: 56.25%;
+      /* 16:9 ratio */
+      display: block;
+      content: ''; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
@@ -6848,9 +6868,24 @@ form textarea {
       background: rgba(33, 153, 232, 0.6);
       transition: all 0.5s ease;
       opacity: 0; }
+      @media screen and (max-width: 39.9375em) {
+        .post-grid .post-block .thumbnail-overlay {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: center;
+              justify-content: center;
+          -ms-flex-align: center;
+              align-items: center; } }
       .post-grid .post-block .thumbnail-overlay .excerpt {
-        padding: 30px;
+        padding: 20px;
         color: #fefefe; }
+        .post-grid .post-block .thumbnail-overlay .excerpt p {
+          line-height: 20px; }
+        .post-grid .post-block .thumbnail-overlay .excerpt span {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 600;
+          color: rgba(254, 254, 254, 0.5); }
       .post-grid .post-block .thumbnail-overlay.play span {
         width: 80px;
         height: 80px;
@@ -8132,25 +8167,34 @@ a, button {
       background: #fefefe;
       color: #0a0a0a; }
 
-.button-jar {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
-  -ms-flex-align: center;
-      align-items: center; }
+@media screen and (min-width: 40em) {
+  .button-jar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: center;
+        align-items: center; } }
+
+.button-jar a, .button-jar button {
+  display: block;
+  margin: 6px 0; }
   @media screen and (min-width: 40em) {
-    .button-jar {
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-      -ms-flex-align: center;
-          -ms-grid-row-align: center;
-          align-items: center; } }
-  .button-jar a {
-    -ms-flex: 0 1 auto;
-        flex: 0 1 auto; }
-    .button-jar a.button {
-      margin-left: 4px; }
+    .button-jar a, .button-jar button {
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+      margin: 6px 0 6px 24px; } }
+  .button-jar a.button, .button-jar button.button {
+    margin-left: 4px; }
+
+.button-jar.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media screen and (min-width: 40em) {
+    .button-jar.wrap a, .button-jar.wrap button {
+      margin: 6px 0 6px 0;
+      -ms-flex: 1 25%;
+          flex: 1 25%; } }
 
 .columns img {
   width: 100%;
@@ -8277,25 +8321,28 @@ a, button {
   .headline .row {
     padding: 0 20px; }
     .headline .row .columns {
-      padding: 30px;
-      background: #e6e6e6; }
+      background: #e6e6e6;
+      padding: 30px; }
     @media screen and (max-width: 39.9375em) {
       .headline .row .columns:first-of-type {
         padding: 30px 30px 5px 30px; }
       .headline .row .columns:last-of-type {
         padding: 5px 30px 30px 30px; } }
+  @media screen and (max-width: 63.9375em) {
+    .headline .row.stacked-medium .columns:first-of-type {
+      padding: 30px 30px 5px 30px; }
+    .headline .row.stacked-medium .columns:last-of-type {
+      padding: 5px 30px 30px 30px; } }
   .headline .button {
     margin: 0; }
   .headline .headline-link, .headline button {
-    font-size: 16px;
+    font-size: 18px;
     margin-right: 24px;
     color: #BFBFBF;
     text-transform: capitalize; }
     @media screen and (min-width: 40em) {
       .headline .headline-link, .headline button {
-        font-size: 24px;
-        margin-right: 0;
-        margin-left: 32px; } }
+        margin-right: 0; } }
     .headline .headline-link:hover, .headline button:hover {
       color: #808080; }
     .headline .headline-link.is-checked, .headline button.is-checked {

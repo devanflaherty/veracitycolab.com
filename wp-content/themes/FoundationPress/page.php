@@ -5,7 +5,6 @@
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
- *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
@@ -14,38 +13,40 @@
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
 
- <div id="page" role="main">
-
- <?php do_action( 'foundationpress_before_content' ); ?>
+ <div id="fullCard" role="main">
  <?php while ( have_posts() ) : the_post(); ?>
-   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-       <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
-       </header>
-       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-       <div class="entry-content">
-           <?php the_content(); ?>
+   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
+     data-0="margin-top: -250px;"
+     data-top-bottom="margin-top: -400px;">
+
+     <div class="row">
+       <div id="tagline" class="columns medium-9">
+         <h1 class="entry-title"><?php bloginfo('description'); ?></h1>
        </div>
-       <footer>
-           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-           <p><?php the_tags(); ?></p>
-       </footer>
-       <?php do_action( 'foundationpress_page_before_comments' ); ?>
-       <?php comments_template(); ?>
-       <?php do_action( 'foundationpress_page_after_comments' ); ?>
+     </div>
+
+     <div class="row" id="cardBody"
+      data-0="margin-top: 40px;"
+      data-100="margin-top: 0px;">
+       <div id="contentBody" class="entry-content columns">
+         <?php the_content(); ?>
+       </div>
+     </div>
+
+     <div id="cta" class="row collapse align-stretch"
+       data-0="margin-top: 0px;"
+       data-end="margin-top: 120px;">
+       <div class="medium-8 columns flex">
+         <h2><?php the_field( 'cta' ); ?></h2>
+       </div>
+       <div class="medium-4 columns flex">
+        <a class="button expanded secondary" href="<?php the_field( 'cta_button_url' ); ?>"><?php the_field( 'cta_button_value' ); ?></a>
+       </div>
+     </div>
    </article>
  <?php endwhile;?>
 
  <?php do_action( 'foundationpress_after_content' ); ?>
- <aside class="sidebar show-for-large" id="pageSidebar">
-   <div clas="row" data-sticky-container>
-     <div class="sticky" data-sticky data-top-anchor="pageSidebar:top" data-btm-anchor="contentFooter:top" data-check-every="0" data-options="marginTop:6;">
-
-       <?php get_sidebar(); ?>
-
-     </div>
-   </div>
- </aside>
 
  </div>
 

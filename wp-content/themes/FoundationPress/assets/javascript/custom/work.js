@@ -11,6 +11,7 @@ $(".play").click(function(){
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');
   }, 500);
+  return false;
 
 });
 

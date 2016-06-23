@@ -60,7 +60,17 @@ get_header(); ?>
 	    <?php if( have_rows('work_ctas', "option") ) : ?>
 	      <div class="small-12 medium-6 columns button-jar">
 	      <?php while ( have_rows('work_ctas', "option") ) : the_row(); ?>
-	        <a class="headline-link" href="<?php the_sub_field('button_url'); ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
+					<?php
+						$buttonLink = get_sub_field('button_url');
+						if(get_sub_field('is_video') == true) {
+							$buttonClass = "play";
+							$link = "#wistia_" . $buttonLink . "?videoFoam=true&playerColor=dd3333&videoQuality=hd-only";
+						} else {
+							$buttonClass = "";
+							$link = $buttonLink;
+						}
+					?>
+	        <a class="headline-link <?= $buttonClass; ?>" href="<?= $Link; ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
 	      <?php endwhile; ?>
 	      </div>
 	    <?php endif; ?>
@@ -108,16 +118,15 @@ get_header(); ?>
 				<a href="<?php the_permalink(); ?>" class="permalink">
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
+						<h5><span><?= $client ?></span></h5>
 						<h3><?php the_title(); ?></h3>
-						<h4 class="show-for-medium"><span class="float-right"><?= $client ?></span></h4>
 					</div>
 				</a>
-				<div class="post-block">
-					<?php
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						}
-					?>
+				<?php if ( has_post_thumbnail() )  : ?>
+					<div class="post-block" style="background-image: url(http:<?php the_post_thumbnail_url( 'large' ); ?>)">
+				<?php else : ?>
+					<div class="post-block" style="background-color: <?= $primary; ?>">
+				<?php endif; ?>
 					<a href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
 						<div class="thumbnail-overlay play" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play" aria-hidden="true"></i></span>
@@ -166,16 +175,15 @@ get_header(); ?>
 				<a href="<?php the_permalink(); ?>" class="permalink">
 					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
 					<div class="post-meta">
+						<h5><span><?= $client ?></span></h5>
 						<h3><?php the_title(); ?></h3>
-						<h4 class="show-for-medium"><span class="float-right"><?= $client ?></span></h4>
 					</div>
 				</a>
-				<div class="post-block">
-					<?php
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						}
-					?>
+			<?php if ( has_post_thumbnail() )  : ?>
+				<div class="post-block" style="background-image: url(http:<?php the_post_thumbnail_url( 'large' ); ?>)">
+			<?php else : ?>
+				<div class="post-block" style="background-color: <?= $primary; ?>">
+			<?php endif; ?>
 					<a href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
 						<div class="thumbnail-overlay play" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play" aria-hidden="true"></i></span>

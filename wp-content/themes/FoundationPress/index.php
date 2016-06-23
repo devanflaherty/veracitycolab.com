@@ -77,18 +77,19 @@ get_header(); ?>
 					<div class="hover-indicator" style="background-color: <?= $primaryColor; ?>"></div>
 					<div class="post-meta">
 						<h3><?php the_title(); ?></h3>
-						<h4><span class="float-right"><?= $slug; ?></span></h4>
 					</div>
-					<div class="post-block">
-						<?php
-							if ( has_post_thumbnail() ) {
-								the_post_thumbnail();
-							}
-						?>
+					<?php if ( has_post_thumbnail() )  : ?>
+						<div class="post-block" style="background-image: url(http:<?php the_post_thumbnail_url( 'large' ); ?>)">
+					<?php else : ?>
+						<div class="post-block" style="background-color: <?= $primary; ?>">
+					<?php endif; ?>
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<div class="row excerpt">
-								<div class="columns small-9 medium-6">
-									<span><?php the_excerpt(); ?></span>
+								<div class="columns small-12 medium-6">
+									<div>
+										<?php the_excerpt(); ?>
+										<span><?= $slug; ?></span>
+									</div>
 								</div>
 							</div>
 						</div>

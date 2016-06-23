@@ -1,25 +1,16 @@
 .home-link {
   cursor: pointer;
 }
-.slide-down {}
-
-/* Mobile menu */
-.off-canvas {
- > ul.menu {
-    height: 100vh;
-    padding: 1rem;
-  }
-}
 
 #mobileMenu {
   width: 100%;
-  height: calc(100vh - 80px);
   background: $primary-color;
   position: relative;
   z-index: 400;
+  height: calc(100vh - 80px);
   ul {
-    background: none;
     height: calc(100vh - 80px);
+    background: none;
     padding: 60px 0;
     @include flex;
     @include flex-align(center, middle);
@@ -51,6 +42,13 @@
         }
       }
     }
+  }
+}
+
+//for devices
+.iphone {
+  #mobileMenu, #mobileMenu ul {
+    height: calc(100vh - 150px);
   }
 }
 

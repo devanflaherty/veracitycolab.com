@@ -18,6 +18,8 @@
     height: calc(100vh - 80px);
   }
 }
+
+
 form {
   .field {
     margin-bottom: 6px;
@@ -85,6 +87,7 @@ form {
   }
 }
 
+// Close form button
 #closeForm {
   position: absolute;
   height: 40px; width: 40px;
@@ -97,5 +100,12 @@ form {
   &.visible {
     transform: translate(0px, 0px);
     opacity: 1;
+  }
+}
+
+//for devices
+.iphone {
+  #closeForm {
+    bottom: 95px;
   }
 }

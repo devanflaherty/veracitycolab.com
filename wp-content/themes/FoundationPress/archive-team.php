@@ -17,12 +17,11 @@ get_header(); ?>
 		data-0="transform: translate(0px, 0px);opacity: 1;"
 		data-100="transform: translate(0px, -50px); opacity: 1;"
 		data-200="transform: translate(0px, -50px); opacity: 0;">
-		<div class="row align-center">
-			<div class="columns small-12 medium-4">
+		<div class="row align-center stacked-medium">
+			<div class="small-12 large-3 columns">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
 			</div>
-
-			<div class="columns small-12 medium-8 filter-button-group button-jar">
+			<div class="small-12 large-9 columns filter-button-group button-jar wrap">
 					<button data-filter="*" class="is-checked">All</button>
 					<?php
 						$taxonomies = get_terms('team-filters');
