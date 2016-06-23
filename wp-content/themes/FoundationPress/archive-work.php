@@ -84,20 +84,18 @@ get_header(); ?>
 		data-end="transform: translate(0px, -100px)">
 
 		<?php
-			$posts = get_posts(array(
-				'numberposts'	=> -1,
+			$args = array(
+				'numberposts' => 2,
 				'post_type'		=> 'work',
 				'meta_key'		=> 'visibility',
-				'meta_value'	=> 'featured'
-			));
+				'meta_value'	=> 'featured',
+			);
 
-			if( $posts ):
+			$the_query = new WP_Query( $args );
 		?>
+		<?php if( $the_query->have_posts() ): ?>
 		<div class="row post-grid present">
-
-			<?php foreach( $posts as $post ):
-				setup_postdata( $post )
-			?>
+			<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<?php
 				// Setting up some variabels to make life a little easier
 				$setColor =  get_field('primary_color');
@@ -134,26 +132,28 @@ get_header(); ?>
 					</a>
 				</div>
 			</div>
-		<?php endforeach; ?>
+		<?php endwhile; ?>
 
 		</div>
-		<?php wp_reset_postdata(); ?>
 		<?php endif; // End have_posts() check. ?>
+		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
+
+		<?php // DEFAULT POSTS ?>
 
 		<?php
-			$posts = get_posts(array(
-				'numberposts'	=> -1,
+			$args = array(
+				'posts_per_page' => 8,
 				'post_type'		=> 'work',
 				'meta_key'		=> 'visibility',
-				'meta_value'	=> 'default'
-			));
+				'meta_value'	=> 'default',
+				'paged' => $paged
+			);
 
-			if( $posts ):
+			$the_query = new WP_Query( $args );
 		?>
+		<?php if( $the_query->have_posts() ): ?>
 		<div class="row small-up-1 medium-up-2 post-grid present">
-			<?php foreach( $posts as $post ):
-				setup_postdata( $post )
-			?>
+			<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 			<?php
 				// Setting up some variabels to make life a little easier
@@ -191,11 +191,11 @@ get_header(); ?>
 					</a>
 				</div>
 			</div>
-		<?php endforeach; ?>
+		<?php endwhile; ?>
 
 		</div>
-		<?php wp_reset_postdata(); ?>
 		<?php endif; // End have_posts() check. ?>
+		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
