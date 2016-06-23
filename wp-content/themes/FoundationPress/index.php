@@ -79,7 +79,7 @@ get_header(); ?>
 						<h3><?php the_title(); ?></h3>
 					</div>
 					<?php if ( has_post_thumbnail() )  : ?>
-						<div class="post-block" style="background-image: url(http:<?php the_post_thumbnail_url( 'large' ); ?>)">
+						<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 					<?php else : ?>
 						<div class="post-block" style="background-color: <?= $primary; ?>">
 					<?php endif; ?>
