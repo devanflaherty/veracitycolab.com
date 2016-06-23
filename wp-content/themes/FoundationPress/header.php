@@ -86,7 +86,7 @@
 			#contentBody h1, #contentBody h6 {
 				color: <?= $primaryColor ?>!important;
 			}
-      .main-content blockquote {
+      #contentBody blockquote {
         border-color: <?= $primaryColor ?>
       }
       .main-content .social-nav a:hover {
@@ -100,6 +100,9 @@
       }
       .pagination a:hover {
         border-color: <?= $secondaryColor ?>!important;
+      }
+      #closeForm {
+        background: <?= $secondaryColor ?>;
       }
     </style>
 	</head>
@@ -138,7 +141,7 @@
   					</div>
   					<button type="submit" id="formSubmit" name="send" class="button white hollow expanded disabled" />Send</button>
   				</form>
-  				<button class="button round secondary" id="closeForm">X</button>
+  				<button class="button round" id="closeForm">X</button>
   			</div>
   		</div>
   	</section>

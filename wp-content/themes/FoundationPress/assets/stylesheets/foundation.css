@@ -7060,14 +7060,17 @@ blockquote {
   font-style: italic;
   border-left: 6px solid #2199e8;
   margin: 40px 0;
-  padding-top: 0; }
+  padding-top: 0;
+  -ms-transform: translate(-20px, 0);
+      transform: translate(-20px, 0); }
   blockquote p {
     color: #808080;
     font-weight: 600;
     padding: 0;
     font-size: 20px;
     line-height: 28px;
-    font-style: normal; }
+    font-style: normal;
+    margin: 0 15px 0; }
   blockquote em {
     color: #BFBFBF;
     font-weight: 400;
@@ -7911,8 +7914,7 @@ pre {
         color: white;
         margin: 0; }
     #fullCard .main-content .entry-content {
-      background: #fefefe;
-      padding: 40px; }
+      background: #fefefe; }
     #fullCard .main-content #cta h2 {
       margin: 25px 0;
       padding: 0 40px;
