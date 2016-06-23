@@ -13,8 +13,19 @@ get_header(); ?>
 <section id="singleWork" class="wrapper align-center" role="main">
 	<?php while ( have_posts() ) : the_post(); // While we have a post let's show it off?>
 
+	<?php if(get_field('show_sidebar') == true) : ?>
 	<!-- MAIN CONTENT : Skrollr animation set to parralax the article up -->
-	<article class="main-content" id="post-<?php the_ID(); ?>">
+	<article class="main-content" id="post-<?php the_ID(); ?>"
+		data-0="transform: translate(0px , 0px);"
+    data-top-bottom="transform: translate(0px ,-400px);"
+		data-end="transform: translate(0px ,0px);"
+		data-anchor-target="#featured-hero">
+	<?php else : ?>
+		<article class="main-content" id="post-<?php the_ID(); ?>"
+			data-0="transform: translate(0px , 0px);"
+			data-end="transform: translate(0px ,-100px);"
+			data-anchor-target="#featured-hero">
+	<?php endif; ?>
 		<div id="contentBody" class="entry-content">
 			<?php
 				$clients = get_field('client');
@@ -44,6 +55,8 @@ get_header(); ?>
 	<!-- CLOSE MAIN CONTENT -->
 <?php endwhile;?>
 
+
+<?php if(get_field('show_sidebar') == true) : ?>
 <!-- SIDEBAR -->
 <aside class="sidebar show-for-large" id="workSidebar">
   <div clas="row" data-sticky-container>
@@ -93,6 +106,7 @@ get_header(); ?>
     </div>
   </div>
 </aside>
+<?php endif; ?>
 <!-- CLOSE SIDEBAR -->
 </section>
 

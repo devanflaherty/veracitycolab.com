@@ -7819,16 +7819,11 @@ pre {
 #single-post {
   max-width: 75rem;
   margin-left: auto;
-  margin-right: auto; }
-  #single-post::before, #single-post::after {
-    content: ' ';
-    display: table;
-    -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-    -ms-flex-order: 1;
-        order: 1; }
-  #single-post::after {
-    clear: both; }
+  margin-right: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
   #single-post .main-content {
     background: #fefefe;
     width: 100%;
@@ -7847,10 +7842,15 @@ pre {
       float: right; }
     @media screen and (min-width: 40em) {
       #single-post .main-content {
-        width: 66.66667%;
+        width: 83.33333%;
         float: left;
         padding-left: 1.25rem;
-        padding-right: 1.25rem; } }
+        padding-right: 1.25rem;
+        -ms-flex-pack: center;
+            justify-content: center;
+        -ms-flex-align: center;
+            -ms-grid-row-align: center;
+            align-items: center; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     #single-post .main-content {
       padding-left: 1.25rem;
@@ -7942,7 +7942,6 @@ pre {
       flex-flow: row wrap; }
   #singleWork .main-content {
     background: #fefefe;
-    transition: none;
     width: 100%;
     float: left;
     padding-left: 1.25rem;

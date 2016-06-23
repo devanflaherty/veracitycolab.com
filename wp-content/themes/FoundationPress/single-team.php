@@ -14,7 +14,9 @@ get_header(); ?>
 <section id="singleTeam" role="main" class="parallax-parent">
 	<div class="parallax-bg" style="background: url(<?php the_post_thumbnail_url( 'full' ); ?>)"
 		data-0="background-position: 50% 0px;"
-		data-end="background-position: 50% -200px">
+		data-center-center="background-position: 50% 0px;"
+		data-end="background-position: 50% -200px"
+		data-anchor-target="#teamContent">
 	</div>
 	<div class="team-container row expanded collapse">
 		<div class="columns small-11 large-7">
@@ -22,8 +24,8 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article class="main-content cards" id="teamContent"
-		    data-0="transform: translate(0, 0px);"
-		    data-end="transform: translate(0, -200px)">
+			data-0="transform: translate(0, 0px);"
+			data-top-bottom="transform: translate(0, -200px)">
 				<header class="text-center">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<h4 class="entry-title"><?php the_field('title'); ?></h4>

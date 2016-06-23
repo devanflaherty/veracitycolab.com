@@ -2,7 +2,6 @@
   @include flex-grid-row();
   .main-content {
     background: $white;
-    transition: none;
     @include grid-column(12);
 
     @include breakpoint(medium) {
