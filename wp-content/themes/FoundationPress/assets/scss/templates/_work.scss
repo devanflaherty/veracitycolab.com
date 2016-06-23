@@ -1,9 +1,14 @@
 #singleWork {
   @include flex-grid-row();
+  @include breakpoint(small only) {
+    padding: 0 20px;
+  }
   .main-content {
     background: $white;
     @include grid-column(12);
-
+    @include breakpoint(small only) {
+      margin-top: -30px;
+    }
     @include breakpoint(medium) {
       @include grid-column(11);
     }

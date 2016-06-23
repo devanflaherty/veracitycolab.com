@@ -7827,12 +7827,18 @@ pre {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap; }
+  @media screen and (max-width: 39.9375em) {
+    #single-post {
+      padding: 0 20px; } }
   #single-post .main-content {
     background: #fefefe;
     width: 100%;
     float: left;
     padding-left: 1.25rem;
     padding-right: 1.25rem; }
+    @media screen and (max-width: 39.9375em) {
+      #single-post .main-content {
+        margin-top: -30px; } }
     @media screen and (min-width: 40em) {
       #single-post .main-content {
         padding-left: 1.25rem;
@@ -7886,11 +7892,11 @@ pre {
     z-index: 20;
     -ms-transform: translate(0, 0);
         transform: translate(0, 0);
-    -ms-flex: 0 0 91.66667%;
-        flex: 0 0 91.66667%;
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    max-width: 91.66667%; }
+    max-width: 100%; }
     @media screen and (min-width: 40em) {
       #fullCard .main-content {
         padding-left: 1.25rem;
@@ -7901,13 +7907,26 @@ pre {
         padding-right: 1.25rem; } }
     @media screen and (min-width: 40em) {
       #fullCard .main-content {
-        padding: 40px !important; } }
+        padding: 40px !important;
+        -ms-flex: 0 0 91.66667%;
+            flex: 0 0 91.66667%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        max-width: 91.66667%; } }
+  @media screen and (min-width: 40em) and (min-width: 40em) {
+    #fullCard .main-content {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; } }
+  @media screen and (min-width: 40em) and (min-width: 64em) {
+    #fullCard .main-content {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; } }
     #fullCard .main-content #tagline {
       background: #ffd145;
       padding: 40px; }
       @media screen and (max-width: 39.9375em) {
         #fullCard .main-content #tagline {
-          margin-top: -90px; } }
+          margin-top: -70px; } }
       #fullCard .main-content #tagline h1 {
         font-size: 38px;
         line-height: 40px;
@@ -7917,13 +7936,13 @@ pre {
       background: #fefefe; }
     #fullCard .main-content #cta h2 {
       margin: 25px 0;
-      padding: 0 40px;
       font-size: 22px;
       line-height: 22px; }
       @media screen and (min-width: 40em) {
         #fullCard .main-content #cta h2 {
           font-size: 32px;
-          line-height: 32px; } }
+          line-height: 32px;
+          padding: 0 40px; } }
     #fullCard .main-content #cta .button {
       font-size: 32px;
       padding: 40px 0;
@@ -7942,6 +7961,9 @@ pre {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap; }
+  @media screen and (max-width: 39.9375em) {
+    #singleWork {
+      padding: 0 20px; } }
   #singleWork .main-content {
     background: #fefefe;
     width: 100%;
@@ -7958,6 +7980,9 @@ pre {
         padding-right: 1.25rem; } }
     #singleWork .main-content:last-child:not(:first-child) {
       float: right; }
+    @media screen and (max-width: 39.9375em) {
+      #singleWork .main-content {
+        margin-top: -30px; } }
     @media screen and (min-width: 40em) {
       #singleWork .main-content {
         width: 91.66667%;

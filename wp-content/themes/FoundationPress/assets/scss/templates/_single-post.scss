@@ -1,8 +1,13 @@
 #single-post {
   @include flex-grid-row();
-
+  @include breakpoint(small only) {
+    padding: 0 20px;
+  }
   .main-content {
     background: $white;
+    @include breakpoint(small only) {
+      margin-top: -30px;
+    }
     @include breakpoint(small) {
       @include grid-column(12);
     }

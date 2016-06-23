@@ -28,7 +28,7 @@
      <div id="cardBody"
       data-0="margin-top: 40px;"
       data-100="margin-top: 0px;">
-       <div id="contentBody" class="entry-content expand">
+       <div id="contentBody" class="entry-content">
          <?php the_content(); ?>
        </div>
      </div>

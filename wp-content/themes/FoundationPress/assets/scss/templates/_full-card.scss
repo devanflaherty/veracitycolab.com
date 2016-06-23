@@ -9,16 +9,17 @@
     position: relative;
     z-index: 20;
     transform: translate(0, 0);
-    @include flex-grid-column(11);
+    @include flex-grid-column(12);
 
     @include breakpoint(medium) {
       padding: 40px!important;
+      @include flex-grid-column(11);
     }
     #tagline {
       background: $secondary-color;
       padding: 40px;
       @include breakpoint(small only) {
-        margin-top: -90px;
+        margin-top: -70px;
       }
       h1 {
         font-size: 38px;
@@ -33,12 +34,12 @@
     #cta {
       h2 {
         margin: 25px 0;
-        padding: 0 40px;
         font-size: 22px;
         line-height: 22px;
         @include breakpoint(medium) {
           font-size: 32px;
           line-height: 32px;
+          padding: 0 40px;
         }
       }
       .button {

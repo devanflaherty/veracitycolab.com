@@ -29,7 +29,7 @@
      <div class="row" id="cardBody"
       data-0="margin-top: 40px;"
       data-100="margin-top: 0px;">
-       <div class="entry-content columns">
+       <div class="entry-content columns" style="padding-top: 40px; padding-bottom: 40px;">
          <h2><?php the_field( 'mission' ); ?></h2>
          <?php
            if( have_rows('logos') ) {
@@ -49,10 +49,10 @@
      <div id="cta" class="row collapse align-stretch"
        data-0="margin-top: 0px;"
        data-end="margin-top: 120px;">
-       <div class="medium-8 columns flex">
+       <div class="small-12 medium-8 columns flex">
          <h2><?php the_field( 'cta' ); ?></h2>
        </div>
-       <div class="medium-4 columns flex">
+       <div class="small-12 medium-4 columns flex">
         <a class="button expanded secondary" href="<?php the_field( 'cta_button_url' ); ?>"><?php the_field( 'cta_button_value' ); ?></a>
        </div>
      </div>
