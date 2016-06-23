@@ -4,6 +4,10 @@ window.onload = function() {
   if (s.isMobile()) {
       s.destroy();
   }
+  var currentSize = Foundation.MediaQuery.current;
+  if (Foundation.MediaQuery.current == "small") {
+    skrollr.init().destroy(); // skrollr.init() returns the singleton created above
+  }
 };
 
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){

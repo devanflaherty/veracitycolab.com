@@ -8318,6 +8318,11 @@ a, button {
     font-size: 36px;
     margin: 0;
     color: #0a0a0a; }
+  .headline h5 {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px; }
   .headline .row {
     padding: 0 20px; }
     .headline .row .columns {

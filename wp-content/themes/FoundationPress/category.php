@@ -26,6 +26,7 @@ get_header(); ?>
 			data-250="transform: translate(0px, -250px)">
 		<div class="row align-center">
 			<div class="small-12 medium-4 columns">
+				<h5><span class="subheader"><?php single_term_title(); ?></span></h5>
 				<h2>Our Blog</h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
@@ -33,8 +34,15 @@ get_header(); ?>
 				$taxonomies = get_categories();
 				foreach($taxonomies as $term) {
 					if ($term->slug != 'uncategorized') {
+						$currentTerm = strtolower(single_term_title( "", false ));
+						$current = preg_replace('#[ -]+#', '-', $currentTerm);
 						$slug = $term->slug;
-						echo "<a class='headline-link' href=\"/category/$slug\">$slug</a> ";
+						if ($current == $slug) {
+							$checked = "is-checked";
+						} else {
+							$checked = "";
+						}
+						echo "<a class='headline-link $checked' href=\"/category/$slug\">$slug</a> ";
 					}
 				}
 			?>
