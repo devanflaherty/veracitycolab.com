@@ -8,6 +8,7 @@ $(".play").click(function(){
   $(".feature-overlay").addClass("animate-in");
   $('#navBar').addClass('push-up');
   $('.main-content').addClass('push-down');
+  $('.feature-play').fadeOut();
 
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');

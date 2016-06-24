@@ -11,40 +11,7 @@
  */
 get_header(); ?>
 
-<?php
-	$posts = get_posts(array(
-		'numberposts'	=> 1,
-		'post_type'		=> 'work',
-		'meta_key'		=> 'visibility',
-		'meta_value'	=> 'featured'
-	));
-
-	if( $posts ) {
-		foreach( $posts as $post ) {
-			$i++;
-			setup_postdata( $post );
-			if ($i == 1) {
-				$initVideo = 'o3wjbaj9xc';
-			}
-		}
-	}
-	wp_reset_postdata();
-?>
-
-<!-- VIDEO CONTAINER -->
-<header id="featured-hero" class="hidden" role="banner" style="background-color:#222">
-
-	<div class="feature-overlay"></div>
-	<div id="featureVideo" class="row collapse video-container align-center">
-		<div class="large-11 columns">
-			<div class="flex-video widescreen">
-				<div class="wistia_embed wistia_async_<?php echo $initVideo; ?> videoFoam=true" style="height:720px;width:1280px">&nbsp;</div>
-			</div>
-		</div>
-	</div>
-
-</header>
-<!-- CLOSE VIDEO CONTAINER -->
+<?php get_template_part( 'template-parts/featured-image' ); ?>
 
 <section id="archiveWork" class="wrapper" role="main">
 	<!-- HEADLINE -->

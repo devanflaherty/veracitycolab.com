@@ -21,13 +21,17 @@ if ( is_post_type_archive('work') ) {
 	} else {
 		$style = "background-color:" . $primaryColor . ";";
 	}
+
+	if(is_post_type_archive( 'work' )) {
+		$hidden = "hidden";
+	}
 ?>
 
 <!-- HERO!! DUH DUH DUUUUN -->
-<header id="featured-hero" role="banner" style="<?php echo $style ?>">
+<header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
 	<?php if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' )) || is_singular( 'advance' )) :
 		// So if we can't find the "video_id" associated with the post,
-		//or if this is an advance page nothing after this comment will be seen. Sad.
+		// or if this is an advance page nothing after this comment will be seen. Sad.
 		if(get_field('video_id')) {
 			$video = get_field('video_id');
 		} else {
