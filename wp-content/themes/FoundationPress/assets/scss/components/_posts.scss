@@ -84,32 +84,7 @@
       width: 100%;
       margin-top: -15%;
     }
-    .thumbnail-overlay {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0; left: 0;
-      background: rgba($primary-color, 0.6);
-      transition: all 0.5s ease;
-      opacity: 0;
-      @include breakpoint(small only) {
-        @include flex();
-        @include flex-align(center, middle);
-      }
-      .excerpt {
-        padding: 20px;
-        color: $white;
-        p {
-          line-height: 20px;
-        }
-        span {
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          font-weight: 600;
-          color: rgba($white, 0.5);
-        }
-      }
-      &.play {
+    .play {
         span {
           width: 80px;
           height: 80px;
@@ -135,6 +110,31 @@
           }
         }
       }
+    .thumbnail-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      background: rgba($primary-color, 0.6);
+      transition: all 0.5s ease;
+      opacity: 0;
+      @include breakpoint(small only) {
+        @include flex();
+        @include flex-align(center, middle);
+      }
+      .excerpt {
+        padding: 20px;
+        color: $white;
+        p {
+          line-height: 20px;
+        }
+        span {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 600;
+          color: rgba($white, 0.5);
+        }
+      }
     }
     &:hover {
       .thumbnail-overlay {
@@ -146,4 +146,13 @@
       }
     }
   } // Close Work-Block
+}
+
+.advance-posts {
+  width: 100%;
+  background: $light-gray;
+  padding: 40px 14px;
+  .column {
+    padding: 0 12px!important;
+  }
 }

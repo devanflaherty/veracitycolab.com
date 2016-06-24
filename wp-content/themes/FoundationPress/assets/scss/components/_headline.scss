@@ -1,0 +1,64 @@
+.headline {
+  position: relative;
+  @include breakpoint(medium) {
+    position: fixed;
+    top: 100px;
+    left: 0; right: 0;
+    margin: auto;
+    z-index:1;
+  }
+  h2 {
+    font-size: 36px;
+    margin: 0;
+    color: $black;
+  }
+  h5 {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px;
+  }
+  .row {
+    padding: 0 20px;
+    .columns {
+      background: $light-gray;
+      padding: 30px;
+    }
+    @include breakpoint(small only) {
+      .columns:first-of-type {
+        padding: 30px 30px 5px 30px;
+      }
+      .columns:last-of-type {
+        padding: 5px 30px 30px 30px;
+      }
+    }
+  }
+  .row.stacked-medium {
+    @include breakpoint(medium down) {
+      .columns:first-of-type {
+        padding: 30px 30px 5px 30px;
+      }
+      .columns:last-of-type {
+        padding: 5px 30px 30px 30px;
+      }
+    }
+  }
+  .button {
+    margin: 0;
+  }
+  .headline-link, button {
+    font-size: 18px;
+    margin-right: 24px;
+    color: $medium-gray;
+    text-transform: capitalize;
+    @include breakpoint(medium) {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $dark-gray;
+    }
+    &.is-checked {
+      color: $primary-color;
+    }
+  }
+}

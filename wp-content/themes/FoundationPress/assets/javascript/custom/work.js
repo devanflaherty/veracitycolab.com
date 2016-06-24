@@ -7,6 +7,7 @@ $(".play").click(function(){
   $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
   $(".feature-overlay").addClass("animate-in");
   $('#navBar').addClass('push-up');
+  $('.main-content').addClass('push-down');
 
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');
@@ -37,6 +38,12 @@ $(document).mouseup(function (e) {
       $("#featureVideo").hide();
 
       if ($('body').hasClass('video-single')) {
+        $("#featured-hero").removeClass("video-reveal click-to-close");
+        $(".feature-overlay").removeClass("animate-in");
+        $('#navBar').removeClass('push-up');
+        $('.feature-play').removeClass('blow-up');
+        $('.main-content').removeClass('push-down');
+      } else if($('body').hasClass('single-advance')) {
         $("#featured-hero").removeClass("video-reveal click-to-close");
         $(".feature-overlay").removeClass("animate-in");
         $('#navBar').removeClass('push-up');

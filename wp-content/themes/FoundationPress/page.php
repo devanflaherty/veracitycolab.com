@@ -25,10 +25,10 @@
        </div>
      </div>
 
-     <div id="cardBody"
+     <div id="cardBody" class="bg-white"
       data-0="margin-top: 40px;"
       data-100="margin-top: 0px;">
-       <div id="contentBody" class="entry-content">
+       <div id="contentBody">
          <?php the_content(); ?>
        </div>
      </div>

@@ -136,6 +136,12 @@
       #closeForm {
         background: <?= $secondaryColor ?>;
       }
+      .sidebar h3 {
+        color: <?= $primaryColor ?>;
+      }
+      .sidebar .button-wrapper a {
+        background: <?= $primaryColor ?>;
+      }
     </style>
 	</head>
 	<body <?php body_class(); ?>>

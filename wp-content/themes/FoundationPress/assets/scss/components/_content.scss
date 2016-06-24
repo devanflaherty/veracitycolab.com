@@ -1,3 +1,49 @@
+// LAYOUT
+.wrapper {
+  @include breakpoint(medium) {
+    margin: 3rem 0;
+  }
+}
+.main-content {
+  position: relative;
+  z-index: 100;
+  padding:40px inherit;
+  transform: translate(0px, 0px);
+  @include breakpoint(medium) {
+    margin-top: -140px;
+    margin-bottom: 60px;
+    transform: translate(0, 100px);
+  }
+}
+.main-cards {
+  position: relative;
+  z-index: 100;
+  margin-top: 0!important;
+  @include breakpoint(medium) {
+  }
+  @include breakpoint(large) {
+  }
+}
+
+.sidebar {
+  h3 {
+    font-weight: 600;
+    letter-spacing: -1px;
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .button-wrapper {
+    margin: 40px 0;
+    a {
+      transition: all 0.5s ease;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+}
+
 // Markdown classes
 $margin: 40px;
 #contentBody {
@@ -103,7 +149,10 @@ blockquote {
   border-left: 6px solid $primary-color;
   margin: $margin 0;
   padding-top: 0;
-  transform: translate(-20px, 0);
+  transform: translate(-40px, 0);
+  @include breakpoint(medium) {
+    transform: translate(-40px, 0);
+  }
   p {
     color: $dark-gray;
     font-weight: 600;
@@ -111,6 +160,9 @@ blockquote {
     font-size: 20px;
     line-height: 28px;
     font-style: normal;
+    margin: 0 15px 0;
+  }
+  h2, h3, h4, h5, h6 {
     margin: 0 15px 0;
   }
   em {

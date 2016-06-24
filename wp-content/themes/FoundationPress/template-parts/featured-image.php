@@ -25,8 +25,14 @@ if ( is_post_type_archive('work') ) {
 
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" style="<?php echo $style ?>">
-	<?php if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' ))) :
-		// So if we can't find the "video_id" associated with the post, nothing after this comment will be seen. Sad.
+	<?php if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' )) || is_singular( 'advance' )) :
+		// So if we can't find the "video_id" associated with the post,
+		//or if this is an advance page nothing after this comment will be seen. Sad.
+		if(get_field('video_id')) {
+			$video = get_field('video_id');
+		} else {
+			$video = 'o3wjbaj9xc';
+		}
 	?>
 
 		<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
@@ -35,7 +41,7 @@ if ( is_post_type_archive('work') ) {
 		<div id="featureVideo" class="row collapse video-container align-center">
 		  <div class="small-11 columns">
 		    <div class="flex-video widescreen">
-					<div class="wistia_embed wistia_async_<?php echo get_field( 'video_id' );?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
+					<div class="wistia_embed wistia_async_<?= $video; ?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
 					<!-- WISTIA EMBED CODE BYE BYE -->
 		    </div>
 		  </div>

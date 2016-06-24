@@ -30,6 +30,15 @@
     }
     .entry-content {
       background: $white;
+      padding:40px;
+      h2 {
+        font-size: 30px;
+        line-height: 32px;
+        @include breakpoint(medium) {
+          font-size: 36px;
+          line-height: 38px;
+        }
+      }
     }
     #cta {
       h2 {
@@ -55,5 +64,9 @@
       }
     }
   }
-
+  #cardBody {
+    .row {
+      padding: 0 20px;
+    }
+  }
 }
