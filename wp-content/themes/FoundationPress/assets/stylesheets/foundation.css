@@ -3189,7 +3189,7 @@ h6 {
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  line-height: 1.4; }
+  line-height: 1; }
   h1 small,
   h2 small,
   h3 small,
@@ -6922,10 +6922,20 @@ form textarea {
         -ms-transform: scale(1);
             transform: scale(1); }
 
+.single-advance .main-content {
+  padding-bottom: 0; }
+
 .advance-posts {
-  width: 100%;
+  width: calc(100% + 40px);
+  -ms-transform: translate(-20px, 0);
+      transform: translate(-20px, 0);
   background: #e6e6e6;
-  padding: 40px 14px; }
+  padding: 40px 14px;
+  margin: 40px 0 0; }
+  .advance-posts h3 {
+    padding: 0 15px;
+    margin: 0 0 40px;
+    color: #0a0a0a; }
   .advance-posts .column, .advance-posts .columns {
     padding: 0 12px !important; }
 

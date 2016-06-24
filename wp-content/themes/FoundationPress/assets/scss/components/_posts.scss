@@ -148,10 +148,20 @@
   } // Close Work-Block
 }
 
+.single-advance .main-content {
+  padding-bottom: 0;
+}
 .advance-posts {
-  width: 100%;
+  width: calc(100% + 40px);
+  transform: translate(-20px, 0);
   background: $light-gray;
   padding: 40px 14px;
+  margin: 40px 0 0;
+  h3 {
+    padding: 0 15px;
+    margin: 0 0 40px;
+    color: $black;
+  }
   .column {
     padding: 0 12px!important;
   }

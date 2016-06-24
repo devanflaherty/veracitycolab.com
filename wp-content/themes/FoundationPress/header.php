@@ -36,7 +36,11 @@
     <title>VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA</title>
   <?php endif; ?>
     <meta name="description" content="<?= $description; ?>">
+  <?php if ( is_singular('advance'))  : ?>
+    <meta name="robots" content="noindex">
+  <?php else: ?>
     <meta name="robots" content="all">
+  <?php endif; ?>
     <meta name="zipcode" content="92658">
 
   <?php if ( is_post_type_archive('work'))  : ?>

@@ -36,6 +36,7 @@ get_header(); ?>
 		</div>
 
 		<div class="advance-posts">
+			<h3><?php the_field('headline'); ?></h3>
 		<?php // RELATED POSTS ?>
 		<?php
 			$posts = get_field('related_work');
