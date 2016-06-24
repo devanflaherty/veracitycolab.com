@@ -38,8 +38,10 @@ if ( is_post_type_archive('work') ) {
 			$video = 'o3wjbaj9xc';
 		}
 	?>
-
-		<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
+		<?php if(is_singular( 'advance' ) && empty(get_field('video_id'))) : ?>
+		<?php else : ?>
+			<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
+		<?php endif; ?>
 		<div class="feature-overlay"></div>
 
 		<div id="featureVideo" class="row collapse video-container align-center">
