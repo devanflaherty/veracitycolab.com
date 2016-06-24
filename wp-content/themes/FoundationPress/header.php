@@ -22,6 +22,8 @@
    $secondaryColor = get_field( 'global_secondary_color', 'options' );
  }
 
+ $description = "VeracityColab is a video production & motion graphics agency based in Newport Beach, CA. We make live action & motion graphic brand videos!";
+
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
@@ -29,6 +31,36 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="D75mcBbFpurEh5x_YA2-r91ntoWT4_SZxcXTSiTLcUQ">
+
+  <?php if(is_front_page() ) : ?>
+    <title>VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA</title>
+  <?php endif; ?>
+    <meta name="description" content="<?= $description; ?>">
+    <meta name="robots" content="all">
+    <meta name="zipcode" content="92658">
+
+  <?php if ( is_post_type_archive('work'))  : ?>
+    <meta property="og:description" content="Check out <?php the_title(); ?>, some awesome work from VeracityColab. <?= $description; ?>">
+  <?php else: ?>
+    <meta property="og:description" content="<?= $description; ?>">
+  <?php endif; ?>
+  <?php
+    if ( has_post_thumbnail( $post->ID ) ) {
+      if(! is_front_page() ) {
+    		$fbImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    		$fbImage = $fbImage[0];
+      } else {
+        $fbImage = get_field('facebook_image', 'option');
+      }
+  	} else {
+  		$fbImage = get_field('facebook_image', 'option');
+  	}
+  ?>
+    <meta property="og:image" content="<?= $fbImage; ?>"/>
+    <meta property="og:title" content="<?php the_title(); ?> - VeracityColab"/>
+    <meta property="og:url" content="<?php echo get_permalink(); ?>"/>
+    <meta property="og:site_name" content="VeracityColab"/>
+    <meta property="og:type" content="blog"/>
 
 		<?php wp_head(); ?>
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
@@ -62,10 +94,10 @@
     <!-- CALL RAIL -->
     <script src="//cdn.callrail.com/companies/176691639/d7e924485e706ce162f8/12/swap.js"></script>
 
-    <?php if ( is_post_type_archive('team'))  : ?>
-      <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-      <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
-    <?php endif; ?>
+  <?php if ( is_post_type_archive('team'))  : ?>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+  <?php endif; ?>
 
 		<style>
 			.top-bar .menu .colorize a, .home-link.colorize path {

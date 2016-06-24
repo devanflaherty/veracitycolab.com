@@ -103,6 +103,11 @@ get_header(); ?>
 
 				<!-- SHARE SECTION TODO: Need to figure this out still-->
 				<span>Share:</span><br>
+				<nav>
+					<a target="_blank" href="http://twitter.com/share?url=<?php echo get_permalink(); ?>
+&amp;text=Look at this awesome work done by the @veracityColab team for <?= $client; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a target="_blank" href="http://www.facebook.com/sharer.php?u=http:<?php echo get_permalink(); ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				</nav>
     </div>
   </div>
 </aside>
