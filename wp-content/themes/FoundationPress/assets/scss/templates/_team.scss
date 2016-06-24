@@ -9,10 +9,12 @@
   .main-content {
     background: $white;
     margin-top: -30px;
+    padding: 40px 40px!important;
     h1 {
       font-size: 46px;
       color: darken($dark-gray, 10%);
       letter-spacing: .5px;
+      line-height: 46px;
     }
     h4 {
       font-size: 13px;
@@ -20,12 +22,6 @@
       color: $medium-gray;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-    }
-    blockquote {
-      transform: translate(-40px, 0);
-      p {
-        margin: 0 15px 0;
-      }
     }
 
     @include breakpoint(medium) {
