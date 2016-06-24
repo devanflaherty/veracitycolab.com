@@ -11,12 +11,17 @@
 
  get_header(); ?>
 
+<?php if(get_field('show_featured_image') == true) : ?>
+  <?php $pullUp = "-250"; ?>
  <?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php else: ?>
+  <?php $pullUp = "0"; ?>
+<?php endif; ?>
 
  <div id="fullCard" role="main">
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
-     data-0="margin-top: -250px;"
+     data-0="margin-top: <?= $pullUp; ?>px;"
      data-top-bottom="margin-top: -400px;">
 
      <div class="row">
