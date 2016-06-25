@@ -27,8 +27,9 @@ get_header(); ?>
 						$taxonomies = get_terms('team-filters');
 						if ($taxonomies) {
 							foreach($taxonomies as $term) {
+								$name = $term->name;
 								$slug = $term->slug;
-								echo "<button data-filter=\".$slug\">$slug</button> ";
+								echo "<button data-filter=\".$slug\">$name</button> ";
 							}
 						}
 					?>
