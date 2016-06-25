@@ -2,6 +2,7 @@ $('#mobileMenu').hide();
 
 // SlideToggle Mobile Nav Form
 $('#mobileToggle').click(function(){
+	$(this).toggleClass('open');
   $('#mobileMenu').slideToggle( "slow", function() {});
   $('body').toggleClass("fixed mobile-nav");
   $('#mobileMenu li').each(function(index, element) {

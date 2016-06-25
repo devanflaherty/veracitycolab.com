@@ -115,9 +115,8 @@
       #mobileMenu, #mobileMenu ul {
         background-color: <?= $primaryColor ?>;
       }
-      #mobileToggle.menu-icon::after {
+      #mobileToggle span {
         background: <?= $primaryColor ?>;
-        box-shadow: 0 7px 0 <?= $primaryColor ?>, 0 14px 0 <?= $primaryColor ?>;
       }
 			#contentBody h1, #contentBody h6 {
 				color: <?= $primaryColor ?>!important;
@@ -211,7 +210,11 @@
               </svg>
             </a>
     			</div>
-          <button id="mobileToggle" class="menu-icon" type="button"></button>
+          <button id="mobileToggle" class="menu-hamburger" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
     		</div>
 
     		<nav id="site-navigation" class="main-navigation top-bar" role="navigation" style="width:100%">
