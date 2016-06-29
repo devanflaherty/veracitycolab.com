@@ -6470,15 +6470,11 @@ a::after {
       margin-top: 24px; }
       @media screen and (min-width: 64em) {
         #footer-container #footer .social-nav {
-          float: right;
           margin-top: 0; } }
       #footer-container #footer .social-nav a {
         font-size: 20px;
         color: rgba(254, 254, 254, 0.85);
         margin: 0 18px 0 0; }
-        @media screen and (min-width: 64em) {
-          #footer-container #footer .social-nav a {
-            margin: 0 0 0 18px; } }
         #footer-container #footer .social-nav a:hover {
           color: #fefefe; }
 
@@ -7948,7 +7944,6 @@ pre {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
     #fullCard .main-content #tagline {
-      background: #ffd145;
       padding: 40px; }
       @media screen and (max-width: 39.9375em) {
         #fullCard .main-content #tagline {

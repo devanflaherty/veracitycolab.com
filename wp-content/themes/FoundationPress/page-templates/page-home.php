@@ -21,7 +21,7 @@
      data-top-bottom="margin-top: -400px;">
 
      <div class="row">
-       <div id="tagline" class="columns medium-9">
+       <div id="tagline" class="columns medium-9" style="background:<?php the_field("tertiary_color"); ?>">
          <h1 class="entry-title"><?php bloginfo('description'); ?></h1>
        </div>
      </div>

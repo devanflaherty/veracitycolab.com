@@ -26,35 +26,35 @@
 		</section>
 		<div id="footer-container" style="background-color: <?= $secondaryColor; ?>">
 			<footer id="footer" class="row expand">
-				<div class="small-12 medium-9 large-9 columns">
+				<div class="small-12 large-9 columns">
 					<h2><?php the_field( 'footer_headline', 'option' ); ?></h2>
 					<div class="footer-info float-left">
 						<span>VERACITYCOLAB</span><br><br>
 						<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
 						<a href="tel:<?php the_field( 'company_phone', 'option' ); ?>"><?php the_field( 'company_phone', 'option' ); ?></a>
-            <br><br>
-            <div class="team-social">
-    					<?php
-    						if( have_rows('footer_social', 'option') ) {
-    							echo "<nav class=\"social-nav\">";
-    							while ( have_rows('footer_social', 'option') ) { the_row();
-    								$url = get_sub_field('url');
-    								echo "<a href=\"" . $url . "\" target=\"_blank\">";
-    								the_sub_field('icon');
-    								echo "</a>";
-    							}
-    							echo "</nav>";
-    						}
-    					?>
-            </div>
 					</div>
 					<div class="footer-menu float-left">
 						<?php foundationpress_footer_nav(); ?>
 					</div>
 				</div>
-				<div class="small-12 medium-3 large-3 columns">
-          <img class="show-for-medium" style="max-width: 250px;" src="<?php the_field( 'footer_logo', 'option' ); ?>">
+				<div class="small-12 large-3 columns">
+          <div class="team-social">
+  					<?php
+  						if( have_rows('footer_social', 'option') ) {
+  							echo "<nav class=\"social-nav\">";
+  							while ( have_rows('footer_social', 'option') ) { the_row();
+  								$url = get_sub_field('url');
+  								echo "<a href=\"" . $url . "\" target=\"_blank\">";
+  								the_sub_field('icon');
+  								echo "</a>";
+  							}
+  							echo "</nav>";
+  						}
+  					?>
 				</div>
+				<?php do_action( 'foundationpress_before_footer' ); ?>
+				<?php dynamic_sidebar( 'footer-widgets' ); ?>
+				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>
 		</div>
 

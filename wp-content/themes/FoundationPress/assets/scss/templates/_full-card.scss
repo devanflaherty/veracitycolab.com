@@ -16,7 +16,6 @@
       @include flex-grid-column(11);
     }
     #tagline {
-      background: $secondary-color;
       padding: 40px;
       @include breakpoint(small only) {
         margin-top: -70px;
