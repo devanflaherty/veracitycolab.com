@@ -4,9 +4,10 @@
 
 // Title Bar
 .title-bar {
-  height: 80px;
+  height: 100px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 7px;
   .title-bar-title {
     a {
       font-size: 1rem;
@@ -80,13 +81,16 @@
   z-index: 200;
 }
 .top-bar {
-  height: 80px;
+  height: 90px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
   z-index: 800;
   ul {
     background: none!important;
+  }
+  .home-link a {
+    margin-top: 3px;
   }
   #menu-primary {
     justify-content: flex-end;

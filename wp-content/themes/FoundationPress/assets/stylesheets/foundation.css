@@ -6216,9 +6216,10 @@ table.hover tr:nth-of-type(even):hover {
   cursor: pointer; }
 
 .title-bar {
-  height: 80px;
+  height: 100px;
   padding-left: 20px;
-  padding-right: 20px; }
+  padding-right: 20px;
+  padding-top: 7px; }
   .title-bar .title-bar-title a {
     font-size: 1rem;
     color: #0a0a0a; }
@@ -6285,13 +6286,15 @@ table.hover tr:nth-of-type(even):hover {
   z-index: 200; }
 
 .top-bar {
-  height: 80px;
+  height: 90px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
   z-index: 800; }
   .top-bar ul {
     background: none !important; }
+  .top-bar .home-link a {
+    margin-top: 3px; }
   .top-bar #menu-primary {
     -ms-flex-pack: end;
         justify-content: flex-end; }
