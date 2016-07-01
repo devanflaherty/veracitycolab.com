@@ -5,8 +5,8 @@
 // Title Bar
 .title-bar {
   height: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   padding-top: 7px;
   .title-bar-title {
     a {
@@ -17,6 +17,9 @@
   .menu-hamburger {
     margin-right: 0!important;
   }
+}
+.home-link svg {
+  margin-top: 3px;
 }
 
 /* Icon 2 */
@@ -82,15 +85,12 @@
 }
 .top-bar {
   height: 90px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   position: relative;
   z-index: 800;
   ul {
     background: none!important;
-  }
-  .home-link a {
-    margin-top: 3px;
   }
   #menu-primary {
     justify-content: flex-end;

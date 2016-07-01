@@ -6217,14 +6217,17 @@ table.hover tr:nth-of-type(even):hover {
 
 .title-bar {
   height: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   padding-top: 7px; }
   .title-bar .title-bar-title a {
     font-size: 1rem;
     color: #0a0a0a; }
   .title-bar .menu-hamburger {
     margin-right: 0 !important; }
+
+.home-link svg {
+  margin-top: 3px; }
 
 /* Icon 2 */
 .menu-hamburger {
@@ -6287,14 +6290,12 @@ table.hover tr:nth-of-type(even):hover {
 
 .top-bar {
   height: 90px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   position: relative;
   z-index: 800; }
   .top-bar ul {
     background: none !important; }
-  .top-bar .home-link a {
-    margin-top: 3px; }
   .top-bar #menu-primary {
     -ms-flex-pack: end;
         justify-content: flex-end; }
