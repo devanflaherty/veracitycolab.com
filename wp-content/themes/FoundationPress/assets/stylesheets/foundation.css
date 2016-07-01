@@ -6219,15 +6219,18 @@ table.hover tr:nth-of-type(even):hover {
   height: 100px;
   padding-left: 34px;
   padding-right: 34px;
-  padding-top: 7px; }
+  padding-top: 7px;
+  display: -ms-flexbox !important;
+  display: flex !important; }
   .title-bar .title-bar-title a {
     font-size: 1rem;
     color: #0a0a0a; }
   .title-bar .menu-hamburger {
     margin-right: 0 !important; }
-
-.home-link svg {
-  margin-top: 3px; }
+  .title-bar a.home-link {
+    height: 35px;
+    display: block;
+    margin-top: 1px; }
 
 /* Icon 2 */
 .menu-hamburger {
@@ -6289,11 +6292,16 @@ table.hover tr:nth-of-type(even):hover {
   z-index: 200; }
 
 .top-bar {
-  height: 90px;
+  height: 100px;
   padding-left: 34px;
   padding-right: 34px;
   position: relative;
   z-index: 800; }
+  .top-bar .home-link a {
+    display: block;
+    padding: 0 !important; }
+    .top-bar .home-link a svg {
+      margin-top: 1px; }
   .top-bar ul {
     background: none !important; }
   .top-bar #menu-primary {

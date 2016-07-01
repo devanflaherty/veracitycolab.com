@@ -8,6 +8,7 @@
   padding-left: 34px;
   padding-right: 34px;
   padding-top: 7px;
+  display: flex!important;
   .title-bar-title {
     a {
       font-size: 1rem;
@@ -17,10 +18,13 @@
   .menu-hamburger {
     margin-right: 0!important;
   }
+  a.home-link {
+    height: 35px;
+    display: block;
+    margin-top: 1px;
+  }
 }
-.home-link svg {
-  margin-top: 3px;
-}
+
 
 /* Icon 2 */
 
@@ -84,11 +88,18 @@
   z-index: 200;
 }
 .top-bar {
-  height: 90px;
+  height: 100px;
   padding-left: 34px;
   padding-right: 34px;
   position: relative;
   z-index: 800;
+  .home-link a {
+    display: block;
+    padding: 0!important;
+    svg {
+      margin-top: 1px;
+    }
+  }
   ul {
     background: none!important;
   }
