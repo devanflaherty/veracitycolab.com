@@ -170,17 +170,21 @@
   					<div class="inputs">
   						<div class="field" id="nameInput">
   							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
-  							<label for="name">Full Name</label>
+  							<label for="firstname">Full Name</label>
   						</div>
   						<div class="field" id="emailInput">
   							<input id="contactEmail" class="float-input" type="email" name="email" placeholder="Email Address" />
   							<label for="email">Email Address</label>
   						</div>
+              <div class="field" id="companyInput">
+                <input id="contactCompany" class="float-input" type="text" name="company_name" placeholder="Company" />
+                <label for="company_name">Company</label>
+              </div>
               <div class="field" id="commentInput">
     						<textarea id="contactMessage" placeholder="I'm Contacting Because..." name="comment"></textarea>
               </div>
   					</div>
-  					<button type="submit" id="formSubmit" name="send" class="button white hollow expanded disabled" />Send</button>
+  					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
   				</form>
   				<button class="button round" id="closeForm">X</button>
   			</div>

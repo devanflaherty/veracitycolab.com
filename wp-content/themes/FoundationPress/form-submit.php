@@ -9,10 +9,6 @@
       $errors['email'] = 'Email is required.';
     }
 
-    if (empty($_POST['comment'])) {
-      $errors['comment'] = 'Comment is required';
-    }
-
     // return a response ===========================================================
 
     // if there are any errors in our errors array, return a success boolean of false
@@ -37,6 +33,7 @@
           "firstname=" . urlencode($_POST["firstname"])
           . "&email=" . urlencode($_POST["email"])
           . "&comment=" . urlencode($_POST["comment"])
+          . "&company_name=" . urlencode($_POST["company_name"])
           . "&hs_context=" . urlencode($hs_context_json); //Leave this one be
 
         //replace the values in this URL with your portal ID and your form GUID

@@ -1,15 +1,15 @@
 // CONTACT
 $(document).ready(function(){
-$('#contact').on('submit', function(e){
+$("#contactSend").click(function(){
   $('.field').removeClass('has-error'); // remove the error class
   $('.help-block').remove(); // remove the error text
 
-  var formData="";
-  x=$("#contact").serializeArray();
-  $.each(x, function(i, field){
-      formData+=i>0?"&":"";
-      formData+=field.name + "=" + field.value;
-  });
+  var formData = {
+      'firstname'       : $('input[name=firstname]').val(),
+      'email'           : $('input[name=email]').val(),
+      'company_name'    : $('input[name=company_name]').val(),
+      'comment'         : $('input[name=comment]').val()
+  };
 
   $.ajax({
       type:'POST',
@@ -30,6 +30,12 @@ $('#contact').on('submit', function(e){
         if (data.errors.email) {
           $('#emailInput').addClass('has-error'); // add the error class to show red input
           $('#emailInput').append('<div class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
+        }
+
+        // handle errors for email ---------------
+        if (data.errors.company_name) {
+          $('#companyInput').addClass('has-error'); // add the error class to show red input
+          $('#companyInput').append('<div class="help-block">' + data.errors.company_name + '</div>'); // add the actual error message under our input
         }
 
         // handle errors for superhero alias ---------------
@@ -113,6 +119,20 @@ $('#contactName').on('input', function() {
   }
 });
 
+// Name can't be blank
+$('#contactCompany').on('input', function() {
+	var input=$(this);
+	var is_name=input.val();
+	if(is_name){
+    input.removeClass("invalid").addClass("valid");
+    input.siblings('label').addClass("float");
+  }
+	else{
+    input.removeClass("valid").addClass("invalid");
+    input.siblings('label').removeClass("float");
+  }
+});
+
 // Message can't be blank
 $('#contactMessage').keyup(function(event) {
 	var input=$(this);
@@ -137,7 +157,7 @@ $(document).ready(function() {
         });
 
         if (!$emptyFields.length) {
-            $("#formSubmit").removeClass("disabled");
+            $("#contactSend").removeClass("disabled");
         }
     });
 });
