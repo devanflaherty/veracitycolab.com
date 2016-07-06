@@ -37,7 +37,7 @@ get_header(); ?>
 							$link = $buttonLink;
 						}
 					?>
-	        <a class="headline-link <?= $buttonClass; ?>" href="<?= $Link; ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
+	        <a class="headline-link <?= $buttonClass; ?>" href="<?= $link; ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
 	      <?php endwhile; ?>
 	      </div>
 	    <?php endif; ?>
