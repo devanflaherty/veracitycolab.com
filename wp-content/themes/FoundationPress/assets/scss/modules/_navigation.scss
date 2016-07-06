@@ -150,9 +150,9 @@
   background: $primary-color;
   position: relative;
   z-index: 400;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 107px);
   ul {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 107px);
     background: none;
     padding: 60px 0;
     @include flex;

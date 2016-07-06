@@ -6343,9 +6343,9 @@ a::after {
   background: #2199e8;
   position: relative;
   z-index: 400;
-  height: calc(100vh - 80px); }
+  height: calc(100vh - 107px); }
   #mobileMenu ul {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 107px);
     background: none;
     padding: 60px 0;
     display: -ms-flexbox;
@@ -6544,7 +6544,7 @@ a::after {
     width: 100%; }
   #contactForm.reveal {
     padding: 120px 0;
-    height: calc(100vh - 110px); }
+    height: calc(100vh - 107px); }
 
 form .field {
   margin-bottom: 6px; }
