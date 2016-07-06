@@ -84,32 +84,63 @@
       width: 100%;
       margin-top: -15%;
     }
+
+    .permalink-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      background: rgba($primary-color, 0.6);
+      transition: all 0.5s ease;
+      opacity: 0;
+      @include breakpoint(small only) {
+        @include flex();
+        @include flex-align(center, middle);
+      }
+      &.show {
+        opacity: 1;
+      }
+      span {
+        color: rgba($white, 0.8);
+        font-size: 20px;
+        letter-spacing: 3px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0; top: 0;
+        margin: auto;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+
     .play {
-        span {
-          width: 80px;
-          height: 80px;
-          color: white;
-          text-align: center;
-          display: block;
+      span {
+        width: 80px;
+        height: 80px;
+        color: white;
+        text-align: center;
+        display: block;
+        position: absolute;
+        border-radius: 300px;
+        background: rgba($white,0.33);
+        top: 0; left: 0; right: 0; bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transform: scale(0.25, 0.25);
+        transition: all 0.5s ease;
+        transition-delay: 0.2s;
+        i {
           position: absolute;
-          border-radius: 300px;
-          background: rgba($white,0.33);
-          top: 0; left: 0; right: 0; bottom: 0;
+          font-size: 34px;
+          width: 40px;
+          height: 40px;
           margin: auto;
-          opacity: 0;
-          transform: scale(0.25, 0.25);
-          transition: all 0.5s ease;
-          transition-delay: 0.2s;
-          i {
-            position: absolute;
-            font-size: 34px;
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            top: 5px; left: 3px; right: 0; bottom: 0;
-          }
+          top: 5px; left: 3px; right: 0; bottom: 0;
         }
       }
+    }
     .thumbnail-overlay {
       height: 100%;
       width: 100%;
