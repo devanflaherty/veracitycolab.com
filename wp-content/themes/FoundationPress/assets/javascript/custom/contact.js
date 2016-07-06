@@ -1,5 +1,6 @@
 // CONTACT
 $(document).ready(function(){
+$("#confirmation").hide();
 $("#contactSend").click(function(){
   $('.field').removeClass('has-error'); // remove the error class
   $('.help-block').remove(); // remove the error text
@@ -48,6 +49,8 @@ $("#contactSend").click(function(){
         $("#message").fadeOut(function() {
           $(this).text("Thank you!");
         }).fadeIn();
+        $("#formWrap").removeClass('large-4').addClass('large-6');
+        $("#confirmation").fadeIn();
       }
     });
     return false;

@@ -162,12 +162,13 @@
   	<!-- Contact -->
   	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
   		<div class="row align-center">
-  			<div class="small-10 medium-6 large-4 columns text-center">
+  			<div id="formWrap" class="small-10 medium-6 large-4 columns text-center">
   				<h5 id="message" class="contrast-text upper"><strong>Pleased to meet you</strong></h5>
   				<br><br>
 
   				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
-  					<div class="inputs">
+            <br><br>
+            <div class="inputs">
   						<div class="field" id="nameInput">
   							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
   							<label for="firstname">Full Name</label>
@@ -186,7 +187,17 @@
   					</div>
   					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
   				</form>
-  				<button class="button round" id="closeForm">X</button>
+          <div id="confirmation">
+            <iframe src="//fast.wistia.net/embed/iframe/8q9mws127j?videoFoam=true&playerColor=0082c3" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+            <br>
+            <h4>We want your experience with us to be delightful right from the start.</h4>
+            <p>We will get back to you within the hour.<br>
+              In the meantime, please enjoy our FREE ebook!
+            </p>
+            <br>
+            <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text">7 Insights eBook</a>
+          </div>
+  				<button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
   			</div>
   		</div>
   	</section>
