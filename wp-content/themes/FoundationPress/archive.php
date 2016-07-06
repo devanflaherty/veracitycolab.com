@@ -34,7 +34,8 @@ get_header(); ?>
 				foreach($taxonomies as $term) {
 					if ($term->slug != 'uncategorized') {
 						$slug = $term->slug;
-						echo "<a class='headline-link' href=\"/category/$slug\">$slug</a> ";
+						$name = $term->name;
+						echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
 					}
 				}
 			?>

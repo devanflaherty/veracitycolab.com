@@ -34,15 +34,14 @@ get_header(); ?>
 				$taxonomies = get_categories();
 				foreach($taxonomies as $term) {
 					if ($term->slug != 'uncategorized') {
-						$currentTerm = strtolower(single_term_title( "", false ));
-						$current = preg_replace('#[ -]+#', '-', $currentTerm);
 						$slug = $term->slug;
+						$name = $term->name;
 						if ($current == $slug) {
 							$checked = "is-checked";
 						} else {
 							$checked = "";
 						}
-						echo "<a class='headline-link $checked' href=\"/category/$slug\">$slug</a> ";
+						echo "<a class='headline-link $checked' href=\"/category/$slug\">$name</a> ";
 					}
 				}
 			?>
