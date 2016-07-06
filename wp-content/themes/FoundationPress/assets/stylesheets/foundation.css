@@ -8319,6 +8319,7 @@ a, button {
     background-attachment: fixed;
     background-size: cover !important;
     background-repeat: no-repeat;
+    background-position: center;
     position: fixed;
     z-index: 0;
     -ms-transform: scale(1.2);
