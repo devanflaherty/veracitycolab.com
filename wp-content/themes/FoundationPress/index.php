@@ -24,7 +24,7 @@ get_header(); ?>
 			data-250="transform: translate(0px, -250px)">
 		<div class="row align-center">
 			<div class="small-12 medium-4 columns">
-				<h2>Our Blog</h2>
+				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
 			<?php
@@ -32,6 +32,7 @@ get_header(); ?>
 				foreach($taxonomies as $term) {
 					if ($term->slug != 'uncategorized') {
 						$slug = $term->slug;
+						$slug = preg_replace('#[ -]+#', '-', $slug)
 						echo "<a class='headline-link' href=\"/category/$slug\">$slug</a> ";
 					}
 				}

@@ -26,7 +26,7 @@ get_header(); ?>
 			data-250="transform: translate(0px, -250px)">
 		<div class="row align-center">
 			<div class="small-12 medium-4 columns">
-				<h2>Our Blog</h2>
+				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
 			<?php
