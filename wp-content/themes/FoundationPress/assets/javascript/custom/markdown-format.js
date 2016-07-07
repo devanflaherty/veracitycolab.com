@@ -50,11 +50,11 @@ $(".columns img").each(function() {
 
 // GIF loading
 $(function() {
-  $('img[src$=".gif"]').each(function() {
-    var src = $(this).attr("src");
-    $(this).attr("src", src.replace(/\.gif$/i, ".jpg"));
-    $(this).addClass("gif");
-  });
+  // $('img[src$=".gif"]').each(function() {
+  //   var src = $(this).attr("src");
+  //   $(this).attr("src", src.replace(/\.gif$/i, ".jpg"));
+  //   $(this).addClass("gif");
+  // });
   $('.gif').hover(function() {
         var src = $(this).attr("src");
         $(this).attr("src", src.replace(/\.jpg$/i, ".gif"));
