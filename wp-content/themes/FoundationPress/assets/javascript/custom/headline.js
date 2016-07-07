@@ -1,6 +1,11 @@
 $(function() {
   if (Foundation.MediaQuery.atLeast('medium')) {
-    $('.headline').parent().css("padding-top","140px");
+    if(isiPad()){
+      $('.headline').addClass('relative');
+      $('.headline').parent().css("padding-top","0!important");
+    } else {
+      $('.headline').parent().css("padding-top","140px");
+    }
   } else {
     $('.headline').parent().css("padding-top","0");
   }
