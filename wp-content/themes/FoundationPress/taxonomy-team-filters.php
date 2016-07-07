@@ -38,9 +38,10 @@ get_header(); ?>
 								$slug = $term->slug;
 								if ($name == $current) {
 									$class = "is-checked";
+								} else {
+									$class = "";
 								}
 								echo "<a class=\"headline-link $class\" href=\"/filter/$slug\">$name</a> ";
-								echo $current;
 							}
 						}
 					?>
