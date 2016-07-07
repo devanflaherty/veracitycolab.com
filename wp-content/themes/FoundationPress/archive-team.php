@@ -13,10 +13,7 @@ get_header(); ?>
 
 <section id="archiveTeam" class="wrapper" role="main">
 	<!-- HEADLINE -->
-	<header class="headline pad"
-		data-0="transform: translate(0px, 0px);opacity: 1;"
-		data-100="transform: translate(0px, -50px); opacity: 1;"
-		data-200="transform: translate(0px, -50px); opacity: 0;">
+	<header class="headline pad">
 		<div class="row align-center stacked-medium">
 			<div class="small-12 large-3 columns">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
