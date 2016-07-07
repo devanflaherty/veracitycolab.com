@@ -13,7 +13,10 @@ get_header(); ?>
 
 <section id="archiveTeam" class="wrapper" role="main">
 	<!-- HEADLINE -->
-	<header class="headline pad">
+	<header class="headline pad"
+		data-0="transform: translate(0px, 0px);opacity: 1;"
+		data-100="transform: translate(0px, -50px); opacity: 1;"
+		data-200="transform: translate(0px, -50px); opacity: 0;">
 		<div class="row align-center stacked-medium">
 			<div class="small-12 large-3 columns">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
@@ -35,7 +38,9 @@ get_header(); ?>
 	</header>
 	<!-- CLOSE HEADLINE -->
 
-	<article class="main-cards pad">
+	<article class="main-cards pad"
+		data-500-end="transform: translate(0px, 0px)"
+		data-end="transform: translate(0px, -100px)">
 	<?php
 		global $query_string;
 		query_posts( $query_string . '&posts_per_page=-1' );
