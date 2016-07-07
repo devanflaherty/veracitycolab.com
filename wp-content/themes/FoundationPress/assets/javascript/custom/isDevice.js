@@ -4,6 +4,15 @@ function isiPhone(){
     (navigator.platform.indexOf("iPod") != -1)
   );
 }
+function isiPad(){
+  return (
+    (navigator.platform.indexOf("iPad") != -1)
+  );
+}
 if(isiPhone()){
   $('body').addClass('iphone');
+}
+
+if(isiPad()){
+  $('.headline').addClass('relative');
 }

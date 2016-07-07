@@ -7,6 +7,10 @@
     margin: auto;
     z-index:1;
   }
+  &.relative {
+    position: relative;
+    top: 0;
+  }
   h2 {
     font-size: 36px;
     margin: 0;
