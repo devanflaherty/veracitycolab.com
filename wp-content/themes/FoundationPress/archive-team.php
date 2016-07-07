@@ -69,8 +69,8 @@ get_header(); ?>
 									$avatar = get_field( 'team_default_avatar', 'option' );
 								}
 							?>
-								<div class="thumbnail-overlay" style="background-image: url(http:<?= $avatar; ?>)"></div>
-								<div class="thumbnail-overlay-hover" style="background-image: url(http:<?= $avatar; ?>)"></div>
+								<div class="thumbnail-overlay" style="background-image: url(<?= $avatar; ?>)"></div>
+								<div class="thumbnail-overlay-hover" style="background-image: url(<?= $avatar; ?>)"></div>
 							</div>
 							<div class="team-meta row align-middle">
 								<div class="columns">
