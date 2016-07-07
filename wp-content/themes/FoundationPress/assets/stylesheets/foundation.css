@@ -8182,6 +8182,8 @@ pre {
         width: 25%; } }
   #archiveTeam .team-grid .team-block {
     position: relative; }
+    #archiveTeam .team-grid .team-block a {
+      display: block; }
     #archiveTeam .team-grid .team-block .avatar {
       border-radius: 600px;
       background: #f9f9f9; }
