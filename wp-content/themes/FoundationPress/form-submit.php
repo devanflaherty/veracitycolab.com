@@ -24,7 +24,7 @@
           'hutk' => $hubspotutk,
           'ipAddress' => $ip_addr,
           'pageUrl' => 'http://www.veracitycolab.com',
-          'pageName' => 'veracityColab'
+          'pageName' => 'VeracityColab'
         );
         $hs_context_json = json_encode($hs_context);
 
