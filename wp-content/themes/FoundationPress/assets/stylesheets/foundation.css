@@ -6865,6 +6865,10 @@ form textarea {
             transform: scale(0.25, 0.25);
         transition: all 0.5s ease;
         transition-delay: 0.2s; }
+        .post-grid .post-block .play span.device {
+          opacity: 1;
+          -ms-transform: scale(1);
+              transform: scale(1); }
         .post-grid .post-block .play span i {
           position: absolute;
           font-size: 34px;
@@ -6892,6 +6896,8 @@ form textarea {
               justify-content: center;
           -ms-flex-align: center;
               align-items: center; } }
+      .post-grid .post-block .thumbnail-overlay.device {
+        opacity: 1; }
       .post-grid .post-block .thumbnail-overlay .excerpt {
         padding: 20px;
         color: #fefefe; }

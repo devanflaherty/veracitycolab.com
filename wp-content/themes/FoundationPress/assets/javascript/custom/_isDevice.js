@@ -11,4 +11,6 @@ function isiPad(){
 }
 if(isiPhone()){
   $('body').addClass('iphone');
+  $('.post-block a span').addClass('device');
+  $('.post-block a .thumbnail-overlay').addClass('device');
 }

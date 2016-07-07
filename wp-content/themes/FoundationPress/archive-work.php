@@ -154,7 +154,7 @@ get_header(); ?>
 					<div class="permalink-overlay" style="background-color: <?= $primary; ?>">
 						<span>See Campaign</span>
 					</div>
-					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
+					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only" onclick="">
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>

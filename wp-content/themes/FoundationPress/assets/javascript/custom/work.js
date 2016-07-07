@@ -1,5 +1,27 @@
 $("#featureVideo").fadeOut();
 
+if(isiPad()){
+  $('.post-block a span').addClass('device');
+  $('.post-block a .thumbnail-overlay').addClass('device');
+
+  //Playback for Archive Page
+  $(".play").bind("click touchend", function(){
+    $("body").addClass("video-fixed");
+
+    $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
+    $(".feature-overlay").addClass("animate-in");
+    $('#navBar').addClass('push-up');
+    $('.main-content').addClass('push-down');
+    $('.feature-play').fadeOut();
+
+    setTimeout(function(){
+      $("#featureVideo").fadeIn('slow');
+    }, 500);
+    return false;
+
+  });
+}
+
 //Playback for Archive Page
 $(".play").click(function(){
   $("body").addClass("video-fixed");
