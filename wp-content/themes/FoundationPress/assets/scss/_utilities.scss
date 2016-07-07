@@ -60,9 +60,11 @@ a, button {
   a, button {
     display: block;
     margin: 6px 0;
+    color: $medium-gray;
     @include breakpoint(medium) {
       flex: 0 1 auto;
       margin: 6px 0 6px 24px;
+      text-align: center;
     }
     &.button {
       margin-left: 4px;

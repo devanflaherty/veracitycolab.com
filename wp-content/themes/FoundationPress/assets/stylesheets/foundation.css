@@ -8284,12 +8284,14 @@ a, button {
 
 .button-jar a, .button-jar button {
   display: block;
-  margin: 6px 0; }
+  margin: 6px 0;
+  color: #BFBFBF; }
   @media screen and (min-width: 40em) {
     .button-jar a, .button-jar button {
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-      margin: 6px 0 6px 24px; } }
+      margin: 6px 0 6px 24px;
+      text-align: center; } }
   .button-jar a.button, .button-jar button.button {
     margin-left: 4px; }
 

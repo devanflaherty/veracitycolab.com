@@ -37,7 +37,8 @@ get_header(); ?>
 						if ($term->slug != 'all') {
 							$slug = $term->slug;
 							$name = $term->name;
-							if ($current == $slug) {
+							$current = single_term_title("",false);
+							if ($current == $name) {
 								$checked = "is-checked";
 							} else {
 								$checked = "";

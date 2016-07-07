@@ -1,8 +1,13 @@
 <?php
 /**
- * The template for displaying archive work posts
+ * The template for displaying archive pages
  *
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
  *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (team filters archives), author.php (Author archives), etc.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -25,15 +30,17 @@ get_header(); ?>
 					<a class="headline-link" href="/team">All</a>
 					<?php
 						$taxonomies = get_terms('team-filters');
-						$current = $wp_query->query_vars['team-filters'];
+						$current = single_term_title("", false);
 						if ($taxonomies) {
 							foreach($taxonomies as $term) {
 								$name = $term->name;
 								$slug = $term->slug;
-								echo "<a class=\"headline-link\" href=\"/filter/$slug\">$name</a> ";
+								if ($name == $current) {
+									$class = "is-checked";
+								}
+								echo "<a class=\"headline-link $class\" href=\"/filter/$slug\">$name</a> ";
 							}
 						}
-						echo $current;
 					?>
 			</div>
 		</div>
