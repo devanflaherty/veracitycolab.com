@@ -40,6 +40,7 @@ get_header(); ?>
 									$class = "is-checked";
 								}
 								echo "<a class=\"headline-link $class\" href=\"/filter/$slug\">$name</a> ";
+								echo $current;
 							}
 						}
 					?>
@@ -48,9 +49,7 @@ get_header(); ?>
 	</header>
 	<!-- CLOSE HEADLINE -->
 
-	<article class="main-cards pad"
-		data-500-end="transform: translate(0px, 0px)"
-		data-end="transform: translate(0px, -100px)">
+	<article class="main-cards pad">
 	<?php
 		global $query_string;
 		query_posts( $query_string . '&posts_per_page=12' );
