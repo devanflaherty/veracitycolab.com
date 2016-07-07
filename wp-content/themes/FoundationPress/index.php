@@ -66,10 +66,9 @@ get_header(); ?>
 
 				// Have to do a lil loop to get the a-singular client
 					$categories = get_the_category();
-					$i = 0;
 					foreach($categories as $term) {
-						$i++;
-						if ($i == 1) {
+						$slug = $term->slug;
+						if ($slug != "all") {
 							$slug = $term->slug;
 						}
 					}

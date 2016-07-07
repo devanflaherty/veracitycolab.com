@@ -73,14 +73,13 @@ get_header(); ?>
 				$secondary = substr($secondaryColor, 1);
 
 				// Have to do a lil loop to get the a-singular client
-					$categories = get_the_category();
-					$i = 0;
-					foreach($categories as $term) {
-						$i++;
-						if ($i == 1) {
-							$slug = $term->slug;
-						}
+				$categories = get_the_category();
+				foreach($categories as $term) {
+					$slug = $term->slug;
+					if ($slug != "all") {
+						$slug = $term->slug;
 					}
+				}
 			?>
 			<div class="columns small-12">
 				<a href="<?php the_permalink(); ?>" class="permalink bloglink">
