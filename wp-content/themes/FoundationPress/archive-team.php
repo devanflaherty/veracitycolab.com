@@ -45,7 +45,7 @@ get_header(); ?>
 		data-end="transform: translate(0px, -100px)">
 	<?php
 		global $query_string;
-		query_posts( $query_string . '&posts_per_page=-1' );
+		query_posts( $query_string . '&posts_per_page=12' );
 		if ( have_posts() ) : ?>
 		<div class="row small-up-2 medium-up-4 team-grid present">
 
@@ -91,13 +91,13 @@ get_header(); ?>
 		<?php endif; // End have_posts() check. ?>
 
 	</article>
-	<!-- <?php /* Display navigation to next/previous pages when applicable */ ?>
+	<?php /* Display navigation to next/previous pages when applicable */ ?>
 	<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
 		<nav id="post-nav">
 			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
 			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 		</nav>
-	<?php } ?> -->
+	<?php } ?>
 </section>
 
 <?php get_footer();
