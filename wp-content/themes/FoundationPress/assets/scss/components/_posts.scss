@@ -70,12 +70,6 @@
     background: black;
     background-position: center;
     background-size: cover!important;
-    &:after {
-      padding-top: 56.25%;
-      /* 16:9 ratio */
-      display: block;
-      content: '';
-    }
     a {
       display: block;
       overflow: hidden;
@@ -117,6 +111,7 @@
 
     .play {
       display: block;
+      padding-bottom: 56.25%;
       span {
         width: 80px;
         height: 80px;
@@ -196,5 +191,14 @@
   }
   .column {
     padding: 0 12px!important;
+  }
+}
+
+.blog .post-block {
+  &:after {
+    padding-top: 56.25%;
+    /* 16:9 ratio */
+    display: block;
+    content: '';
   }
 }

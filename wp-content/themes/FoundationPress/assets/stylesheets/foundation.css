@@ -6804,11 +6804,6 @@ form textarea {
     background: black;
     background-position: center;
     background-size: cover !important; }
-    .post-grid .post-block:after {
-      padding-top: 56.25%;
-      /* 16:9 ratio */
-      display: block;
-      content: ''; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
@@ -6849,7 +6844,8 @@ form textarea {
         text-transform: uppercase;
         text-align: center; }
     .post-grid .post-block .play {
-      display: block; }
+      display: block;
+      padding-bottom: 56.25%; }
       .post-grid .post-block .play span {
         width: 80px;
         height: 80px;
@@ -6929,6 +6925,12 @@ form textarea {
     color: #0a0a0a; }
   .advance-posts .column, .advance-posts .columns {
     padding: 0 12px !important; }
+
+.blog .post-block:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: ''; }
 
 @media screen and (min-width: 40em) {
   .wrapper {
