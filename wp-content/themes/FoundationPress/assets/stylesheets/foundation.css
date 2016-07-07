@@ -8202,7 +8202,7 @@ pre {
       background-image: center;
       background-size: cover !important;
       background-position: center -100%;
-      transition: all 0.5s ease;
+      transition: all 0.25s ease;
       opacity: 0; }
     #archiveTeam .team-grid .team-block .team-meta {
       width: 100%;
