@@ -15,5 +15,5 @@ if(isiPhone()){
 
 if(isiPad()){
   $('.headline').addClass('relative');
-  $('.headline').parent().css("padding-top","0");
+  $('.headline').parent().css("padding-top","0!important");
 }
