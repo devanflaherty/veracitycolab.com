@@ -30,21 +30,22 @@ get_header(); ?>
 				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
-			<?php
-				$taxonomies = get_categories();
-				foreach($taxonomies as $term) {
-					if ($term->slug != 'uncategorized') {
-						$slug = $term->slug;
-						$name = $term->name;
-						if ($current == $slug) {
-							$checked = "is-checked";
-						} else {
-							$checked = "";
+				<a class="headline-link" href="/category/all">All</a>
+				<?php
+					$taxonomies = get_categories();
+					foreach($taxonomies as $term) {
+						if ($term->slug != 'all') {
+							$slug = $term->slug;
+							$name = $term->name;
+							if ($current == $slug) {
+								$checked = "is-checked";
+							} else {
+								$checked = "";
+							}
+							echo "<a class='headline-link $checked' href=\"/category/$slug\">$name</a> ";
 						}
-						echo "<a class='headline-link $checked' href=\"/category/$slug\">$name</a> ";
 					}
-				}
-			?>
+				?>
 			</div>
 		</div>
 	</header>

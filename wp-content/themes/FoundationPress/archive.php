@@ -29,16 +29,17 @@ get_header(); ?>
 				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
-			<?php
-				$taxonomies = get_categories();
-				foreach($taxonomies as $term) {
-					if ($term->slug != 'uncategorized') {
-						$slug = $term->slug;
-						$name = $term->name;
-						echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+				<a class="headline-link" href="/category/all">All</a>
+				<?php
+					$taxonomies = get_categories();
+					foreach($taxonomies as $term) {
+						if ($term->slug != 'all') {
+							$slug = $term->slug;
+							$name = $term->name;
+							echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+						}
 					}
-				}
-			?>
+				?>
 			</div>
 		</div>
 	</header>
