@@ -79,6 +79,9 @@ get_header(); ?>
 										<span><i class="fa fa-play" aria-hidden="true"></i></span>
 									</div>
 								</a>
+								<div class="permalink-overlay" style="background-color: <?= $primary; ?>">
+									<span>See Campaign</span>
+								</div>
 							</div>
 						</div>
 				<?php endforeach; ?>
