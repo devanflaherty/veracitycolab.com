@@ -16,7 +16,8 @@ get_header(); ?>
 	<header class="headline pad"
 		data-0="transform: translate(0px, 0px);opacity: 1;"
 		data-100="transform: translate(0px, -50px); opacity: 1;"
-		data-200="transform: translate(0px, -50px); opacity: 0;">
+		data-200="transform: translate(0px, -50px); opacity: 0;"
+		data-210="transform: translate(0px, -250px); opacity: 0;">
 		<div class="row align-center stacked-medium">
 			<div class="small-12 large-3 columns">
 				<h2><?php the_field("team_headline", "option"); ?></h2>
