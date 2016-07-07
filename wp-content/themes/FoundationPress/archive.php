@@ -29,7 +29,7 @@ get_header(); ?>
 				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
-				<a class="headline-link" href="/category/all">All</a>
+				<a class="headline-link" href="/blog">All</a>
 				<?php
 					$taxonomies = get_categories();
 					foreach($taxonomies as $term) {
@@ -69,8 +69,7 @@ get_header(); ?>
 				// Have to do a lil loop to get the a-singular client
 				$categories = get_the_category();
 				foreach($categories as $term) {
-					$slug = $term->slug;
-					if ($slug != "all") {
+					if ($term->slug != "all") {
 						$slug = $term->slug;
 					}
 				}
