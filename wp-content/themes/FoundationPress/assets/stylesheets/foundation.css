@@ -8186,11 +8186,20 @@ pre {
       border-radius: 600px;
       background: #f9f9f9; }
     #archiveTeam .team-grid .team-block .thumbnail-overlay {
-      height: 100%;
       width: 100%;
+      padding-bottom: 100%;
+      opacity: 1;
+      background-image: center;
+      background-size: cover !important; }
+    #archiveTeam .team-grid .team-block .thumbnail-overlay-hover {
+      width: 100%;
+      padding-bottom: 100%;
+      opacity: 1;
       position: absolute;
       top: 0;
-      left: 0;
+      background-image: center;
+      background-size: cover !important;
+      background-position: center -100%;
       transition: all 0.5s ease;
       opacity: 0; }
     #archiveTeam .team-grid .team-block .team-meta {
@@ -8202,19 +8211,18 @@ pre {
         font-size: 18px;
         font-weight: 800;
         margin-bottom: 0;
-        transition: all 0.5s ease; }
+        transition: all 0.5s ease;
+        color: #BFBFBF; }
       #archiveTeam .team-grid .team-block .team-meta h5 {
         font-size: 14px;
         font-weight: 800;
         margin-bottom: 0;
         letter-spacing: 0;
         opacity: 0.5; }
-    #archiveTeam .team-grid .team-block:hover .thumbnail-overlay {
+    #archiveTeam .team-grid .team-block:hover .thumbnail-overlay-hover {
       opacity: 1; }
-      #archiveTeam .team-grid .team-block:hover .thumbnail-overlay span {
-        opacity: 1; }
     #archiveTeam .team-grid .team-block:hover .team-meta h4 {
-      letter-spacing: 2px; }
+      color: #808080; }
 
 /* Utilities */
 html, body {

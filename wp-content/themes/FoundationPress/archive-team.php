@@ -62,22 +62,15 @@ get_header(); ?>
 					<div class="team-block">
 						<a href="<?php the_permalink(); ?>">
 							<div class="avatar">
-								<div class="thumbnail-overlay" style="background-color: <?php echo $primary; ?>">
-									<?php
-										if (get_field( 'avatar' )) {
-											$avatar = get_field( 'avatar' );
-										} else {
-											$avatar = get_field( 'team_default_avatar', 'option' );
-										}
-										if (get_field( 'avatar_hover' )) {
-											$avatarHover = get_field( 'avatar_hover' );
-										} else {
-											$avatarHover = get_field( 'team_default_avatar_hover', 'option' );
-										}
-									?>
-									<img src="<?= $avatarHover; ?>" alt="<?php the_title(); ?>">
-								</div>
-								<img src="<?= $avatar; ?>" alt="<?php the_title(); ?>">
+							<?php
+								if (get_field( 'avatar' )) {
+									$avatar = get_field( 'avatar' );
+								} else {
+									$avatar = get_field( 'team_default_avatar', 'option' );
+								}
+							?>
+								<div class="thumbnail-overlay" style="background-image: url(http:<?= $avatar; ?>)"></div>
+								<div class="thumbnail-overlay-hover" style="background-image: url(http:<?= $avatar; ?>)"></div>
 							</div>
 							<div class="team-meta row align-middle">
 								<div class="columns">
