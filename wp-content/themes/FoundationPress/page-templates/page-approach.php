@@ -25,7 +25,7 @@
      data-top-bottom="margin-top: -400px;">
 
      <div class="row">
-       <div id="tagline" class="columns medium-9" style="background-color: <?php the_field('tertiary_color'); ?>">
+       <div id="tagline" class="columns medium-9">
          <h1 class="entry-title"><?php the_field('tagline') ?></h1>
        </div>
      </div>
@@ -36,19 +36,6 @@
        <div id="contentBody">
          <?php the_content(); ?>
        </div>
-       <div class="row">
-         <div class="small-12 medium-12 large-6 columns">
-           <div id="contentBody">
-             <?php the_field('left_column'); ?>
-           </div>
-         </div>
-         <div class="small-12 medium-12 large-6 columns">
-           <div id="contentBody">
-             <?php the_field('right_column'); ?>
-           </div>
-         </div>
-       </div>
-       <br>
      </div>
 
    </article>
