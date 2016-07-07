@@ -6815,6 +6815,39 @@ form textarea {
     .post-grid .post-block img {
       width: 100%;
       margin-top: -15%; }
+    .post-grid .post-block .permalink-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(33, 153, 232, 0.6);
+      transition: all 0.5s ease;
+      opacity: 0; }
+      @media screen and (max-width: 39.9375em) {
+        .post-grid .post-block .permalink-overlay {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: center;
+              justify-content: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+      .post-grid .post-block .permalink-overlay.show {
+        opacity: 1; }
+      .post-grid .post-block .permalink-overlay span {
+        color: rgba(254, 254, 254, 0.8);
+        font-size: 20px;
+        letter-spacing: 3px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        text-transform: uppercase;
+        text-align: center; }
     .post-grid .post-block .play span {
       width: 80px;
       height: 80px;
@@ -8149,6 +8182,8 @@ pre {
         width: 25%; } }
   #archiveTeam .team-grid .team-block {
     position: relative; }
+    #archiveTeam .team-grid .team-block a {
+      display: block; }
     #archiveTeam .team-grid .team-block .avatar {
       border-radius: 600px;
       background: #f9f9f9; }

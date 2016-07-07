@@ -27,16 +27,17 @@ get_header(); ?>
 				<h2><?php the_field('blog_title', 'option'); ?></h2>
 			</div>
 			<div class="small-12 medium-8 columns button-jar">
-			<?php
-				$taxonomies = get_categories();
-				foreach($taxonomies as $term) {
-					if ($term->slug != 'uncategorized') {
-						$slug = $term->slug;
-						$name = $term->name;
-						echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+				<a class="headline-link" href="/blog">All</a>
+				<?php
+					$taxonomies = get_categories();
+					foreach($taxonomies as $term) {
+						if ($term->slug != 'all') {
+							$slug = $term->slug;
+							$name = $term->name;
+							echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+						}
 					}
-				}
-			?>
+				?>
 			</div>
 		</div>
 	</header>
@@ -65,10 +66,8 @@ get_header(); ?>
 
 				// Have to do a lil loop to get the a-singular client
 					$categories = get_the_category();
-					$i = 0;
 					foreach($categories as $term) {
-						$i++;
-						if ($i == 1) {
+						if ($term->slug != "all") {
 							$slug = $term->slug;
 						}
 					}

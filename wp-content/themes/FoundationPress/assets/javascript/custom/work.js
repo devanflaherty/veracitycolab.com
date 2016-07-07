@@ -58,3 +58,7 @@ $(document).mouseup(function (e) {
     }
   }
 });
+
+$(".permalink").hover(function(){
+  $(this).siblings(".post-block").find(".permalink-overlay").toggleClass("show");
+});

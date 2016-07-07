@@ -76,6 +76,9 @@
     }
     .team-block {
       position: relative;
+      a {
+        display: block;
+      }
       .avatar {
         border-radius: 600px;
         background: $body-background;
