@@ -2,13 +2,13 @@ if ($("body").hasClass("post-type-archive-team")){
 // init Isotope
 
 // layout Isotope after each image loads
-var $grid = $('.grid');
-  // init Isotope after all images have loaded
-$grid.isotope({
-  itemSelector: '.grid-item',
-  layoutMode: 'fitRows',
-  percentPosition: true
-});
+// var $grid = $('.grid');
+//   // init Isotope after all images have loaded
+// $grid.isotope({
+//   itemSelector: '.grid-item',
+//   layoutMode: 'fitRows',
+//   percentPosition: true
+// });
 
 
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){

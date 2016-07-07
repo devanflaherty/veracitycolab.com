@@ -45,11 +45,10 @@ get_header(); ?>
 		global $query_string;
 		query_posts( $query_string . '&posts_per_page=-1' );
 		if ( have_posts() ) : ?>
-		<div class="grid team-grid present">
-			<div class="grid-sizer"></div>
+		<div class="row small-up-2 medium-up-4 team-grid present">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		  <div class="grid-item
+		  <div class="column
 				<?php
 					$taxonomies = get_the_terms( $post->ID, 'team-filters');
 					if ($taxonomies) {
