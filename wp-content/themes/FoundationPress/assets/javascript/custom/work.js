@@ -1,6 +1,6 @@
 $("#featureVideo").fadeOut();
 
-//Playback for Archive Page
+// Playback for Archive Page
 $(".play").click(function(){
   $("body").addClass("video-fixed");
 
