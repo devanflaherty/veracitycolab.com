@@ -166,7 +166,7 @@
   				<h5 id="message" class="contrast-text upper"><strong>Pleased to meet you</strong></h5>
   				<br><br>
 
-  				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
+  				<form style="display:none;" action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
             <br><br>
             <div class="inputs">
   						<div class="field" id="nameInput">
@@ -187,15 +187,15 @@
   					</div>
   					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
   				</form>
-          <div id="confirmation">
-            <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&amp;playerColor=0082c3" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+          <div id="">
+            <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&amp;playerColor=181818" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
             <br>
-            <h4>We want your experience with us to be delightful right from the start.</h4>
+            <h4 style="color: rgba(255,255,255,0.9);margin-top:12px;">We want your experience with us to be delightful right from the start.</h4>
             <p style="color: rgba(255,255,255,0.8);">We'll get back to you soon.<br>
               In the meantime, please enjoy our FREE ebook!
             </p>
             <br>
-            <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text">7 Insights eBook</a>
+            <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text secondary">7 Insights eBook</a>
           </div>
   				<button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
   			</div>
