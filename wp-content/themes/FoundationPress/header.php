@@ -164,10 +164,9 @@
   		<div class="row align-center">
   			<div id="formWrap" class="small-10 medium-6 large-4 columns text-center">
   				<h5 id="message" class="contrast-text upper"><strong>Pleased to meet you</strong></h5>
-  				<br><br>
 
   				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
-            <br><br>
+            <br>
             <div class="inputs">
   						<div class="field" id="nameInput">
   							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
@@ -197,8 +196,9 @@
             <br>
             <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text secondary">7 Insights eBook</a>
           </div>
-  				<button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
   			</div>
+        <button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
+
   		</div>
   	</section>
 

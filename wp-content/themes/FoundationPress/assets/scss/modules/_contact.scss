@@ -19,7 +19,9 @@
   }
 }
 
-
+#formWrap {
+  transform: translate(0px, -40px);
+}
 form {
   .field {
     margin-bottom: 6px;

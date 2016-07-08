@@ -6546,6 +6546,10 @@ a::after {
     padding: 120px 0;
     height: calc(100vh - 107px); }
 
+#formWrap {
+  -ms-transform: translate(0px, -40px);
+      transform: translate(0px, -40px); }
+
 form .field {
   margin-bottom: 6px; }
 
