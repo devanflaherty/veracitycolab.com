@@ -1,3 +1,5 @@
+$("#featureVideo").fadeOut();
+
 //Playback for Archive Page
 $(".play").click(function(){
   alert("hello");
