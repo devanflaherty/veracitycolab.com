@@ -2,7 +2,6 @@ $("#featureVideo").fadeOut();
 
 //Playback for Archive Page
 $(".play").click(function(){
-  alert("hello");
   $("body").addClass("video-fixed");
 
   $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
