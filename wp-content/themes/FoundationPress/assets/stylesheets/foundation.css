@@ -6931,7 +6931,8 @@ form textarea {
 .main-content {
   position: relative;
   z-index: 100;
-  padding: 40px inherit;
+  padding-top: 40px;
+  padding-bottom: 40px;
   -ms-transform: translate(0px, 0px);
       transform: translate(0px, 0px); }
   @media screen and (min-width: 40em) {
