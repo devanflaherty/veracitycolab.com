@@ -6421,7 +6421,7 @@ a::after {
     display: none !important; } }
 
 .iphone #mobileMenu, .iphone #mobileMenu ul {
-  height: calc(100vh - 150px); }
+  height: calc(100vh - 170px); }
 
 #footer-container {
   position: relative;
@@ -6642,13 +6642,15 @@ form textarea {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center; }
-  #featured-hero.hidden {
-    height: 0px !important; }
+  #featured-hero.video-reveal {
+    height: 100vh !important;
+    opacity: 1; }
   #featured-hero.animate-in {
     opacity: 1;
     height: 15.625rem; }
-  #featured-hero.video-reveal {
-    height: 100vh !important; }
+  #featured-hero.hidden {
+    height: 2px !important;
+    opacity: 0; }
   #featured-hero .feature-overlay {
     opacity: 0;
     transition: all 0.5s ease;
@@ -6720,6 +6722,9 @@ form textarea {
     z-index: 200;
     width: 100%;
     cursor: default; }
+
+.iphone #featured-hero .video-reveal {
+  height: calc(100vh - 80px) !important; }
 
 @media screen and (min-width: 40em) {
   #featured-hero {

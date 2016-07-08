@@ -13,15 +13,17 @@
 		overflow: hidden;
 		@include flex();
 		@include flex-align(center, middle);
-		&.hidden {
-			height:0px!important;
+		&.video-reveal {
+			height: 100vh!important;
+			opacity: 1;
 		}
 		&.animate-in {
 			opacity: 1;
 			height: rem-calc(250);
 		}
-		&.video-reveal {
-			height: 100vh!important;
+		&.hidden {
+			height: 2px!important;
+			opacity: 0;
 		}
 		.feature-overlay {
 			opacity: 0;
@@ -97,6 +99,14 @@
 			z-index: 200;
 			width: 100%;
 			cursor: default;
+		}
+	}
+}
+
+.iphone {
+	#featured-hero {
+		.video-reveal {
+			height: calc(100vh - 80px)!important;
 		}
 	}
 }

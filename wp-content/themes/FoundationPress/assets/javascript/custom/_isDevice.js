@@ -12,3 +12,6 @@ function isiPad(){
 if(isiPhone()){
   $('body').addClass('iphone');
 }
+if(isiPad()){
+  $('body').addClass('ipad');
+}
