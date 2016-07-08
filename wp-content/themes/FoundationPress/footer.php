@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				<div class="small-12 medium-3 large-3 columns">
-          <img class="show-for-medium" style="max-width: 250px;" src="<?php the_field( 'footer_logo', 'option' ); ?>">
+          <img class="show-for-medium" src="<?php the_field( 'footer_logo', 'option' ); ?>">
 				</div>
 			</footer>
 		</div>

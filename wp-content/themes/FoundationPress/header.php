@@ -188,10 +188,10 @@
   					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
   				</form>
           <div id="confirmation">
-            <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&playerColor=0082c3" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
+            <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&amp;playerColor=0082c3" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
             <br>
             <h4>We want your experience with us to be delightful right from the start.</h4>
-            <p>We will get back to you within the hour.<br>
+            <p style="color: rgba(255,255,255,0.8);">We'll get back to you soon.<br>
               In the meantime, please enjoy our FREE ebook!
             </p>
             <br>
