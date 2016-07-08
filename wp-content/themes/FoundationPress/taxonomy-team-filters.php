@@ -53,7 +53,7 @@ get_header(); ?>
 	<article class="main-cards pad">
 	<?php
 		global $query_string;
-		query_posts( $query_string . '&posts_per_page=12' );
+		query_posts( $query_string . '&posts_per_page=-1' );
 		if ( have_posts() ) : ?>
 		<div class="row small-up-2 medium-up-4 team-grid present">
 
