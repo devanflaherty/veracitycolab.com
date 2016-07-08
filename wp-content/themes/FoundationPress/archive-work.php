@@ -92,7 +92,8 @@ get_header(); ?>
 				<?php else : ?>
 					<div class="post-block" style="background-color: <?= $primary; ?>">
 				<?php endif; ?>
-					<a href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only" class="play">
+					<div class="permalink-overlay"></div>
+					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only">
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
@@ -151,10 +152,8 @@ get_header(); ?>
 			<?php else : ?>
 				<div class="post-block" style="background-color: <?= $primary; ?>">
 			<?php endif; ?>
-					<div class="permalink-overlay" style="background-color: <?= $primary; ?>">
-						<span>See Campaign</span>
-					</div>
-					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only" onclick="">
+					<div class="permalink-overlay"></div>
+					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only">
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>

@@ -46,10 +46,8 @@
 
 		<div id="featureVideo" class="row collapse video-container align-center">
 		  <div class="small-11 columns">
-		    <div class="flex-video widescreen">
-					<div class="wistia_embed wistia_async_<?= $video; ?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
-					<!-- WISTIA EMBED CODE BYE BYE -->
-		    </div>
+				<div class="wistia_embed wistia_async_<?= $video; ?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
+				<!-- WISTIA EMBED CODE BYE BYE -->
 		  </div>
 		</div>
 

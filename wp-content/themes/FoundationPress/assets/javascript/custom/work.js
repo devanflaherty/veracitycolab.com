@@ -1,43 +1,43 @@
-$("#featureVideo").fadeOut();
-
-if(isiPad()){
-  $('.post-block a span').addClass('device');
-  $('.post-block a .thumbnail-overlay').addClass('device');
-
-  //Playback for Archive Page
-  $(".play").bind("click touchend", function(){
-    $("body").addClass("video-fixed");
-
-    $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
-    $(".feature-overlay").addClass("animate-in");
-    $('#navBar').addClass('push-up');
-    $('.main-content').addClass('push-down');
-    $('.feature-play').fadeOut();
-
-    setTimeout(function(){
-      $("#featureVideo").fadeIn('slow');
-    }, 500);
-    return false;
-
-  });
-}
-
 //Playback for Archive Page
 $(".play").click(function(){
+  alert("hello");
   $("body").addClass("video-fixed");
 
   $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
   $(".feature-overlay").addClass("animate-in");
-  $('#navBar').addClass('push-up');
+  $('#navBar').addClass('push-up').hide();
   $('.main-content').addClass('push-down');
   $('.feature-play').fadeOut();
 
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');
   }, 500);
-  return false;
+  // $(this).children('a').trigger('click');
 
+  return false;
 });
+
+if(isiPad()){
+  $('.post-block a span').addClass('device');
+  $('.post-block a .thumbnail-overlay').addClass('device');
+
+  $(".fa-play").bind("touchstart click", function(){
+    $("body").addClass("video-fixed");
+
+    $("#featured-hero").addClass("video-reveal click-to-close").removeClass("shrink");
+    $(".feature-overlay").addClass("animate-in");
+    $('#navBar').addClass('push-up').hide();
+    $('.main-content').addClass('push-down');
+    $('.feature-play').fadeOut();
+
+    setTimeout(function(){
+      $("#featureVideo").fadeIn('slow');
+    }, 500);
+    // $(this).children('a').trigger('click');
+
+    return false;
+  });
+}
 
 //Playback for Single Page
 $(".feature-play").click(function(){
@@ -75,7 +75,9 @@ $(document).mouseup(function (e) {
       } else {
         $("#featured-hero").removeClass("video-reveal").addClass("hidden");
         $(".feature-overlay").removeClass("animate-in");
-        $('#navBar').removeClass('push-up');
+        $('#navBar').removeClass('push-up').show();
+        $('.main-content').removeClass('push-down');
+        return false;
       }
     }
   }

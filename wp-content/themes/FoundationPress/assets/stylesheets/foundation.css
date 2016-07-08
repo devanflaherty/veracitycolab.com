@@ -6643,7 +6643,7 @@ form textarea {
   -ms-flex-align: center;
       align-items: center; }
   #featured-hero.hidden {
-    height: 0 !important; }
+    height: 0px !important; }
   #featured-hero.animate-in {
     opacity: 1;
     height: 15.625rem; }
@@ -6796,6 +6796,10 @@ form textarea {
     margin-bottom: 24px; }
     .post-grid .feature-post .post-block img {
       margin-top: -25%; }
+    .post-grid .feature-post .post-block a.play {
+      padding-bottom: 33.25% !important; }
+      .post-grid .feature-post .post-block a.play .thumbnail-overlay {
+        padding-bottom: 33.25% !important; }
   .post-grid .post-block {
     overflow: hidden;
     position: relative;
@@ -6816,36 +6820,18 @@ form textarea {
       position: absolute;
       top: 0;
       left: 0;
-      background: rgba(33, 153, 232, 0.6);
+      background: rgba(254, 254, 254, 0.2);
       transition: all 0.5s ease;
       opacity: 0; }
-      @media screen and (max-width: 39.9375em) {
-        .post-grid .post-block .permalink-overlay {
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-pack: center;
-              justify-content: center;
-          -ms-flex-align: center;
-              align-items: center; } }
       .post-grid .post-block .permalink-overlay.show {
         opacity: 1; }
-      .post-grid .post-block .permalink-overlay span {
-        color: rgba(254, 254, 254, 0.8);
-        font-size: 20px;
-        letter-spacing: 3px;
-        height: 20px;
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        margin: auto;
-        text-transform: uppercase;
-        text-align: center; }
     .post-grid .post-block .play {
       display: block;
-      padding-bottom: 56.25%; }
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding-bottom: 56.25%;
+      z-index: 200; }
       .post-grid .post-block .play span {
         width: 80px;
         height: 80px;
@@ -6879,15 +6865,21 @@ form textarea {
           left: 3px;
           right: 0;
           bottom: 0; }
+      .post-grid .post-block .play:hover .thumbnail-overlay {
+        opacity: 1; }
+        .post-grid .post-block .play:hover .thumbnail-overlay span {
+          opacity: 1;
+          -ms-transform: scale(1);
+              transform: scale(1); }
     .post-grid .post-block .thumbnail-overlay {
-      height: 100%;
       width: 100%;
       position: absolute;
       top: 0;
       left: 0;
       background: rgba(33, 153, 232, 0.6);
       transition: all 0.5s ease;
-      opacity: 0; }
+      opacity: 0;
+      padding-bottom: 56.25%; }
       @media screen and (max-width: 39.9375em) {
         .post-grid .post-block .thumbnail-overlay {
           display: -ms-flexbox;
@@ -6908,12 +6900,6 @@ form textarea {
           letter-spacing: 2px;
           font-weight: 600;
           color: rgba(254, 254, 254, 0.5); }
-    .post-grid .post-block:hover .thumbnail-overlay {
-      opacity: 1; }
-      .post-grid .post-block:hover .thumbnail-overlay span {
-        opacity: 1;
-        -ms-transform: scale(1);
-            transform: scale(1); }
 
 .single-advance .main-content {
   padding-bottom: 0; }
@@ -8400,7 +8386,7 @@ a, button {
   transition: all 0.5s ease; }
 
 .push-up {
-  margin-top: -87px !important; }
+  margin-top: -107px !important; }
 
 .blow-up {
   -ms-transform: scale(3) !important;

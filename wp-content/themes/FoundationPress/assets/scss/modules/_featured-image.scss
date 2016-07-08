@@ -14,7 +14,7 @@
 		@include flex();
 		@include flex-align(center, middle);
 		&.hidden {
-			height:0!important;
+			height:0px!important;
 		}
 		&.animate-in {
 			opacity: 1;
