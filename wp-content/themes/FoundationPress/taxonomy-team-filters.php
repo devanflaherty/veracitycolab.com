@@ -83,8 +83,8 @@ get_header(); ?>
 							</div>
 							<div class="team-meta row align-middle">
 								<div class="columns">
-									<h4 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_title(); ?></h4>
-									<h5 style="color:<?php the_field( 'primary_color' ) ?>"><?php the_field('title'); ?></h5>
+									<h4><?php the_title(); ?></h4>
+									<h5><?php the_field('title'); ?></h5>
 								</div>
 							</div>
 						</a>
