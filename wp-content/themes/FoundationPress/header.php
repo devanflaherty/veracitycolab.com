@@ -257,5 +257,5 @@
     </div>
 
   	<section class="container">
-  		<div class="overlay"></div>
+  		<div class="overlay load"></div>
   		<?php do_action( 'foundationpress_after_header' );

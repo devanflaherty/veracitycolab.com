@@ -6934,8 +6934,8 @@ form textarea {
   content: ''; }
 
 @media screen and (min-width: 40em) {
-  .wrapper {
-    margin: 3rem 0; } }
+  .wrapper .main-cards {
+    margin-top: 2rem !important; } }
 
 .main-content {
   position: relative;
@@ -8354,12 +8354,16 @@ a, button {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  z-index: 40;
+  z-index: 200;
   height: 100%;
   width: 100%;
   background: rgba(254, 254, 254, 0.8);
   transition: all 1s ease; }
   .overlay.visible {
+    opacity: 1;
+    visibility: visible; }
+  .overlay.load {
+    background: #fefefe;
     opacity: 1;
     visibility: visible; }
 

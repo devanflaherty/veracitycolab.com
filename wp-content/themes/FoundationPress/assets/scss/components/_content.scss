@@ -1,7 +1,7 @@
 // LAYOUT
-.wrapper {
+.wrapper .main-cards {
   @include breakpoint(medium) {
-    margin: 3rem 0;
+    margin-top: 2rem!important;
   }
 }
 .main-content {
