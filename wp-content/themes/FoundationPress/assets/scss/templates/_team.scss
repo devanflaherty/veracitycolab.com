@@ -1,9 +1,9 @@
 #singleTeam {
   overflow: visible!important;
   .team-container {
-    @include flex-grid-row-align(center, middle);
+    @include flex-align(center, middle);
     @include breakpoint(large) {
-      @include flex-grid-row-align(right, middle);
+      @include flex-align(right, middle);
     }
   }
   .main-content {

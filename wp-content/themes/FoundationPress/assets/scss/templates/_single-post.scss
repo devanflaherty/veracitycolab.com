@@ -14,7 +14,7 @@
 
     @include breakpoint(medium) {
       @include grid-column(10);
-      @include flex-grid-row-align(center, middle) ;
+      @include flex-grid-row-align(center, middle);
     }
   }
 }

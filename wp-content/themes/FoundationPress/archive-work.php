@@ -30,7 +30,7 @@ get_header(); ?>
 					<?php
 						$buttonLink = get_sub_field('button_url');
 						if(get_sub_field('is_video') == true) {
-							$buttonClass = "play";
+							$buttonClass = "play fa-play";
 							$link = "#wistia_" . $buttonLink . "?videoFoam=true&playerColor=dd3333&videoQuality=hd-only";
 						} else {
 							$buttonClass = "";

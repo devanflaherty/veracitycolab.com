@@ -1,6 +1,6 @@
 #fullCard {
   @include flex-grid-row();
-  @include flex-grid-row-align(center, middle);
+  @include flex-align(center, middle);
 
   .main-content {
     padding:40px 20px!important;
