@@ -8606,6 +8606,14 @@ pre {
       line-height: 1.7; }
       #singleWork .sidebar div span {
         font-weight: 400; }
+  #singleWork .credits {
+    list-style-type: none;
+    margin: 12px 0; }
+    #singleWork .credits a {
+      color: #808080;
+      border-bottom: 2px solid transparent; }
+      #singleWork .credits a:hover {
+        border-bottom: 2px solid #808080; }
 
 #archiveWork .main-content {
   margin-top: 0; }

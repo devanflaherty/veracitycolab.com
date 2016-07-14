@@ -63,7 +63,7 @@ get_header(); ?>
 			<!-- CREDITS SECTION -->
 			<?php
 				if( have_rows('credits') ) {
-					echo "<div class='credits'>";
+					echo "<ul class='credits'>";
 					while ( have_rows('credits') ) { the_row();
 						$title = get_sub_field('title');
 						if (get_sub_field('veracity_employee') == true) {
@@ -73,16 +73,21 @@ get_header(); ?>
 									foreach( $posts as $p ) {
 										$permalink = get_permalink( $p->ID );
 										$name = get_the_title( $p->ID );
-										echo '<span>' . $title . ': <strong>' . $name . '</strong></span><br>';
+										echo '<li><span>' . $title . ':</span> <a href="' . $permalink . '"><strong>' . $name . '</strong></a></li>';
 									}
 								}
 						} else {
 							// If Creditor isn't an employee we just plop out their name
 							$name = get_sub_field('name');
-							echo '<span>' . $title . ': <strong>' . $name . '</strong></span><br>';
+							$link = get_sub_field('link');
+							if (get_sub_field('link')) {
+								echo '<li><span>' . $title . ':</span> <a href="' . $link . '"><strong>' . $name . '</strong></a></li>';
+							} else {
+								echo '<li><span>' . $title . ':</span> <strong>' . $name . '</strong></li>';
+							}
 						}
 					}
-					echo "</div>";
+					echo "</ul>";
 				}
 			?>
 

@@ -33,6 +33,17 @@
       }
     }
   }
+  .credits {
+    list-style-type: none;
+    margin: 12px 0;
+    a {
+      color: $dark-gray;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-bottom: 2px solid $dark-gray;
+      }
+    }
+  }
 }
 #archiveWork {
   .main-content {
