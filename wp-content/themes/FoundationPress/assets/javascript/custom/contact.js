@@ -48,8 +48,9 @@ $("#contactSend").click(function(){
         $("#contact").fadeOut();
         $("#message").fadeOut(function() {
           $(this).text("Thank you!");
+          $(this).addClass("hide-for-large");
         }).fadeIn();
-        $("#formWrap").removeClass('large-4').addClass('large-6');
+        $("#formWrap").removeClass('medium-6 large-4').addClass('small-11 medium-9 large-11');
         $("#confirmation").fadeIn();
       }
     });

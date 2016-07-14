@@ -8,6 +8,9 @@
     if (empty($_POST['email'])) {
       $errors['email'] = 'Email is required.';
     }
+    if (empty($_POST['comment'])) {
+      $errors['comment'] = 'A message is required.';
+    }
 
     // return a response ===========================================================
 

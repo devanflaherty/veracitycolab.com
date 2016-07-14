@@ -85,7 +85,7 @@ $breakpoints: (
   xlarge: 1200px,
   xxlarge: 1440px,
 );
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xxlarge);
 
 // 3. The Grid
 // -----------
@@ -96,6 +96,7 @@ $grid-column-gutter: (
   small: 40px,
   medium: 40px,
   large: 40px,
+  xxlarge: 40px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
