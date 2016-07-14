@@ -8626,13 +8626,17 @@ pre {
     -ms-flex-align: center;
         -ms-grid-row-align: center;
         align-items: center; }
+    #singleTeam .team-container .columns {
+      max-width: 720px; }
     @media screen and (min-width: 64em) {
       #singleTeam .team-container {
         -ms-flex-pack: end;
             justify-content: flex-end;
         -ms-flex-align: center;
             -ms-grid-row-align: center;
-            align-items: center; } }
+            align-items: center; }
+        #singleTeam .team-container .columns {
+          max-width: 1150px; } }
   #singleTeam .main-content {
     background: #fefefe;
     margin-top: -30px;
@@ -8879,9 +8883,16 @@ a, button {
     background-position: center;
     position: fixed;
     z-index: 0;
-    -ms-transform: scale(1.2);
-        transform: scale(1.2);
     opacity: 0; }
+    @media screen and (min-width: 40em) {
+      .parallax-parent .parallax-bg {
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); } }
+
+.ipad .parallax-bg, .iphone .parallax-bg {
+  background-position: center top !important;
+  -ms-transform: scale(1);
+      transform: scale(1); }
 
 .animate-in {
   transition: all 0.5s ease; }

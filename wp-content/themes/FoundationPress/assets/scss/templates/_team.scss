@@ -2,8 +2,14 @@
   overflow: visible!important;
   .team-container {
     @include flex-align(center, middle);
+    .columns {
+      max-width: 720px;
+    }
     @include breakpoint(large) {
       @include flex-align(right, middle);
+      .columns {
+        max-width: 1150px;
+      }
     }
   }
   .main-content {

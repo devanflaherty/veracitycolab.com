@@ -159,8 +159,16 @@ a, button {
     background-position: center;
     position: fixed;
     z-index: 0;
-    transform: scale(1.2);
     opacity: 0;
+    @include breakpoint(medium) {
+      transform: scale(1.2);
+    }
+  }
+}
+.ipad, .iphone {
+  .parallax-bg {
+    background-position: center top!important;
+    transform: scale(1.0);
   }
 }
 

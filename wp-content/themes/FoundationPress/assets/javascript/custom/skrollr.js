@@ -1,11 +1,14 @@
 //Activate Skrollr
-window.onload = function() {
+window.onload = function() {  
   var s = skrollr.init();
   if (s.isMobile()) {
       s.destroy();
   }
   var currentSize = Foundation.MediaQuery.current;
   if (Foundation.MediaQuery.current == "small") {
+    skrollr.init().destroy(); // skrollr.init() returns the singleton created above
+  }
+  if(isiPad()){
     skrollr.init().destroy(); // skrollr.init() returns the singleton created above
   }
 };
