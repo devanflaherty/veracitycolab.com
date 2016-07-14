@@ -31,15 +31,15 @@
 
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
-	<?php if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' )) || is_singular( 'advance' )) :
+<?php
+	if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' )) || is_singular( 'advance' )) :
 		if(get_field('video_id')) {
 			$video = get_field('video_id');
 		} else {
 			$video = 'o3wjbaj9xc';
 		}
 	?>
-	<?php if(is_singular( 'advance' ) && empty(get_field('video_id'))) : ?>
-	<?php else : ?>
+	<?php if(!is_singular( 'advance' ) && !empty(get_field('video_id'))) : ?>
 		<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
 	<?php endif; ?>
 		<div class="feature-overlay"></div>
@@ -48,9 +48,17 @@
 		  <div class="small-11 columns">
 				<div class="wistia_embed wistia_async_<?= $video; ?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
 				<!-- WISTIA EMBED CODE BYE BYE -->
+				<div class="row align-center" style="margin-top: 24px">
+					<div class="small-6 medium-3 columns">
+						<a class="button expanded radius secondary" href="#close">Close</a>
+					</div>
+					<div class="small-6 medium-3 columns">
+						<a class="button expanded radius secondary" id="seeProject" href="#">See Project</a>
+					</div>
+				</div>
 		  </div>
 		</div>
 
-	<?php endif; ?>
+<?php endif; ?>
 </header>
 <!-- CLOSE HERO!! -->

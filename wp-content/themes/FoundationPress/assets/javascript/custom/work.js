@@ -1,7 +1,7 @@
 $("#featureVideo").fadeOut();
 
 // Playback for Archive Page
-function archivePlay() {
+function archivePlay(perma) {
   $("body").addClass("video-fixed");
   $("#featured-hero").addClass('video-reveal').removeClass('hidden');
   $("#featured-hero").addClass("click-to-close");
@@ -10,24 +10,36 @@ function archivePlay() {
   $('.main-content').addClass('push-down');
   $('.feature-play').fadeOut();
 
+  $('#seeProject').attr("href", perma);
+  if ($("#seeProject").hasClass ){
+
+  }
+
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');
   }, 500);
-  // $(this).children('a').trigger('click');
 
   return false;
 }
 
 $(".play").click(function(){
-  archivePlay();
+  if($(this).hasClass('reel')) {
+    $('#seeProject').parent().hide();
+  } else {
+    $('#seeProject').parent().show();
+  }
+  var permalink = $(this).attr("data-permalink");
+  archivePlay(permalink);
 });
+
 
 if(isiPad() || isiPhone()){
   $('.post-block a span').addClass('device');
   $('.post-block a .thumbnail-overlay').addClass('device');
 
   $(".fa-play").bind("touchstart click", function(){
-    archivePlay();
+    var permalink = $(this).closest('a').attr("data-permalink");
+    archivePlay(permalink);
   });
 }
 
