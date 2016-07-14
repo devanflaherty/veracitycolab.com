@@ -1,0 +1,8 @@
+#blog {
+  @include grid-row();
+
+  .main-content {
+    margin-top: 0;
+    @include grid-column(12);
+  }
+}

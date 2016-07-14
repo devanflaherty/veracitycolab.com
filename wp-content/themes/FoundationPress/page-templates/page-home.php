@@ -14,7 +14,7 @@
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
 
- <div id="fullCard" role="main">
+ <div id="home" class="full-card" role="main">
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
      data-0="margin-top: -250px;"
@@ -36,8 +36,9 @@
              echo '<div id="logos" class="row small-up-2 medium-up-5">';
              while ( have_rows('logos') ) { the_row();
                $src = get_sub_field('logo');
+               $link = get_sub_field('link');
                echo "<div class='columns'>";
-               echo "<img src=\"" . $src . "\"/>";
+               echo "<a href=\"" . $link . "\"><img src=\"" . $src . "\"/></a>";
                echo "</div>";
              }
              echo "</div>";

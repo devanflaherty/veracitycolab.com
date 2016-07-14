@@ -94,14 +94,14 @@
 
 
 // Templates
-@import "templates/front";
 @import "templates/kitchen-sink";
-@import "templates/page-default";
 @import "templates/page-sidebar-left";
 @import "templates/single-post";
 @import "templates/full-card";
+@import "templates/home";
 @import "templates/work";
 @import "templates/team";
+@import "templates/blog";
 
 /* Utilities */
 @import "utilities";

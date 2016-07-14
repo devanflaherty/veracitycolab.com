@@ -1,4 +1,4 @@
-#fullCard {
+.full-card {
   @include flex-grid-row();
   @include flex-align(center, middle);
 
@@ -36,29 +36,6 @@
         @include breakpoint(medium) {
           font-size: 36px;
           line-height: 38px;
-        }
-      }
-    }
-    #cta {
-      h2 {
-        margin: 25px 0;
-        font-size: 22px;
-        line-height: 22px;
-        @include breakpoint(medium) {
-          font-size: 32px;
-          line-height: 32px;
-          padding: 0 40px;
-        }
-      }
-      .button {
-        font-size: 32px;
-        padding: 40px 0;
-        background: $light-gray;
-        color: $dark-gray;
-        margin: 0;
-        &:hover {
-          background: $dark-gray;
-          color: $white;
         }
       }
     }
