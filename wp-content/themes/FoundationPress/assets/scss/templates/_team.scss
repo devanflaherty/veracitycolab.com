@@ -56,6 +56,17 @@
 }
 
 #archiveTeam {
+  .main-cards {
+    margin-top: 0rem!important;
+    margin-bottom: 40px;
+    @include breakpoint(medium) {
+      margin-top: 4rem!important;
+    }
+    @include breakpoint(large) {
+      margin-top: 2.5rem!important;
+    }
+  }
+
   .team-grid {
     min-height: 400px;
     width: calc(100% - 40px);
@@ -63,16 +74,6 @@
     margin: auto;
     img {
       width: 100%;
-    }
-    .grid-sizer,
-    .grid-item {
-      width: 50%;
-      float: left;
-      padding: 0 1.5%;
-      margin-bottom: 36px;
-      @include breakpoint(medium) {
-        width: 25%;
-      }
     }
     .team-block {
       position: relative;
@@ -104,7 +105,6 @@
       }
       .team-meta {
         width: 100%;
-        height: 34px;
         margin: 12px auto;
         text-align: center;
         h4 {
