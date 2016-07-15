@@ -9,7 +9,7 @@ $("#contactSend").click(function(){
       'firstname'       : $('input[name=firstname]').val(),
       'email'           : $('input[name=email]').val(),
       'company_name'    : $('input[name=company_name]').val(),
-      'comment'         : $('input[name=comment]').val()
+      'comment'         : $('textarea[name=comment]').val()
   };
 
   $.ajax({
@@ -57,6 +57,7 @@ $("#contactSend").click(function(){
     return false;
   });
 });
+
 // Change loadbar size on contact hover
 $('a[href=#contact]').hover(
   function() {
