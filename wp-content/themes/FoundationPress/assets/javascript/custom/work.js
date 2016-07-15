@@ -11,9 +11,6 @@ function archivePlay(perma) {
   $('.feature-play').fadeOut();
 
   $('#seeProject').attr("href", perma);
-  if ($("#seeProject").hasClass ){
-
-  }
 
   setTimeout(function(){
     $("#featureVideo").fadeIn('slow');
@@ -23,6 +20,7 @@ function archivePlay(perma) {
 }
 
 $(".play").click(function(){
+
   if($(this).hasClass('reel')) {
     $('#seeProject').parent().hide();
   } else {

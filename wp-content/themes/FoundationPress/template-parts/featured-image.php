@@ -48,8 +48,6 @@
 		  <div class="small-11 columns">
 				<div class="wistia_embed wistia_async_<?= $video; ?> videoFoam=true playerColor=<?= $secondaryColor; ?>" style="height:720px;width:1280px">&nbsp;</div>
 				<!-- WISTIA EMBED CODE BYE BYE -->
-		  </div>
-			<div class="small-11 columns">
 				<div class="row align-center" style="margin-top: 24px">
 					<div class="small-6 medium-3 columns">
 						<a class="button expanded hollow upper white" href="#close">Close</a>
@@ -60,7 +58,7 @@
 					</div>
 				<?php endif; ?>
 				</div>
-			</div>
+		  </div>
 		</div>
 
 <?php endif; ?>
