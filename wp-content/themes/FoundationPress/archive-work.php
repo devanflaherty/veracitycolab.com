@@ -30,7 +30,7 @@ get_header(); ?>
 					<?php
 						$buttonLink = get_sub_field('button_url');
 						if(get_sub_field('is_video') == true) {
-							$buttonClass = "play fa-play reel";
+							$buttonClass = "play iplay reel";
 							$link = "#wistia_" . $buttonLink . "?videoFoam=true&playerColor=dd3333&videoQuality=hd-only";
 						} else {
 							$buttonClass = "";
@@ -95,7 +95,7 @@ get_header(); ?>
 					<div class="permalink-overlay"></div>
 					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
-							<span><i class="fa fa-play" aria-hidden="true"></i></span>
+							<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
 						</div>
 					</a>
 				</div>
@@ -155,7 +155,7 @@ get_header(); ?>
 					<div class="permalink-overlay"></div>
 					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
-							<span><i class="fa fa-play" aria-hidden="true"></i></span>
+							<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
 						</div>
 					</a>
 				</div>

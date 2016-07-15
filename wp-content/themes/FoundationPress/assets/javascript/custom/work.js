@@ -37,7 +37,7 @@ if(isiPad() || isiPhone()){
   $('.post-block a span').addClass('device');
   $('.post-block a .thumbnail-overlay').addClass('device');
 
-  $(".fa-play").bind("touchstart click", function(){
+  $(".iplay").bind("touchstart click", function(){
     var permalink = $(this).closest('a').attr("data-permalink");
     archivePlay(permalink);
   });
