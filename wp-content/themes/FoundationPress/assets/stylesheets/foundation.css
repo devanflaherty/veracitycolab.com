@@ -6747,10 +6747,10 @@ a::after {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 20px; }
+  padding: 60px 0; }
   @media screen and (min-width: 40em) {
     #footer-container {
-      padding: 60px 0; } }
+      padding: 60px 20px; } }
   #footer-container #footer {
     max-width: 75rem;
     margin-left: auto;
