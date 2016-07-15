@@ -54,9 +54,11 @@
 					<div class="small-6 medium-3 columns">
 						<a class="button expanded hollow upper white" href="#close">Close</a>
 					</div>
+					<?php if(!is_singular( 'work' )) :?>
 					<div class="small-6 medium-3 columns">
 						<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
 					</div>
+				<?php endif; ?>
 				</div>
 			</div>
 		</div>
