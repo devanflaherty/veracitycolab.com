@@ -58,6 +58,17 @@
 					</div>
 				<?php endif; ?>
 				</div>
+				<div class="small-11 columns">
+					<div class="row align-center" style="margin-top: 24px">
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" href="#close">Close</a>
+						</div>
+						<?php if(!is_singular( 'work' )) :?>
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
+						</div>
+					<?php endif; ?>
+					</div>
 		  </div>
 		</div>
 
