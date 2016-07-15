@@ -72,8 +72,8 @@ get_header(); ?>
 								<div class="thumbnail-overlay" style="background-image: url(<?= $avatar; ?>)"></div>
 								<div class="thumbnail-overlay-hover" style="background-image: url(<?= $avatar; ?>)"></div>
 							</div>
-							<div class="team-meta row align-middle">
-								<div class="columns">
+							<div class="team-meta row align-middle collapse">
+								<div class="column">
 									<h4 ><?php the_title(); ?></h4>
 									<h5><?php the_field('title'); ?></h5>
 								</div>
