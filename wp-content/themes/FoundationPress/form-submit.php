@@ -11,6 +11,12 @@
     if (empty($_POST['comment'])) {
       $errors['comment'] = 'A message is required.';
     }
+    if (empty($_POST['company_name'])) {
+      $errors['company_name'] = 'A company is required.';
+    }
+    if (empty($_POST['firstname'])) {
+      $errors['firstname'] = 'A name is required.';
+    }
 
     // return a response ===========================================================
 
