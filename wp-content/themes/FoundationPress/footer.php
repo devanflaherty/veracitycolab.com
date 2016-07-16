@@ -31,7 +31,7 @@
 					<div class="footer-info float-left">
 						<span>VERACITYCOLAB</span><br><br>
 						<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
-						<a href="tel:<?php the_field( 'company_phone', 'option' ); ?>"><?php the_field( 'company_phone', 'option' ); ?></a>
+						<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
             <br><br>
             <div class="team-social">
     					<?php
