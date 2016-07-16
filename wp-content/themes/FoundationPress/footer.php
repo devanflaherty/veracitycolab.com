@@ -31,7 +31,7 @@
 					<div class="footer-info float-left">
 						<span>VERACITYCOLAB</span><br><br>
 						<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
-						<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
+						<a href="tel:949-383-5500">949-383-5500</a>
             <br><br>
             <div class="team-social">
     					<?php
