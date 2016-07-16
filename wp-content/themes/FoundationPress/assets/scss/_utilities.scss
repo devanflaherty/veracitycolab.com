@@ -129,12 +129,17 @@ a, button {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  z-index: 40;
+  z-index: 200;
   height: 100%;
   width: 100%;
   background: rgba($white, 0.8);
   transition: all 1s ease;
   &.visible {
+    opacity: 1;
+	  visibility: visible;
+  }
+  &.load {
+    background: $body-background;
     opacity: 1;
 	  visibility: visible;
   }
@@ -154,8 +159,16 @@ a, button {
     background-position: center;
     position: fixed;
     z-index: 0;
-    transform: scale(1.2);
     opacity: 0;
+    @include breakpoint(medium) {
+      transform: scale(1.2);
+    }
+  }
+}
+.ipad, .iphone {
+  .parallax-bg {
+    background-position: center top!important;
+    transform: scale(1.0);
   }
 }
 

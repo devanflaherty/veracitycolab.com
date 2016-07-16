@@ -4,6 +4,9 @@
 	width: 100%;
 	margin: 0 auto;
 	padding: 60px 0;
+	@include breakpoint(medium) {
+		padding: 60px 20px;
+	}
 
 
 	#footer {

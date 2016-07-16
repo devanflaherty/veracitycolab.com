@@ -18,7 +18,7 @@
   <?php $pullUp = "0"; ?>
 <?php endif; ?>
 
- <div id="fullCard" role="main">
+ <div id="approach" class="full-card" role="main">
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>"
      data-0="margin-top: <?= $pullUp; ?>px;"
@@ -40,8 +40,6 @@
 
    </article>
  <?php endwhile;?>
-
- <?php do_action( 'foundationpress_after_content' ); ?>
 
  </div>
 

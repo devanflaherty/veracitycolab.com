@@ -8,27 +8,30 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
-
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<header>
-				<h1 class="entry-title"><?php _e( 'File Not Found', 'foundationpress' ); ?></h1>
-			</header>
-			<div class="entry-content">
-				<div class="error">
-					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'foundationpress' ); ?></p>
-				</div>
-				<p><?php _e( 'Please try the following:', 'foundationpress' ); ?></p>
-				<ul>
-					<li><?php _e( 'Check your spelling', 'foundationpress' ); ?></li>
-					<li><?php printf( __( 'Return to the <a href="%s">home page</a>', 'foundationpress' ), home_url() ); ?></li>
-					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'foundationpress' ); ?></li>
-				</ul>
-			</div>
-		</article>
-
+<div id="fourohfour" role="main" style="padding: 40px 0 60px">
+	<div class="row align-center">
+		<div class="small-9 medium-5 large-4 columns">
+			<img src="<?php the_field('404_image', 'option') ?>">
+		</div>
 	</div>
-	<?php get_sidebar(); ?>
+	<div class="row align-center text-center">
+		<div class="small-11 medium-7 columns">
+			<h3 class="entry-title"><?php the_field('404_title', 'option') ?></h3>
+
+			<div class="error">
+				<p class="bottom"><?php the_field('404_content', 'option') ?></p>
+			</div>
+
+			<?php /*
+			<p><?php _e( 'Please try the following:', 'foundationpress' ); ?></p>
+			<ul>
+				<li><?php _e( 'Check your spelling', 'foundationpress' ); ?></li>
+				<li><?php printf( __( 'Return to the <a href="%s">home page</a>', 'foundationpress' ), home_url() ); ?></li>
+				<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'foundationpress' ); ?></li>
+			</ul> */
+			?>
+		</div>
+	</div>
 </div>
+
 <?php get_footer();

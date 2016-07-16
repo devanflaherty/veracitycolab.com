@@ -9,7 +9,7 @@ $("#contactSend").click(function(){
       'firstname'       : $('input[name=firstname]').val(),
       'email'           : $('input[name=email]').val(),
       'company_name'    : $('input[name=company_name]').val(),
-      'comment'         : $('input[name=comment]').val()
+      'comment'         : $('textarea[name=comment]').val()
   };
 
   $.ajax({
@@ -48,14 +48,16 @@ $("#contactSend").click(function(){
         $("#contact").fadeOut();
         $("#message").fadeOut(function() {
           $(this).text("Thank you!");
+          $(this).addClass("hide-for-large");
         }).fadeIn();
-        $("#formWrap").removeClass('large-4').addClass('large-6');
+        $("#formWrap").removeClass('medium-6 large-4').addClass('small-11 medium-9 large-11');
         $("#confirmation").fadeIn();
       }
     });
     return false;
   });
 });
+
 // Change loadbar size on contact hover
 $('a[href=#contact]').hover(
   function() {

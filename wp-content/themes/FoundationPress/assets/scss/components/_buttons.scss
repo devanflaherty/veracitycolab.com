@@ -6,3 +6,12 @@
   border-radius: 3px;
   border: none;
 }
+.button.white {
+  border-color: $white;
+  color: $white;
+  &:hover {
+    border-color: $white;
+    background: $white;
+    color: $black;
+  }
+}
