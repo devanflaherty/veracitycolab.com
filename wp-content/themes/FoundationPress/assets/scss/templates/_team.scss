@@ -141,3 +141,29 @@
     } // Close team-Block
   }
 }
+
+.ipad {
+  @include breakpoint(portrait) {
+    .team-header {
+      visibility: visible!important;
+      display: block!important;
+    }
+    .parallax-bg {
+      display: none!important;
+    }
+    #singleTeam {
+      .team-container {
+        @include breakpoint(large) {
+          @include flex-align(center, middle);
+          .columns {
+            @include flex-grid-column(11);
+            max-width: 1550px!important;
+            .main-content {
+              margin: -60px 0px inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

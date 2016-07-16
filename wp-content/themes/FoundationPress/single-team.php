@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<div class="hide-for-large">
+<div class="hide-for-large team-header">
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 </div>
 
