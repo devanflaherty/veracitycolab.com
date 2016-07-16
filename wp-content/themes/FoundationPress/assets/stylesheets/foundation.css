@@ -8225,6 +8225,44 @@ pre {
     #archiveTeam .team-grid .team-block:hover .team-meta h4 {
       color: #808080; }
 
+@media screen and (orientation: portrait) {
+  .ipad .team-header {
+    visibility: visible !important;
+    display: block !important; }
+  .ipad .parallax-bg {
+    display: none !important; } }
+
+@media screen and (orientation: portrait) and (min-width: 64em) {
+  .ipad #singleTeam .team-container {
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        -ms-grid-row-align: center;
+        align-items: center; }
+    .ipad #singleTeam .team-container .columns {
+      -ms-flex: 0 0 91.66667%;
+          flex: 0 0 91.66667%;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      max-width: 91.66667%;
+      max-width: 1550px !important; } }
+    @media screen and (orientation: portrait) and (min-width: 64em) and (min-width: 40em) {
+      .ipad #singleTeam .team-container .columns {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem; } }
+    @media screen and (orientation: portrait) and (min-width: 64em) and (min-width: 64em) {
+      .ipad #singleTeam .team-container .columns {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem; } }
+    @media screen and (orientation: portrait) and (min-width: 64em) and (min-width: 90em) {
+      .ipad #singleTeam .team-container .columns {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem; } }
+
+@media screen and (orientation: portrait) and (min-width: 64em) {
+      .ipad #singleTeam .team-container .columns .main-content {
+        margin: -60px 0px inherit; } }
+
 #blog {
   max-width: 75rem;
   margin-left: auto;
