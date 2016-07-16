@@ -1,15 +1,15 @@
 //Activate Skrollr
-window.onload = function() {  
+window.onload = function() {
   var s = skrollr.init();
   if (s.isMobile()) {
       s.destroy();
   }
+  if(isiPad()){
+    s.destroy(); // skrollr.init() returns the singleton created above
+  }
   var currentSize = Foundation.MediaQuery.current;
   if (Foundation.MediaQuery.current == "small") {
-    skrollr.init().destroy(); // skrollr.init() returns the singleton created above
-  }
-  if(isiPad()){
-    skrollr.init().destroy(); // skrollr.init() returns the singleton created above
+    s.destroy(); // skrollr.init() returns the singleton created above
   }
 };
 
