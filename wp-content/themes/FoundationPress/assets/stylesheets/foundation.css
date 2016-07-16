@@ -8404,7 +8404,7 @@ a, button {
     background-attachment: fixed;
     background-size: cover !important;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 0px;
     position: fixed;
     z-index: 0;
     opacity: 0; }
@@ -8413,10 +8413,12 @@ a, button {
         -ms-transform: scale(1.2);
             transform: scale(1.2); } }
 
-.ipad .parallax-bg, .iphone .parallax-bg {
-  background-position: center top !important;
-  -ms-transform: scale(1);
-      transform: scale(1); }
+.ipad .parallax-parent .parallax-bg {
+  background-attachment: local;
+  background-size: 100% auto !important;
+  background-position: 50% 0px !important;
+  -ms-transform: scale(1) !important;
+      transform: scale(1) !important; }
 
 .animate-in {
   transition: all 0.5s ease; }

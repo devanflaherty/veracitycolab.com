@@ -12,7 +12,7 @@ get_header(); ?>
 </div>
 
 <section id="singleTeam" role="main" class="parallax-parent">
-	<div class="parallax-bg" style="background: url(<?php the_post_thumbnail_url( 'full' ); ?>)"
+	<div class="parallax-bg strip" style="background: url(<?php the_post_thumbnail_url( 'full' ); ?>)"
 		data-0="background-position: 50% 0px;"
 		data-center-center="background-position: 50% 0px;"
 		data-end="background-position: 50% -200px"
@@ -20,7 +20,6 @@ get_header(); ?>
 	</div>
 	<div class="team-container row expanded collapse">
 		<div class="columns small-11 large-7">
-		<?php do_action( 'foundationpress_before_content' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article class="main-content cards" id="teamContent"
@@ -30,7 +29,6 @@ get_header(); ?>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<h4 class="entry-title"><?php the_field('title'); ?></h4>
 				</header>
-				<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 				<div id="contentBody" class="entry-content">
 
 				<?php the_content(); ?>
@@ -53,7 +51,6 @@ get_header(); ?>
 			</article>
 		<?php endwhile;?>
 
-		<?php do_action( 'foundationpress_after_content' ); ?>
 		</div><!-- close column -->
 	</div><!-- close row-->
 </section>
