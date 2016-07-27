@@ -32,16 +32,18 @@
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
 <?php
-	if ( get_field( 'video_id' ) && !empty(get_field( 'video_id' )) || is_singular( 'advance' )) :
+	if ( is_post_type_archive( 'work' ) || is_singular( 'work' ) || is_singular( 'advance' )) :
 		if(get_field('video_id')) {
 			$video = get_field('video_id');
 		} else {
 			$video = 'o3wjbaj9xc';
 		}
 	?>
+
 	<?php if(!is_singular( 'advance' ) && !empty(get_field('video_id'))) : ?>
 		<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
 	<?php endif; ?>
+
 		<div class="feature-overlay"></div>
 
 		<div id="featureVideo" class="row collapse video-container align-center">
