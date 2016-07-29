@@ -53,6 +53,7 @@
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
+<div style=transform: translate3d(0,0,0);></div>
 
 <?php wp_footer(); ?>
 </body>

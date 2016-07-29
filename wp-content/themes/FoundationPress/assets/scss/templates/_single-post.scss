@@ -10,6 +10,7 @@
     }
     @include breakpoint(small) {
       @include grid-column(12);
+      margin-top: -80px;
     }
 
     @include breakpoint(medium) {

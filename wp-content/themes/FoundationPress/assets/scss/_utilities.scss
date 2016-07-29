@@ -10,6 +10,12 @@ body.fixed, body.video-fixed {
   top: 0;
   overflow: hidden;
 }
+*,:before,:after {
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  -webkit-backface-visibility:hidden;
+}
 path {
   fill: black;
   transition: fill .5s !important;
@@ -106,6 +112,10 @@ a, button {
   padding: 90px 0;
 }
 
+.no-marg-bottom {
+  margin-bottom: 0!important;
+}
+
 // Flex
 .flex {
   @include flex;
@@ -172,6 +182,36 @@ a, button {
       background-size: 100% auto!important;
       background-position: 50% 0px!important;
       transform: scale(1)!important;
+    }
+  }
+}
+
+.cta-row {
+  margin-bottom: 40px;
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+  }
+}
+#cta {
+  h2 {
+    margin: 25px 0;
+    font-size: 22px;
+    line-height: 22px;
+    @include breakpoint(medium) {
+      font-size: 32px;
+      line-height: 32px;
+      padding: 0 40px;
+    }
+  }
+  .button {
+    font-size: 32px;
+    padding: 40px 0;
+    background: $light-gray;
+    color: $dark-gray;
+    margin: 0;
+    &:hover {
+      background: $dark-gray;
+      color: $white;
     }
   }
 }
