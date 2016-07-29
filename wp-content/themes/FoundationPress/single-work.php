@@ -8,24 +8,22 @@
 
 get_header(); ?>
 
+<?php
+	if ( get_field('choose_cta') !== "Hide" ) {
+		$contentMargin = "no-marg-bottom";
+	}
+?>
+
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
 <section id="singleWork" class="wrapper align-center" role="main">
 	<?php while ( have_posts() ) : the_post(); // While we have a post let's show it off?>
 
-	<?php if(get_field('show_sidebar') == true) : ?>
 	<!-- MAIN CONTENT : Skrollr animation set to parralax the article up -->
-	<article class="main-content" id="post-<?php the_ID(); ?>"
+	<article class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>"
 		data-0="transform: translate(0px , 0px);"
-    data-top-bottom="transform: translate(0px ,-400px);"
-		data-end="transform: translate(0px ,0px);"
-		data-anchor-target="#featured-hero">
-	<?php else : ?>
-		<article class="main-content" id="post-<?php the_ID(); ?>"
-			data-0="transform: translate(0px , 0px);"
-			data-end="transform: translate(0px ,-100px);"
-			data-anchor-target="#featured-hero">
-	<?php endif; ?>
+		data-end="transform: translate(0px , -100px);"
+		>
 		<div id="contentBody" class="entry-content">
 			<?php
 				$clients = get_field('client');
@@ -113,8 +111,17 @@ get_header(); ?>
     </div>
   </div>
 </aside>
+<?php else :?>
+	<?php $sideBar = "align-center"; ?>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->
+
+<div class="row cta-row <?= $sideBar; ?>">
+	<div class="columns small-12 medium-11 large-8">
+		<?php get_template_part( 'template-parts/cta' ); ?>
+	</div>
+</div>
+
 </section>
 
 <script>

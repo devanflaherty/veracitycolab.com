@@ -161,48 +161,21 @@
 
   	<!-- Contact -->
   	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
-  		<div class="row align-center">
-  			<div id="formWrap" class="small-11 medium-6 large-4 columns text-center">
-  				<h5 id="message" class="contrast-text upper large-text-left"><strong>Pleased to meet you</strong></h5>
+  		<div class="row align-center align-middle">
 
-  				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
-            <br>
-            <div class="inputs">
-  						<div class="field" id="nameInput">
-  							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
-  							<label for="firstname">Full Name</label>
-  						</div>
-  						<div class="field" id="emailInput">
-  							<input id="contactEmail" class="float-input" type="email" name="email" placeholder="Email Address" />
-  							<label for="email">Email Address</label>
-  						</div>
-              <div class="field" id="companyInput">
-                <input id="contactCompany" class="float-input" type="text" name="company_name" placeholder="Company" />
-                <label for="company_name">Company</label>
-              </div>
-              <div class="field" id="commentInput">
-    						<textarea id="contactMessage" placeholder="I'm Contacting Because..." name="comment"></textarea>
-              </div>
-  					</div>
-  					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
-  				</form>
-          <div id="confirmation" class="row">
-            <div class="small-12 large-8 columns">
-              <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&amp;playerColor=181818" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
-              <br>
-            </div>
-            <div class="small-12 large-4 columns flex">
-              <div>
-                <h5 class="contrast-text upper large-text-left show-for-large"><strong>Pleased to meet you</strong></h5>
-                <h4 class="large-text-left">We want your experience with us to be delightful right from the start.</h4>
-                <p class="large-text-left">We'll get back to you soon.<br>
-                  In the meantime, please enjoy our FREE ebook!
-                </p>
-                <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text secondary">7 Insights eBook</a>
-              </div>
-            </div>
-          </div>
+        <div class="small-11 medium-5 large-4 columns">
+					<h4>VERACITYCOLAB</h4>
+          <h6><?php bloginfo('description'); ?></h6>
+          <br><br>
+
+					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
+					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
+          <br><br>
+				</div>
+        <div class="small-11 medium-5 large-4 columns">
+          <?php foundationpress_contact_nav(); ?>
   			</div>
+
         <button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
 
   		</div>

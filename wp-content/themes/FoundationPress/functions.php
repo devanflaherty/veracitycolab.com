@@ -65,4 +65,12 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 
+	acf_add_options_page(array(
+		'page_title' 	=> 'Call To Actions',
+		'menu_title'	=> 'CTAs',
+		'menu_slug' 	=> 'call-to-actions',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
 }
