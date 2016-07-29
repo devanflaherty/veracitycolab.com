@@ -40,7 +40,7 @@
 ?>
 <?php
 	if ( get_field('choose_cta') &&  get_field('choose_cta') !== "Hide" ) : ?>
-	<?php if(is_page('home')) : ?>
+	<?php if(is_front_page()) : ?>
     <div id="cta" class="row collapse align-stretch"
       data-0="margin-top: 0px;"
       data-end="margin-top: 120px;">
