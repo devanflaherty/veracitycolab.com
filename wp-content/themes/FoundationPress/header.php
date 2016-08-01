@@ -166,11 +166,25 @@
         <div class="small-11 medium-5 large-4 columns">
 					<h4>VERACITYCOLAB</h4>
           <h6><?php bloginfo('description'); ?></h6>
-          <br><br>
+          <br>
 
 					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
 					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
           <br><br>
+          <div class="team-social">
+            <?php
+              if( have_rows('footer_social', 'option') ) {
+                echo "<nav class=\"social-nav\">";
+                while ( have_rows('footer_social', 'option') ) { the_row();
+                  $url = get_sub_field('url');
+                  echo "<a href=\"" . $url . "\" target=\"_blank\">";
+                  the_sub_field('icon');
+                  echo "</a>";
+                }
+                echo "</nav>";
+              }
+            ?>
+          </div>
 				</div>
         <div class="small-11 medium-5 large-4 columns">
           <?php foundationpress_contact_nav(); ?>

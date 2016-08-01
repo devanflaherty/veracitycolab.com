@@ -6799,18 +6799,6 @@ a::after {
         font-weight: 600; }
         #footer-container #footer .footer-nav li a:hover {
           color: #fefefe; }
-    #footer-container #footer .social-nav {
-      float: left;
-      margin-top: 24px; }
-      @media screen and (min-width: 64em) {
-        #footer-container #footer .social-nav {
-          margin-top: 0; } }
-      #footer-container #footer .social-nav a {
-        font-size: 20px;
-        color: rgba(254, 254, 254, 0.85);
-        margin: 0 18px 0 0; }
-        #footer-container #footer .social-nav a:hover {
-          color: #fefefe; }
 
 .sidebar {
   width: 100%;
@@ -6882,6 +6870,9 @@ a::after {
   #contactForm .contact-nav {
     list-style-type: none;
     margin: 0; }
+    @media screen and (max-width: 39.9375em) {
+      #contactForm .contact-nav {
+        margin-top: 32px; } }
     #contactForm .contact-nav li:first-of-type a {
       display: inline-block;
       text-align: center;
@@ -8516,10 +8507,6 @@ body.fixed, body.video-fixed {
   top: 0;
   overflow: hidden; }
 
-*, :before, :after {
-  box-sizing: border-box;
-  -webkit-backface-visibility: hidden; }
-
 path {
   fill: black;
   transition: fill .5s !important; }
@@ -8669,6 +8656,19 @@ a, button {
   -ms-transform: scale(1) !important;
       transform: scale(1) !important; }
 
+.social-nav {
+  float: left;
+  margin-top: 0px; }
+  @media screen and (min-width: 64em) {
+    .social-nav {
+      margin-top: 0; } }
+  .social-nav a {
+    font-size: 20px;
+    color: rgba(254, 254, 254, 0.85);
+    margin: 0 18px 0 0; }
+    .social-nav a:hover {
+      color: #fefefe; }
+
 .cta-row {
   margin-bottom: 40px; }
   @media screen and (min-width: 40em) {
@@ -8687,13 +8687,19 @@ a, button {
 
 #cta .button {
   font-size: 32px;
-  padding: 40px 0;
+  padding: 40px 40px;
   background: #e6e6e6;
   color: #808080;
   margin: 0; }
   #cta .button:hover {
     background: #808080;
     color: #fefefe; }
+
+.cta-form {
+  padding: 40px 20px 40px; }
+  @media screen and (min-width: 40em) {
+    .cta-form {
+      padding: 40px 0 12.5%; } }
 
 .animate-in {
   transition: all 0.5s ease; }

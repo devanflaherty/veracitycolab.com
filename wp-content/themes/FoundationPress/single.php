@@ -39,10 +39,8 @@ get_header(); ?>
 	</article>
 <?php endwhile;?>
 
-	<div class="row align-center cta-row">
-		<div class="columns small-12 medium-10">
+	<div class="small-12 medium-10 cta-row">
 			<?php get_template_part( 'template-parts/cta' ); ?>
-		</div>
 	</div>
 
 </section>

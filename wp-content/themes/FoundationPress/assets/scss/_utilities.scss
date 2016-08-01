@@ -10,12 +10,7 @@ body.fixed, body.video-fixed {
   top: 0;
   overflow: hidden;
 }
-*,:before,:after {
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing:border-box;
-  box-sizing:border-box;
-  -webkit-backface-visibility:hidden;
-}
+
 path {
   fill: black;
   transition: fill .5s !important;
@@ -186,6 +181,29 @@ a, button {
   }
 }
 
+// Social
+.social-nav {
+  float: left;
+  margin-top: 0px;
+
+  @include breakpoint(large) {
+    //float: right;
+    margin-top: 0;
+  }
+  a {
+    font-size: 20px;
+    color: rgba($white, 0.85);
+    margin: 0 18px 0 0;
+    @include breakpoint(large) {
+      //margin: 0 0 0 18px;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// CTA
 .cta-row {
   margin-bottom: 40px;
   @include breakpoint(medium) {
@@ -205,7 +223,7 @@ a, button {
   }
   .button {
     font-size: 32px;
-    padding: 40px 0;
+    padding: 40px 40px;
     background: $light-gray;
     color: $dark-gray;
     margin: 0;
@@ -213,6 +231,12 @@ a, button {
       background: $dark-gray;
       color: $white;
     }
+  }
+}
+.cta-form {
+  padding: 40px 20px 40px;
+  @include breakpoint(medium) {
+    padding: 40px 0 12.5%;
   }
 }
 

@@ -116,10 +116,8 @@ get_header(); ?>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->
 
-<div class="row cta-row <?= $sideBar; ?>">
-	<div class="columns small-12 medium-11 large-8">
-		<?php get_template_part( 'template-parts/cta' ); ?>
-	</div>
+<div class="small-12 medium-11 large-8 cta-row <?= $sideBar; ?>">
+	<?php get_template_part( 'template-parts/cta' ); ?>
 </div>
 
 </section>

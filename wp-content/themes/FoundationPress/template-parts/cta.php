@@ -41,18 +41,18 @@
 <?php
 	if ( get_field('choose_cta') &&  get_field('choose_cta') !== "Hide" ) : ?>
 	<?php if(is_front_page()) : ?>
-    <div id="cta" class="row collapse align-stretch"
+    <div id="cta" class="row collapse align-middle"
       data-0="margin-top: 0px;"
       data-end="margin-top: 120px;">
 	<?php else : ?>
-		<div id="cta" class="row collapse align-stretch"
+		<div id="cta" class="row collapse align-middle"
 			data-bottom-top="margin-bottom: 0px;"
 			data-end="margin-bottom: 120px;">
 	<?php endif; ?>
-    <div class="small-12 medium-8 columns flex">
+    <div class="small-12 medium-8 columns">
       <h2><?= $blurb; ?></h2>
     </div>
-    <div class="small-12 medium-4 columns flex">
+    <div class="small-12 medium-4 columns">
      <a class="button expanded secondary" href="<?= $url; ?>"><?= $value; ?></a>
     </div>
   </div>

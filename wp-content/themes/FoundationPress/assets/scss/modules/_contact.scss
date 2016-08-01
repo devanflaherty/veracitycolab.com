@@ -26,6 +26,9 @@
   .contact-nav {
     list-style-type: none;
     margin: 0;
+    @include breakpoint(small only) {
+      margin-top: 32px;
+    }
     li {
       &:first-of-type {
         a {

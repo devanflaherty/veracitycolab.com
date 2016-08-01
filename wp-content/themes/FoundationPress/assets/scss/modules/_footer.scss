@@ -60,26 +60,5 @@
 				}
 			}
 		}
-		// Social
-		.social-nav {
-		  float: left;
-			margin-top: 24px;
-
-		  @include breakpoint(large) {
-		    //float: right;
-		    margin-top: 0;
-		  }
-		  a {
-		    font-size: 20px;
-		    color: rgba($white, 0.85);
-		    margin: 0 18px 0 0;
-		    @include breakpoint(large) {
-		      //margin: 0 0 0 18px;
-		    }
-		    &:hover {
-		      color: $white;
-		    }
-		  }
-		}
 	}
 }
