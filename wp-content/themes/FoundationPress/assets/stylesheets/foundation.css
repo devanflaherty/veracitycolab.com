@@ -3739,13 +3739,13 @@ textarea {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  height: 2.5625rem;
+  height: 2.4375rem;
   padding: 0.5rem;
   border: none;
   margin: 0 0 1rem;
   font-family: inherit;
-  font-size: 1.125rem;
-  color: #fefefe;
+  font-size: 1rem;
+  color: #0a0a0a;
   background-color: transparent;
   box-shadow: none;
   border-radius: 3;
@@ -3767,19 +3767,19 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: rgba(254, 254, 254, 0.6); }
+  color: #BFBFBF; }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: rgba(254, 254, 254, 0.6); }
+  color: #BFBFBF; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: rgba(254, 254, 254, 0.6); }
+  color: #BFBFBF; }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(254, 254, 254, 0.6); }
+  color: #BFBFBF; }
 
 input:disabled, input[readonly],
 textarea:disabled,
@@ -3825,14 +3825,14 @@ label {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.8;
-  color: #0a0a0a; }
+  color: #e6e6e6; }
   label.middle {
     margin: 0 0 1rem;
     padding: 0.5rem 0; }
 
 .help-text {
   margin-top: -0.5rem;
-  font-size: 0.8125rem;
+  font-size: 0.625rem;
   font-style: italic;
   color: #333; }
 
@@ -3910,19 +3910,19 @@ legend {
     margin-left: -0.1875rem; }
 
 select {
-  height: 2.5625rem;
+  height: 2.4375rem;
   padding: 0.5rem;
   border: none;
   margin: 0 0 1rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-family: inherit;
   line-height: normal;
-  color: #fefefe;
-  background-color: #fefefe;
-  border-radius: 3;
+  color: #0a0a0a;
+  background-color: #f6f6f6;
+  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%2851, 51, 51%29"></polygon></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%2833, 153, 232%29"></polygon></svg>');
   background-size: 9px 6px;
   background-position: right center;
   background-origin: content-box;
@@ -6938,6 +6938,24 @@ a::after {
   -ms-transform: translate(0px, -40px);
       transform: translate(0px, -40px); }
 
+form fieldset {
+  max-width: 100% !important; }
+  form fieldset > div:first-of-type:not(:only-child) > .input {
+    margin-right: 15px !important; }
+  form fieldset > div > .input {
+    margin-right: 0 !important; }
+
+form .hs-input {
+  width: 100% !important; }
+
+form .hs-field-desc {
+  color: #BFBFBF;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+  transition: all 0.25s ease; }
+
 form .field {
   margin-bottom: 6px; }
 
@@ -6949,7 +6967,6 @@ form label {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: left;
-  color: #fefefe;
   -ms-transform: translate(-100px, 0);
       transform: translate(-100px, 0);
   transition: all 0.25s ease;
