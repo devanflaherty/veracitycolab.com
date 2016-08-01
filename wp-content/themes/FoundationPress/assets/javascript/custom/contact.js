@@ -50,6 +50,7 @@ $(window).load(function(){
   $('.hs-input').each(function() {
     var input=$(this);
     var is_valid=input.val();
+    $('select').parent().siblings('label').addClass("float");
     if(is_valid){
       input.removeClass("invalid").addClass("valid");
       input.parent().siblings('label').addClass("float");

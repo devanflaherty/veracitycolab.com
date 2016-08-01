@@ -58,6 +58,26 @@
   transform: translate(0px, -40px);
 }
 form {
+  fieldset {
+    max-width: 100%!important;
+    > div:first-of-type:not(:only-child) > .input {
+      margin-right: 15px!important;
+    }
+    > div > .input {
+      margin-right: 0!important;
+    }
+  }
+  .hs-input {
+    width: 100%!important;
+  }
+  .hs-field-desc {
+    color: $medium-gray;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    transition: all 0.25s ease;
+  }
   .field {
     margin-bottom: 6px;
   }
@@ -69,7 +89,6 @@ form {
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: left;
-    color: $white;
     transform: translate(-100px, 0);
     transition: all 0.25s ease;
     opacity: 0;
