@@ -6560,6 +6560,10 @@ a, button {
 .expand {
   max-width: 100% !important; }
 
+.w-control-bar {
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
 .contrast-text {
   color: #fefefe; }
 
