@@ -46,3 +46,15 @@
     }
   }
 }
+#success.full-card {
+  .main-content {
+    @include flex-grid-column(12);
+
+    @include breakpoint(medium) {
+      @include flex-grid-column(11);
+    }
+    @include breakpoint(large) {
+      @include flex-grid-column(9);
+    }
+  }
+}

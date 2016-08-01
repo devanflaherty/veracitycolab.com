@@ -44,6 +44,15 @@
       }
     }
   }
+  .cta-row {
+    @include flex-align(center, middle);
+    @include breakpoint(large) {
+      @include flex-align(left, middle);
+    }
+    &.align-center {
+      @include flex-align(center, middle);
+    }
+  }
 }
 #archiveWork {
   .main-content {

@@ -47,16 +47,8 @@
        </div>
      </div>
 
-     <div id="cta" class="row collapse align-stretch"
-       data-0="margin-top: 0px;"
-       data-end="margin-top: 120px;">
-       <div class="small-12 medium-8 columns flex">
-         <h2><?php the_field( 'cta' ); ?></h2>
-       </div>
-       <div class="small-12 medium-4 columns flex">
-        <a class="button expanded secondary" href="<?php the_field( 'cta_button_url' ); ?>"><?php the_field( 'cta_button_value' ); ?></a>
-       </div>
-     </div>
+     <?php get_template_part( 'template-parts/cta' ); ?>
+
    </article>
  <?php endwhile;?>
 

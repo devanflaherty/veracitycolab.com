@@ -17,8 +17,40 @@
     padding: 120px 0;
     height: calc(100vh - 107px);
   }
-  h5 {
-    padding: 0 20px;
+  h4 {
+    color: rgba($white, 0.9);
+  }
+  h6, span, a {
+    color: rgba($white, 0.75);
+  }
+  .contact-nav {
+    list-style-type: none;
+    margin: 0;
+    @include breakpoint(small only) {
+      margin-top: 32px;
+    }
+    li {
+      &:first-of-type {
+        a {
+          @include button(true, rgba($white, 0.75), rgba($white, 1), $black, solid);
+          &:hover {
+            border-color: $white;
+            color: $black;
+          }
+        }
+      }
+      a {
+        @include button(true, $light-gray, $white, $black, hollow);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        &:hover {
+          background-color: $white;
+          border-color: $white;
+          color: $black;
+        }
+      }
+    }
   }
 }
 
@@ -29,16 +61,45 @@ form {
   .field {
     margin-bottom: 6px;
   }
-  input[type="text"], input[type="email"]  {
-    border-bottom: 1px solid rgba($white, 0.6)!important;
-    padding: 0!important;
+  label span {
+    color: $medium-gray;
+  }
+  label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
     color: $white;
+    transform: translate(-100px, 0);
+    transition: all 0.25s ease;
+    opacity: 0;
+    .hs-form-required {
+      color: $primary-color;
+      font-size: 16px;
+      line-height: 11px;
+    }
+    &.float {
+      transform: translate(0, 0);
+      opacity: 1;
+      display: block!important;
+    }
+  }
+  input[type="text"], input[type="email"]  {
+    border-bottom: 1px solid $medium-gray!important;
+    padding: 0!important;
+    color: $medium-gray;
+    background: none;
+    &::placeholder {
+      color: $medium-gray;
+    }
     &:focus {
       padding-left: 12px!important;
       color: $black;
+      background: lighten($light-gray, 7%);
+      border-bottom-color: lighten($light-gray, 7%)!important;
     }
     &:valid, &.valid{
-      color: $white;
+      color: $black;
       border-bottom: none;
       &:focus {
         color: $black;
@@ -68,26 +129,46 @@ form {
       display: block!important;
     }
   }
-  input.button {
-    border: 1px solid $white!important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-  }
   textarea {
     resize: none;
-    margin: 12px 0 1px!important;
+    border-bottom: 1px solid $medium-gray;
+    margin: 0 0 1px!important;
+    padding-top: 12px;
     padding-left: 0!important;
     color: $black;
     &:focus {
-      background: $white;
-      height: 10em;
+      background: lighten($light-gray, 7%);
+      min-height: 15em;
       padding-left: 12px!important;
     }
     &.valid {
-      background: $white;
-      height: 10em;
+      background: lighten($light-gray, 7%);
+      height: 15em;
       padding-left: 12px!important;
+    }
+    &::placeholder {
+      color: $medium-gray;
+    }
+  }
+  input[type="submit"] {
+    @include button(true, $dark-gray, $black, $white, hollow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 30px;
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+  .hs-error-msgs {
+    color: $alert-color;
+    list-style-type: square;
+    margin-bottom: 0;
+    label {
+      color: $alert-color!important;
+      transform: translate(0, 0);
+      opacity: 1;
     }
   }
 }
