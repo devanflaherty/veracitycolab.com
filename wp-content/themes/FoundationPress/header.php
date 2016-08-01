@@ -70,6 +70,8 @@
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
+    <script src="https://use.fontawesome.com/771c954b4a.js"></script>
+
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
     <!-- Facebook Pixel Code -->
