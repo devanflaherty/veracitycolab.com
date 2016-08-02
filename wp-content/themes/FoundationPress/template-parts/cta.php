@@ -46,8 +46,8 @@
       data-end="margin-top: 120px;">
 	<?php else : ?>
 		<div id="cta" class="row collapse align-middle"
-			data-bottom-top="margin-bottom: 0px;"
-			data-end="margin-bottom: 120px;">
+			data-bottom-top="transform: translate(0px, 0px);"
+			data-end="transform: translate(0px, 60px)">
 	<?php endif; ?>
     <div class="small-12 medium-8 columns text-center">
       <h2><?= $blurb; ?></h2>

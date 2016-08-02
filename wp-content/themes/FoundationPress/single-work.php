@@ -16,36 +16,39 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
-<section id="singleWork" class="wrapper align-center" role="main">
+<section id="singleWork" class="wrapper" role="main">
 	<?php while ( have_posts() ) : the_post(); // While we have a post let's show it off?>
 
 	<!-- MAIN CONTENT : Skrollr animation set to parralax the article up -->
-	<article class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>"
-		data-0="transform: translate(0px , 0px);"
-		data-end="transform: translate(0px , -100px);"
-		>
-		<div id="contentBody" class="entry-content">
-			<?php
-				$clients = get_field('client');
-				if( $clients ) {
-					foreach( $clients as $p ) {
-						$client = get_the_title( $p->ID );
+	<article
+	data-0="transform: translate(0px , 0px);"
+	data-end="transform: translate(0px , -100px);">
+		<div class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>">
+			<div id="contentBody" class="entry-content">
+				<?php
+					$clients = get_field('client');
+					if( $clients ) {
+						foreach( $clients as $p ) {
+							$client = get_the_title( $p->ID );
+						}
 					}
-				}
-			?>
-			<header id="contentHeader">
-				<h6><?= $client; ?></h6>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header>
+				?>
+				<header id="contentHeader">
+					<h6><?= $client; ?></h6>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+				</header>
 
-			<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
-			<?php the_content(); ?>
+				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
+				<?php the_content(); ?>
 
-			<footer id="contentFooter">
-				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-				<p><?php the_tags(); ?></p>
-			</footer>
+				<footer id="contentFooter">
+					<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
+					<p><?php the_tags(); ?></p>
+				</footer>
+			</div>
 		</div>
+
+		<?php get_template_part( 'template-parts/cta' ); ?>
 	</article>
 	<!-- CLOSE MAIN CONTENT -->
 <?php endwhile;?>
@@ -112,13 +115,8 @@ get_header(); ?>
   </div>
 </aside>
 <?php else :?>
-	<?php $sideBar = "align-center"; ?>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->
-
-<div class="small-12 medium-11 large-8 cta-row <?= $sideBar; ?>">
-	<?php get_template_part( 'template-parts/cta' ); ?>
-</div>
 
 </section>
 

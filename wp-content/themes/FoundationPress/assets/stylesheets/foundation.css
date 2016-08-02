@@ -5410,6 +5410,10 @@ form .hs-error-msgs {
   .wrapper .main-cards {
     margin-top: 2rem !important; } }
 
+article {
+  position: relative;
+  z-index: 100; }
+
 .main-content {
   position: relative;
   z-index: 100;
@@ -5588,7 +5592,8 @@ form .hs-error-msgs {
       width: 100%;
       height: auto; }
     .flex-wrap .columns h6 {
-      margin-top: 0 !important; }
+      margin-top: 8px !important;
+      margin-left: 40px; }
 
 p + blockquote {
   margin: 40px 0 40px; }
@@ -5963,32 +5968,28 @@ pre {
   @media screen and (max-width: 39.9375em) {
     #single-post {
       padding: 0 20px; } }
-  #single-post .main-content {
-    background: #fefefe;
+  #single-post article {
+    padding: 0 !important;
     width: 100%;
     float: left;
     padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    margin-top: -80px; }
-    @media screen and (max-width: 39.9375em) {
-      #single-post .main-content {
-        margin-top: -30px; } }
+    padding-right: 1.25rem; }
     @media screen and (min-width: 40em) {
-      #single-post .main-content {
+      #single-post article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
     @media screen and (min-width: 64em) {
-      #single-post .main-content {
+      #single-post article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
     @media screen and (min-width: 90em) {
-      #single-post .main-content {
+      #single-post article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
-    #single-post .main-content:last-child:not(:first-child) {
+    #single-post article:last-child:not(:first-child) {
       float: right; }
     @media screen and (min-width: 40em) {
-      #single-post .main-content {
+      #single-post article {
         width: 83.33333%;
         float: left;
         padding-left: 1.25rem;
@@ -5999,20 +6000,28 @@ pre {
             -ms-grid-row-align: center;
             align-items: center; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    #single-post .main-content {
+    #single-post article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 64em) {
-    #single-post .main-content {
+    #single-post article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 90em) {
-    #single-post .main-content {
+    #single-post article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
     @media screen and (min-width: 40em) {
-        #single-post .main-content:last-child:not(:first-child) {
+        #single-post article:last-child:not(:first-child) {
           float: right; } }
+  #single-post .main-content {
+    background: #fefefe;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -80px; }
+    @media screen and (max-width: 39.9375em) {
+      #single-post .main-content {
+        margin-top: -30px; } }
 
 .full-card {
   max-width: 75rem;
@@ -6169,71 +6178,83 @@ pre {
   @media screen and (max-width: 39.9375em) {
     #singleWork {
       padding: 0 20px; } }
-  #singleWork .main-content {
-    background: #fefefe;
+  @media screen and (max-width: 63.9375em) {
+    #singleWork {
+      -ms-flex-pack: center;
+          justify-content: center; } }
+  @media screen and (min-width: 64em) {
+    #singleWork.no-sidebar {
+      -ms-flex-pack: center;
+          justify-content: center; } }
+  #singleWork article {
     width: 100%;
     float: left;
     padding-left: 1.25rem;
-    padding-right: 1.25rem; }
+    padding-right: 1.25rem;
+    padding: 0 !important; }
     @media screen and (min-width: 40em) {
-      #singleWork .main-content {
+      #singleWork article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
     @media screen and (min-width: 64em) {
-      #singleWork .main-content {
+      #singleWork article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
     @media screen and (min-width: 90em) {
-      #singleWork .main-content {
+      #singleWork article {
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
-    #singleWork .main-content:last-child:not(:first-child) {
+    #singleWork article:last-child:not(:first-child) {
       float: right; }
-    @media screen and (max-width: 39.9375em) {
-      #singleWork .main-content {
-        margin-top: -30px; } }
     @media screen and (min-width: 40em) {
-      #singleWork .main-content {
+      #singleWork article {
         width: 91.66667%;
         float: left;
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 64em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 90em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
     @media screen and (min-width: 40em) {
-        #singleWork .main-content:last-child:not(:first-child) {
+        #singleWork article:last-child:not(:first-child) {
           float: right; } }
     @media screen and (min-width: 64em) {
-      #singleWork .main-content {
+      #singleWork article {
         width: 66.66667%;
         float: left;
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
   @media screen and (min-width: 64em) and (min-width: 40em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 64em) and (min-width: 64em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
   @media screen and (min-width: 64em) and (min-width: 90em) {
-    #singleWork .main-content {
+    #singleWork article {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
     @media screen and (min-width: 64em) {
-        #singleWork .main-content:last-child:not(:first-child) {
+        #singleWork article:last-child:not(:first-child) {
           float: right; } }
+  #singleWork .main-content {
+    background: #fefefe;
+    padding-left: 20px;
+    padding-right: 20px; }
+    @media screen and (max-width: 39.9375em) {
+      #singleWork .main-content {
+        margin-top: -30px; } }
     #singleWork .main-content.animate-in {
       transition: all 1s ease; }
     #singleWork .main-content .row {

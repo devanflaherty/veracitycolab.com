@@ -3,19 +3,25 @@
   @include breakpoint(small only) {
     padding: 0 20px;
   }
+  article {
+    padding: 0!important;
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include flex-grid-row-align(center, middle);
+    }
+  }
   .main-content {
     background: $white;
+    padding-left: 20px;
+    padding-right: 20px;
     @include breakpoint(small only) {
       margin-top: -30px;
     }
     @include breakpoint(small) {
-      @include grid-column(12);
       margin-top: -80px;
-    }
-
-    @include breakpoint(medium) {
-      @include grid-column(10);
-      @include flex-grid-row-align(center, middle);
     }
   }
 }

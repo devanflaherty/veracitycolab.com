@@ -3,17 +3,30 @@
   @include breakpoint(small only) {
     padding: 0 20px;
   }
-  .main-content {
-    background: $white;
-    @include grid-column(12);
-    @include breakpoint(small only) {
-      margin-top: -30px;
+  @include breakpoint(medium down) {
+    @include flex-align(center);
+  }
+  &.no-sidebar {
+    @include breakpoint(large) {
+      @include flex-align(center);
     }
+  }
+  article {
+    @include grid-column(12);
+    padding: 0!important;
     @include breakpoint(medium) {
       @include grid-column(11);
     }
     @include breakpoint(large) {
       @include grid-column(8);
+    }
+  }
+  .main-content {
+    background: $white;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include breakpoint(small only) {
+      margin-top: -30px;
     }
     &.animate-in {
       transition: all 1s ease;
@@ -21,6 +34,9 @@
     .row {
       margin-top: 0;
     }
+    // .content-col {
+    //   padding: 0 40px!important;
+    // }
   }
   .sidebar {
     padding: 0 40px 60px!important;
