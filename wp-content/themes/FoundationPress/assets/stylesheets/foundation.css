@@ -5964,7 +5964,8 @@ pre {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
-      flex-flow: row wrap; }
+      flex-flow: row wrap;
+  margin-bottom: 20px; }
   @media screen and (max-width: 39.9375em) {
     #single-post {
       padding: 0 20px; } }
@@ -6174,7 +6175,8 @@ pre {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
-      flex-flow: row wrap; }
+      flex-flow: row wrap;
+  margin-bottom: 20px; }
   @media screen and (max-width: 39.9375em) {
     #singleWork {
       padding: 0 20px; } }
