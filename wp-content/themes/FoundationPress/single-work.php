@@ -54,9 +54,9 @@ get_header(); ?>
 <?php if(get_field('show_sidebar') == true) : ?>
 <!-- SIDEBAR -->
 <aside class="sidebar show-for-large" id="workSidebar">
-  <div clas="row" data-sticky-container>
-    <div class="sticky" data-sticky data-top-anchor="workSidebar:top" data-btm-anchor="contentFooter:top" data-check-every="0" data-options="marginTop:6;">
-      <span><?php the_field('completion_date'); ?></span><br>
+  <div class="row collapse" data-sticky-container>
+    <div class="sticky columns" data-sticky data-top-anchor="workSidebar:top" data-btm-anchor="contentFooter:top" data-check-every="0" data-options="marginTop:7;">
+      <span><?php the_field('completion_date'); ?></span>
 
 			<!-- CREDITS SECTION -->
 			<?php

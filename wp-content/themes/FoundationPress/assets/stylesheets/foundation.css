@@ -4762,8 +4762,7 @@ a::after {
       width: 33.33333%;
       float: left;
       padding-left: 1.25rem;
-      padding-right: 1.25rem;
-      margin-top: 1rem; } }
+      padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .sidebar {
       padding-left: 1.25rem;
@@ -6240,13 +6239,16 @@ pre {
     #singleWork .main-content .row {
       margin-top: 0; }
   #singleWork .sidebar {
-    padding: 20px 40px 60px !important;
+    padding: 0 40px 60px !important;
     transition: all 0.25s ease; }
     #singleWork .sidebar div {
       margin-bottom: 24px;
       line-height: 1.7; }
       #singleWork .sidebar div span {
         font-weight: 400; }
+    #singleWork .sidebar .sticky > *:first-child {
+      margin-top: 40px;
+      display: block; }
   #singleWork .credits {
     list-style-type: none;
     margin: 12px 0; }

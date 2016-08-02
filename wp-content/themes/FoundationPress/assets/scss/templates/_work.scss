@@ -23,7 +23,7 @@
     }
   }
   .sidebar {
-    padding: 20px 40px 60px!important;
+    padding: 0 40px 60px!important;
     transition: all 0.25s ease;
     div {
       margin-bottom: 24px;
@@ -31,6 +31,10 @@
       span {
         font-weight: 400
       }
+    }
+    .sticky > *:first-child {
+      margin-top: 40px;
+      display: block;
     }
   }
   .credits {
