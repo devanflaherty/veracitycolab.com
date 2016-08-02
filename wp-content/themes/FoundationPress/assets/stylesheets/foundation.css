@@ -6066,16 +6066,16 @@ pre {
     .full-card .main-content {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
-    .full-card .main-content #tagline {
-      padding: 40px; }
-      @media screen and (max-width: 39.9375em) {
-        .full-card .main-content #tagline {
-          margin-top: -70px; } }
-      .full-card .main-content #tagline h1 {
-        font-size: 38px;
-        line-height: 40px;
-        color: white;
-        margin: 0; }
+    @media screen and (max-width: 39.9375em) {
+      .full-card .main-content #tagline {
+        margin-top: -70px; } }
+    .full-card .main-content #tagline h1 {
+      padding: 40px;
+      display: inline-block;
+      font-size: 38px;
+      line-height: 40px;
+      color: white;
+      margin: 0; }
     .full-card .main-content .entry-content {
       background: #fefefe;
       padding: 40px; }
