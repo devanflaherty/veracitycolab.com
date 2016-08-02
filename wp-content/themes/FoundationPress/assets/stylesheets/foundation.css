@@ -4684,7 +4684,8 @@ a::after {
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 0; }
+  padding: 60px 0;
+  z-index: 200; }
   @media screen and (min-width: 40em) {
     #footer-container {
       padding: 60px 20px; } }
@@ -4761,8 +4762,7 @@ a::after {
       width: 33.33333%;
       float: left;
       padding-left: 1.25rem;
-      padding-right: 1.25rem;
-      margin-top: 1rem; } }
+      padding-right: 1.25rem; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .sidebar {
       padding-left: 1.25rem;
@@ -4795,6 +4795,13 @@ a::after {
   max-width: 100%;
   transition: all 1s ease;
   border: none; }
+  @media screen and (max-width: 39.9375em) {
+    #contactForm {
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: start;
+          -ms-grid-row-align: flex-start;
+          align-items: flex-start; } }
   #contactForm .row {
     width: 100%; }
   #contactForm.reveal {
@@ -4809,7 +4816,7 @@ a::after {
     margin: 0; }
     @media screen and (max-width: 39.9375em) {
       #contactForm .contact-nav {
-        margin-top: 32px; } }
+        margin-top: 28px; } }
     #contactForm .contact-nav li:first-of-type a {
       display: inline-block;
       text-align: center;
@@ -4834,6 +4841,9 @@ a::after {
       #contactForm .contact-nav li:first-of-type a:hover, #contactForm .contact-nav li:first-of-type a:focus {
         background-color: #fefefe;
         color: #0a0a0a; }
+      @media screen and (max-width: 39.9375em) {
+        #contactForm .contact-nav li:first-of-type a {
+          margin-bottom: 9px; } }
       #contactForm .contact-nav li:first-of-type a:hover {
         border-color: #fefefe;
         color: #0a0a0a; }
@@ -4866,6 +4876,9 @@ a::after {
       #contactForm .contact-nav li a:hover, #contactForm .contact-nav li a:focus {
         border-color: #737373;
         color: #737373; }
+      @media screen and (max-width: 39.9375em) {
+        #contactForm .contact-nav li a {
+          margin-bottom: 9px; } }
       #contactForm .contact-nav li a:hover {
         background-color: #fefefe;
         border-color: #fefefe;
@@ -4874,6 +4887,10 @@ a::after {
 #formWrap {
   -ms-transform: translate(0px, -40px);
       transform: translate(0px, -40px); }
+
+form input {
+  -webkit-appearance: none;
+  border-radius: 0; }
 
 form fieldset {
   max-width: 100% !important; }
@@ -4970,7 +4987,9 @@ form textarea {
   margin: 0 0 1px !important;
   padding-top: 12px;
   padding-left: 0 !important;
-  color: #0a0a0a; }
+  color: #0a0a0a;
+  -webkit-appearance: none;
+  border-radius: 0; }
   form textarea:focus {
     background: #f8f8f8;
     min-height: 15em;
@@ -5067,8 +5086,12 @@ form .hs-error-msgs {
   border-radius: 3px;
   padding: 6px 3px; }
 
+.iphone #contactForm.reveal {
+  padding: 40px 0px !important;
+  height: calc(100vh - 170px); }
+
 .iphone #closeForm {
-  bottom: 95px; }
+  bottom: 85px; }
 
 #featured-hero {
   background-size: cover;
@@ -6048,16 +6071,16 @@ pre {
     .full-card .main-content {
       padding-left: 1.25rem;
       padding-right: 1.25rem; } }
-    .full-card .main-content #tagline {
-      padding: 40px; }
-      @media screen and (max-width: 39.9375em) {
-        .full-card .main-content #tagline {
-          margin-top: -70px; } }
-      .full-card .main-content #tagline h1 {
-        font-size: 38px;
-        line-height: 40px;
-        color: white;
-        margin: 0; }
+    @media screen and (max-width: 39.9375em) {
+      .full-card .main-content #tagline {
+        margin-top: -20px; } }
+    .full-card .main-content #tagline h1 {
+      padding: 40px;
+      display: inline-block;
+      font-size: 38px;
+      line-height: 40px;
+      color: white;
+      margin: 0; }
     .full-card .main-content .entry-content {
       background: #fefefe;
       padding: 40px; }
@@ -6216,13 +6239,16 @@ pre {
     #singleWork .main-content .row {
       margin-top: 0; }
   #singleWork .sidebar {
-    padding: 20px 40px 60px !important;
+    padding: 0 40px 60px !important;
     transition: all 0.25s ease; }
     #singleWork .sidebar div {
       margin-bottom: 24px;
       line-height: 1.7; }
       #singleWork .sidebar div span {
         font-weight: 400; }
+    #singleWork .sidebar .sticky > *:first-child {
+      margin-top: 40px;
+      display: block; }
   #singleWork .credits {
     list-style-type: none;
     margin: 12px 0; }

@@ -49,7 +49,7 @@
 			data-bottom-top="margin-bottom: 0px;"
 			data-end="margin-bottom: 120px;">
 	<?php endif; ?>
-    <div class="small-12 medium-8 columns">
+    <div class="small-12 medium-8 columns text-center">
       <h2><?= $blurb; ?></h2>
     </div>
     <div class="small-12 medium-4 columns">

@@ -10,6 +10,9 @@
   max-width: 100%;
   transition: all 1s ease;
   border: none;
+  @include breakpoint(small only) {
+    @include flex-align(center, top);
+  }
   .row {
     width: 100%;
   }
@@ -27,12 +30,15 @@
     list-style-type: none;
     margin: 0;
     @include breakpoint(small only) {
-      margin-top: 32px;
+      margin-top: 28px;
     }
     li {
       &:first-of-type {
         a {
           @include button(true, rgba($white, 0.75), rgba($white, 1), $black, solid);
+          @include breakpoint(small only) {
+            margin-bottom: 9px;
+          }
           &:hover {
             border-color: $white;
             color: $black;
@@ -44,6 +50,9 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
+        @include breakpoint(small only) {
+          margin-bottom: 9px;
+        }
         &:hover {
           background-color: $white;
           border-color: $white;
@@ -58,6 +67,10 @@
   transform: translate(0px, -40px);
 }
 form {
+  input {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
   fieldset {
     max-width: 100%!important;
     > div:first-of-type:not(:only-child) > .input {
@@ -155,6 +168,8 @@ form {
     padding-top: 12px;
     padding-left: 0!important;
     color: $black;
+    -webkit-appearance: none;
+    border-radius: 0;
     &:focus {
       background: lighten($light-gray, 7%);
       min-height: 15em;
@@ -234,7 +249,11 @@ form {
 
 //for devices
 .iphone {
+  #contactForm.reveal {
+    padding: 40px 0px!important;
+    height: calc(100vh - 170px);
+  }
   #closeForm {
-    bottom: 95px;
+    bottom: 85px;
   }
 }

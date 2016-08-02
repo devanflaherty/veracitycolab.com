@@ -16,11 +16,12 @@
       @include flex-grid-column(11);
     }
     #tagline {
-      padding: 40px;
       @include breakpoint(small only) {
-        margin-top: -70px;
+        margin-top: -20px;
       }
       h1 {
+        padding: 40px;
+        display: inline-block;
         font-size: 38px;
         line-height: 40px;
         color: white;
