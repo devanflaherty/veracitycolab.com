@@ -16,8 +16,6 @@
   }
   .main-content {
     background: $white;
-    padding-left: 20px;
-    padding-right: 20px;
     @include breakpoint(small only) {
       margin-top: -30px;
     }

@@ -5417,8 +5417,7 @@ article {
 .main-content {
   position: relative;
   z-index: 100;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
   -ms-transform: translate(0px, 0px);
       transform: translate(0px, 0px); }
   @media screen and (min-width: 40em) {
@@ -6017,8 +6016,6 @@ pre {
           float: right; } }
   #single-post .main-content {
     background: #fefefe;
-    padding-left: 20px;
-    padding-right: 20px;
     margin-top: -80px; }
     @media screen and (max-width: 39.9375em) {
       #single-post .main-content {
@@ -6037,13 +6034,10 @@ pre {
   -ms-flex-align: center;
       align-items: center; }
   .full-card .main-content {
-    padding: 40px 20px !important;
     margin-top: 0;
     margin-bottom: 60px;
     position: relative;
     z-index: 20;
-    -ms-transform: translate(0, 0);
-        transform: translate(0, 0);
     -ms-flex: 0 0 100%;
         flex: 0 0 100%;
     padding-left: 1.25rem;
@@ -6063,7 +6057,6 @@ pre {
         padding-right: 1.25rem; } }
     @media screen and (min-width: 40em) {
       .full-card .main-content {
-        padding: 40px !important;
         -ms-flex: 0 0 91.66667%;
             flex: 0 0 91.66667%;
         padding-left: 1.25rem;
@@ -6184,10 +6177,6 @@ pre {
     #singleWork {
       -ms-flex-pack: center;
           justify-content: center; } }
-  @media screen and (min-width: 64em) {
-    #singleWork.no-sidebar {
-      -ms-flex-pack: center;
-          justify-content: center; } }
   #singleWork article {
     width: 100%;
     float: left;
@@ -6251,9 +6240,7 @@ pre {
         #singleWork article:last-child:not(:first-child) {
           float: right; } }
   #singleWork .main-content {
-    background: #fefefe;
-    padding-left: 20px;
-    padding-right: 20px; }
+    background: #fefefe; }
     @media screen and (max-width: 39.9375em) {
       #singleWork .main-content {
         margin-top: -30px; } }
@@ -6325,7 +6312,7 @@ pre {
   #singleTeam .main-content {
     background: #fefefe;
     margin-top: -30px;
-    padding: 40px 40px !important; }
+    padding: 40px !important; }
     #singleTeam .main-content h1 {
       font-size: 46px;
       color: #676767;

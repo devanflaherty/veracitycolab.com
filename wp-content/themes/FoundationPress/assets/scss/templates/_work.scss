@@ -7,11 +7,6 @@
   @include breakpoint(medium down) {
     @include flex-align(center);
   }
-  &.no-sidebar {
-    @include breakpoint(large) {
-      @include flex-align(center);
-    }
-  }
   article {
     @include grid-column(12);
     padding: 0!important;
@@ -24,8 +19,6 @@
   }
   .main-content {
     background: $white;
-    padding-left: 20px;
-    padding-right: 20px;
     @include breakpoint(small only) {
       margin-top: -30px;
     }

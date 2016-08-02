@@ -3,16 +3,13 @@
   @include flex-align(center, middle);
 
   .main-content {
-    padding:40px 20px!important;
     margin-top: 0;
     margin-bottom: 60px;
     position: relative;
     z-index: 20;
-    transform: translate(0, 0);
     @include flex-grid-column(12);
 
     @include breakpoint(medium) {
-      padding: 40px!important;
       @include flex-grid-column(11);
     }
     #tagline {
