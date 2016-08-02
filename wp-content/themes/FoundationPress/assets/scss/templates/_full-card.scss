@@ -17,7 +17,7 @@
     }
     #tagline {
       @include breakpoint(small only) {
-        margin-top: -70px;
+        margin-top: -20px;
       }
       h1 {
         padding: 40px;

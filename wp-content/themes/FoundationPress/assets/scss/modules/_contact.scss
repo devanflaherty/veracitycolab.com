@@ -67,6 +67,10 @@
   transform: translate(0px, -40px);
 }
 form {
+  input {
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
   fieldset {
     max-width: 100%!important;
     > div:first-of-type:not(:only-child) > .input {
@@ -164,6 +168,8 @@ form {
     padding-top: 12px;
     padding-left: 0!important;
     color: $black;
+    -webkit-appearance: none;
+    border-radius: 0;
     &:focus {
       background: lighten($light-gray, 7%);
       min-height: 15em;

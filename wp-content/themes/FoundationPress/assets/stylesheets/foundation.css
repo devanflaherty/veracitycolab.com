@@ -4889,6 +4889,10 @@ a::after {
   -ms-transform: translate(0px, -40px);
       transform: translate(0px, -40px); }
 
+form input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
 form fieldset {
   max-width: 100% !important; }
   form fieldset > div:first-of-type:not(:only-child) > .input {
@@ -4984,7 +4988,9 @@ form textarea {
   margin: 0 0 1px !important;
   padding-top: 12px;
   padding-left: 0 !important;
-  color: #0a0a0a; }
+  color: #0a0a0a;
+  -webkit-appearance: none;
+  border-radius: 0; }
   form textarea:focus {
     background: #f8f8f8;
     min-height: 15em;
@@ -6068,7 +6074,7 @@ pre {
       padding-right: 1.25rem; } }
     @media screen and (max-width: 39.9375em) {
       .full-card .main-content #tagline {
-        margin-top: -70px; } }
+        margin-top: -20px; } }
     .full-card .main-content #tagline h1 {
       padding: 40px;
       display: inline-block;

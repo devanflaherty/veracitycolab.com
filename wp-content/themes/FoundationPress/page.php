@@ -25,8 +25,8 @@
      data-top-bottom="margin-top: -400px;">
 
      <div class="row">
-       <div id="tagline" class="columns medium-9" style="background-color: <?php the_field('tertiary_color'); ?>">
-         <h1 class="entry-title"><?php the_field('tagline') ?></h1>
+       <div id="tagline" class="medium-9">
+         <h1 class="entry-title" style="background-color: <?php the_field('tertiary_color'); ?>"><?php the_field('tagline') ?></h1>
        </div>
      </div>
 
