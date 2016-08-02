@@ -3,13 +3,16 @@
   top: 0px;
   z-index: 400;
   @include flex;
-  @include flex-align(center, top);
+  @include flex-align(center, middle);
   height: 0px;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   transition: all 1s ease;
   border: none;
+  @include breakpoint(small only) {
+    @include flex-align(center, top);
+  }
   .row {
     width: 100%;
   }

@@ -4787,14 +4787,21 @@ a::after {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  -ms-flex-align: start;
-      align-items: flex-start;
+  -ms-flex-align: center;
+      align-items: center;
   height: 0px;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   transition: all 1s ease;
   border: none; }
+  @media screen and (max-width: 39.9375em) {
+    #contactForm {
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: start;
+          -ms-grid-row-align: flex-start;
+          align-items: flex-start; } }
   #contactForm .row {
     width: 100%; }
   #contactForm.reveal {
