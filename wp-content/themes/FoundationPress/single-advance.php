@@ -15,80 +15,79 @@ get_header(); ?>
 
 	<?php if(get_field( 'pull_quote' ) && !empty(get_field( 'pull_quote' ))) : ?>
 	<!-- MAIN CONTENT : Skrollr animation set to parralax the article up -->
-	<article class="main-content" id="post-<?php the_ID(); ?>"
+	<article
 		data-0="transform: translate(0px , 0px);"
-    data-top-bottom="transform: translate(0px ,-400px);"
-		data-end="transform: translate(0px ,0px);"
-		data-anchor-target="#featured-hero">
+		data-end="transform: translate(0px , -100px);">
 	<?php else : ?>
-		<article class="main-content" id="post-<?php the_ID(); ?>"
+		<article
 			data-0="transform: translate(0px , 0px);"
-			data-end="transform: translate(0px ,-100px);"
-			data-anchor-target="#featured-hero">
+			data-end="transform: translate(0px , -100px);">
 	<?php endif; ?>
-		<div id="contentBody" class="entry-content">
-			<header id="contentHeader">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header>
+		<div class="main-content" id="post-<?php the_ID(); ?>">
+			<div id="contentBody" class="entry-content">
+				<header id="contentHeader">
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+				</header>
 
-			<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
-			<?php the_content(); ?>
-		</div>
+				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
+				<?php the_content(); ?>
+			</div>
 
-		<div class="advance-posts">
-			<h3><?php the_field('headline'); ?></h3>
-		<?php // RELATED POSTS ?>
-		<?php
-			$posts = get_field('related_work');
+			<div class="advance-posts">
+				<h3><?php the_field('headline'); ?></h3>
+			<?php // RELATED POSTS ?>
+			<?php
+				$posts = get_field('related_work');
 
-			if( $posts ): ?>
-				<div class="row small-up-1 medium-up-2 post-grid">
-					<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-						<?php setup_postdata($post); ?>
-						<?php
-							// Setting up some variabels to make life a little easier
-							$setColor =  get_field('primary_color');
-							$color = $setColor;
-							$primary = foundationpress_hex2rgba($color, 0.8);
-							$secondary = substr(get_field( 'secondary_color'), 1);
-							$video =  get_field('video_id');
+				if( $posts ): ?>
+					<div class="row small-up-1 medium-up-2 post-grid">
+						<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+							<?php setup_postdata($post); ?>
+							<?php
+								// Setting up some variabels to make life a little easier
+								$setColor =  get_field('primary_color');
+								$color = $setColor;
+								$primary = foundationpress_hex2rgba($color, 0.8);
+								$secondary = substr(get_field( 'secondary_color'), 1);
+								$video =  get_field('video_id');
 
-							// Have to do a lil loop to get the a-singular client
-							$clients = get_field('client');
-							if( $clients ) {
-								foreach( $clients as $p ) {
-									$client = get_the_title( $p->ID );
+								// Have to do a lil loop to get the a-singular client
+								$clients = get_field('client');
+								if( $clients ) {
+									foreach( $clients as $p ) {
+										$client = get_the_title( $p->ID );
+									}
 								}
-							}
-						?>
-						<div class="column">
-							<a href="<?php the_permalink(); ?>" class="permalink">
-								<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
-								<div class="post-meta">
-									<h5><span><?= $client ?></span></h5>
-									<h3><?php the_title(); ?></h3>
-								</div>
-							</a>
-						<?php if ( has_post_thumbnail() )  : ?>
-							<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-						<?php else : ?>
-							<div class="post-block" style="background-color: <?= $primary; ?>">
-						<?php endif; ?>
-								<div class="permalink-overlay"></div>
-								<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
-									<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
-										<span><i class="fa fa-play" aria-hidden="true"></i></span>
+							?>
+							<div class="column">
+								<a href="<?php the_permalink(); ?>" class="permalink">
+									<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
+									<div class="post-meta">
+										<h5><span><?= $client ?></span></h5>
+										<h3><?php the_title(); ?></h3>
 									</div>
 								</a>
+							<?php if ( has_post_thumbnail() )  : ?>
+								<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
+							<?php else : ?>
+								<div class="post-block" style="background-color: <?= $primary; ?>">
+							<?php endif; ?>
+									<div class="permalink-overlay"></div>
+									<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
+										<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
+											<span><i class="fa fa-play" aria-hidden="true"></i></span>
+										</div>
+									</a>
+								</div>
 							</div>
-						</div>
-				<?php endforeach; ?>
-				</div>
-				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-			<?php endif; ?>
+					<?php endforeach; ?>
+					</div>
+					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php endif; ?>
+			</div>
+			<footer id="contentFooter">
+			</footer>
 		</div>
-		<footer id="contentFooter">
-		</footer>
 	</article>
 	<!-- CLOSE MAIN CONTENT -->
 <?php endwhile;?>
@@ -98,7 +97,7 @@ get_header(); ?>
 <!-- SIDEBAR -->
 <aside class="sidebar show-for-large" id="workSidebar">
   <div clas="row" data-sticky-container>
-    <div class="sticky" data-sticky data-anchor="workSidebar" data-check-every="0" data-options="marginTop:6;">
+    <div class="sticky" data-sticky data-anchor="workSidebar" data-check-every="0" data-options="marginTop:7;">
       <h3><?php the_field('pull_quote'); ?></h3>
 
 			<?php if( have_rows('buttons') ) : ?>
