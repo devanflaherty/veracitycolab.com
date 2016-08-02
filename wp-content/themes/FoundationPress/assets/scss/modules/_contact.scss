@@ -3,7 +3,7 @@
   top: 0px;
   z-index: 400;
   @include flex;
-  @include flex-align(center, middle);
+  @include flex-align(center, top);
   height: 0px;
   overflow: hidden;
   width: 100%;
@@ -27,12 +27,15 @@
     list-style-type: none;
     margin: 0;
     @include breakpoint(small only) {
-      margin-top: 32px;
+      margin-top: 28px;
     }
     li {
       &:first-of-type {
         a {
           @include button(true, rgba($white, 0.75), rgba($white, 1), $black, solid);
+          @include breakpoint(small only) {
+            margin-bottom: 9px;
+          }
           &:hover {
             border-color: $white;
             color: $black;
@@ -44,6 +47,9 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
+        @include breakpoint(small only) {
+          margin-bottom: 9px;
+        }
         &:hover {
           background-color: $white;
           border-color: $white;
@@ -234,7 +240,11 @@ form {
 
 //for devices
 .iphone {
+  #contactForm.reveal {
+    padding: 40px 0px!important;
+    height: calc(100vh - 170px);
+  }
   #closeForm {
-    bottom: 95px;
+    bottom: 85px;
   }
 }

@@ -4787,8 +4787,8 @@ a::after {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-align: start;
+      align-items: flex-start;
   height: 0px;
   overflow: hidden;
   width: 100%;
@@ -4809,7 +4809,7 @@ a::after {
     margin: 0; }
     @media screen and (max-width: 39.9375em) {
       #contactForm .contact-nav {
-        margin-top: 32px; } }
+        margin-top: 28px; } }
     #contactForm .contact-nav li:first-of-type a {
       display: inline-block;
       text-align: center;
@@ -4834,6 +4834,9 @@ a::after {
       #contactForm .contact-nav li:first-of-type a:hover, #contactForm .contact-nav li:first-of-type a:focus {
         background-color: #fefefe;
         color: #0a0a0a; }
+      @media screen and (max-width: 39.9375em) {
+        #contactForm .contact-nav li:first-of-type a {
+          margin-bottom: 9px; } }
       #contactForm .contact-nav li:first-of-type a:hover {
         border-color: #fefefe;
         color: #0a0a0a; }
@@ -4866,6 +4869,9 @@ a::after {
       #contactForm .contact-nav li a:hover, #contactForm .contact-nav li a:focus {
         border-color: #737373;
         color: #737373; }
+      @media screen and (max-width: 39.9375em) {
+        #contactForm .contact-nav li a {
+          margin-bottom: 9px; } }
       #contactForm .contact-nav li a:hover {
         background-color: #fefefe;
         border-color: #fefefe;
@@ -5067,8 +5073,12 @@ form .hs-error-msgs {
   border-radius: 3px;
   padding: 6px 3px; }
 
+.iphone #contactForm.reveal {
+  padding: 40px 0px !important;
+  height: calc(100vh - 170px); }
+
 .iphone #closeForm {
-  bottom: 95px; }
+  bottom: 85px; }
 
 #featured-hero {
   background-size: cover;
