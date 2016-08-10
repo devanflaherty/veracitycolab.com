@@ -22,3 +22,11 @@ $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
     }
   }
 });
+
+$(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){
+  if(oldSize ==  "medium") {
+    if(newSize == "small") {
+      $('.sticky-container').css('height', 'auto');
+    }
+  }
+});

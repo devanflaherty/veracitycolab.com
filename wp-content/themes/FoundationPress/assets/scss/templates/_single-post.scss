@@ -1,17 +1,35 @@
 #single-post {
   @include flex-grid-row();
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  @include flex-align(left);
   @include breakpoint(small only) {
     padding: 0 20px;
   }
+  @include breakpoint(medium only) {
+    @include flex-align(center);
+  }
   article {
+    padding: 0!important;
+    @include grid-column(12);
+
+    @include breakpoint(medium) {
+      @include grid-column(11);
+      @include flex-align(center, middle);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
+    }
+  }
+  .cta {
     padding: 0!important;
     @include breakpoint(small) {
       @include grid-column(12);
     }
     @include breakpoint(medium) {
-      @include grid-column(10);
-      @include flex-grid-row-align(center, middle);
+      @include grid-column(11);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
     }
   }
   .main-content {

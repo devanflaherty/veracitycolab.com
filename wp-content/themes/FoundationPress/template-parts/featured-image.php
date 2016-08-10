@@ -24,7 +24,7 @@
 		$style = "background-color:" . $primaryColor . ";";
 	}
 
-	if(is_post_type_archive( 'work' )) {
+	if(is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ))  {
 		$hidden = "hidden";
 	}
 ?>
@@ -32,7 +32,7 @@
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
 <?php
-	if ( is_post_type_archive( 'work' ) || is_singular( 'work' ) || is_singular( 'advance' )) :
+	if ( is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_singular( 'work' ) || is_singular( 'advance' )) :
 		if(get_field('video_id')) {
 			$video = get_field('video_id');
 		} else {
@@ -56,11 +56,15 @@
 					<div class="small-6 medium-3 columns">
 						<a class="button expanded hollow upper white" href="#close">Close</a>
 					</div>
-					<?php if(!is_singular( 'work' )) :?>
-					<div class="small-6 medium-3 columns">
-						<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
-					</div>
-				<?php endif; ?>
+					<?php if(is_post_type_archive( 'work' ) || is_singular( 'advance' )) : ?>
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
+						</div>
+					<?php elseif(is_post_type_archive( 'podcast' )) : ?>
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" id="seeProject" href="#">Go to Post</a>
+						</div>
+					<?php endif; ?>
 				</div>
 		  </div>
 		</div>

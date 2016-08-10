@@ -45,7 +45,6 @@ get_header(); ?>
 	</header>
 	<!-- CLOSE HEADLINE -->
 
-
 	<article class="main-cards pad" id="workPosts"
 		data-500-end="transform: translate(0px, 0px)"
 		data-end="transform: translate(0px, -100px)">

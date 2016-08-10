@@ -10,12 +10,12 @@ body.fixed, body.video-fixed {
   top: 0;
   overflow: hidden;
 }
-
-path {
-  fill: black;
-  transition: fill .5s !important;
+.home-link {
+  path {
+    fill: black;
+    transition: fill .5s !important;
+  }
 }
-
 // Typography
 h5 {
   letter-spacing: 1.5px;
@@ -121,7 +121,7 @@ a, button {
 }
 .w-control-bar {
   display: flex!important;
-} 
+}
 
 // Contrast
 .contrast-text {
