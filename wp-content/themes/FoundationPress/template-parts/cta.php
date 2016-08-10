@@ -1,8 +1,6 @@
 <?php
 	if ( get_field('choose_cta') !== "Hide" ) {
-
     if ( get_field('choose_cta') == "Default" ) {
-
       if( is_singular( 'post' ) ) { // IF IS A POST
         $ctaId = get_field('post_cta_default', 'option');
         $ctaId = $ctaId[0];
@@ -15,7 +13,13 @@
   			$value = get_field('cta_button_value', $ctaId);
         $url = get_field('cta_button_url', $ctaId);
         $blurb = get_field('cta_button_blurb', $ctaId);
-  		} else {
+  		} elseif( is_singular( 'podcast' ) ) { // IF IS A WORK POST
+				$ctaId = get_field('podcast_cta_default', 'option');
+				$ctaId = $ctaId[0];
+				$value = get_field('cta_button_value', $ctaId);
+				$url = get_field('cta_button_url', $ctaId);
+				$blurb = get_field('cta_button_blurb', $ctaId);
+			} else {
         $ctaId = get_field('post_global_default', 'option');
         $ctaId = $ctaId[0];
   			$value = get_field('cta_button_value', $ctaId);
@@ -45,9 +49,7 @@
       data-0="margin-top: 0px;"
       data-end="margin-top: 120px;">
 	<?php else : ?>
-		<div id="cta" class="row collapse align-middle"
-			data-bottom-top="transform: translate(0px, 0px);"
-			data-end="transform: translate(0px, 60px)">
+		<div id="cta" class="row collapse align-middle">
 	<?php endif; ?>
     <div class="small-12 medium-8 columns text-center">
       <h2><?= $blurb; ?></h2>

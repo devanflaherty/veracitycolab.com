@@ -51,17 +51,17 @@ article {
 // Markdown classes
 $margin: 40px;
 #contentBody {
-  .content .columns {
+  .content .columns.content-col {
     & > p:last-of-type {
       margin-bottom: 0
     }
-    & > :only-child {
+    & > :only-child:not(header, footer) {
       margin: $margin 0;
     }
-    & > :last-child:not(footer) {
+    & > :last-child:not(header, footer) {
       margin-bottom: $margin!important;
     }
-    & > :first-child:not(header) {
+    & > :first-child:not(header, footer) {
       margin-top: $margin!important;
     }
   }

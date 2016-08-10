@@ -17,6 +17,18 @@
       @include grid-column(8);
     }
   }
+  .cta {
+    padding: 0!important;
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(medium) {
+      @include grid-column(11);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
+    }
+  }
   .main-content {
     background: $white;
     @include breakpoint(small only) {
@@ -31,32 +43,6 @@
     // .content-col {
     //   padding: 0 40px!important;
     // }
-  }
-  .sidebar {
-    padding: 0 40px 60px!important;
-    transition: all 0.25s ease;
-    div {
-      margin-bottom: 24px;
-      line-height: 1.7;
-      span {
-        font-weight: 400
-      }
-    }
-    .sticky > *:first-child {
-      margin-top: 40px;
-      display: block;
-    }
-  }
-  .credits {
-    list-style-type: none;
-    margin: 12px 0;
-    a {
-      color: $dark-gray;
-      border-bottom: 2px solid transparent;
-      &:hover {
-        border-bottom: 2px solid $dark-gray;
-      }
-    }
   }
   .cta-row {
     @include flex-align(center, middle);
