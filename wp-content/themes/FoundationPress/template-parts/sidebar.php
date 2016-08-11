@@ -21,7 +21,7 @@
             <div class="medium-10 large-8 columns author-meta">
               <span>Written by</span>
               <span><strong><?= $name; ?></strong></span>
-              <span><?= $title; ?>Video Success Manager</span>
+              <span><?= $title; ?></span>
             </div>
         <?php
           endforeach;
