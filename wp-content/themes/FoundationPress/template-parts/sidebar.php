@@ -15,12 +15,12 @@
         		$image = $image[0];
           ?>
             <div class="columns author-image shrink">
-              <div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div>
+              <a href="<?= $permalink; ?>"><div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div></a>
             </div>
 
             <div class="columns author-meta">
               <span>Written by</span>
-              <span><strong><?= $name; ?></strong></span>
+              <a href="<?= $permalink; ?>"><span><strong><?= $name; ?></strong></span></a>
               <span><?= $title; ?></span>
             </div>
         <?php

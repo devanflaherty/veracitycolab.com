@@ -29,18 +29,17 @@ get_header(); ?>
 		data-end="transform: translate(0px , <?= $pullUp; ?>px); margin-bottom: 60px">
 		<div class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>"
 			style="margin-top: <?= $pullUp; ?>">
+			<header id="contentHeader">
+				<h6>Episode <?php the_field('episode'); ?></h6>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+        <?php get_template_part( 'template-parts/single-meta' ); ?>
+			</header>
 			<div id="contentBody" class="entry-content">
-				<header id="contentHeader">
-					<h6>Episode <?php the_field('episode'); ?></h6>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-          <?php get_template_part( 'template-parts/single-meta' ); ?>
-				</header>
 
 				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
 				<?php the_content(); ?>
-
-				<footer id="contentFooter"></footer>
 			</div>
+			<footer id="contentFooter"></footer>
 		</div>
 		<!-- <footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

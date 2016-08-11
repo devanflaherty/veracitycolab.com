@@ -44,6 +44,9 @@
   .author-image {
     padding-left: 20px;
     padding-right: 10px;
+    a {
+      display: block;
+    }
     @include breakpoint(medium) {
       margin-bottom: 24px;
     }
@@ -98,7 +101,9 @@
 // Single Meta
 .single-meta {
   margin-top: 24px;
-  margin-bottom: 40px!important;
+  .shrink {
+    padding-left: 0px;
+  }
   .author-avatar {
     width: 80px;
     height: 80px;
@@ -135,7 +140,7 @@
 
 .single-podcast, .single-work {
   .single-meta {
-    margin: 24px 0px 40px!important;
+    margin: 24px 0px 0px!important;
     .post-date {
       float: left;
       margin-right: 20px;

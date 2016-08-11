@@ -1,6 +1,6 @@
 #singleWork {
   @include flex-grid-row();
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   @include breakpoint(small only) {
     padding: 0 20px;
   }

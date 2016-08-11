@@ -4830,6 +4830,8 @@ a::after {
   .sidebar .author-image {
     padding-left: 20px;
     padding-right: 10px; }
+    .sidebar .author-image a {
+      display: block; }
     @media screen and (min-width: 40em) {
       .sidebar .author-image {
         margin-bottom: 24px; } }
@@ -4868,8 +4870,9 @@ a::after {
       margin-right: 8px; }
 
 .single-meta {
-  margin-top: 24px;
-  margin-bottom: 40px !important; }
+  margin-top: 24px; }
+  .single-meta .shrink {
+    padding-left: 0px; }
   .single-meta .author-avatar {
     width: 80px;
     height: 80px;
@@ -4897,7 +4900,7 @@ a::after {
         color: #0a0a0a; }
 
 .single-podcast .single-meta, .single-work .single-meta {
-  margin: 24px 0px 40px !important; }
+  margin: 24px 0px 0px !important; }
   .single-podcast .single-meta .post-date, .single-work .single-meta .post-date {
     float: left;
     margin-right: 20px; }
@@ -5558,6 +5561,18 @@ article {
   z-index: 100;
   margin-top: 0 !important; }
 
+header#contentHeader {
+  margin-top: 0;
+  padding: 0 20px; }
+  header#contentHeader h1 {
+    font-size: 48px;
+    line-height: 42px;
+    margin-top: 0;
+    color: #0a0a0a; }
+  header#contentHeader h6 {
+    margin-top: 0 !important;
+    color: #BFBFBF !important; }
+
 .sidebar h3 {
   font-weight: 600;
   letter-spacing: -1px;
@@ -5572,23 +5587,20 @@ article {
     .sidebar .button-wrapper a:hover {
       opacity: 1.0; }
 
-#contentBody .content .columns.content-col > p:last-of-type {
+#contentBody .content .columns > p:last-of-type {
   margin-bottom: 0; }
 
-#contentBody .content .columns.content-col > :only-child:not(header):not(footer) {
+#contentBody .content .columns > :only-child {
   margin: 40px 0; }
 
-#contentBody .content .columns.content-col > :last-child:not(header):not(footer) {
+#contentBody .content .columns > :last-child {
   margin-bottom: 40px !important; }
 
-#contentBody .content .columns.content-col > :first-child:not(header):not(footer) {
+#contentBody .content .columns > :first-child {
   margin-top: 40px !important; }
 
-#contentBody header#contentHeader {
-  margin-top: 0; }
-  #contentBody header#contentHeader h6 {
-    margin-top: 0 !important;
-    color: #BFBFBF !important; }
+#contentBody > .flex-wrap:first-child {
+  margin-top: 40px !important; }
 
 #contentBody h1, #contentBody h2, #contentBody h3, #contentBody h4, #contentBody h5, #contentBody h6 {
   margin-top: 40px;
@@ -6384,7 +6396,7 @@ pre {
   display: flex;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  margin-bottom: 20px; }
+  margin-bottom: 40px; }
   @media screen and (max-width: 39.9375em) {
     #singleWork {
       padding: 0 20px; } }

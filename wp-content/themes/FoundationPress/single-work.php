@@ -24,29 +24,29 @@ get_header(); ?>
 		data-0="transform: translate(0px , 0px);"
 		data-end="transform: translate(0px , -100px);">
 		<div class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>">
-			<div id="contentBody" class="entry-content">
-				<?php
-					$clients = get_field('client');
-					if( $clients ) {
-						foreach( $clients as $p ) {
-							$client = get_the_title( $p->ID );
-						}
+			<?php
+				$clients = get_field('client');
+				if( $clients ) {
+					foreach( $clients as $p ) {
+						$client = get_the_title( $p->ID );
 					}
-				?>
-				<header id="contentHeader">
-					<h6><?= $client; ?></h6>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<?php get_template_part( 'template-parts/single-meta' ); ?>
-				</header>
+				}
+			?>
+			<header id="contentHeader">
+				<h6><?= $client; ?></h6>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<?php get_template_part( 'template-parts/single-meta' ); ?>
+			</header>
 
+			<div id="contentBody" class="entry-content">
 				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
 				<?php the_content(); ?>
-
-				<footer id="contentFooter">
-					<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
-					<p><?php the_tags(); ?></p>
-				</footer>
 			</div>
+
+			<footer id="contentFooter">
+				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
+				<p><?php the_tags(); ?></p>
+			</footer>
 		</div>
 	</article>
 	<!-- CLOSE MAIN CONTENT -->
@@ -60,9 +60,6 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/sidebar' ); ?>
 			</div>
 		</div>
-	</aside>
-	<aside class="sidebar hide-for-large" id="sidebar">
-		<?php get_template_part( 'template-parts/sidebar' ); ?>
 	</aside>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->

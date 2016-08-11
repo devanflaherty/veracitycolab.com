@@ -24,10 +24,11 @@ get_header(); ?>
 			data-end="transform: translate(0px , -100px);">
 	<?php endif; ?>
 		<div class="main-content" id="post-<?php the_ID(); ?>">
+			<header id="contentHeader">
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
+
 			<div id="contentBody" class="entry-content">
-				<header id="contentHeader">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-				</header>
 
 				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
 				<?php the_content(); ?>
@@ -85,9 +86,8 @@ get_header(); ?>
 					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 				<?php endif; ?>
 			</div>
-			<footer id="contentFooter">
-			</footer>
 		</div>
+		<footer id="contentFooter"></footer>
 	</article>
 	<!-- CLOSE MAIN CONTENT -->
 <?php endwhile;?>
