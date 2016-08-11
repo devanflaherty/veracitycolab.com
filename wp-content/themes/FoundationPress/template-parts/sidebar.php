@@ -14,11 +14,11 @@
             $image = wp_get_attachment_image_src( get_post_thumbnail_id( $p->ID ), 'single-post-thumbnail' );
         		$image = $image[0];
           ?>
-            <div class="small-4 medium-2 large-4 columns author-image">
+            <div class="columns author-image shrink">
               <div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div>
             </div>
 
-            <div class="medium-10 large-8 columns author-meta">
+            <div class="columns author-meta">
               <span>Written by</span>
               <span><strong><?= $name; ?></strong></span>
               <span><?= $title; ?></span>
