@@ -64,10 +64,10 @@ get_header(); ?>
 
 			<?php
 				// Setting up some variabels to make life a little easier
-				$setColor =  get_field('primary_color');
+				$setColor =  get_field('podcast_primary_color', 'option');
 				$color = $setColor;
 				$primary = foundationpress_hex2rgba($color, 0.8);
-				$secondary = substr(get_field( 'secondary_color'), 1);
+				$secondary = substr(get_field( 'podcast_secondary_color', 'option'), 1);
 				$video =  get_field('video_id');
 
 				// Have to do a lil loop to get the a-singular client
@@ -75,7 +75,7 @@ get_header(); ?>
 			?>
 			<div class="column">
 				<a href="<?php the_permalink(); ?>" class="permalink">
-					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
+					<div class="hover-indicator" style="background: <?php the_field( 'podcast_primary_color', 'option' ) ?>"></div>
 					<div class="post-meta">
 						<h5><span>Episode <?= $episode; ?></span></h5>
 						<h3><?php the_title(); ?></h3>
