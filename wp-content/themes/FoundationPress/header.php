@@ -26,9 +26,9 @@ if(is_front_page() ) {
 }
 
 // Set site description
-$seoDesc = get_field('seo-description', 'option');
+$seoDesc = get_field('seo_description', 'option');
 if($seoDesc && $seoDesc !== "") {
-  $description = get_field('seo-description', 'option');
+  $description = get_field('seo_description', 'option');
 } else {
   $description = get_bloginfo( 'description', 'display' );
 }
