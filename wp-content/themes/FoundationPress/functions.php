@@ -50,6 +50,12 @@ require_once( 'library/responsive-images.php' );
 /** Configure convert color to hex */
 require_once( 'library/hex.php' );
 
+/** Get The Client for work posts */
+require_once( 'library/get-client.php' );
+
+/** Get site colors */
+require_once( 'library/colors.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 

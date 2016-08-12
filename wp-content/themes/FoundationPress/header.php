@@ -8,26 +8,39 @@
  * @since FoundationPress 1.0.0
  */
 
- if ( is_post_type_archive('work') ) {
-	 $primaryColor = get_field( 'work_primary_color', 'option' );
-	 $secondaryColor = get_field( 'work_secondary_color', 'option' );
- } elseif ( is_post_type_archive('team') ) {
-	 $primaryColor = get_field( 'team_primary_color', 'option' );
-	 $secondaryColor = get_field( 'team_secondary_color', 'option' );
- } elseif ( is_post_type_archive('podcast') || is_singular('podcast') ) {
-   $primaryColor = get_field( 'podcast_primary_color', 'option' );
-   $secondaryColor = get_field( 'podcast_secondary_color', 'option' );
- } elseif (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
-	 $primaryColor = get_field( 'primary_color' );
-	 $secondaryColor = get_field( 'secondary_color' );
- } else {
-   $primaryColor = get_field( 'global_primary_color', 'options' );
-   $secondaryColor = get_field( 'global_secondary_color', 'options' );
- }
+$colors = getColors();
+$primaryColor = $colors['primary'];
+$secondaryColor = $colors['secondary'];
 
- $description = "VeracityColab is a video production & motion graphics agency based in Newport Beach, CA. We make live action & motion graphic brand videos!";
+// Set Page title
+// Display a special title for front page to help SEO
+if(is_front_page() ) {
+  $pageTitle = "VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA";
+} elseif(is_singular('work')) {
+  // Set a special title that displays the client for work posts
+  $client = getClient();
+  $pageTitle = $client . " | " . get_the_title() . " - " . get_bloginfo( 'name', 'display' );
+} else {
+  // Fallback title for all pages
+  $pageTitle =  wp_title( '-', false, 'right' ) . get_bloginfo( 'name', 'display' );
+}
 
+// Set site description
+$seoDesc = get_field('seo-description', 'option');
+if($seoDesc && $seoDesc !== "") {
+  $description = get_field('seo-description', 'option');
+} else {
+  $description = get_bloginfo( 'description', 'display' );
+}
+// If is post page and if the excerpt field has content change description
+if ( is_singular('post'))  {
+  $excerpt = get_field('excerpt');
+  if($excerpt && $excerpt !== "") {
+    $description = $excerpt;
+  }
+}
 ?>
+
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
@@ -35,9 +48,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="D75mcBbFpurEh5x_YA2-r91ntoWT4_SZxcXTSiTLcUQ">
 
-  <?php if(is_front_page() ) : ?>
-    <title>VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA</title>
-  <?php endif; ?>
+    <title><?= $pageTitle; ?></title>
     <meta name="description" content="<?= $description; ?>">
   <?php if ( is_singular('advance'))  : ?>
     <meta name="robots" content="noindex">
@@ -46,11 +57,6 @@
   <?php endif; ?>
     <meta name="zipcode" content="92658">
 
-  <?php if ( is_post_type_archive('work'))  : ?>
-    <meta property="og:description" content="Check out <?php the_title(); ?>, some awesome work from VeracityColab. <?= $description; ?>">
-  <?php else: ?>
-    <meta property="og:description" content="<?= $description; ?>">
-  <?php endif; ?>
   <?php
     if ( has_post_thumbnail( $post->ID ) ) {
       if(! is_front_page() ) {
@@ -64,12 +70,14 @@
   	}
   ?>
     <meta property="og:image" content="<?= $fbImage; ?>"/>
-    <meta property="og:title" content="<?php the_title(); ?> - VeracityColab"/>
+    <meta property="og:title" content="<?= $pageTitle; ?>"/>
+    <meta property="og:description" content="<?= $description; ?>">
     <meta property="og:url" content="<?php echo get_permalink(); ?>"/>
-    <meta property="og:site_name" content="VeracityColab"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>"/>
     <meta property="og:type" content="blog"/>
 
 		<?php wp_head(); ?>
+
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
@@ -102,11 +110,6 @@
     </script>
     <!-- CALL RAIL -->
     <script src="//cdn.callrail.com/companies/176691639/d7e924485e706ce162f8/12/swap.js"></script>
-
-  <?php if ( is_post_type_archive('team'))  : ?>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
-  <?php endif; ?>
 
 		<style>
 			.top-bar .menu .colorize a, .home-link.colorize path {

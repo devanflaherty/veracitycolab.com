@@ -1,11 +1,22 @@
 <!-- SHARE SECTION -->
+<?php
+  // Set twitter compose text
+  if(is_singular('post')) {
+    $twitter = "This is a great read! " . get_the_title() . " by  " . get_the_author() . "  from @VeracityColab.";
+  } elseif(is_singular('work')) {
+    $client = getClient();
+    $twitter = "Check out the " . get_the_title() . " project for " . $client . " by @VeracityColab.";
+  } elseif(is_singular('podcast')) {
+    $twitter = "Watch " . get_the_title() . " on Play It Forward by @VeracityColab to get great video insights for your business.";
+  }
+?>
 <div class="sidebar-social">
   <nav>
     <a target="_blank" href="http://twitter.com/share?url=<?php echo get_permalink(); ?>
-&amp;text=<?php the_title(); ?> : Awesome post by the @veracityColab team.">
+&amp;text=<?= urlencode($twitter); ?>">
       <i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter
     </a>
-    <a target="_blank" href="http://www.facebook.com/sharer.php?u=http:<?php echo get_permalink(); ?>">
+    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>">
       <i class="fa fa-facebook-official" aria-hidden="true"></i> Share on Facebook
     </a>
 
@@ -21,7 +32,7 @@
         </a>
       <?php endif;?>
     <?php endif; ?>
-    
+
     <?php if(is_singular('podcast')) : ?>
       <a target="_blank" href="<?php the_field( 'podcast_subscribe', 'options' ); ?>">
         <i class="fa fa-music"></i> Listen on iTunes

@@ -69,14 +69,7 @@ get_header(); ?>
 				$primary = foundationpress_hex2rgba($color, 0.8);
 				$secondary = substr(get_field( 'secondary_color'), 1);
 				$video =  get_field('video_id');
-
-				// Have to do a lil loop to get the a-singular client
-				$clients = get_field('client');
-				if( $clients ) {
-					foreach( $clients as $p ) {
-			    	$client = get_the_title( $p->ID );
-					}
-				}
+				$client = getClient();
 			?>
 			<div class="columns small-12 feature-post">
 				<a href="<?php the_permalink(); ?>" class="permalink">

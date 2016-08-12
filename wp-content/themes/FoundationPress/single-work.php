@@ -25,12 +25,7 @@ get_header(); ?>
 		data-end="transform: translate(0px , -100px);">
 		<div class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>">
 			<?php
-				$clients = get_field('client');
-				if( $clients ) {
-					foreach( $clients as $p ) {
-						$client = get_the_title( $p->ID );
-					}
-				}
+				$client = getClient();
 			?>
 			<header id="contentHeader">
 				<h6><?= $client; ?></h6>
