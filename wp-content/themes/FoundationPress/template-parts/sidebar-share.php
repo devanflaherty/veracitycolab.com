@@ -2,12 +2,12 @@
 <?php
   // Set twitter compose text
   if(is_singular('post')) {
-    $twitter = "This is a great read! " . get_the_title() . " by  " . get_the_author() . "  from @VeracityColab.";
+    $twitter = "This is a great read! " . get_the_title() . " by " . get_the_author() . " from @VeracityColab.";
   } elseif(is_singular('work')) {
     $client = getClient();
     $twitter = "Check out the " . get_the_title() . " project for " . $client . " by @VeracityColab.";
   } elseif(is_singular('podcast')) {
-    $twitter = "Watch " . get_the_title() . " on Play It Forward by @VeracityColab to get great video insights for your business.";
+    $twitter = "Watch Episode " . get_field('episode') . " on Play It Forward by @VeracityColab to get great video insights for your business.";
   }
 ?>
 <div class="sidebar-social">
