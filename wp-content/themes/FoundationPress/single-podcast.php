@@ -50,7 +50,7 @@ get_header(); ?>
 	<!-- SIDEBAR -->
 	<aside class="sidebar show-for-large" id="sidebar">
 	  <div data-sticky-container>
-	    <div class="sticky side-wrap" data-sticky data-top-anchor="sidebar:top" data-btm-anchor="contentFooter:top" data-check-every="0" data-options="marginTop:7;" data-sticky-on="large">
+	    <div class="sticky side-wrap" data-sticky data-anchor="single-post" data-check-every="0" data-options="marginTop:7;" data-sticky-on="large">
 				<?php get_template_part( 'template-parts/sidebar' ); ?>
 			</div>
 		</div>
