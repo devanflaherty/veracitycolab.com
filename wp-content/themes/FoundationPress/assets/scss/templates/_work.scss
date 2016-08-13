@@ -1,13 +1,26 @@
 #singleWork {
   @include flex-grid-row();
+  margin-bottom: 40px;
   @include breakpoint(small only) {
     padding: 0 20px;
   }
-  .main-content {
-    background: $white;
+  @include breakpoint(medium down) {
+    @include flex-align(center);
+  }
+  article {
     @include grid-column(12);
-    @include breakpoint(small only) {
-      margin-top: -30px;
+    padding: 0!important;
+    @include breakpoint(medium) {
+      @include grid-column(11);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
+    }
+  }
+  .cta {
+    padding: 0!important;
+    @include breakpoint(small) {
+      @include grid-column(12);
     }
     @include breakpoint(medium) {
       @include grid-column(11);
@@ -15,38 +28,21 @@
     @include breakpoint(large) {
       @include grid-column(8);
     }
+  }
+  .main-content {
+    background: $white;
+    @include breakpoint(small only) {
+      margin-top: -30px;
+    }
     &.animate-in {
       transition: all 1s ease;
     }
     .row {
       margin-top: 0;
     }
-  }
-  .sidebar {
-    padding: 0 40px 60px!important;
-    transition: all 0.25s ease;
-    div {
-      margin-bottom: 24px;
-      line-height: 1.7;
-      span {
-        font-weight: 400
-      }
-    }
-    .sticky > *:first-child {
-      margin-top: 40px;
-      display: block;
-    }
-  }
-  .credits {
-    list-style-type: none;
-    margin: 12px 0;
-    a {
-      color: $dark-gray;
-      border-bottom: 2px solid transparent;
-      &:hover {
-        border-bottom: 2px solid $dark-gray;
-      }
-    }
+    // .content-col {
+    //   padding: 0 40px!important;
+    // }
   }
   .cta-row {
     @include flex-align(center, middle);
