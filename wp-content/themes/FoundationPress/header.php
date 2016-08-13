@@ -28,7 +28,7 @@ if(is_front_page() ) {
 // Set site description
 $seoDesc = get_field('seo_description', 'option');
 if($seoDesc && $seoDesc !== "") {
-  $description = get_field('seo_description', 'option');
+  $description = $seoDesc;
 } else {
   $description = get_bloginfo( 'description', 'display' );
 }
@@ -49,7 +49,7 @@ if ( is_singular('post'))  {
     <meta name="google-site-verification" content="D75mcBbFpurEh5x_YA2-r91ntoWT4_SZxcXTSiTLcUQ">
 
     <title><?= $pageTitle; ?></title>
-    <meta name="description" content="<?= $description; ?>">
+    <meta name="description" content="<?= strip_tags($description); ?>">
   <?php if ( is_singular('advance'))  : ?>
     <meta name="robots" content="noindex">
   <?php else: ?>
@@ -71,7 +71,7 @@ if ( is_singular('post'))  {
   ?>
     <meta property="og:image" content="<?= $fbImage; ?>"/>
     <meta property="og:title" content="<?= $pageTitle; ?>"/>
-    <meta property="og:description" content="<?= $description; ?>">
+    <meta property="og:description" content="<?= strip_tags($description); ?>">
     <meta property="og:url" content="<?php echo get_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>"/>
     <meta property="og:type" content="blog"/>
