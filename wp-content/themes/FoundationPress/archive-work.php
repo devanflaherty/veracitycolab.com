@@ -105,11 +105,13 @@ get_header(); ?>
 				'posts_per_page' => 8,
 				'post_type'		=> 'work',
 				'meta_key'		=> 'visibility',
+				'meta_compare'		=> '==',
 				'meta_value'	=> 'default',
 				'paged' => $paged
 			);
 
 			$the_query = new WP_Query( $args );
+			$wp_query = $the_query;
 		?>
 		<?php if( $the_query->have_posts() ): ?>
 		<div class="row small-up-1 medium-up-2 post-grid present">
@@ -156,7 +158,6 @@ get_header(); ?>
 
 		</div>
 		<?php endif; // End have_posts() check. ?>
-		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
