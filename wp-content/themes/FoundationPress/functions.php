@@ -56,9 +56,6 @@ require_once( 'library/get-client.php' );
 /** Get site colors */
 require_once( 'library/colors.php' );
 
-/** Paginate */
-require_once( 'library/paginate.php' );
-
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
