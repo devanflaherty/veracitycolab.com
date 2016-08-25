@@ -61,18 +61,18 @@ get_header(); ?>
 								}
 							?>
 							<div class="column">
-								<a href="<?php the_permalink(); ?>" class="permalink">
-									<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
-									<div class="post-meta">
-										<h5><span><?= $client ?></span></h5>
-										<h3><?php the_title(); ?></h3>
-									</div>
-								</a>
 							<?php if ( has_post_thumbnail() )  : ?>
 								<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 							<?php else : ?>
 								<div class="post-block" style="background-color: <?= $primary; ?>">
 							<?php endif; ?>
+									<a href="<?php the_permalink(); ?>" class="permalink">
+										<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
+										<div class="post-meta">
+											<h5><span><?= $client ?></span></h5>
+											<h3><?php the_title(); ?></h3>
+										</div>
+									</a>
 									<div class="permalink-overlay"></div>
 									<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
 										<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">

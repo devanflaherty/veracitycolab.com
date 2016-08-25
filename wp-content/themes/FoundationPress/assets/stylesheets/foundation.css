@@ -5362,12 +5362,13 @@ form .hs-error-msgs {
   .post-grid > .column, .post-grid > .columns {
     margin-bottom: 24px; }
     .post-grid > .column .permalink, .post-grid > .columns .permalink {
-      position: relative;
+      position: absolute;
       display: block;
       width: 100%;
+      z-index: 600;
       height: auto;
       background: #fefefe !important;
-      margin: 0; }
+      margin: -1px 0 0; }
       .post-grid > .column .permalink .hover-indicator, .post-grid > .columns .permalink .hover-indicator {
         position: absolute;
         top: 0;
@@ -5403,7 +5404,6 @@ form .hs-error-msgs {
   .post-grid .feature-post .post-block {
     overflow: hidden;
     position: relative;
-    max-height: 400px;
     margin-bottom: 24px; }
     .post-grid .feature-post .post-block img {
       margin-top: -25%; }
@@ -5411,10 +5411,14 @@ form .hs-error-msgs {
       padding-bottom: 33.25% !important; }
       .post-grid .feature-post .post-block a.play .thumbnail-overlay {
         padding-bottom: 33.25% !important; }
+      @media screen and (max-width: 39.9375em) {
+        .post-grid .feature-post .post-block a.play {
+          padding-bottom: 56.25% !important; }
+          .post-grid .feature-post .post-block a.play .thumbnail-overlay {
+            padding-bottom: 56.25% !important; } }
   .post-grid .post-block {
     overflow: hidden;
     position: relative;
-    max-height: 400px;
     width: 100%;
     background: black;
     background-position: center;
@@ -5441,8 +5445,12 @@ form .hs-error-msgs {
       width: 100%;
       height: 100%;
       position: relative;
+      margin-top: 100px;
       padding-bottom: 56.25%;
       z-index: 200; }
+      @media screen and (max-width: 39.9375em) {
+        .post-grid .post-block .play {
+          margin-top: 94px; } }
       .post-grid .post-block .play span {
         width: 80px;
         height: 80px;
@@ -5528,6 +5536,10 @@ form .hs-error-msgs {
     color: #0a0a0a; }
   .advance-posts .column, .advance-posts .columns {
     padding: 0 12px !important; }
+
+#blog .permalink {
+  position: relative;
+  margin: 0 0 0; }
 
 #blog .post-block:after {
   padding-top: 56.25%;
