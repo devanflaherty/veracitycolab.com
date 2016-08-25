@@ -62,9 +62,13 @@
 }
 
 #archiveTeam {
+  .headline {
+    z-index: 500!important;
+  }
   .main-cards {
     margin-top: 0rem!important;
     margin-bottom: 40px;
+    z-index: 0!important;
     @include breakpoint(medium) {
       margin-top: 4rem!important;
     }

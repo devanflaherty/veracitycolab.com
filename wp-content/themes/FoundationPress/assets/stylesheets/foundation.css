@@ -6630,9 +6630,13 @@ pre {
       #singleTeam .parallax-bg {
         display: block; } }
 
+#archiveTeam .headline {
+  z-index: 500 !important; }
+
 #archiveTeam .main-cards {
   margin-top: 0rem !important;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  z-index: 0 !important; }
   @media screen and (min-width: 40em) {
     #archiveTeam .main-cards {
       margin-top: 4rem !important; } }
