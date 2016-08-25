@@ -90,6 +90,7 @@ if ( is_singular('post'))  {
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-128.png" sizes="128x128" />
+    <link rel='mask-icon' href='<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon.svg' color='#ff0000'>
     <meta name="application-name" content="&nbsp;"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-144x144.png" />
