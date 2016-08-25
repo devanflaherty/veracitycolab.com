@@ -5249,6 +5249,17 @@ form .hs-error-msgs {
   #featured-hero.hidden {
     height: 2px !important;
     opacity: 0; }
+  #featured-hero.device .feature-overlay {
+    opacity: .75; }
+  #featured-hero.device .feature-play {
+    animation: pulse 2s infinite;
+    opacity: 1;
+    -ms-transform: scale(1);
+        transform: scale(1); }
+    #featured-hero.device .feature-play i {
+      opacity: 1;
+      -ms-transform: scale(1);
+          transform: scale(1); }
   #featured-hero .feature-overlay {
     opacity: 0;
     transition: all 0.5s ease;
@@ -5470,10 +5481,6 @@ form .hs-error-msgs {
             transform: scale(0.25, 0.25);
         transition: all 0.5s ease;
         transition-delay: 0.2s; }
-        .post-grid .post-block .play span.device {
-          opacity: 1;
-          -ms-transform: scale(1);
-              transform: scale(1); }
         .post-grid .post-block .play span i {
           position: absolute;
           font-size: 34px;
@@ -5507,8 +5514,6 @@ form .hs-error-msgs {
               justify-content: center;
           -ms-flex-align: center;
               align-items: center; } }
-      .post-grid .post-block .thumbnail-overlay.device {
-        opacity: 1; }
       .post-grid .post-block .thumbnail-overlay .excerpt {
         padding: 20px;
         color: #fefefe; }

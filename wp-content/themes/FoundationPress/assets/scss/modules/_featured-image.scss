@@ -25,6 +25,20 @@
 			height: 2px!important;
 			opacity: 0;
 		}
+		&.device {
+			.feature-overlay {
+				opacity: .75;
+			}
+			.feature-play {
+				animation: pulse 2s infinite;
+				opacity: 1;
+				transform: scale(1);
+				i {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
 		.feature-overlay {
 			opacity: 0;
 			transition: all 0.5s ease;
