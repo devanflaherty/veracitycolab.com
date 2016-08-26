@@ -5379,7 +5379,7 @@ form .hs-error-msgs {
     position: relative; }
     @media screen and (max-width: 39.9375em) {
       .post-grid > .column, .post-grid > .columns {
-        padding-bottom: 56.25%; } }
+        padding-bottom: 72%; } }
   .post-grid .permalink {
     -ms-flex: 1 0 auto;
         flex: 1 0 auto;
@@ -5521,7 +5521,7 @@ form .hs-error-msgs {
     padding-bottom: 47%; }
     @media screen and (max-width: 39.9375em) {
       .post-grid .feature-post {
-        padding-bottom: 56.25%; } }
+        padding-bottom: 72%; } }
 
 .single-advance .main-content {
   padding-bottom: 0; }
@@ -5808,6 +5808,9 @@ pre {
     border: none;
     padding: 0;
     color: #8148eb; }
+
+.bp-2000 {
+  background: #fefefe; }
 
 .pagination-centered {
   display: -ms-flexbox;
