@@ -5290,8 +5290,8 @@ form .hs-error-msgs {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 30px;
     z-index: 50;
     margin: auto;
     text-align: center;
@@ -5301,6 +5301,9 @@ form .hs-error-msgs {
         transform: scale(0.25);
     transition: all 0.5s ease;
     background: rgba(254, 254, 254, 0.5); }
+    @media screen and (min-width: 40em) {
+      #featured-hero .feature-play {
+        bottom: 50px; } }
     #featured-hero .feature-play:hover {
       animation: pulse 2s infinite; }
     #featured-hero .feature-play i {
