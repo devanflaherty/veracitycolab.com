@@ -5433,7 +5433,8 @@ form .hs-error-msgs {
   .post-grid .post-block {
     overflow: hidden;
     width: 100%;
-    background: black; }
+    background: black;
+    position: relative; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
@@ -5537,6 +5538,8 @@ form .hs-error-msgs {
   background: #e6e6e6;
   padding: 40px 30px;
   margin: 40px 0 0; }
+  .advance-posts .permalink {
+    width: calc(100% - 24px) !important; }
   .advance-posts h3 {
     padding: 0 15px;
     margin: 0 0 40px;

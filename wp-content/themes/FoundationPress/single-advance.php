@@ -61,25 +61,7 @@ get_header(); ?>
 								}
 							?>
 							<div class="column">
-							<?php if ( has_post_thumbnail() )  : ?>
-								<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-							<?php else : ?>
-								<div class="post-block" style="background-color: <?= $primary; ?>">
-							<?php endif; ?>
-									<a href="<?php the_permalink(); ?>" class="permalink">
-										<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
-										<div class="post-meta">
-											<h5><span><?= $client ?></span></h5>
-											<h3><?php the_title(); ?></h3>
-										</div>
-									</a>
-									<div class="permalink-overlay"></div>
-									<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&playerColor=<?= $secondary; ?>&videoQuality=hd-only">
-										<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
-											<span><i class="fa fa-play" aria-hidden="true"></i></span>
-										</div>
-									</a>
-								</div>
+								<?php get_template_part( 'template-parts/work-content' ); ?>
 							</div>
 					<?php endforeach; ?>
 					</div>
