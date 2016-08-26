@@ -4867,7 +4867,8 @@ a::after {
     display: block;
     color: #808080; }
     .sidebar-social a i {
-      margin-right: 8px; }
+      margin-right: 8px;
+      margin-left: 1px; }
 
 .single-meta {
   margin-top: 24px; }
@@ -5373,12 +5374,12 @@ form .hs-error-msgs {
 
 .post-grid {
   width: 100%; }
-  .post-grid > .column, .post-grid > .columns {
+  .post-grid > .column, .post-grid > .columns, .post-grid .column, .post-grid .columns {
     margin-bottom: 24px;
     padding-bottom: 36.25%;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
-      .post-grid > .column, .post-grid > .columns {
+      .post-grid > .column, .post-grid > .columns, .post-grid .column, .post-grid .columns {
         padding-bottom: 72%; } }
   .post-grid .permalink {
     -ms-flex: 1 0 auto;
@@ -5538,7 +5539,8 @@ form .hs-error-msgs {
     margin: 0 0 40px;
     color: #0a0a0a; }
   .advance-posts .column, .advance-posts .columns {
-    padding: 0 12px !important; }
+    padding-left: 12px !important;
+    padding-right: 12px !important; }
 
 #blog .permalink {
   position: relative;
@@ -5618,7 +5620,8 @@ header#contentHeader {
   margin: 40px 0; }
   .sidebar .button-wrapper a {
     transition: all 0.5s ease;
-    opacity: 0.8; }
+    opacity: 0.8;
+    color: #fefefe; }
     .sidebar .button-wrapper a:hover {
       opacity: 1.0; }
 

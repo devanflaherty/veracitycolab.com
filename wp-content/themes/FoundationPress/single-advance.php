@@ -77,23 +77,28 @@ get_header(); ?>
 
 <?php if(get_field('pull_quote') && !empty(get_field( 'pull_quote' ))) : ?>
 <!-- SIDEBAR -->
-<aside class="sidebar show-for-large" id="workSidebar">
-  <div clas="row" data-sticky-container>
-    <div class="sticky" data-sticky data-anchor="workSidebar" data-check-every="0" data-options="marginTop:7;">
-      <h3><?php the_field('pull_quote'); ?></h3>
+<!-- SIDEBAR -->
+<aside class="sidebar show-for-large" id="sidebar">
+	<div data-sticky-container>
+		<div class="sticky side-wrap" data-sticky data-anchor="singleWork" data-check-every="0" data-options="marginTop:7;" data-sticky-on="large">
+			<div class="row collapse align-center align-middle">
+        <div class="sidebar-meta columns small-6 medium-12 large-12">
+					<h3><?php the_field('pull_quote'); ?></h3>
 
-			<?php if( have_rows('buttons') ) : ?>
-	      <div class="button-wrapper">
-	      <?php while ( have_rows("buttons") ) : the_row(); ?>
-					<?php
-						$buttonLink = get_sub_field('button_url');
-					?>
-	        <a class="headline-link button round expanded" href="<?= $buttonLink; ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
-	      <?php endwhile; ?>
-	      </div>
-	    <?php endif; ?>
-    </div>
-  </div>
+					<?php if( have_rows('buttons') ) : ?>
+			      <div class="button-wrapper">
+			      <?php while ( have_rows("buttons") ) : the_row(); ?>
+							<?php
+								$buttonLink = get_sub_field('button_url');
+							?>
+			        <a class="headline-link button round expanded" href="<?= $buttonLink; ?>"><?php if(get_sub_field('button_icon')) {the_sub_field('button_icon');} ?> <?php the_sub_field('button_value'); ?></a>
+			      <?php endwhile; ?>
+			      </div>
+			    <?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </aside>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->
