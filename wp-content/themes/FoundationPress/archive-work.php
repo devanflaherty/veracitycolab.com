@@ -79,13 +79,18 @@ get_header(); ?>
 						<h3><?php the_title(); ?></h3>
 					</div>
 				</a>
+				<div class="post-block" style="background-color: <?= $primary; ?>">
 				<?php if ( has_post_thumbnail() )  : ?>
-					<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
+					<a class="play"
+						style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)"
+						href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only"
+						data-permalink="<?php the_permalink(); ?>">
 				<?php else : ?>
-					<div class="post-block" style="background-color: <?= $primary; ?>">
+					<a class="play"
+						href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only"
+						data-permalink="<?php the_permalink(); ?>">
 				<?php endif; ?>
-					<div class="permalink-overlay"></div>
-					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
+						<div class="permalink-overlay"></div>
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
 						</div>
@@ -134,20 +139,25 @@ get_header(); ?>
 				}
 			?>
 			<div class="column">
-			<?php if ( has_post_thumbnail() )  : ?>
-				<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
-			<?php else : ?>
+				<a href="<?php the_permalink(); ?>" class="permalink">
+					<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
+					<div class="post-meta">
+						<h5><span><?= $client ?></span></h5>
+						<h3><?php the_title(); ?></h3>
+					</div>
+				</a>
 				<div class="post-block" style="background-color: <?= $primary; ?>">
-			<?php endif; ?>
-					<a href="<?php the_permalink(); ?>" class="permalink">
-						<div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
-						<div class="post-meta">
-							<h5><span><?= $client ?></span></h5>
-							<h3><?php the_title(); ?></h3>
-						</div>
-					</a>
-					<div class="permalink-overlay"></div>
-					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
+				<?php if ( has_post_thumbnail() )  : ?>
+					<a class="play"
+						style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)"
+						href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only"
+						data-permalink="<?php the_permalink(); ?>">
+				<?php else : ?>
+					<a class="play"
+						href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only"
+						data-permalink="<?php the_permalink(); ?>">
+				<?php endif; ?>
+						<div class="permalink-overlay"></div>
 						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
 							<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
 						</div>

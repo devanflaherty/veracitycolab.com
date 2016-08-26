@@ -2,20 +2,22 @@
   width: 100%;
   > .column {
     margin-bottom: 24px;
+    position: relative;
     .permalink {
-      position: absolute;;
-      display: block;
-      width: 100%;
+      position: absolute;
+      top: 0;
       z-index: 600;
+      display: block;
+      width: calc(100% - 39px);
       height: auto;
-      background: $white!important;
       margin: -1px 0 0;
+      background: $white!important;
       .hover-indicator {
         position: absolute;
+        z-index: 100;
         top: 0; left: 0;
         width: 0;
         height: 7px;
-        z-index: 100;
         transition: all 0.5s ease;
         &.hover {
           width: 100%!important;
@@ -23,6 +25,7 @@
       }
       //Client & Title
       .post-meta {
+        position: relative;
         padding: 30px 20px 20px;
         h3 {
           font-size: 28px;
@@ -77,11 +80,8 @@
   }
   .post-block {
     overflow: hidden;
-    position: relative;
     width: 100%;
     background: black;
-    background-position: center;
-    background-size: cover!important;
     a {
       display: block;
       overflow: hidden;
@@ -110,6 +110,8 @@
       margin-top: 100px;
       padding-bottom: 56.25%;
       z-index: 200;
+      background-position: center;
+      background-size: cover!important;
       @include breakpoint(small only) {
         margin-top: 94px;
       }

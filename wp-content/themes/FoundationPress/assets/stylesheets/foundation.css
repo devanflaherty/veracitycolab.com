@@ -5371,26 +5371,29 @@ form .hs-error-msgs {
 .post-grid {
   width: 100%; }
   .post-grid > .column, .post-grid > .columns {
-    margin-bottom: 24px; }
+    margin-bottom: 24px;
+    position: relative; }
     .post-grid > .column .permalink, .post-grid > .columns .permalink {
       position: absolute;
-      display: block;
-      width: 100%;
+      top: 0;
       z-index: 600;
+      display: block;
+      width: calc(100% - 39px);
       height: auto;
-      background: #fefefe !important;
-      margin: -1px 0 0; }
+      margin: -1px 0 0;
+      background: #fefefe !important; }
       .post-grid > .column .permalink .hover-indicator, .post-grid > .columns .permalink .hover-indicator {
         position: absolute;
+        z-index: 100;
         top: 0;
         left: 0;
         width: 0;
         height: 7px;
-        z-index: 100;
         transition: all 0.5s ease; }
         .post-grid > .column .permalink .hover-indicator.hover, .post-grid > .columns .permalink .hover-indicator.hover {
           width: 100% !important; }
       .post-grid > .column .permalink .post-meta, .post-grid > .columns .permalink .post-meta {
+        position: relative;
         padding: 30px 20px 20px; }
         .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
           font-size: 28px;
@@ -5429,11 +5432,8 @@ form .hs-error-msgs {
             padding-bottom: 56.25% !important; } }
   .post-grid .post-block {
     overflow: hidden;
-    position: relative;
     width: 100%;
-    background: black;
-    background-position: center;
-    background-size: cover !important; }
+    background: black; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
@@ -5458,7 +5458,9 @@ form .hs-error-msgs {
       position: relative;
       margin-top: 100px;
       padding-bottom: 56.25%;
-      z-index: 200; }
+      z-index: 200;
+      background-position: center;
+      background-size: cover !important; }
       @media screen and (max-width: 39.9375em) {
         .post-grid .post-block .play {
           margin-top: 94px; } }
