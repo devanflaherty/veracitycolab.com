@@ -5375,99 +5375,75 @@ form .hs-error-msgs {
   width: 100%; }
   .post-grid > .column, .post-grid > .columns {
     margin-bottom: 24px;
+    padding-bottom: 36.25%;
     position: relative; }
-    .post-grid > .column .permalink, .post-grid > .columns .permalink {
+    @media screen and (max-width: 39.9375em) {
+      .post-grid > .column, .post-grid > .columns {
+        padding-bottom: 56.25%; } }
+  .post-grid .permalink {
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+    z-index: 600;
+    display: block;
+    width: 100%;
+    margin: -1px 0 0;
+    background: #fefefe !important; }
+    .post-grid .permalink .hover-indicator {
       position: absolute;
+      z-index: 100;
       top: 0;
-      z-index: 600;
-      display: block;
-      width: calc(100% - 39px);
-      height: auto;
-      margin: -1px 0 0;
-      background: #fefefe !important; }
-      .post-grid > .column .permalink .hover-indicator, .post-grid > .columns .permalink .hover-indicator {
-        position: absolute;
-        z-index: 100;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 7px;
-        transition: all 0.5s ease; }
-        .post-grid > .column .permalink .hover-indicator.hover, .post-grid > .columns .permalink .hover-indicator.hover {
-          width: 100% !important; }
-      .post-grid > .column .permalink .post-meta, .post-grid > .columns .permalink .post-meta {
-        position: relative;
-        padding: 30px 20px 20px; }
-        .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
-          font-size: 28px;
-          line-height: 32px;
-          display: inline;
-          color: #808080;
-          padding: 0;
-          margin: 0; }
-          @media screen and (min-width: 40em) {
-            .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
-              font-size: 32px;
-              line-height: 36px; } }
-          .post-grid > .column .permalink .post-meta h3 span, .post-grid > .columns .permalink .post-meta h3 span {
-            color: #e6e6e6; }
-        .post-grid > .column .permalink .post-meta h5, .post-grid > .columns .permalink .post-meta h5 {
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          font-size: 15px;
-          margin: 0; }
-      .post-grid > .column .permalink.bloglink:hover .thumbnail-overlay, .post-grid > .columns .permalink.bloglink:hover .thumbnail-overlay {
-        opacity: 1; }
-  .post-grid .feature-post .post-block {
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 24px; }
-    .post-grid .feature-post .post-block img {
-      margin-top: -25%; }
-    .post-grid .feature-post .post-block a.play {
-      padding-bottom: 33.25% !important; }
-      .post-grid .feature-post .post-block a.play .thumbnail-overlay {
-        padding-bottom: 33.25% !important; }
-      @media screen and (max-width: 39.9375em) {
-        .post-grid .feature-post .post-block a.play {
-          padding-bottom: 56.25% !important; }
-          .post-grid .feature-post .post-block a.play .thumbnail-overlay {
-            padding-bottom: 56.25% !important; } }
+      left: 0;
+      width: 0;
+      height: 7px;
+      transition: all 0.5s ease; }
+      .post-grid .permalink .hover-indicator.hover {
+        width: 100% !important; }
+    .post-grid .permalink .post-meta {
+      position: relative;
+      padding: 30px 20px 20px; }
+      .post-grid .permalink .post-meta h3 {
+        font-size: 28px;
+        line-height: 32px;
+        display: inline;
+        color: #808080;
+        padding: 0;
+        margin: 0; }
+        @media screen and (min-width: 40em) {
+          .post-grid .permalink .post-meta h3 {
+            font-size: 32px;
+            line-height: 36px; } }
+        .post-grid .permalink .post-meta h3 span {
+          color: #e6e6e6; }
+      .post-grid .permalink .post-meta h5 {
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+        margin: 0; }
+    .post-grid .permalink.bloglink:hover .thumbnail-overlay {
+      opacity: 1; }
   .post-grid .post-block {
     overflow: hidden;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 39px);
+    height: 100%;
     background: black;
-    position: relative; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+        flex-flow: column; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
     .post-grid .post-block img {
       width: 100%;
       margin-top: -15%; }
-    .post-grid .post-block .permalink-overlay {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(254, 254, 254, 0.2);
-      transition: all 0.5s ease;
-      opacity: 0; }
-      .post-grid .post-block .permalink-overlay.show {
-        opacity: 1; }
     .post-grid .post-block .play {
-      display: block;
       width: 100%;
       height: 100%;
       position: relative;
-      margin-top: 100px;
-      padding-bottom: 56.25%;
-      z-index: 200;
+      z-index: 600;
       background-position: center;
       background-size: cover !important; }
-      @media screen and (max-width: 39.9375em) {
-        .post-grid .post-block .play {
-          margin-top: 94px; } }
       .post-grid .post-block .play span {
         width: 80px;
         height: 80px;
@@ -5503,15 +5479,26 @@ form .hs-error-msgs {
           opacity: 1;
           -ms-transform: scale(1);
               transform: scale(1); }
+    .post-grid .post-block .permalink-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(254, 254, 254, 0.2);
+      transition: all 0.5s ease;
+      opacity: 0; }
+      .post-grid .post-block .permalink-overlay.show {
+        opacity: 1; }
     .post-grid .post-block .thumbnail-overlay {
       width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
       background: rgba(33, 153, 232, 0.6);
       transition: all 0.5s ease;
-      opacity: 0;
-      padding-bottom: 56.25%; }
+      opacity: 0; }
       @media screen and (max-width: 39.9375em) {
         .post-grid .post-block .thumbnail-overlay {
           display: -ms-flexbox;
@@ -5530,6 +5517,11 @@ form .hs-error-msgs {
           letter-spacing: 2px;
           font-weight: 600;
           color: rgba(254, 254, 254, 0.5); }
+  .post-grid .feature-post {
+    padding-bottom: 47%; }
+    @media screen and (max-width: 39.9375em) {
+      .post-grid .feature-post {
+        padding-bottom: 56.25%; } }
 
 .single-advance .main-content {
   padding-bottom: 0; }
@@ -5541,8 +5533,6 @@ form .hs-error-msgs {
   background: #e6e6e6;
   padding: 40px 30px;
   margin: 40px 0 0; }
-  .advance-posts .permalink {
-    width: calc(100% - 24px) !important; }
   .advance-posts h3 {
     padding: 0 15px;
     margin: 0 0 40px;
@@ -5554,11 +5544,31 @@ form .hs-error-msgs {
   position: relative;
   margin: 0 0 0; }
 
-#blog .post-block:after {
-  padding-top: 56.25%;
-  /* 16:9 ratio */
-  display: block;
-  content: ''; }
+#blog .bloglink {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #blog .bloglink:hover .thumbnail-overlay {
+    opacity: 1; }
+    #blog .bloglink:hover .thumbnail-overlay span {
+      opacity: 1;
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+#blog .columns {
+  padding-bottom: 0; }
+
+#blog .post-block {
+  position: relative;
+  width: 100%;
+  display: block !important;
+  background-position: center;
+  background-size: cover !important; }
+  #blog .post-block:after {
+    padding-top: 56.25%;
+    /* 16:9 ratio */
+    display: block;
+    content: ''; }
 
 @media screen and (min-width: 40em) {
   .wrapper .main-cards {

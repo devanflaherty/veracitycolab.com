@@ -33,10 +33,12 @@
 		}
 ?>
 
-<a href="<?php the_permalink(); ?>" class="permalink bloglink">
-	<div class="hover-indicator" style="background-color: <?= $primaryColor; ?>"></div>
-	<div class="post-meta">
-		<h3><?php the_title(); ?></h3>
+<a href="<?php the_permalink(); ?>" class="bloglink">
+	<div class="permalink">
+		<div class="hover-indicator" style="background-color: <?= $primaryColor; ?>"></div>
+		<div class="post-meta">
+			<h3><?php the_title(); ?></h3>
+		</div>
 	</div>
 	<?php if ( has_post_thumbnail() )  : ?>
 		<div class="post-block" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
