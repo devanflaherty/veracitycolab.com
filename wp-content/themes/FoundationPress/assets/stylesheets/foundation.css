@@ -5810,7 +5810,7 @@ pre {
     color: #8148eb; }
 
 .bp-2000 {
-  background: #fefefe; }
+  background: #fefefe !important; }
 
 .pagination-centered {
   display: -ms-flexbox;
