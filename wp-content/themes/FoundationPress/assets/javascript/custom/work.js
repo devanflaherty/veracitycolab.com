@@ -32,8 +32,7 @@ $(".play").click(function(){
 
 
 if(isiPad() || isiPhone()){
-  $('.post-block a span').addClass('device');
-  $('.post-block a .thumbnail-overlay').addClass('device');
+  $('#featured-hero').addClass('device');
 
   $(".iplay").bind("touchstart click", function(){
     var permalink = $(this).closest('a').attr("data-permalink");

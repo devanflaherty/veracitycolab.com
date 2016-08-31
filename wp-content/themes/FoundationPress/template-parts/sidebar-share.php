@@ -23,7 +23,7 @@
     <?php if(is_singular('work')) : ?>
       <?php if(get_field('youtube') && get_field('youtube') !== "") : ?>
         <a target="_blank" href="<?php the_field( 'youtube' ); ?>">
-          <i class="fa fa-youtube"></i> Like on Youtube
+          <i class="fa fa-youtube-play"></i> Like on Youtube
         </a>
       <?php endif;?>
       <?php if(get_field('vimeo') && get_field('vimeo') !== "") : ?>

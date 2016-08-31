@@ -4867,7 +4867,8 @@ a::after {
     display: block;
     color: #808080; }
     .sidebar-social a i {
-      margin-right: 8px; }
+      margin-right: 8px;
+      margin-left: 1px; }
 
 .single-meta {
   margin-top: 24px; }
@@ -5249,6 +5250,17 @@ form .hs-error-msgs {
   #featured-hero.hidden {
     height: 2px !important;
     opacity: 0; }
+  #featured-hero.device .feature-overlay {
+    opacity: .75; }
+  #featured-hero.device .feature-play {
+    animation: pulse 2s infinite;
+    opacity: 1;
+    -ms-transform: scale(1);
+        transform: scale(1); }
+    #featured-hero.device .feature-play i {
+      opacity: 1;
+      -ms-transform: scale(1);
+          transform: scale(1); }
   #featured-hero .feature-overlay {
     opacity: 0;
     transition: all 0.5s ease;
@@ -5279,8 +5291,8 @@ form .hs-error-msgs {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 30px;
     z-index: 50;
     margin: auto;
     text-align: center;
@@ -5290,6 +5302,9 @@ form .hs-error-msgs {
         transform: scale(0.25);
     transition: all 0.5s ease;
     background: rgba(254, 254, 254, 0.5); }
+    @media screen and (min-width: 40em) {
+      #featured-hero .feature-play {
+        bottom: 50px; } }
     #featured-hero .feature-play:hover {
       animation: pulse 2s infinite; }
     #featured-hero .feature-play i {
@@ -5359,90 +5374,77 @@ form .hs-error-msgs {
 
 .post-grid {
   width: 100%; }
-  .post-grid > .column, .post-grid > .columns {
-    margin-bottom: 24px; }
-    .post-grid > .column .permalink, .post-grid > .columns .permalink {
+  .post-grid > .column, .post-grid > .columns, .post-grid .column, .post-grid .columns {
+    margin-bottom: 24px;
+    padding-bottom: 36.25%;
+    position: relative; }
+    @media screen and (max-width: 39.9375em) {
+      .post-grid > .column, .post-grid > .columns, .post-grid .column, .post-grid .columns {
+        padding-bottom: 72%; } }
+  .post-grid .permalink {
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+    z-index: 600;
+    display: block;
+    width: 100%;
+    margin: -1px 0 0;
+    background: #fefefe !important; }
+    .post-grid .permalink .hover-indicator {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 7px;
+      transition: all 0.5s ease; }
+      .post-grid .permalink .hover-indicator.hover {
+        width: 100% !important; }
+    .post-grid .permalink .post-meta {
       position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #fefefe !important;
-      margin: 0; }
-      .post-grid > .column .permalink .hover-indicator, .post-grid > .columns .permalink .hover-indicator {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 7px;
-        z-index: 100;
-        transition: all 0.5s ease; }
-        .post-grid > .column .permalink .hover-indicator.hover, .post-grid > .columns .permalink .hover-indicator.hover {
-          width: 100% !important; }
-      .post-grid > .column .permalink .post-meta, .post-grid > .columns .permalink .post-meta {
-        padding: 30px 20px 20px; }
-        .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
-          font-size: 28px;
-          line-height: 32px;
-          display: inline;
-          color: #808080;
-          padding: 0;
-          margin: 0; }
-          @media screen and (min-width: 40em) {
-            .post-grid > .column .permalink .post-meta h3, .post-grid > .columns .permalink .post-meta h3 {
-              font-size: 32px;
-              line-height: 36px; } }
-          .post-grid > .column .permalink .post-meta h3 span, .post-grid > .columns .permalink .post-meta h3 span {
-            color: #e6e6e6; }
-        .post-grid > .column .permalink .post-meta h5, .post-grid > .columns .permalink .post-meta h5 {
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          font-size: 15px;
-          margin: 0; }
-      .post-grid > .column .permalink.bloglink:hover .thumbnail-overlay, .post-grid > .columns .permalink.bloglink:hover .thumbnail-overlay {
-        opacity: 1; }
-  .post-grid .feature-post .post-block {
-    overflow: hidden;
-    position: relative;
-    max-height: 400px;
-    margin-bottom: 24px; }
-    .post-grid .feature-post .post-block img {
-      margin-top: -25%; }
-    .post-grid .feature-post .post-block a.play {
-      padding-bottom: 33.25% !important; }
-      .post-grid .feature-post .post-block a.play .thumbnail-overlay {
-        padding-bottom: 33.25% !important; }
+      padding: 30px 20px 20px; }
+      .post-grid .permalink .post-meta h3 {
+        font-size: 28px;
+        line-height: 32px;
+        display: inline;
+        color: #808080;
+        padding: 0;
+        margin: 0; }
+        @media screen and (min-width: 40em) {
+          .post-grid .permalink .post-meta h3 {
+            font-size: 32px;
+            line-height: 36px; } }
+        .post-grid .permalink .post-meta h3 span {
+          color: #e6e6e6; }
+      .post-grid .permalink .post-meta h5 {
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+        margin: 0; }
+    .post-grid .permalink.bloglink:hover .thumbnail-overlay {
+      opacity: 1; }
   .post-grid .post-block {
     overflow: hidden;
-    position: relative;
-    max-height: 400px;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 39px);
+    height: 100%;
     background: black;
-    background-position: center;
-    background-size: cover !important; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+        flex-flow: column; }
     .post-grid .post-block a {
       display: block;
       overflow: hidden; }
     .post-grid .post-block img {
       width: 100%;
       margin-top: -15%; }
-    .post-grid .post-block .permalink-overlay {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(254, 254, 254, 0.2);
-      transition: all 0.5s ease;
-      opacity: 0; }
-      .post-grid .post-block .permalink-overlay.show {
-        opacity: 1; }
     .post-grid .post-block .play {
-      display: block;
       width: 100%;
       height: 100%;
       position: relative;
-      padding-bottom: 56.25%;
-      z-index: 200; }
+      z-index: 600;
+      background-position: center;
+      background-size: cover !important; }
       .post-grid .post-block .play span {
         width: 80px;
         height: 80px;
@@ -5462,10 +5464,6 @@ form .hs-error-msgs {
             transform: scale(0.25, 0.25);
         transition: all 0.5s ease;
         transition-delay: 0.2s; }
-        .post-grid .post-block .play span.device {
-          opacity: 1;
-          -ms-transform: scale(1);
-              transform: scale(1); }
         .post-grid .post-block .play span i {
           position: absolute;
           font-size: 34px;
@@ -5482,15 +5480,26 @@ form .hs-error-msgs {
           opacity: 1;
           -ms-transform: scale(1);
               transform: scale(1); }
+    .post-grid .post-block .permalink-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(254, 254, 254, 0.2);
+      transition: all 0.5s ease;
+      opacity: 0; }
+      .post-grid .post-block .permalink-overlay.show {
+        opacity: 1; }
     .post-grid .post-block .thumbnail-overlay {
       width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
       background: rgba(33, 153, 232, 0.6);
       transition: all 0.5s ease;
-      opacity: 0;
-      padding-bottom: 56.25%; }
+      opacity: 0; }
       @media screen and (max-width: 39.9375em) {
         .post-grid .post-block .thumbnail-overlay {
           display: -ms-flexbox;
@@ -5499,8 +5508,6 @@ form .hs-error-msgs {
               justify-content: center;
           -ms-flex-align: center;
               align-items: center; } }
-      .post-grid .post-block .thumbnail-overlay.device {
-        opacity: 1; }
       .post-grid .post-block .thumbnail-overlay .excerpt {
         padding: 20px;
         color: #fefefe; }
@@ -5511,6 +5518,11 @@ form .hs-error-msgs {
           letter-spacing: 2px;
           font-weight: 600;
           color: rgba(254, 254, 254, 0.5); }
+  .post-grid .feature-post {
+    padding-bottom: 47%; }
+    @media screen and (max-width: 39.9375em) {
+      .post-grid .feature-post {
+        padding-bottom: 72%; } }
 
 .single-advance .main-content {
   padding-bottom: 0; }
@@ -5527,13 +5539,38 @@ form .hs-error-msgs {
     margin: 0 0 40px;
     color: #0a0a0a; }
   .advance-posts .column, .advance-posts .columns {
-    padding: 0 12px !important; }
+    padding-left: 12px !important;
+    padding-right: 12px !important; }
 
-#blog .post-block:after {
-  padding-top: 56.25%;
-  /* 16:9 ratio */
-  display: block;
-  content: ''; }
+#blog .permalink {
+  position: relative;
+  margin: 0 0 0; }
+
+#blog .bloglink {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  #blog .bloglink:hover .thumbnail-overlay {
+    opacity: 1; }
+    #blog .bloglink:hover .thumbnail-overlay span {
+      opacity: 1;
+      -ms-transform: scale(1);
+          transform: scale(1); }
+
+#blog .columns {
+  padding-bottom: 0; }
+
+#blog .post-block {
+  position: relative;
+  width: 100%;
+  display: block !important;
+  background-position: center;
+  background-size: cover !important; }
+  #blog .post-block:after {
+    padding-top: 56.25%;
+    /* 16:9 ratio */
+    display: block;
+    content: ''; }
 
 @media screen and (min-width: 40em) {
   .wrapper .main-cards {
@@ -5583,7 +5620,8 @@ header#contentHeader {
   margin: 40px 0; }
   .sidebar .button-wrapper a {
     transition: all 0.5s ease;
-    opacity: 0.8; }
+    opacity: 0.8;
+    color: #fefefe; }
     .sidebar .button-wrapper a:hover {
       opacity: 1.0; }
 
@@ -5773,6 +5811,9 @@ pre {
     border: none;
     padding: 0;
     color: #8148eb; }
+
+.bp-2000 {
+  background: #fefefe !important; }
 
 .pagination-centered {
   display: -ms-flexbox;
@@ -6618,9 +6659,13 @@ pre {
       #singleTeam .parallax-bg {
         display: block; } }
 
+#archiveTeam .headline {
+  z-index: 500 !important; }
+
 #archiveTeam .main-cards {
   margin-top: 0rem !important;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  z-index: 0 !important; }
   @media screen and (min-width: 40em) {
     #archiveTeam .main-cards {
       margin-top: 4rem !important; } }

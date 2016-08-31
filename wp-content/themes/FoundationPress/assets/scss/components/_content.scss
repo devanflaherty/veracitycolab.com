@@ -57,6 +57,7 @@ header#contentHeader {
     a {
       transition: all 0.5s ease;
       opacity: 0.8;
+      color: $white;
       &:hover {
         opacity: 1.0;
       }
@@ -199,4 +200,9 @@ pre {
     padding: 0;
     color: #8148eb;
   }
+}
+
+// Wistia hairline fix
+.bp-2000 {
+  background: $white!important;
 }
