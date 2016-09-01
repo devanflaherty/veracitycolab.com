@@ -100,6 +100,12 @@ get_header(); ?>
 
 		<?php endif; // End have_posts() check. ?>
 
+		<div class="cta row">
+			<div class="columns">
+				<?php get_template_part( 'template-parts/cta' ); ?>
+			</div>
+		</div>
+
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
 			<nav id="post-nav">

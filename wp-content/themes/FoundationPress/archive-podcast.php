@@ -74,32 +74,38 @@ get_header(); ?>
 				$episode = get_field('episode');
 			?>
 			<div class="column">
-					<div class="post-block" style="background-color: <?= $primary; ?>">
-						<a href="<?php the_permalink(); ?>" class="permalink">
-							<div class="hover-indicator" style="background: <?php the_field( 'podcast_primary_color', 'option' ) ?>"></div>
-							<div class="post-meta">
-								<h5><span>Episode <?= $episode; ?></span></h5>
-								<h3><?php the_title(); ?></h3>
-							</div>
-						</a>
-					<?php if ( has_post_thumbnail() )  : ?>
-						<a class="play"
-							style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)"
-							href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
-					<?php else : ?>
-						<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
-					<?php endif; ?>
-							<div class="permalink-overlay"></div>
-							<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
-								<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
-							</div>
-						</a>
-					</div>
+				<div class="post-block" style="background-color: <?= $primary; ?>">
+					<a href="<?php the_permalink(); ?>" class="permalink">
+						<div class="hover-indicator" style="background: <?php the_field( 'podcast_primary_color', 'option' ) ?>"></div>
+						<div class="post-meta">
+							<h5><span>Episode <?= $episode; ?></span></h5>
+							<h3><?php the_title(); ?></h3>
+						</div>
+					</a>
+				<?php if ( has_post_thumbnail() )  : ?>
+					<a class="play"
+						style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)"
+						href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
+				<?php else : ?>
+					<a class="play" href="#wistia_<?= $video; ?>?videoFoam=true&amp;playerColor=<?= $secondary; ?>&amp;videoQuality=hd-only" data-permalink="<?php the_permalink(); ?>">
+				<?php endif; ?>
+						<div class="permalink-overlay"></div>
+						<div class="thumbnail-overlay" style="background-color: <?= $primary; ?>">
+							<span><i class="fa fa-play iplay" aria-hidden="true"></i></span>
+						</div>
+					</a>
 				</div>
+			</div>
 			<?php endwhile; ?>
 		</div>
 		<?php endif; // End have_posts() check. ?>
 		<?php wp_reset_query();	 // Restore global post data stomped by the_post(). ?>
+
+		<div class="cta row">
+			<div class="columns">
+				<?php get_template_part( 'template-parts/cta' ); ?>
+			</div>
+		</div>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
