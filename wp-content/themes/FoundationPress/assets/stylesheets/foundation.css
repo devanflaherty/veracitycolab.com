@@ -6679,8 +6679,7 @@ a, button {
   color: #fefefe; }
 
 .container {
-  position: relative;
-  background: #fafafa; }
+  position: relative; }
 
 .overlay {
   visibility: hidden;
