@@ -191,6 +191,9 @@
     margin: 0 0 0;
   }
   .post-grid {
+    .columns {
+      padding-bottom: 0;
+    }
     .post-block {
       position: relative;
       width: 100%;
@@ -218,8 +221,5 @@
         }
       }
     }
-  }
-  .columns {
-    padding-bottom: 0;
   }
 }

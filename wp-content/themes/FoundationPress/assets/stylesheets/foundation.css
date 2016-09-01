@@ -5546,6 +5546,9 @@ form .hs-error-msgs {
   position: relative;
   margin: 0 0 0; }
 
+#blog .post-grid .columns {
+  padding-bottom: 0; }
+
 #blog .post-grid .post-block {
   position: relative;
   width: 100%;
@@ -5568,9 +5571,6 @@ form .hs-error-msgs {
       opacity: 1;
       -ms-transform: scale(1);
           transform: scale(1); }
-
-#blog .columns {
-  padding-bottom: 0; }
 
 @media screen and (min-width: 40em) {
   .wrapper .main-cards {
