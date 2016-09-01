@@ -5546,31 +5546,31 @@ form .hs-error-msgs {
   position: relative;
   margin: 0 0 0; }
 
-#blog .bloglink {
+#blog .post-grid .post-block {
+  position: relative;
+  width: 100%;
+  display: block !important;
+  background-position: center;
+  background-size: cover !important; }
+  #blog .post-grid .post-block:after {
+    padding-top: 41.5%;
+    /* 16:9 ratio */
+    display: block;
+    content: ''; }
+
+#blog .post-grid .bloglink {
   position: relative;
   width: 100%;
   height: 100%; }
-  #blog .bloglink:hover .thumbnail-overlay {
+  #blog .post-grid .bloglink:hover .thumbnail-overlay {
     opacity: 1; }
-    #blog .bloglink:hover .thumbnail-overlay span {
+    #blog .post-grid .bloglink:hover .thumbnail-overlay span {
       opacity: 1;
       -ms-transform: scale(1);
           transform: scale(1); }
 
 #blog .columns {
   padding-bottom: 0; }
-
-#blog .post-block {
-  position: relative;
-  width: 100%;
-  display: block !important;
-  background-position: center;
-  background-size: cover !important; }
-  #blog .post-block:after {
-    padding-top: 56.25%;
-    /* 16:9 ratio */
-    display: block;
-    content: ''; }
 
 @media screen and (min-width: 40em) {
   .wrapper .main-cards {
