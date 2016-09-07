@@ -19,7 +19,7 @@
 	if ( $hidden !== true ) : ?>
 	<?php if(is_front_page()) : ?>
     <div id="cta" class="row collapse align-middle"
-      data-0="margin-top: 0px;"
+      data-0="margin-top: 20px;"
       data-end="margin-top: 120px;">
 	<?php else : ?>
 		<div id="cta" class="row collapse align-middle">

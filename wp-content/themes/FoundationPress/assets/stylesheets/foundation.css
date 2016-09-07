@@ -5375,7 +5375,7 @@ form .hs-error-msgs {
 .post-grid {
   width: 100%; }
   .post-grid > .column, .post-grid > .columns, .post-grid .column, .post-grid .columns {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     padding-bottom: 36.25%;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
@@ -5551,15 +5551,12 @@ form .hs-error-msgs {
 
 #blog .post-grid .post-block {
   position: relative;
+  height: 0;
   width: 100%;
   display: block !important;
   background-position: center;
-  background-size: cover !important; }
-  #blog .post-grid .post-block:after {
-    padding-top: 41.5%;
-    /* 16:9 ratio */
-    display: block;
-    content: ''; }
+  background-size: cover !important;
+  padding-top: 41.5%; }
 
 #blog .post-grid .bloglink {
   position: relative;
@@ -5568,6 +5565,7 @@ form .hs-error-msgs {
   #blog .post-grid .bloglink:hover .thumbnail-overlay {
     opacity: 1; }
     #blog .post-grid .bloglink:hover .thumbnail-overlay span {
+      display: block;
       opacity: 1;
       -ms-transform: scale(1);
           transform: scale(1); }
@@ -6745,17 +6743,20 @@ a, button {
 
 #cta {
   background: #fefefe;
-  margin: 0; }
+  margin: 20px 0 0; }
   #cta h2 {
     margin: 25px 0;
     font-size: 22px;
     line-height: 22px;
-    color: #0a0a0a; }
+    color: #0a0a0a;
+    padding: 20px 40px;
+    text-align: center; }
     @media screen and (min-width: 40em) {
       #cta h2 {
+        padding: 0px 40px;
+        text-align: left;
         font-size: 32px;
-        line-height: 32px;
-        padding: 0 40px; } }
+        line-height: 32px; } }
   #cta .button {
     font-size: 32px;
     padding: 40px 40px;
@@ -6774,7 +6775,7 @@ a, button {
       padding: 40px 0 12.5%; } }
 
 .archive #cta, .blog #cta {
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 60px; }
 
 .animate-in {
