@@ -131,7 +131,6 @@ a, button {
 // Overlay
 .container {
   position: relative;
-  background: #fafafa;
 }
 .overlay {
   visibility: hidden;
@@ -214,25 +213,32 @@ a, button {
   }
 }
 #cta {
+  background: $white;
+  margin: 20px 0 0;
   h2 {
     margin: 25px 0;
     font-size: 22px;
     line-height: 22px;
+    color: $black;
+    padding: 20px 40px;
+    text-align: center;
     @include breakpoint(medium) {
+      padding: 0px 40px;
+      text-align: left;
       font-size: 32px;
       line-height: 32px;
-      padding: 0 40px;
     }
   }
   .button {
     font-size: 32px;
     padding: 40px 40px;
     background: $light-gray;
-    color: $dark-gray;
+    color: $white;
     margin: 0;
+    opacity: 0.9;
+    transition: all 0.5s ease;
     &:hover {
-      background: $dark-gray;
-      color: $white;
+      opacity: 1;
     }
   }
 }
@@ -241,6 +247,11 @@ a, button {
   @include breakpoint(medium) {
     padding: 40px 0 12.5%;
   }
+}
+
+.archive #cta, .blog #cta {
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
 
 // ANIMATIONS

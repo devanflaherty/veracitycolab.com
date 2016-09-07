@@ -1,61 +1,34 @@
 <?php
-	if ( get_field('choose_cta') !== "Hide" ) {
-    if ( get_field('choose_cta') == "Default" ) {
-      if( is_singular( 'post' ) ) { // IF IS A POST
-        $ctaId = get_field('post_cta_default', 'option');
-        $ctaId = $ctaId[0];
-  			$value = get_field('cta_button_value', $ctaId);
-        $url = get_field('cta_button_url', $ctaId);
-        $blurb = get_field('cta_button_blurb', $ctaId);
-  		} elseif( is_singular( 'work' ) ) { // IF IS A WORK POST
-        $ctaId = get_field('work_cta_default', 'option');
-        $ctaId = $ctaId[0];
-  			$value = get_field('cta_button_value', $ctaId);
-        $url = get_field('cta_button_url', $ctaId);
-        $blurb = get_field('cta_button_blurb', $ctaId);
-  		} elseif( is_singular( 'podcast' ) ) { // IF IS A WORK POST
-				$ctaId = get_field('podcast_cta_default', 'option');
-				$ctaId = $ctaId[0];
-				$value = get_field('cta_button_value', $ctaId);
-				$url = get_field('cta_button_url', $ctaId);
-				$blurb = get_field('cta_button_blurb', $ctaId);
-			} else {
-        $ctaId = get_field('post_global_default', 'option');
-        $ctaId = $ctaId[0];
-  			$value = get_field('cta_button_value', $ctaId);
-        $url = get_field('cta_button_url', $ctaId);
-        $blurb = get_field('cta_button_blurb', $ctaId);
-      }
-    } elseif( get_field('choose_cta') == "Select" ) {
-			$cta = get_field('call_to_action');
-			if( $cta ) {
-				foreach( $cta as $p ) {
-          $value = get_field('cta_button_value', $p->ID);
-          $url = get_field('cta_button_url', $p->ID);
-          $blurb = get_field('cta_button_blurb', $p->ID);
-				}
-			}
-		} elseif( get_field('choose_cta') == "Custom" ) {
-      $value = get_field('button_value');
-      $url = get_field('button_url');
-      $blurb = get_field('button_blurb');
-    }
+	$colors = getColors();
+	$primaryColor = $colors['primary'];
+	$secondaryColor = $colors['secondary'];
+
+	$cta = getCta();
+	$value = $cta['ctaValue'];
+	$url = $cta['ctaUrl'];
+	$blurb = $cta['ctaBlurb'];
+	$hidden = $cta['ctaHide'];
+	$buttonColor = $cta['ctaColor'];
+
+	if($buttonColor) {
+		$primaryColor = $buttonColor;
 	}
+
 ?>
 <?php
-	if ( get_field('choose_cta') &&  get_field('choose_cta') !== "Hide" ) : ?>
+	if ( $hidden !== true ) : ?>
 	<?php if(is_front_page()) : ?>
     <div id="cta" class="row collapse align-middle"
-      data-0="margin-top: 0px;"
+      data-0="margin-top: 20px;"
       data-end="margin-top: 120px;">
 	<?php else : ?>
 		<div id="cta" class="row collapse align-middle">
 	<?php endif; ?>
-    <div class="small-12 medium-8 columns text-center">
+    <div class="small-12 medium-8 columns">
       <h2><?= $blurb; ?></h2>
     </div>
     <div class="small-12 medium-4 columns">
-     <a class="button expanded secondary" href="<?= $url; ?>"><?= $value; ?></a>
+     <a class="button expanded" href="<?= $url; ?>" style="background-color: <?= $primaryColor; ?>"><?= $value; ?></a>
     </div>
   </div>
 <?php endif; ?>

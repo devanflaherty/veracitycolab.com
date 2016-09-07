@@ -1,7 +1,7 @@
 .post-grid {
   width: 100%;
   > .column, .column {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     padding-bottom: 36.25%;
     position: relative;
     @include breakpoint(small only) {
@@ -196,16 +196,12 @@
     }
     .post-block {
       position: relative;
+      height: 0;
       width: 100%;
       display: block!important;
       background-position: center;
       background-size: cover!important;
-      &:after {
-        padding-top: 41.5%;
-        /* 16:9 ratio */
-        display: block;
-        content: '';
-      }
+      padding-top: 41.5%;
     }
     .bloglink {
       position: relative;
@@ -215,6 +211,7 @@
         .thumbnail-overlay {
           opacity: 1;
           span {
+            display: block;
             opacity: 1;
             transform: scale(1);
           }

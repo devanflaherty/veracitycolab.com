@@ -55,10 +55,11 @@ require_once( 'library/get-client.php' );
 
 /** Get site colors */
 require_once( 'library/colors.php' );
+/** Get site colors */
+require_once( 'library/get-cta.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
-
 
 // CUSTOM FIELD functions
 if( function_exists('acf_add_options_page') ) {
