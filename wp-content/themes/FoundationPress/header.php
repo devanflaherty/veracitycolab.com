@@ -50,7 +50,7 @@ if ( is_singular('post'))  {
 
     <title><?= $pageTitle; ?></title>
     <meta name="description" content="<?= strip_tags($description); ?>">
-  <?php if ( is_singular('advance'))  : ?>
+  <?php if ( is_singular('example'))  : ?>
     <meta name="robots" content="noindex">
   <?php else: ?>
     <meta name="robots" content="all">

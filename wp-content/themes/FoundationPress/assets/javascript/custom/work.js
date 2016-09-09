@@ -67,7 +67,7 @@ $(document).mouseup(function (e) {
         $('#navBar').removeClass('push-up');
         $('.feature-play').removeClass('blow-up');
         $('.main-content').removeClass('push-down');
-      } else if($('body').hasClass('single-advance')) {
+      } else if($('body').hasClass('single-example')) {
         $("#featured-hero").removeClass("video-reveal click-to-close");
         $(".feature-overlay").removeClass("animate-in");
         $('#navBar').removeClass('push-up');

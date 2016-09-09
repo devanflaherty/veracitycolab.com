@@ -5524,21 +5524,21 @@ form .hs-error-msgs {
       .post-grid .feature-post {
         padding-bottom: 72%; } }
 
-.single-advance .main-content {
+.single-example .main-content {
   padding-bottom: 0; }
 
-.advance-posts {
+.example-posts {
   width: calc(100% + 40px);
   -ms-transform: translate(-20px, 0);
       transform: translate(-20px, 0);
   background: #e6e6e6;
   padding: 40px 30px;
   margin: 40px 0 0; }
-  .advance-posts h3 {
+  .example-posts h3 {
     padding: 0 15px;
     margin: 0 0 40px;
     color: #0a0a0a; }
-  .advance-posts .column, .advance-posts .columns {
+  .example-posts .column, .example-posts .columns {
     padding-left: 12px !important;
     padding-right: 12px !important; }
 

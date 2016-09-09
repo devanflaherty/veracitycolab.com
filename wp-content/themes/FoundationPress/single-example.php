@@ -34,7 +34,7 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div>
 
-			<div class="advance-posts">
+			<div class="example-posts">
 				<h3><?php the_field('headline'); ?></h3>
 			<?php // RELATED POSTS ?>
 			<?php
