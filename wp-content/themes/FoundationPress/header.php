@@ -99,16 +99,16 @@ if ( is_singular('post'))  {
     <meta name="msapplication-wide310x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x310.png" />
 
-
 		<?php wp_head(); ?>
 
+    <!-- Fonts -->
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
     <script src="https://use.fontawesome.com/771c954b4a.js"></script>
 
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -116,11 +116,11 @@ if ( is_singular('post'))  {
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
     fbq('init', '613751512109020');
     fbq('track', "PageView");
     </script>
     <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=613751512109020&amp;ev=PageView&amp;noscript=1"/&gt;</noscript>
+
     <!-- Hotjar Tracking Code for http://www.veracitycolab.com -->
     <script>
       (function(h,o,t,j,a,r){
