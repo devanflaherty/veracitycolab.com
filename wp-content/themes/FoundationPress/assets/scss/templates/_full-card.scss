@@ -14,7 +14,7 @@
     }
     #tagline {
       @include breakpoint(small only) {
-        margin-top: -20px; 
+        margin-top: -40px;
       }
       h1 {
         padding: 40px;
@@ -23,11 +23,17 @@
         line-height: 40px;
         color: white;
         margin: 0;
+        @include breakpoint(small only) {
+          padding: 20px;
+        }
       }
     }
     .entry-content {
       background: $white;
       padding:40px;
+      @include breakpoint(small only) {
+        padding: 20px;
+      }
       h2 {
         font-size: 30px;
         line-height: 32px;
@@ -41,18 +47,9 @@
   #cardBody {
     .row {
       padding: 0 20px;
-    }
-  }
-}
-#success.full-card {
-  .main-content {
-    @include flex-grid-column(12);
-
-    @include breakpoint(medium) {
-      @include flex-grid-column(11);
-    }
-    @include breakpoint(large) {
-      @include flex-grid-column(9);
+      @include breakpoint(small only) {
+        padding: 0px;
+      }
     }
   }
 }
