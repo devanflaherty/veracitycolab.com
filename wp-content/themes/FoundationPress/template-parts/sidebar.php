@@ -92,13 +92,18 @@
           $taxonomies = get_terms('work-categories');
           $current = $wp_query->query_vars['work-categories'];
           if ($taxonomies) {
+            $i = 0;
+            $c = count($taxonomies);
             foreach($taxonomies as $term) {
+              $i++;
               $name = $term->name;
               $slug = $term->slug;
-              echo "<a class=\"headline-link\" href=\"/work-category/$slug\">$name</a> ";
+              echo "<span>$name</span>";
+              if($c >> $i) {
+                echo ", ";
+              }
             }
           }
-          echo $current;
         ?>
         <?php get_template_part( 'template-parts/sidebar-share' ); ?>
       </div>
