@@ -16,9 +16,10 @@
           <a href="<?= $permalink; ?>"><div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div></a>
         </div>
         <div class="columns meta-column">
-          <span>Written by <a href="<?= $permalink; ?>"><?= $name; ?> </a></span>
+          <span>Written by <a href="<?= $permalink; ?>"><?= $name; ?> </a></span><br>
           on <span class="post-date"><?php the_time('F j, Y'); ?></span><br>
-
+        </div>
+        <div class="small-12 columns meta-column">
           <?php get_template_part( 'template-parts/sidebar-share' ); ?>
         </div>
       <?php

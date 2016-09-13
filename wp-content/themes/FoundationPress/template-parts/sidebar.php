@@ -88,13 +88,20 @@
       <!-- CATEGORIES and DATE SECTION -->
       <div class="columns small-12 medium-6 large-12 show-for-large">
         <span class="post-date"><?php the_field('completion_date'); ?></span>
-  			<?php
-          $categories = get_the_category();
-          foreach($categories as $term) {
-            if ($term->slug != "all") {
-              $slug = $term->slug;
+        <?php
+          $taxonomies = get_terms('work-categories');
+          $current = $wp_query->query_vars['work-categories'];
+          if ($taxonomies) {
+            $i = 0;
+            $c = count($taxonomies);
+            foreach($taxonomies as $term) {
+              $i++;
               $name = $term->name;
-              echo "<a href=\"/category/" . $slug . "\">" . $name . "</a>";
+              $slug = $term->slug;
+              echo "<span>$name</span>";
+              if($c >> $i) {
+                echo ", ";
+              }
             }
           }
         ?>

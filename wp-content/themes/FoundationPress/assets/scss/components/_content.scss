@@ -11,12 +11,13 @@ article {
 .main-content {
   position: relative;
   z-index: 100;
-  padding: 40px 20px;
+  padding: 20px 0px;
   transform: translate(0px, 0px);
   @include breakpoint(medium) {
     margin-top: -100px;
     margin-bottom: 60px;
     transform: translate(0, 100px);
+    padding: 40px 20px;
   }
 }
 .main-cards {
@@ -35,7 +36,7 @@ header#contentHeader {
   padding: 0 20px;
   h1 {
     font-size: 48px;
-    line-height: 42px;
+    line-height: 60px;
     margin-top: 0;
     color: $black;
   }
@@ -95,7 +96,7 @@ $margin: 40px;
   }
   h1 {
     font-size: 48px;
-    line-height: 42px;
+    line-height: 60px;
     margin-top: 0;
   }
   h2 {
@@ -127,6 +128,10 @@ $margin: 40px;
   p {
     width: 100%;
     margin-bottom: $margin/2;
+    font-size: 16px;
+    @include breakpoint(medium) {
+      font-size: 18px;
+    }
   }
 }
 .flex-video {
@@ -164,7 +169,7 @@ blockquote {
   border-left: 6px solid $primary-color;
   margin: $margin 0;
   padding-top: 0;
-  transform: translate(-40px, 0);
+  transform: translate(-20px, 0);
   @include breakpoint(medium) {
     transform: translate(-40px, 0);
   }
@@ -175,7 +180,10 @@ blockquote {
     font-size: 20px;
     line-height: 28px;
     font-style: normal;
-    margin: 0 15px 0;
+    margin: 0 0px 0;
+    @include breakpoint(medium) {
+      margin: 0 15px 0;
+    }
   }
   h2, h3, h4, h5, h6 {
     margin: 0 15px 0;

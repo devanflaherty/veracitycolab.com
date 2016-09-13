@@ -14,7 +14,7 @@
 		$style = "background-color:" . $primaryColor . ";";
 	}
 
-	if(is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ))  {
+	if(is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_tax( 'work-categories' ))  {
 		$hidden = "hidden";
 	}
 ?>
