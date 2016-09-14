@@ -21,6 +21,10 @@
     <div id="cta" class="row collapse align-middle"
       data-0="margin-top: 20px;"
       data-end="margin-top: 120px;">
+	<?php elseif(is_singular('work')) : ?>
+		<div id="cta" class="row collapse align-middle"
+      data-0="transform: translate(0px, 0px);"
+      data-end="transform: translate(0px, 100px);">
 	<?php else : ?>
 		<div id="cta" class="row collapse align-middle">
 	<?php endif; ?>

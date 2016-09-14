@@ -1,14 +1,14 @@
 .sidebar {
   @include grid-column(12);
-  padding: 40px 0!important;
+  padding: 40px 0 0!important;
 
   @include breakpoint(medium) {
     @include grid-column(11);
-    padding: 0 0 80px!important;
+    padding: 0 0 0px!important;
   }
   @include breakpoint(large) {
     @include grid-column(4);
-    padding: 0 40px 60px!important;
+    padding: 0 40px 0px!important;
   }
   span {
     font-weight: 400

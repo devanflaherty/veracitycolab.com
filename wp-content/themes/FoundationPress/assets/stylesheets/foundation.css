@@ -4743,7 +4743,7 @@ a::after {
   float: left;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding: 40px 0 !important; }
+  padding: 40px 0 0 !important; }
   @media screen and (min-width: 40em) {
     .sidebar {
       padding-left: 1.25rem;
@@ -4764,7 +4764,7 @@ a::after {
       float: left;
       padding-left: 1.25rem;
       padding-right: 1.25rem;
-      padding: 0 0 80px !important; } }
+      padding: 0 0 0px !important; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
     .sidebar {
       padding-left: 1.25rem;
@@ -4786,7 +4786,7 @@ a::after {
       float: left;
       padding-left: 1.25rem;
       padding-right: 1.25rem;
-      padding: 0 40px 60px !important; } }
+      padding: 0 40px 0px !important; } }
   @media screen and (min-width: 64em) and (min-width: 40em) {
     .sidebar {
       padding-left: 1.25rem;
@@ -6254,7 +6254,7 @@ pre {
       float: right; }
     @media screen and (min-width: 40em) {
       #singleWork .cta {
-        width: 91.66667%;
+        width: 100%;
         float: left;
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }
@@ -6275,7 +6275,7 @@ pre {
           float: right; } }
     @media screen and (min-width: 64em) {
       #singleWork .cta {
-        width: 66.66667%;
+        width: 100%;
         float: left;
         padding-left: 1.25rem;
         padding-right: 1.25rem; } }

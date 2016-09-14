@@ -43,25 +43,33 @@ get_header(); ?>
 				<p><?php the_tags(); ?></p>
 			</footer>
 		</div>
+
+		<div class="cta">
+			<?php get_template_part( 'template-parts/cta' ); ?>
+		</div>
 	</article>
 	<!-- CLOSE MAIN CONTENT -->
 <?php endwhile;?>
 
 <?php if(get_field('show_sidebar') == true) : ?>
 	<!-- SIDEBAR -->
-	<aside class="sidebar show-for-large" id="sidebar">
-	  <div data-sticky-container>
-	    <div class="sticky side-wrap" data-sticky data-anchor="singleWork" data-check-every="0" data-options="marginTop:7;" data-sticky-on="large">
+	<?php if(get_field('unstick') == true) : ?>
+		<aside class="sidebar show-for-large" id="sidebar">
+	    <div class="side-wrap">
 				<?php get_template_part( 'template-parts/sidebar' ); ?>
 			</div>
-		</div>
-	</aside>
+		</aside>
+	<?php else : ?>
+		<aside class="sidebar show-for-large" id="sidebar">
+		  <div data-sticky-container>
+		    <div class="sticky side-wrap" data-sticky data-anchor="singleWork" data-check-every="0" data-options="marginTop:7;" data-sticky-on="large">
+					<?php get_template_part( 'template-parts/sidebar' ); ?>
+				</div>
+			</div>
+		</aside>
+	<?php endif; ?>
 <?php endif; ?>
 <!-- CLOSE SIDEBAR -->
-
-<div class="cta">
-	<?php get_template_part( 'template-parts/cta' ); ?>
-</div>
 
 </section>
 <script>
