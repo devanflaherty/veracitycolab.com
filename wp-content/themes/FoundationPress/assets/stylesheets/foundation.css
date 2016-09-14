@@ -4821,12 +4821,19 @@ a::after {
         padding: 0 !important; } }
   .sidebar .credits {
     list-style-type: none;
-    margin: 12px 0; }
-    .sidebar .credits a {
-      color: #404040;
-      border-bottom: 2px solid transparent; }
-      .sidebar .credits a:hover {
-        border-bottom: 2px solid #404040; }
+    margin: 12px 0;
+    width: 100%; }
+    .sidebar .credits li {
+      margin-bottom: 8px; }
+      .sidebar .credits li .creditor {
+        font-weight: 600;
+        color: #8c8c8c; }
+      .sidebar .credits li a {
+        font-weight: 600;
+        color: #404040;
+        border-bottom: 2px solid transparent; }
+        .sidebar .credits li a:hover {
+          border-bottom: 2px solid #404040; }
   .sidebar .author-image {
     padding-left: 20px;
     padding-right: 10px; }

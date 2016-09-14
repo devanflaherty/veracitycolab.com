@@ -33,11 +33,20 @@
   .credits {
     list-style-type: none;
     margin: 12px 0;
-    a {
-      color: $dark-gray;
-      border-bottom: 2px solid transparent;
-      &:hover {
-        border-bottom: 2px solid $dark-gray;
+    width: 100%;
+    li {
+      margin-bottom: 8px;
+      .creditor {
+        font-weight: 600;
+        color: darken($medium-gray, 20%);
+      }
+      a {
+        font-weight: 600;
+        color: $dark-gray;
+        border-bottom: 2px solid transparent;
+        &:hover {
+          border-bottom: 2px solid $dark-gray;
+        }
       }
     }
   }
