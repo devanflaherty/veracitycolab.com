@@ -29,7 +29,7 @@
 		<div id="cta" class="row collapse align-middle">
 	<?php endif; ?>
     <div class="small-12 medium-8 columns">
-      <h2><?= $blurb; ?></h2>
+      <span class="cta-blurb"><?= $blurb; ?></span>
     </div>
     <div class="small-12 medium-4 columns">
      <a class="button expanded" href="<?= $url; ?>" style="background-color: <?= $primaryColor; ?>"><?= $value; ?></a>
