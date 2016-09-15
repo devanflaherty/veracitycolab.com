@@ -92,6 +92,17 @@
       color: $black;
     }
   }
+  .button-wrapper {
+    margin: 40px 0;
+    a {
+      transition: all 0.5s ease;
+      opacity: 0.8;
+      color: $white;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
 }
 
 // sidebar-social
@@ -148,6 +159,7 @@
   }
 }
 
+// Target pages
 .single-podcast, .single-work {
   .single-meta {
     margin: 24px 0px 0px!important;
