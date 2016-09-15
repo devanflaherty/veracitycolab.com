@@ -36,7 +36,9 @@
                     <div class="small-6 medium-5 large-4 columns">
                       <?php if( !empty($graphic) ): ?>
                         <div class="graphic-container">
-                          <img src="<?php echo $graphic['url']; ?>" alt="<?php echo $graphic['alt']; ?>" />
+                          <div class="graphic-image-container">
+                            <div class="graphic" style="background-image: url(<?php echo $graphic['url']; ?>);"></div>
+                          </div>
                           <div class="graphic-color-container">
                             <div class="graphic-color" style="background-color: <?php the_sub_field('color'); ?>"></div>
                           </div>
