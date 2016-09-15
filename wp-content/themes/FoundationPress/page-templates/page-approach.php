@@ -45,7 +45,7 @@
                         </div>
                       <?php endif; ?>
                     </div>
-                    <div class="small-12 medium-7 large-8 columns">
+                    <div class="small-12 medium-6 large-7 columns">
                       <h2><?php the_sub_field('headline'); ?></h2>
                       <?php the_sub_field('description'); ?>
                     </div>
