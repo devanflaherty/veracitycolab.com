@@ -54,45 +54,6 @@
     <?php endif; ?>
 
     <?php if(is_singular('work')) : ?>
-      <!-- CREDITS SECTION -->
-			<?php
-				if( have_rows('credits') ) {
-					echo "<ul class='credits'>";
-					while ( have_rows('credits') ) { the_row();
-						$role = get_sub_field('role');
-						$posts = get_sub_field('team_member');
-						if( $posts ){
-              echo '<li><span>' . $role . ':</span><br>';
-              $i = 0;
-              $c = count($posts);
-							foreach( $posts as $p ) {
-                $name = get_the_title( $p->ID );
-                if(get_post_type( $p->ID ) == 'creditor') {
-                  $permalink = get_field( 'website', $p->ID );
-                  if($permalink) {
-                    $creditor = ' <a href="' . $permalink . '" target="_blank">' . $name . '</a>';
-                  } else {
-                    $creditor = ' <span class="creditor">' . $name . '</span>';
-                  }
-                } else {
-                  $permalink = get_permalink( $p->ID );
-				          $creditor = ' <a href="' . $permalink . '">' . $name . '</a>';
-                }
-                echo $creditor;
-
-                if ($i < ($c - 1)) {
-                  echo ", ";
-                }
-
-                $i++;
-							}
-              echo '</li>';
-            }
-					}
-					echo "</ul>";
-				}
-			?>
-
       <!-- CATEGORIES and DATE SECTION -->
       <div class="columns small-12 medium-6 large-12 show-for-large">
         <span class="post-date"><?php the_field('completion_date'); ?></span>
@@ -113,6 +74,46 @@
             }
           }
         ?>
+
+        <!-- CREDITS SECTION -->
+  			<?php
+  				if( have_rows('credits') ) {
+  					echo "<ul class='credits'>";
+  					while ( have_rows('credits') ) { the_row();
+  						$role = get_sub_field('role');
+  						$posts = get_sub_field('team_member');
+  						if( $posts ){
+                echo '<li><span>' . $role . ':</span><br>';
+                $i = 0;
+                $c = count($posts);
+  							foreach( $posts as $p ) {
+                  $name = get_the_title( $p->ID );
+                  if(get_post_type( $p->ID ) == 'creditor') {
+                    $permalink = get_field( 'website', $p->ID );
+                    if($permalink) {
+                      $creditor = ' <a href="' . $permalink . '" target="_blank">' . $name . '</a>';
+                    } else {
+                      $creditor = ' <span class="creditor">' . $name . '</span>';
+                    }
+                  } else {
+                    $permalink = get_permalink( $p->ID );
+  				          $creditor = ' <a href="' . $permalink . '">' . $name . '</a>';
+                  }
+                  echo $creditor;
+
+                  if ($i < ($c - 1)) {
+                    echo ", ";
+                  }
+
+                  $i++;
+  							}
+                echo '</li>';
+              }
+  					}
+  					echo "</ul>";
+  				}
+  			?>
+
         <?php get_template_part( 'template-parts/sidebar-share' ); ?>
       </div>
     <?php endif; ?>
