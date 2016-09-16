@@ -63,13 +63,13 @@
             $i = 0;
             $c = count($taxonomies);
             foreach($taxonomies as $term) {
-              $i++;
               $name = $term->name;
               $slug = $term->slug;
               echo "<span>$name</span>";
-              if($c >> $i) {
+              if ($i < ($c - 1)) {
                 echo ", ";
               }
+              $i++;
             }
           }
         ?>
