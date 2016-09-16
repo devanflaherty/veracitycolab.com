@@ -23,7 +23,6 @@
   }
   .main-content {
     background: $white;
-    padding-top: 20px;
     @include breakpoint(small only) {
       margin-top: -30px;
     }
@@ -32,6 +31,26 @@
     }
     .row {
       margin-top: 0;
+    }
+    #contentBody {
+      $margin: 40px;
+      .content:first-of-type {
+        .columns {
+          & > :first-child {
+            margin-top: 0!important;
+          }
+        }
+      }
+      .content:last-of-type {
+        .columns {
+          & > :only-child {
+            margin-bottom: 0!important;
+          }
+          & > :last-child {
+            margin-bottom: 0!important;
+          }
+        }
+      }
     }
     // .content-col {
     //   padding: 0 40px!important;

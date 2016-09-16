@@ -5633,6 +5633,15 @@ header#contentHeader {
 #contentBody .content .columns > :first-child {
   margin-top: 40px !important; }
 
+#contentBody .content:first-of-type .columns > :first-child {
+  margin-top: 20px !important; }
+
+#contentBody .content:last-of-type .columns > :only-child {
+  margin-bottom: 0 !important; }
+
+#contentBody .content:last-of-type .columns > :last-child {
+  margin-bottom: 0 !important; }
+
 #contentBody > .flex-wrap:first-child {
   margin-top: 40px !important; }
 
@@ -6364,8 +6373,7 @@ pre {
     #singleWork .cta:last-child:not(:first-child) {
       float: right; }
   #singleWork .main-content {
-    background: #fefefe;
-    padding-top: 20px; }
+    background: #fefefe; }
     @media screen and (max-width: 39.9375em) {
       #singleWork .main-content {
         margin-top: -30px; } }
@@ -6373,6 +6381,12 @@ pre {
       transition: all 1s ease; }
     #singleWork .main-content .row {
       margin-top: 0; }
+    #singleWork .main-content #contentBody .content:first-of-type .columns > :first-child {
+      margin-top: 0 !important; }
+    #singleWork .main-content #contentBody .content:last-of-type .columns > :only-child {
+      margin-bottom: 0 !important; }
+    #singleWork .main-content #contentBody .content:last-of-type .columns > :last-child {
+      margin-bottom: 0 !important; }
 
 #archiveWork .main-content {
   margin-top: 0; }
