@@ -240,7 +240,7 @@ if ( is_singular('post'))  {
       	</div>
     		<div class="title-bar" data-responsive-toggle="site-navigation">
     			<div class="title-bar-title">
-            <a class="home-link" href="/home">
+            <a class="home-link" href="/">
               <svg width="26px" height="35px" viewBox="0 0 26 35">
                   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
@@ -262,7 +262,7 @@ if ( is_singular('post'))  {
     				<ul class="menu">
     					<li class="home-link">
     						<!-- LOGO -->
-    						<a href="/home">
+    						<a href="/">
     							<svg width="26px" height="35px" viewBox="0 0 26 35">
     							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
