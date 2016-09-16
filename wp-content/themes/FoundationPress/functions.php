@@ -65,18 +65,32 @@ require_once( 'library/get-cta.php' );
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Page Themes',
-		'menu_title'	=> 'Page Themes',
-		'menu_slug' 	=> 'page-themes',
+		'page_title' 	=> 'Design',
+		'menu_title'	=> 'Design',
+		'menu_slug' 	=> 'design',
+		'icon_url' => 'dashicons-edit',
 		'capability'	=> 'edit_posts',
+		'redirect'		=> true
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Page Theme Settings',
+		'menu_title'	=> 'Page Themes',
+		'parent_slug'	=> 'design',
 		'redirect'		=> false
 	));
 
-	acf_add_options_page(array(
-		'page_title' 	=> 'Call To Actions',
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Content Settings',
+		'menu_title'	=> 'Content Settings',
+		'parent_slug'	=> 'design',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Call To Action Settings',
 		'menu_title'	=> 'CTAs',
-		'menu_slug' 	=> 'call-to-actions',
-		'capability'	=> 'edit_posts',
+		'parent_slug'	=> 'design',
 		'redirect'		=> false
 	));
 

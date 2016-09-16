@@ -35,34 +35,14 @@ header#contentHeader {
   margin-top: 0;
   padding: 0 20px;
   h1 {
-    font-size: 48px;
-    line-height: 60px;
     margin-top: 0;
-    color: $black;
+    line-height: 1.25;
   }
   h6 {
+    text-transform: uppercase;
     margin-top: 0!important;
+    letter-spacing: 1.5px;
     color: $medium-gray!important;
-  }
-}
-
-.sidebar {
-  h3 {
-    font-weight: 600;
-    letter-spacing: -1px;
-    font-size: 36px;
-    line-height: 36px;
-  }
-  .button-wrapper {
-    margin: 40px 0;
-    a {
-      transition: all 0.5s ease;
-      opacity: 0.8;
-      color: $white;
-      &:hover {
-        opacity: 1.0;
-      }
-    }
   }
 }
 
@@ -88,42 +68,40 @@ $margin: 40px;
   }
   h1, h2, h3, h4, h5, h6 {
     margin-top: $margin;
-    color: $black;
     a {
       cursor: text;
-      color: $black;
     }
   }
   h1 {
-    font-size: 48px;
-    line-height: 60px;
+
+    font-weight: 300;
+    line-height: 1.25;
     margin-top: 0;
   }
   h2 {
-    font-size: 40px;
-    line-height: 32px;
+    color: $black;
     font-weight: 800;
   }
   h3 {
+    color: $black;
     text-transform: uppercase;
-    font-size: 30px;
-    line-height: 32px;
     font-weight: 600;
   }
   h4 {
-    font-size: 30px;
-    line-height: 32px;
-    font-weight: 400;
+    line-height: 1.15;
+    font-weight: 300;
   }
   h5 {
+    color: $black;
+    line-height: 1.15;
     font-weight: 600;
     letter-spacing: 0;
   }
   h6 {
     text-transform: uppercase;
     color: $medium-gray;
-    font-size: 14px;
-    letter-spacing: 1px;
+    line-height: 1.15;
+    letter-spacing: 1.5px;
   }
   p {
     width: 100%;

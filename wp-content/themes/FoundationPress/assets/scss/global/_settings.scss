@@ -110,23 +110,23 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
+    'h1': 42,
+    'h2': 36,
+    'h3': 32,
     'h4': 18,
-    'h5': 17,
+    'h5': 18,
     'h6': 16,
   ),
   medium: (
     'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
+    'h2': 38,
+    'h3': 32,
+    'h4': 24,
     'h5': 20,
     'h6': 16,
   ),
 );
-$header-color: $medium-gray;
+$header-color: $dark-gray;
 $header-lineheight: 1;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
@@ -175,7 +175,7 @@ $abbr-underline: 1px dotted $black;
 $lead-font-size: $global-font-size * 1.25;
 $lead-lineheight: 1.6;
 $subheader-lineheight: 1.4;
-$subheader-color: $dark-gray;
+$subheader-color: lighten($header-color, 25%);
 $subheader-font-weight: $global-weight-normal;
 $subheader-margin-top: 0.2rem;
 $subheader-margin-bottom: 0.5rem;
