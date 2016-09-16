@@ -5427,6 +5427,7 @@ form .hs-error-msgs {
         .post-grid .permalink .post-meta h3 span {
           color: #e6e6e6; }
       .post-grid .permalink .post-meta h5 {
+        color: #BFBFBF;
         text-transform: uppercase;
         font-size: 16px;
         margin: 0; }
