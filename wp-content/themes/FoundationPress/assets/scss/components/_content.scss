@@ -64,6 +64,23 @@ $margin: 40px;
       margin-top: $margin!important;
     }
   }
+  .content:first-of-type {
+    .columns {
+      & > :first-child {
+        margin-top: $margin/2!important;
+      }
+    }
+  }
+  .content:last-of-type {
+    .columns {
+      & > :only-child {
+        margin-bottom: 0!important;
+      }
+      & > :last-child {
+        margin-bottom: 0!important;
+      }
+    }
+  }
   & > .flex-wrap:first-child {
     margin-top: $margin!important;
   }
