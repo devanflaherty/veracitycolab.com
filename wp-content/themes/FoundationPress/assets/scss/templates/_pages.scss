@@ -92,8 +92,20 @@
         @include flex-align(left, middle);
       }
     }
+    .graphic-text {
+      @include breakpoint(medium) {
+        transform: translate(-5px, 0px);
+        padding-left: 0px;
+      }
+    }
     .graphic-container {
       position: relative;
+      margin: 0 0 20px;
+      padding: 0px 20px;
+      @include breakpoint(medium) {
+        margin: 0;
+        padding: 0;
+      }
       .graphic-image-container {
         width: 100%;
         padding-bottom: 100%;

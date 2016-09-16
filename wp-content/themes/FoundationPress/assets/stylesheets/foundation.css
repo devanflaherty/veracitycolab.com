@@ -6168,8 +6168,19 @@ pre {
         -ms-flex-align: center;
             -ms-grid-row-align: center;
             align-items: center; } }
+  @media screen and (min-width: 40em) {
+    #approach-page .approach-content .graphic-text {
+      -ms-transform: translate(-5px, 0px);
+          transform: translate(-5px, 0px);
+      padding-left: 0px; } }
   #approach-page .approach-content .graphic-container {
-    position: relative; }
+    position: relative;
+    margin: 0 0 20px;
+    padding: 0px 20px; }
+    @media screen and (min-width: 40em) {
+      #approach-page .approach-content .graphic-container {
+        margin: 0;
+        padding: 0; } }
     #approach-page .approach-content .graphic-container .graphic-image-container {
       width: 100%;
       padding-bottom: 100%;

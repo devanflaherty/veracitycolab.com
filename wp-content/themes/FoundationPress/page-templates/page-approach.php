@@ -33,7 +33,7 @@
                   $graphic = get_sub_field('graphic');
                 ?>
                   <div class="row expand graphic-row">
-                    <div class="small-6 medium-5 large-4 columns">
+                    <div class="small-12 medium-5 large-4 columns">
                       <?php if( !empty($graphic) ): ?>
                         <div class="graphic-container">
                           <div class="graphic-image-container">
@@ -45,7 +45,7 @@
                         </div>
                       <?php endif; ?>
                     </div>
-                    <div class="small-12 medium-6 large-7 columns">
+                    <div class="small-12 medium-6 large-7 columns graphic-text">
                       <h2><?php the_sub_field('headline'); ?></h2>
                       <?php the_sub_field('description'); ?>
                     </div>
