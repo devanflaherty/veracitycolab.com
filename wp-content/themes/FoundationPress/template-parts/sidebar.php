@@ -58,8 +58,7 @@
       <div class="columns small-12 medium-6 large-12 show-for-large">
         <span class="post-date"><?php the_field('completion_date'); ?></span>
         <?php
-          $taxonomies = get_terms('work-categories');
-          $current = $wp_query->query_vars['work-categories'];
+          $taxonomies = get_the_terms(get_the_ID(), 'work-categories');
           if ($taxonomies) {
             $i = 0;
             $c = count($taxonomies);

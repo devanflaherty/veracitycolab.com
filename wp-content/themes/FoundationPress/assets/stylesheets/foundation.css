@@ -5612,6 +5612,7 @@ header#contentHeader {
   margin-top: 0;
   padding: 0 20px; }
   header#contentHeader h1 {
+    font-weight: 300;
     margin-top: 0;
     line-height: 1.25; }
   header#contentHeader h6 {
@@ -6363,7 +6364,8 @@ pre {
     #singleWork .cta:last-child:not(:first-child) {
       float: right; }
   #singleWork .main-content {
-    background: #fefefe; }
+    background: #fefefe;
+    padding-top: 20px; }
     @media screen and (max-width: 39.9375em) {
       #singleWork .main-content {
         margin-top: -30px; } }
