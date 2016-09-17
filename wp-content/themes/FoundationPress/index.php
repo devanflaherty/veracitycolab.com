@@ -35,7 +35,7 @@ get_header(); ?>
 							if ($term->slug != 'all') {
 								$slug = $term->slug;
 								$name = $term->name;
-								echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+								echo "<a class='headline-link' href=\"/blog/category/$slug\">$name</a> ";
 							}
 						}
 					?>

@@ -61,6 +61,25 @@ require_once( 'library/get-cta.php' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
+
+// Fixes taxonomy so display on CPT archive
+function team_taxonomy() {
+    register_taxonomy(
+        'team-filters',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'team',        //post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Team Filters',  //Display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'filter', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before
+            )
+        )
+    );
+}
+add_action( 'init', 'team_taxonomy');
+
 // CUSTOM FIELD functions
 if( function_exists('acf_add_options_page') ) {
 
