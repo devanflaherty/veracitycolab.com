@@ -5858,6 +5858,8 @@ pre {
       .pagination-centered .pagination li.current a {
         font-size: 18px;
         color: #fefefe; }
+        .pagination-centered .pagination li.current a:hover {
+          background: none; }
 
 .headline {
   position: relative; }
