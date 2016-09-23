@@ -75,7 +75,7 @@ get_header(); ?>
 
 		<?php
 			$args = array(
-				'posts_per_page' => 8,
+				'posts_per_page' => 4,
 				'post_type'		=> 'work',
 				'meta_key'		=> 'visibility',
 				'meta_compare'		=> '==',

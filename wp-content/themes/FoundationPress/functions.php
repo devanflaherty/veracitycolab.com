@@ -155,3 +155,19 @@ function work_columns_content($column_name, $post_ID) {
         }
     }
 }
+
+
+// Set post amount for blogs so pagination is bajoinked on CPT
+function set_home_pagesize( $query )
+{
+    if ( is_admin() || !$query->is_main_query() )
+        return;
+
+    if ( is_home() )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
+}
+add_action( 'pre_get_posts', 'set_home_pagesize', 1 );
