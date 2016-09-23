@@ -33,7 +33,7 @@ if($seoDesc && $seoDesc !== "") {
   $description = get_bloginfo( 'description', 'display' );
 }
 // If is post page and if the excerpt field has content change description
-if ( is_singular('post'))  {
+if ( is_singular('post') || is_singular('work'))  {
   $excerpt = get_field('excerpt');
   if($excerpt && $excerpt !== "") {
     $description = $excerpt;
@@ -57,24 +57,32 @@ if ( is_singular('post'))  {
   <?php endif; ?>
     <meta name="zipcode" content="92658">
 
-  <?php
-    if ( has_post_thumbnail( $post->ID ) ) {
-      if(! is_front_page() ) {
-    		$fbImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-    		$fbImage = $fbImage[0];
-      } else {
-        $fbImage = get_field('facebook_image', 'option');
-      }
-  	} else {
-  		$fbImage = get_field('facebook_image', 'option');
-  	}
-  ?>
-    <meta property="og:image" content="<?= $fbImage; ?>"/>
+    <?php
+      if ( has_post_thumbnail( $post->ID ) ) {
+        if(! is_front_page() ) {
+      		$seoImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+      		$seoImage = $seoImage[0];
+        } else {
+          $seoImage = get_field('facebook_image', 'option');
+        }
+    	} else {
+    		$seoImage = get_field('facebook_image', 'option');
+    	}
+    ?>
+    <meta property="og:image" content="<?= $seoImage; ?>"/>
     <meta property="og:title" content="<?= $pageTitle; ?>"/>
     <meta property="og:description" content="<?= strip_tags($description); ?>">
     <meta property="og:url" content="<?php echo get_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>"/>
     <meta property="og:type" content="blog"/>
+
+    <!--  twitter card tags additive with the og: tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" value="http://veracitycolab.com" />
+    <meta name="twitter:title" value="<?= $pageTitle; ?>" />
+    <meta name="twitter:description" value="<?= strip_tags($description); ?>" />
+    <meta name="twitter:image" content="<?= $seoImage; ?>" />
+    <meta name="twitter:url" value="<?php echo get_permalink(); ?>" />
 
     <!-- FAVICONS-->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png" />
@@ -111,32 +119,6 @@ if ( is_singular('post'))  {
 
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '613751512109020');
-    fbq('track', "PageView");
-    </script>
-    <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=613751512109020&amp;ev=PageView&amp;noscript=1"/&gt;</noscript>
-
-    <!-- Hotjar Tracking Code for http://www.veracitycolab.com -->
-    <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:232315,hjsv:5};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <!-- CALL RAIL -->
-    <script src="//cdn.callrail.com/companies/176691639/d7e924485e706ce162f8/12/swap.js"></script>
 
 		<style>
 			.top-bar .menu .colorize a, .home-link.colorize path {
