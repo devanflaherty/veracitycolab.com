@@ -9,13 +9,24 @@ $('.desktop-menu li').each(function(index, element) {
   });
 });
 
-setTimeout(function(){
-  $('.main-content').addClass('animate-in').css({"transform":"translate(0px,0px)"});
-  $('.present').addClass('animate-in').css({"transform":"translate(0px,0px)"});
+// wait for images
+var hero = $("#featured-hero");
+if(hero.length) {
+  $("#featured-hero").waitForImages(function() {
+    $(this).addClass("animate-in");
+    $('.main-content').addClass('animate-in').css({"transform":"translate(0px,0px)"});
+    $('.present').addClass('animate-in').css({"transform":"translate(0px,0px)"});
 
-  $('#featured-hero').addClass('animate-in');
-  $('.parallax-bg').addClass('animate-in').css({"opacity": "1"});
-}, 100);
+    $('.parallax-bg').addClass('animate-in').css({"opacity": "1"});
+  });
+} else {
+  setTimeout(function(){
+    $('.main-content').addClass('animate-in').css({"transform":"translate(0px,0px)"});
+    $('.present').addClass('animate-in').css({"transform":"translate(0px,0px)"});
+
+    $('.parallax-bg').addClass('animate-in').css({"opacity": "1"});
+  }, 100);
+}
 
 // Logo fade in
 setTimeout(function(){

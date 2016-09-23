@@ -106,6 +106,9 @@ if ( is_singular('post'))  {
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script src="https://use.fontawesome.com/771c954b4a.js"></script>
 
+    <!-- wait for images -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
+
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 
