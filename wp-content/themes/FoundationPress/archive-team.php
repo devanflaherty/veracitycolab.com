@@ -26,7 +26,7 @@ get_header(); ?>
 					<a class="headline-link" href="/team">All</a>
 					<?php
 						$taxonomies = get_terms('team-filters');
-						$current = $wp_query->query_vars['team-filters'];
+						$current = single_term_title("", false);
 						if ($taxonomies) {
 							foreach($taxonomies as $term) {
 								$name = $term->name;
@@ -36,7 +36,7 @@ get_header(); ?>
 								} else {
 									$class = "";
 								}
-								echo "<a class=\"headline-link $class\" href=\"/filter/$slug\">$name</a> ";
+								echo "<a class=\"headline-link $class\" href=\"/team/filter/$slug\">$name</a> ";
 							}
 						}
 					?>
