@@ -59,7 +59,7 @@ get_header(); ?>
 								} else {
 									$checked = "";
 								}
-								echo "<a class='headline-link $checked' href=\"/category/$slug\">$name</a> ";
+								echo "<a class='headline-link $checked' href=\"/blog/filter/$slug\">$name</a> ";
 							}
 						}
 					?>
@@ -76,7 +76,7 @@ get_header(); ?>
 							if ($term->slug != 'all') {
 								$slug = $term->slug;
 								$name = $term->name;
-								echo "<a class='headline-link' href=\"/category/$slug\">$name</a> ";
+								echo "<a class='headline-link' href=\"/blog/filter/$slug\">$name</a> ";
 							}
 						}
 					?>
