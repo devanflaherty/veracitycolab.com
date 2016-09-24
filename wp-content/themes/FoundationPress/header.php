@@ -38,7 +38,7 @@ if ( is_singular('post') || is_singular('work'))  {
   if($excerpt && $excerpt !== "") {
     $description = $excerpt;
   } else {
-    $description = get_the_excerpt();
+    $description = my_excerpt($post->post_content, get_the_excerpt());
   }
 }
 ?>
