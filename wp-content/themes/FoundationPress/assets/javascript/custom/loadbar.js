@@ -37,6 +37,6 @@ setTimeout(function(){
   $('.main-content').removeClass('animate-in');
   $('.parallax-bg').removeClass('animate-in');
   $('.overlay').removeClass('load');
-}, 500);
+}, 1000);
 
 // Present
