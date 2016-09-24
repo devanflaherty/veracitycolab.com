@@ -6809,7 +6809,7 @@ a, button {
   margin-bottom: 60px; }
 
 .animate-in {
-  transition: all 0.5s ease; }
+  transition: all 1s ease; }
 
 .present {
   transition: all 1s ease;
