@@ -29,16 +29,29 @@ get_header(); ?>
 			</header>
 
 			<div id="contentBody" class="entry-content">
-
 				<!-- Note: #contentBody is heavily formatted by javascript cause of the returned MarkDown -->
 				<?php the_content(); ?>
 			</div>
 
 			<div class="example-posts">
-				<h3><?php the_field('headline'); ?></h3>
+				<h3><?php //the_field('headline'); ?></h3>
 			<?php // RELATED POSTS ?>
 			<?php
-				$posts = get_field('related_work');
+
+			$posts_array = get_posts(
+		    array(
+		        'posts_per_page' => -1,
+		        'post_type' => 'work',
+		        'tax_query' => array(
+		            array(
+		                'taxonomy' => 'clients',
+		                'field' => 'term_id',
+		                'terms' => get_field('related_work'),
+		            )
+		        )
+		    )
+		);
+				$posts = $posts_array;
 
 				if( $posts ): ?>
 					<div class="row small-up-1 medium-up-2 post-grid">
@@ -52,6 +65,7 @@ get_header(); ?>
 								$secondary = substr(get_field( 'secondary_color'), 1);
 								$video =  get_field('video_id');
 
+								// Have to do a lil loop to get the a-singular client
 							?>
 							<div class="column">
 								<?php get_template_part( 'template-parts/work-content' ); ?>

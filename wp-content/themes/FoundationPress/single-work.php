@@ -26,10 +26,15 @@ get_header(); ?>
 		<div class="main-content <?= $contentMargin; ?>" id="post-<?php the_ID(); ?>">
 			<?php
 				$client = getClient();
+				$title = get_the_title();
+			  if (strpos($title, '|') !== false) {
+			    $title = strstr($title, '|');
+			    $title = substr($title, 1);
+			  }
 			?>
 			<header id="contentHeader">
 				<h6><?= $client; ?></h6>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title"><?php echo $title; ?></h1>
 				<?php get_template_part( 'template-parts/single-meta' ); ?>
 			</header>
 

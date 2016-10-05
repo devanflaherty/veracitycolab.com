@@ -115,47 +115,6 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-add_filter('manage_work_posts_columns', 'work_columns_head');
-add_action('manage_work_posts_custom_column', 'work_columns_content', 10, 2);
-
-// GET FEATURED IMAGE
-function work_get_client($post_ID) {
-    $clients = get_field('client', $post_ID);
-    if( $clients ) {
-      foreach( $clients as $p ) {
-        $client = get_the_title( $p->ID );
-      }
-      return $client;
-    }
-}
-
-// ADD NEW COLUMN
-function work_columns_head($defaults) {
-    $new = array();
-    $clients = $defaults['client'];  // save the tags column
-    unset($defaults['client']);   // remove it from the columns list
-
-    foreach($defaults as $key=>$value) {
-        if($key=='date') {  // when we find the date column
-           $new['client'] = 'Client';  // put the tags column before it
-        }
-        $new[$key]=$value;
-    }
-
-    return $new;
-}
-
-// SHOW THE FEATURED IMAGE
-function work_columns_content($column_name, $post_ID) {
-    if ($column_name == 'client') {
-      echo '<style>#client { width: 20%}</style>';
-        $post_client = work_get_client($post_ID);
-        if ($post_client) {
-            echo $post_client;
-        }
-    }
-}
-
 
 // Set post amount for blogs so pagination is bajoinked on CPT
 function set_home_pagesize( $query )
