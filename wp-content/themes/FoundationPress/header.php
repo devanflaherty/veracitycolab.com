@@ -181,9 +181,8 @@ if ( is_singular('post') || is_singular('work'))  {
   		<div class="row align-center align-middle">
 
         <div class="small-11 medium-5 large-4 columns">
-					<h4>VERACITYCOLAB</h4>
-          <h6><?php bloginfo('description'); ?></h6>
-          <br>
+					<span>VERACITYCOLAB</span>
+          <br><br>
 
 					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
 					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
@@ -207,7 +206,18 @@ if ( is_singular('post') || is_singular('work'))  {
           <?php foundationpress_contact_nav(); ?>
   			</div>
 
-        <button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <button class="button round" id="closeForm">
+          <svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+            <title>X</title>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                <g id="X" stroke="#FFFFFF">
+                    <path d="M19.5,19.5 L0.5,0.5 L19.5,19.5 L38.5,0.5 L19.5,19.5 Z M19.5,19.5 L38.0033332,38.0033332 L19.5,19.5 L0.996666815,38.0033332 L19.5,19.5 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </svg>
+      </button>
 
   		</div>
   	</section>
