@@ -5207,7 +5207,8 @@ form .hs-error-msgs {
   -ms-transform: translate(0px, 100px);
       transform: translate(0px, 100px);
   opacity: 0;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  background-color: none !important; }
   #closeForm.visible {
     -ms-transform: translate(0px, 0px);
         transform: translate(0px, 0px);

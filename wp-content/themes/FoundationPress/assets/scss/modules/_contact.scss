@@ -217,6 +217,7 @@ form {
   transform: translate(0px, 100px);
   opacity: 0;
   transition: all 0.5s ease;
+  background-color: none!important;
   &.visible {
     transform: translate(0px, 0px);
     opacity: 1;
