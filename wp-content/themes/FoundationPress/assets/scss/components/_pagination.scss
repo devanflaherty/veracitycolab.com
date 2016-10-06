@@ -12,6 +12,14 @@
       padding: 0;
       background: #fff;
       margin: 8px 0 0;
+      &.dots {
+        height: 38px;
+        width: 38px;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        color: $medium-gray;
+      }
       a {
         color: $medium-gray;
         height: 38px;
