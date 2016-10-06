@@ -7,11 +7,11 @@
   $video =  get_field('video_id');
 
   // Have to do a lil loop to get the a-singular client
-  $clients = get_field('client');
-  if( $clients ) {
-    foreach( $clients as $p ) {
-      $client = get_the_title( $p->ID );
-    }
+  $client = getClient();
+  $title = get_the_title();
+  if (strpos($title, '|') !== false) {
+    $title = strstr($title, '|');
+    $title = substr($title, 1);
   }
 ?>
 <div class="post-block" style="background-color: <?= $primary; ?>">
@@ -19,7 +19,7 @@
     <div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
     <div class="post-meta">
       <h5><span><?= $client ?></span></h5>
-      <h3><?php the_title(); ?></h3>
+      <h3><?php echo $title; ?></h3>
     </div>
   </a>
 <?php if ( has_post_thumbnail() )  : ?>

@@ -5198,8 +5198,8 @@ form .hs-error-msgs {
 
 #closeForm {
   position: absolute;
-  height: 40px;
-  width: 40px;
+  height: 80px;
+  width: 80px;
   left: 0;
   right: 0;
   bottom: 40px;
@@ -5207,11 +5207,18 @@ form .hs-error-msgs {
   -ms-transform: translate(0px, 100px);
       transform: translate(0px, 100px);
   opacity: 0;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  background-color: none !important; }
   #closeForm.visible {
     -ms-transform: translate(0px, 0px);
         transform: translate(0px, 0px);
     opacity: 1; }
+  #closeForm svg {
+    width: 80%;
+    transition: transform 1s ease; }
+  #closeForm:hover {
+    -ms-transform: rotate(90deg) scale(1.2);
+        transform: rotate(90deg) scale(1.2); }
 
 #confirmation {
   margin: 0; }
