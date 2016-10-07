@@ -12,6 +12,14 @@ $colors = getColors();
 $primaryColor = $colors['primary'];
 $secondaryColor = $colors['secondary'];
 
+$title = get_the_title();
+if ( is_singular('work')) {
+  if (strpos($title, '|') !== false) {
+    $title = strstr($title, '|');
+    $title = substr($title, 1);
+  }
+}
+
 // Set Page title
 // Display a special title for front page to help SEO
 if(is_front_page() ) {
@@ -19,7 +27,7 @@ if(is_front_page() ) {
 } elseif(is_singular('work')) {
   // Set a special title that displays the client for work posts
   $client = getClient();
-  $pageTitle = $client . " | " . get_the_title() . " - " . get_bloginfo( 'name', 'display' );
+  $pageTitle = $client . " | " . $title . " - " . get_bloginfo( 'name', 'display' );
 } else {
   // Fallback title for all pages
   $pageTitle =  wp_title( '-', false, 'right' ) . get_bloginfo( 'name', 'display' );
