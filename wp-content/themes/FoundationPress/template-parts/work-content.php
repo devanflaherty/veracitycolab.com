@@ -18,7 +18,13 @@
   <a class="permalink" href="<?php the_permalink(); ?>">
     <div class="hover-indicator" style="background: <?php the_field( 'primary_color' ) ?>"></div>
     <div class="post-meta">
-      <h5><span><?= $client ?></span></h5>
+      <h5>
+        <?php if (get_field('episode')) : ?>
+          <span>Episode <?php echo get_field('episode'); ?></span>
+        <?php else : ?>
+          <span><?= $client ?></span>
+        <?php endif; ?>
+      </h5>
       <h3><?php echo $title; ?></h3>
     </div>
   </a>
