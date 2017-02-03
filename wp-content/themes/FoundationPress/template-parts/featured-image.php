@@ -1,17 +1,7 @@
 <?php
-	if ( is_post_type_archive('work') ) {
-		$primaryColor = get_field( 'work_primary_color', 'option' );
-		$secondaryColor = get_field( 'work_secondary_color', 'option' );
-	} elseif ( is_post_type_archive('team') ) {
-		$primaryColor = get_field( 'team_primary_color', 'option' );
-		$secondaryColor = get_field( 'team_secondary_color', 'option' );
-	} elseif (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
-		$primaryColor = get_field( 'primary_color' );
-		$secondaryColor = get_field( 'secondary_color' );
-	} else {
-		$primaryColor = get_field( 'global_primary_color', 'options' );
-		$secondaryColor = get_field( 'global_secondary_color', 'options' );
-	}
+	$colors = getColors();
+	$primaryColor = $colors['primary'];
+	$secondaryColor = $colors['secondary'];
 
 	// If a feature image is set, get the id, so it can be injected as a css background property
 	if(is_archive()) {
@@ -24,7 +14,7 @@
 		$style = "background-color:" . $primaryColor . ";";
 	}
 
-	if(is_post_type_archive( 'work' )) {
+	if(is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_tax( 'work-categories' ))  {
 		$hidden = "hidden";
 	}
 ?>
@@ -32,7 +22,7 @@
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
 <?php
-	if ( is_post_type_archive( 'work' ) || is_singular( 'work' ) || is_singular( 'advance' )) :
+	if ( is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_singular( 'work' ) || is_singular( 'example' )) :
 		if(get_field('video_id')) {
 			$video = get_field('video_id');
 		} else {
@@ -40,7 +30,7 @@
 		}
 	?>
 
-	<?php if(!is_singular( 'advance' ) && !empty(get_field('video_id'))) : ?>
+	<?php if(!is_singular( 'example' ) && !empty(get_field('video_id'))) : ?>
 		<div class="feature-play"><i class="fa fa-play" aria-hidden="true"></i></div>
 	<?php endif; ?>
 
@@ -56,11 +46,15 @@
 					<div class="small-6 medium-3 columns">
 						<a class="button expanded hollow upper white" href="#close">Close</a>
 					</div>
-					<?php if(!is_singular( 'work' )) :?>
-					<div class="small-6 medium-3 columns">
-						<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
-					</div>
-				<?php endif; ?>
+					<?php if(is_post_type_archive( 'work' ) || is_singular( 'example' )) : ?>
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" id="seeProject" href="#">See Project</a>
+						</div>
+					<?php elseif(is_post_type_archive( 'podcast' )) : ?>
+						<div class="small-6 medium-3 columns">
+							<a class="button expanded hollow upper white" id="seeProject" href="#">Go to Post</a>
+						</div>
+					<?php endif; ?>
 				</div>
 		  </div>
 		</div>

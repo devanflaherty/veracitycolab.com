@@ -8,23 +8,47 @@
  * @since FoundationPress 1.0.0
  */
 
- if ( is_post_type_archive('work') ) {
-	 $primaryColor = get_field( 'work_primary_color', 'option' );
-	 $secondaryColor = get_field( 'work_secondary_color', 'option' );
- } elseif ( is_post_type_archive('team') ) {
-	 $primaryColor = get_field( 'team_primary_color', 'option' );
-	 $secondaryColor = get_field( 'team_secondary_color', 'option' );
- } elseif (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
-	 $primaryColor = get_field( 'primary_color' );
-	 $secondaryColor = get_field( 'secondary_color' );
- } else {
-   $primaryColor = get_field( 'global_primary_color', 'options' );
-   $secondaryColor = get_field( 'global_secondary_color', 'options' );
- }
+$colors = getColors();
+$primaryColor = $colors['primary'];
+$secondaryColor = $colors['secondary'];
 
- $description = "VeracityColab is a video production & motion graphics agency based in Newport Beach, CA. We make live action & motion graphic brand videos!";
+$title = get_the_title();
+if ( is_singular('work')) {
+  if (strpos($title, '|') !== false) {
+    $title = strstr($title, '|');
+    $title = substr($title, 1);
+  }
+}
 
+// Set Page title
+// Display a special title for front page to help SEO
+if(is_front_page() ) {
+  $pageTitle = "VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA";
+} elseif(is_singular('work')) {
+  // Set a special title that displays the client for work posts
+  $client = getClient();
+  $pageTitle = $client . " | " . $title . " - " . get_bloginfo( 'name', 'display' );
+} else {
+  // Fallback title for all pages
+  $pageTitle =  wp_title( '-', false, 'right' ) . get_bloginfo( 'name', 'display' );
+}
+
+// Set site description
+$seoDesc = get_field('seo_description', 'option');
+if($seoDesc && $seoDesc !== "") {
+  $description = $seoDesc;
+} else {
+  $description = get_bloginfo( 'description', 'display' );
+}
+// If is post page and if the excerpt field has content change description
+if ( is_singular('post') || is_singular('work'))  {
+  $excerpt = get_field('excerpt');
+  if($excerpt && $excerpt !== "") {
+    $description = $excerpt;
+  }
+}
 ?>
+
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
@@ -32,76 +56,77 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="D75mcBbFpurEh5x_YA2-r91ntoWT4_SZxcXTSiTLcUQ">
 
-  <?php if(is_front_page() ) : ?>
-    <title>VeracityColab | Motion Graphics Design + Corporate Video Production Company | Newport Beach, CA</title>
-  <?php endif; ?>
-    <meta name="description" content="<?= $description; ?>">
-  <?php if ( is_singular('advance'))  : ?>
+    <title><?= $pageTitle; ?></title>
+    <meta name="description" content="<?= strip_tags($description); ?>">
+  <?php if ( is_singular('example'))  : ?>
     <meta name="robots" content="noindex">
   <?php else: ?>
     <meta name="robots" content="all">
   <?php endif; ?>
     <meta name="zipcode" content="92658">
 
-  <?php if ( is_post_type_archive('work'))  : ?>
-    <meta property="og:description" content="Check out <?php the_title(); ?>, some awesome work from VeracityColab. <?= $description; ?>">
-  <?php else: ?>
-    <meta property="og:description" content="<?= $description; ?>">
-  <?php endif; ?>
-  <?php
-    if ( has_post_thumbnail( $post->ID ) ) {
-      if(! is_front_page() ) {
-    		$fbImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-    		$fbImage = $fbImage[0];
-      } else {
-        $fbImage = get_field('facebook_image', 'option');
-      }
-  	} else {
-  		$fbImage = get_field('facebook_image', 'option');
-  	}
-  ?>
-    <meta property="og:image" content="<?= $fbImage; ?>"/>
-    <meta property="og:title" content="<?php the_title(); ?> - VeracityColab"/>
+    <?php
+      if ( has_post_thumbnail( $post->ID ) ) {
+        if(! is_front_page() ) {
+      		$seoImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+      		$seoImage = $seoImage[0];
+        } else {
+          $seoImage = get_field('facebook_image', 'option');
+        }
+    	} else {
+    		$seoImage = get_field('facebook_image', 'option');
+    	}
+    ?>
+    <meta property="og:image" content="<?= $seoImage; ?>"/>
+    <meta property="og:title" content="<?= $pageTitle; ?>"/>
+    <meta property="og:description" content="<?= strip_tags($description); ?>">
     <meta property="og:url" content="<?php echo get_permalink(); ?>"/>
-    <meta property="og:site_name" content="VeracityColab"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo( 'name', 'display' ); ?>"/>
     <meta property="og:type" content="blog"/>
 
+    <!--  twitter card tags additive with the og: tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" value="http://veracitycolab.com" />
+    <meta name="twitter:title" value="<?= $pageTitle; ?>" />
+    <meta name="twitter:description" value="<?= strip_tags($description); ?>" />
+    <meta name="twitter:image" content="<?= $seoImage; ?>" />
+    <meta name="twitter:url" value="<?php echo get_permalink(); ?>" />
+
+    <!-- FAVICONS-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-128.png" sizes="128x128" />
+    <link rel='mask-icon' href='<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon.svg' color='#ff0000'>
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x310.png" />
+
 		<?php wp_head(); ?>
+
+    <!-- Fonts -->
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://use.fontawesome.com/771c954b4a.js"></script>
+
+    <!-- wait for images -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
 
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '613751512109020');
-    fbq('track', "PageView");
-    </script>
-    <noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=613751512109020&amp;ev=PageView&amp;noscript=1"/&gt;</noscript>
-    <!-- Hotjar Tracking Code for http://www.veracitycolab.com -->
-    <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:232315,hjsv:5};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <!-- CALL RAIL -->
-    <script src="//cdn.callrail.com/companies/176691639/d7e924485e706ce162f8/12/swap.js"></script>
-
-  <?php if ( is_post_type_archive('team'))  : ?>
-    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-    <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
-  <?php endif; ?>
 
 		<style>
 			.top-bar .menu .colorize a, .home-link.colorize path {
@@ -136,9 +161,6 @@
       .pagination a:hover {
         border-color: <?= $secondaryColor ?>!important;
       }
-      #closeForm {
-        background: <?= $secondaryColor ?>;
-      }
       .sidebar h3 {
         color: <?= $primaryColor ?>;
       }
@@ -161,49 +183,46 @@
 
   	<!-- Contact -->
   	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
-  		<div class="row align-center">
-  			<div id="formWrap" class="small-11 medium-6 large-4 columns text-center">
-  				<h5 id="message" class="contrast-text upper large-text-left"><strong>Pleased to meet you</strong></h5>
+  		<div class="row align-center align-middle">
 
-  				<form action="/wp-content/themes/FoundationPress/form-submit.php" method="POST" id="contact">
-            <br>
-            <div class="inputs">
-  						<div class="field" id="nameInput">
-  							<input id="contactName" class="float-input" type="text" name="firstname" placeholder="Full Name" />
-  							<label for="firstname">Full Name</label>
-  						</div>
-  						<div class="field" id="emailInput">
-  							<input id="contactEmail" class="float-input" type="email" name="email" placeholder="Email Address" />
-  							<label for="email">Email Address</label>
-  						</div>
-              <div class="field" id="companyInput">
-                <input id="contactCompany" class="float-input" type="text" name="company_name" placeholder="Company" />
-                <label for="company_name">Company</label>
-              </div>
-              <div class="field" id="commentInput">
-    						<textarea id="contactMessage" placeholder="I'm Contacting Because..." name="comment"></textarea>
-              </div>
-  					</div>
-  					<input id="contactSend" name="send" class="button white hollow expanded disabled" value="send"/>
-  				</form>
-          <div id="confirmation" class="row">
-            <div class="small-12 large-8 columns">
-              <iframe src="//fast.wistia.net/embed/iframe/banph8btoi?videoFoam=true&amp;playerColor=181818" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed vc" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
-              <br>
-            </div>
-            <div class="small-12 large-4 columns flex">
-              <div>
-                <h5 class="contrast-text upper large-text-left show-for-large"><strong>Pleased to meet you</strong></h5>
-                <h4 class="large-text-left">We want your experience with us to be delightful right from the start.</h4>
-                <p class="large-text-left">We'll get back to you soon.<br>
-                  In the meantime, please enjoy our FREE ebook!
-                </p>
-                <a href="http://www.veracitycolab.com/7-insights-ebook-download/" class="button round center-text secondary">7 Insights eBook</a>
-              </div>
-            </div>
+        <div class="small-11 medium-5 large-4 columns">
+					<span>VERACITYCOLAB</span>
+          <br><br>
+
+					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
+					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
+          <br><br>
+          <div class="team-social">
+            <?php
+              if( have_rows('footer_social', 'option') ) {
+                echo "<nav class=\"social-nav\">";
+                while ( have_rows('footer_social', 'option') ) { the_row();
+                  $url = get_sub_field('url');
+                  echo "<a href=\"" . $url . "\" target=\"_blank\">";
+                  the_sub_field('icon');
+                  echo "</a>";
+                }
+                echo "</nav>";
+              }
+            ?>
           </div>
+				</div>
+        <div class="small-11 medium-5 large-4 columns">
+          <?php foundationpress_contact_nav(); ?>
   			</div>
-        <button class="button round" id="closeForm"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+        <button id="closeForm">
+          <svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+            <title>X</title>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                <g id="X" stroke="#FFFFFF">
+                    <path d="M19.5,19.5 L0.5,0.5 L19.5,19.5 L38.5,0.5 L19.5,19.5 Z M19.5,19.5 L38.0033332,38.0033332 L19.5,19.5 L0.996666815,38.0033332 L19.5,19.5 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </svg>
+      </button>
 
   		</div>
   	</section>
@@ -221,7 +240,7 @@
       	</div>
     		<div class="title-bar" data-responsive-toggle="site-navigation">
     			<div class="title-bar-title">
-            <a class="home-link" href="/home">
+            <a class="home-link" href="/">
               <svg width="26px" height="35px" viewBox="0 0 26 35">
                   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                       <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
@@ -243,7 +262,7 @@
     				<ul class="menu">
     					<li class="home-link">
     						<!-- LOGO -->
-    						<a href="/home">
+    						<a href="/">
     							<svg width="26px" height="35px" viewBox="0 0 26 35">
     							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">

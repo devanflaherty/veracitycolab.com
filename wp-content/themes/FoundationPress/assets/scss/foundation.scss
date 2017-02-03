@@ -18,7 +18,6 @@
 @import "global/wp-overrides"; // Override the default WordPress styling for some elements
 
 // Third-party libraries
-@import 'font-awesome';
 @import 'motion-ui';
 
 // Foundation global styles
@@ -94,15 +93,12 @@
 
 
 // Templates
-@import "templates/kitchen-sink";
-@import "templates/page-sidebar-left";
 @import "templates/single-post";
-@import "templates/full-card";
+@import "templates/pages";
 @import "templates/home";
 @import "templates/work";
 @import "templates/team";
 @import "templates/blog";
-@import "templates/404";
 
 
 /* Utilities */

@@ -7,23 +7,41 @@
       margin-bottom: 0;
     }
     li {
-      border-radius: 30px;
+      display: block;
+      float: left;
       padding: 0;
+      background: #fff;
+      margin: 8px 0 0;
+      &.dots {
+        height: 38px;
+        width: 38px;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        color: $medium-gray;
+      }
       a {
+        color: $medium-gray;
         height: 38px;
         width: 38px;
         line-height: 30px;
+        font-size: 16px;
         text-align: center;
-        border-radius: 30px;
-        border: 2px solid $light-gray;
-        background: none;
+        font-weight: 600;
+        &.prev, &.next {
+          font-size: 22px;
+        }
       }
     }
     li.current {
+      margin-top: 0;
+      padding: 6px 4px 2px;
       a {
+        font-size: 18px;
         color: $white;
-        background: none;
-        border: 2px solid transparent;
+        &:hover {
+          background: none;
+        }
       }
     }
   }

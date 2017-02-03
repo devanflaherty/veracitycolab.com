@@ -32,8 +32,7 @@ $(".play").click(function(){
 
 
 if(isiPad() || isiPhone()){
-  $('.post-block a span').addClass('device');
-  $('.post-block a .thumbnail-overlay').addClass('device');
+  $('#featured-hero').addClass('device');
 
   $(".iplay").bind("touchstart click", function(){
     var permalink = $(this).closest('a').attr("data-permalink");
@@ -68,7 +67,7 @@ $(document).mouseup(function (e) {
         $('#navBar').removeClass('push-up');
         $('.feature-play').removeClass('blow-up');
         $('.main-content').removeClass('push-down');
-      } else if($('body').hasClass('single-advance')) {
+      } else if($('body').hasClass('single-example')) {
         $("#featured-hero").removeClass("video-reveal click-to-close");
         $(".feature-overlay").removeClass("animate-in");
         $('#navBar').removeClass('push-up');

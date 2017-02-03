@@ -50,19 +50,127 @@ require_once( 'library/responsive-images.php' );
 /** Configure convert color to hex */
 require_once( 'library/hex.php' );
 
+/** Get The Client for work posts */
+require_once( 'library/get-client.php' );
+
+/** Get site colors */
+require_once( 'library/colors.php' );
+/** Get site colors */
+require_once( 'library/get-cta.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
+
+// Fixes taxonomy so display on CPT archive
+function team_taxonomy() {
+    register_taxonomy(
+        'team-filters',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'team',        //post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Team Filters',  //Display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'filter', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before
+            )
+        )
+    );
+}
+add_action( 'init', 'team_taxonomy');
 
 // CUSTOM FIELD functions
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Page Themes',
-		'menu_title'	=> 'Page Themes',
-		'menu_slug' 	=> 'page-themes',
+		'page_title' 	=> 'Design',
+		'menu_title'	=> 'Design',
+		'menu_slug' 	=> 'design',
+		'icon_url' => 'dashicons-edit',
 		'capability'	=> 'edit_posts',
+		'redirect'		=> true
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Page Theme Settings',
+		'menu_title'	=> 'Page Themes',
+		'parent_slug'	=> 'design',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Content Settings',
+		'menu_title'	=> 'Content Settings',
+		'parent_slug'	=> 'design',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Call To Action Settings',
+		'menu_title'	=> 'CTAs',
+		'parent_slug'	=> 'design',
 		'redirect'		=> false
 	));
 
 }
+
+
+// Set post amount for blogs so pagination is bajoinked on CPT
+function set_home_pagesize( $query )
+{
+    if ( is_admin() || !$query->is_main_query() )
+        return;
+
+    if ( is_home() )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
+    if ( is_archive('podcast') )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
+    if ( is_archive('work') )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
+}
+add_action( 'pre_get_posts', 'set_home_pagesize', 1 );
+
+
+// function toolset_fix_custom_posts_per_page( $query_string ){
+//     if( is_admin() || ! is_array( $query_string ) )
+//         return $query_string;
+//
+//     $post_types_to_fix = array(
+//         array(
+//             'post_type' => 'podcast',
+//             'posts_per_page' => 8
+//         ),
+//
+//         array(
+//             'post_type' => 'work',
+//             'posts_per_page' => 8
+//         ),
+//
+//     );
+//
+//     foreach( $post_types_to_fix as $fix ) {
+//         if( array_key_exists( 'post_type', $query_string )
+//             && $query_string['post_type'] == $fix['post_type']
+//         ) {
+//             $query_string['posts_per_page'] = $fix['posts_per_page'];
+//             return $query_string;
+//         }
+//     }
+//
+//     return $query_string;
+// }
+//
+// add_filter( 'request', 'toolset_fix_custom_posts_per_page' );

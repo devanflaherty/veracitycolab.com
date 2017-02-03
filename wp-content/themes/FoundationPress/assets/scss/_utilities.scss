@@ -10,11 +10,12 @@ body.fixed, body.video-fixed {
   top: 0;
   overflow: hidden;
 }
-path {
-  fill: black;
-  transition: fill .5s !important;
+.home-link {
+  path {
+    fill: black;
+    transition: fill .5s !important;
+  }
 }
-
 // Typography
 h5 {
   letter-spacing: 1.5px;
@@ -106,6 +107,10 @@ a, button {
   padding: 90px 0;
 }
 
+.no-marg-bottom {
+  margin-bottom: 0!important;
+}
+
 // Flex
 .flex {
   @include flex;
@@ -113,6 +118,9 @@ a, button {
 }
 .expand {
   max-width: 100%!important;
+}
+.w-control-bar {
+  display: flex!important;
 }
 
 // Contrast
@@ -123,7 +131,6 @@ a, button {
 // Overlay
 .container {
   position: relative;
-  background: #fafafa;
 }
 .overlay {
   visibility: hidden;
@@ -174,6 +181,68 @@ a, button {
       transform: scale(1)!important;
     }
   }
+}
+
+// Social
+.social-nav {
+  float: left;
+  margin-top: 0px;
+
+  @include breakpoint(large) {
+    //float: right;
+    margin-top: 0;
+  }
+  a {
+    font-size: 20px;
+    color: rgba($white, 0.85);
+    margin: 0 18px 0 0;
+    @include breakpoint(large) {
+      //margin: 0 0 0 18px;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// CTA
+#cta {
+  background: $white;
+  margin: 20px 0 0;
+  .cta-blurb {
+    display: block;
+    margin: 25px 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    color: $dark-gray;
+    padding: 20px 40px;
+    text-align: center;
+    @include breakpoint(medium) {
+      font-size: 24px;
+      line-height: 28px;
+      padding: 0px 40px;
+      text-align: left;
+    }
+  }
+  .button {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 40px 40px;
+    background: $light-gray;
+    color: #ffffff;
+    margin: 0;
+    opacity: 0.9;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.archive #cta, .blog #cta {
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
 
 // ANIMATIONS

@@ -8,19 +8,9 @@
  * @since FoundationPress 1.0.0
  */
 
- if ( is_post_type_archive('work') ) {
-	 $primaryColor = get_field( 'work_primary_color', 'option' );
-	 $secondaryColor = get_field( 'work_secondary_color', 'option' );
- } elseif ( is_post_type_archive('team') ) {
-	 $primaryColor = get_field( 'team_primary_color', 'option' );
-	 $secondaryColor = get_field( 'team_secondary_color', 'option' );
- } elseif (get_field( 'primary_color' ) && get_field( 'secondary_color' )) {
-	 $primaryColor = get_field( 'primary_color' );
-	 $secondaryColor = get_field( 'secondary_color' );
- } else {
-   $primaryColor = get_field( 'global_primary_color', 'options' );
-   $secondaryColor = get_field( 'global_secondary_color', 'options' );
- }
+ $colors = getColors();
+ $primaryColor = $colors['primary'];
+ $secondaryColor = $colors['secondary'];
 
 ?>
 		</section>

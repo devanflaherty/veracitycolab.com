@@ -15,7 +15,8 @@
   .main-content {
     background: $white;
     margin-top: -30px;
-    padding: 40px 40px!important;
+    margin-bottom: 20px;
+    padding: 20px!important;
     h1 {
       font-size: 46px;
       color: darken($dark-gray, 10%);
@@ -62,9 +63,13 @@
 }
 
 #archiveTeam {
+  .headline {
+    z-index: 500!important;
+  }
   .main-cards {
     margin-top: 0rem!important;
     margin-bottom: 40px;
+    z-index: 0!important;
     @include breakpoint(medium) {
       margin-top: 4rem!important;
     }

@@ -1,81 +1,68 @@
 .post-grid {
   width: 100%;
-  > .column {
-    margin-bottom: 24px;
-    .permalink {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: auto;
-      background: $white!important;
-      margin: 0;
-      .hover-indicator {
-        position: absolute;
-        top: 0; left: 0;
-        width: 0;
-        height: 7px;
-        z-index: 100;
-        transition: all 0.5s ease;
-        &.hover {
-          width: 100%!important;
-        }
-      }
-      .post-meta {
-        padding: 30px 20px 20px;
-        h3 {
-          font-size: 28px;
-          line-height: 32px;
-          display: inline;
-          color: $dark-gray;
-          padding: 0;
-          margin: 0;
-          @include breakpoint(medium) {
-            font-size: 32px;
-            line-height: 36px;
-          }
-          span {
-            color: $light-gray;
-          }
-        }
-        h5 {
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
-          font-size: 15px;
-          margin: 0;
-        }
-      }
-      &.bloglink:hover {
-        .thumbnail-overlay {
-          opacity: 1;
-        }
-      }
+  > .column, .column {
+    margin-bottom: 40px;
+    padding-bottom: 36.25%;
+    position: relative;
+    @include breakpoint(small only) {
+      padding-bottom: 72%;
     }
   }
-  .feature-post {
-    .post-block {
-      overflow: hidden;
-      position: relative;
-      max-height: 400px;
-      margin-bottom: 24px;
-      img {
-        margin-top: -25%;
+  .permalink {
+    flex: 1 0 auto;
+    z-index: 600;
+    display: block;
+    width: 100%;
+    margin: -1px 0 0;
+    background: $white!important;
+    .hover-indicator {
+      position: absolute;
+      z-index: 100;
+      top: 0; left: 0;
+      width: 0;
+      height: 7px;
+      transition: all 0.5s ease;
+      &.hover {
+        width: 100%!important;
       }
-      a.play {
-        padding-bottom: 33.25%!important;
-        .thumbnail-overlay {
-          padding-bottom: 33.25%!important;
+    }
+    //Client & Title
+    .post-meta {
+      position: relative;
+      padding: 30px 20px 20px;
+      h3 {
+        font-weight: 300;
+        line-height: 1.15;
+        display: inline;
+        color: $dark-gray;
+        padding: 0;
+        margin: 0;
+        span {
+          color: $light-gray;
         }
+      }
+      h5 {
+        // NOTE: Convert to H6
+        color: $medium-gray; 
+        text-transform: uppercase;
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+    &.bloglink:hover {
+      .thumbnail-overlay {
+        opacity: 1;
       }
     }
   }
   .post-block {
     overflow: hidden;
-    position: relative;
-    max-height: 400px;
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 39px);
+    height: 100%;
     background: black;
-    background-position: center;
-    background-size: cover!important;
+    @include flex();
+    flex-flow: column;
     a {
       display: block;
       overflow: hidden;
@@ -84,27 +71,13 @@
       width: 100%;
       margin-top: -15%;
     }
-
-    .permalink-overlay {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0; left: 0;
-      background: rgba($white, 0.2);
-      transition: all 0.5s ease;
-      opacity: 0;
-      &.show {
-        opacity: 1;
-      }
-    }
-
     .play {
-      display: block;
       width: 100%;
       height: 100%;
       position: relative;
-      padding-bottom: 56.25%;
-      z-index: 200;
+      z-index: 600;
+      background-position: center;
+      background-size: cover!important;
       span {
         width: 80px;
         height: 80px;
@@ -120,10 +93,6 @@
         transform: scale(0.25, 0.25);
         transition: all 0.5s ease;
         transition-delay: 0.2s;
-        &.device {
-          opacity: 1;
-          transform: scale(1);
-        }
         i {
           position: absolute;
           font-size: 34px;
@@ -143,20 +112,29 @@
         }
       }
     }
+    .permalink-overlay {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      background: rgba($white, 0.2);
+      transition: all 0.5s ease;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+      }
+    }
     .thumbnail-overlay {
       width: 100%;
+      height: 100%;
       position: absolute;
       top: 0; left: 0;
       background: rgba($primary-color, 0.6);
       transition: all 0.5s ease;
       opacity: 0;
-      padding-bottom: 56.25%;
       @include breakpoint(small only) {
         @include flex();
         @include flex-align(center, middle);
-      }
-      &.device {
-        opacity: 1;
       }
       .excerpt {
         padding: 20px;
@@ -172,17 +150,24 @@
         }
       }
     }
+  }
+  .feature-post {
+    padding-bottom: 47%;
+    @include breakpoint(small only) {
+      padding-bottom: 72%;
+    }
   } // Close Work-Block
 }
 
-.single-advance .main-content {
+// Example selectors
+.single-example .main-content {
   padding-bottom: 0;
 }
-.advance-posts {
+.example-posts {
   width: calc(100% + 40px);
   transform: translate(-20px, 0);
   background: $light-gray;
-  padding: 40px 14px;
+  padding: 40px 30px;
   margin: 40px 0 0;
   h3 {
     padding: 0 15px;
@@ -190,15 +175,45 @@
     color: $black;
   }
   .column {
-    padding: 0 12px!important;
+    padding-left: 12px!important;
+    padding-right: 12px!important;
   }
 }
 
-#blog .post-block {
-  &:after {
-    padding-top: 56.25%;
-    /* 16:9 ratio */
-    display: block;
-    content: '';
+
+// Blog selectors
+#blog {
+  .permalink {
+    position: relative;
+    margin: 0 0 0;
+  }
+  .post-grid {
+    .columns {
+      padding-bottom: 0;
+    }
+    .post-block {
+      position: relative;
+      height: 0;
+      width: 100%;
+      display: block!important;
+      background-position: center;
+      background-size: cover!important;
+      padding-top: 41.5%;
+    }
+    .bloglink {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      &:hover {
+        .thumbnail-overlay {
+          opacity: 1;
+          span {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+    }
   }
 }

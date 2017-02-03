@@ -4,10 +4,10 @@
 	width: 100%;
 	margin: 0 auto;
 	padding: 60px 0;
+	z-index: 200;
 	@include breakpoint(medium) {
 		padding: 60px 20px;
 	}
-
 
 	#footer {
 		@include grid-row();
@@ -59,27 +59,6 @@
 					}
 				}
 			}
-		}
-		// Social
-		.social-nav {
-		  float: left;
-			margin-top: 24px;
-
-		  @include breakpoint(large) {
-		    //float: right;
-		    margin-top: 0;
-		  }
-		  a {
-		    font-size: 20px;
-		    color: rgba($white, 0.85);
-		    margin: 0 18px 0 0;
-		    @include breakpoint(large) {
-		      //margin: 0 0 0 18px;
-		    }
-		    &:hover {
-		      color: $white;
-		    }
-		  }
 		}
 	}
 }

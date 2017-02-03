@@ -1,62 +1,4 @@
 // CONTACT
-$(document).ready(function(){
-$("#confirmation").hide();
-$("#contactSend").click(function(){
-  $('.field').removeClass('has-error'); // remove the error class
-  $('.help-block').remove(); // remove the error text
-
-  var formData = {
-      'firstname'       : $('input[name=firstname]').val(),
-      'email'           : $('input[name=email]').val(),
-      'company_name'    : $('input[name=company_name]').val(),
-      'comment'         : $('textarea[name=comment]').val()
-  };
-
-  $.ajax({
-      type:'POST',
-      url: '/wp-content/themes/FoundationPress/form-submit.php',
-      data: formData,
-      dataType : 'json' // what type of data do we expect back from the server
-  })// using the done promise callback
-  .done(function(data) {
-      // here we will handle errors and validation messages
-      if ( ! data.success) {
-        // handle errors for name ---------------
-        if (data.errors.firstname) {
-          $('#nameInput').addClass('has-error'); // add the error class to show red input
-          $('#nameInput').append('<div class="help-block">' + data.errors.firstname + '</div>'); // add the actual error message under our input
-        }
-
-        // handle errors for email ---------------
-        if (data.errors.email) {
-          $('#emailInput').addClass('has-error'); // add the error class to show red input
-          $('#emailInput').append('<div class="help-block">' + data.errors.email + '</div>'); // add the actual error message under our input
-        }
-
-        // handle errors for email ---------------
-        if (data.errors.company_name) {
-          $('#companyInput').addClass('has-error'); // add the error class to show red input
-          $('#companyInput').append('<div class="help-block">' + data.errors.company_name + '</div>'); // add the actual error message under our input
-        }
-
-        // handle errors for superhero alias ---------------
-        if (data.errors.comment) {
-          $('#commentInput').addClass('has-error'); // add the error class to show red input
-          $('#commentInput').append('<div class="help-block">' + data.errors.comment + '</div>'); // add the actual error message under our input
-        }
-      } else {
-        $("#contact").fadeOut();
-        $("#message").fadeOut(function() {
-          $(this).text("Thank you!");
-          $(this).addClass("hide-for-large");
-        }).fadeIn();
-        $("#formWrap").removeClass('medium-6 large-4').addClass('small-11 medium-9 large-11');
-        $("#confirmation").fadeIn();
-      }
-    });
-    return false;
-  });
-});
 
 // Change loadbar size on contact hover
 $('a[href=#contact]').hover(
@@ -104,85 +46,28 @@ $('#closeForm').click(function(){
   }
 });
 
-
-
-////////////////////////////////////////
-// Validation
-////////////////////////////////////////
-
-// Name can't be blank
-$('#contactName').on('input', function() {
-	var input=$(this);
-	var is_name=input.val();
-	if(is_name){
-    input.removeClass("invalid").addClass("valid");
-    input.siblings('label').addClass("float");
-  }
-	else{
-    input.removeClass("valid").addClass("invalid");
-    input.siblings('label').removeClass("float");
-  }
-});
-
-// Name can't be blank
-$('#contactCompany').on('input', function() {
-	var input=$(this);
-	var is_name=input.val();
-	if(is_name){
-    input.removeClass("invalid").addClass("valid");
-    input.siblings('label').addClass("float");
-  }
-	else{
-    input.removeClass("valid").addClass("invalid");
-    input.siblings('label').removeClass("float");
-  }
-});
-
-// Message can't be blank
-$('#contactMessage').keyup(function(event) {
-	var input=$(this);
-	var message=$(this).val();
-	console.log(message);
-	if(message){
-    input.removeClass("invalid").addClass("valid");
-    input.siblings('label').addClass("float");
-  }
-	else{
-    input.removeClass("valid").addClass("invalid");
-    input.siblings('label').removeClass("float");
-  }
-});
-
-$(document).ready(function() {
-    var $fields = $(".inputs :input");
-    $fields.keyup(function() {
-        var $emptyFields = $fields.filter(function() {
-            // remove the $.trim if whitespace is counted as filled
-            return $.trim(this.value) === "";
-        });
-
-        if (!$emptyFields.length) {
-            $("#contactSend").removeClass("disabled");
-        }
-    });
-});
-
-// Email must be an email
-$('#contactEmail').on('input', function() {
-	var input=$(this);
-  var email=input.val();
-  if(email){
-    input.siblings('label').addClass("float");
-  }
-	else{
-    input.siblings('label').removeClass("float");
-  }
-	var re = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-	var is_email=re.test(input.val());
-	if(is_email){
-    input.removeClass("invalid").addClass("valid");
-  }
-	else{
-    input.removeClass("valid").addClass("invalid");
-  }
+$(window).load(function(){
+  $('.hs-input').each(function() {
+    var input=$(this);
+    var is_valid=input.val();
+    $('select').parent().siblings('label').addClass("float");
+    if(is_valid){
+      input.removeClass("invalid").addClass("valid");
+      input.parent().siblings('label').addClass("float");
+    } else{
+      input.removeClass("valid").addClass("invalid");
+      input.parent().siblings('label').removeClass("float");
+    }
+  });
+  $('.hs-input').on('input', function() {
+    var input=$(this);
+    var is_valid=input.val();
+    if(is_valid){
+      input.removeClass("invalid").addClass("valid");
+      input.parent().siblings('label').addClass("float");
+    } else{
+      input.removeClass("valid").addClass("invalid");
+      input.parent().siblings('label').removeClass("float");
+    }
+  });
 });

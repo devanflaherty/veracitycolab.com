@@ -26,15 +26,19 @@ get_header(); ?>
 					<a class="headline-link" href="/team">All</a>
 					<?php
 						$taxonomies = get_terms('team-filters');
-						$current = $wp_query->query_vars['team-filters'];
+						$current = single_term_title("", false);
 						if ($taxonomies) {
 							foreach($taxonomies as $term) {
 								$name = $term->name;
 								$slug = $term->slug;
-								echo "<a class=\"headline-link\" href=\"/filter/$slug\">$name</a> ";
+								if ($name == $current) {
+									$class = "is-checked";
+								} else {
+									$class = "";
+								}
+								echo "<a class=\"headline-link $class\" href=\"/team/filter/$slug\">$name</a> ";
 							}
 						}
-						echo $current;
 					?>
 			</div>
 		</div>
@@ -90,13 +94,13 @@ get_header(); ?>
 		<?php endif; // End have_posts() check. ?>
 
 	</article>
-	<?php /* Display navigation to next/previous pages when applicable */ ?>
-	<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
-		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-		</nav>
-	<?php } ?>
 </section>
+<?php /* Display navigation to next/previous pages when applicable */ ?>
+<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+	<nav id="post-nav">
+		<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+		<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+	</nav>
+<?php } ?>
 
 <?php get_footer();

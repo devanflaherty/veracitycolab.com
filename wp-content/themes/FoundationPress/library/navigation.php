@@ -11,6 +11,7 @@ register_nav_menus(array(
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
 	'footer-nav' => 'Footer',
+	'contact-nav' => 'Contact',
 ));
 
 
@@ -67,6 +68,23 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
  		));
  	}
  }
+
+ /**
+  * Contact navigation
+  */
+  if ( ! function_exists( 'foundationpress_contact_nav' ) ) {
+  	function foundationpress_contact_nav() {
+  		wp_nav_menu( array(
+  			'container'      => false,
+  			'menu_class'     => 'contact-nav',
+  			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+  			'theme_location' => 'contact-nav',
+ 				'depth'          => 6,
+  			'fallback_cb'    => false,
+  			'walker'         => new Foundationpress_Top_Bar_Walker(),
+  		));
+  	}
+  }
 
 
 /**
