@@ -128,5 +128,49 @@ function set_home_pagesize( $query )
         return;
     }
 
+    if ( is_archive('podcast') )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
+    if ( is_archive('work') )
+    {
+        $query->set( 'posts_per_page', 8 );
+        return;
+    }
+
 }
 add_action( 'pre_get_posts', 'set_home_pagesize', 1 );
+
+
+// function toolset_fix_custom_posts_per_page( $query_string ){
+//     if( is_admin() || ! is_array( $query_string ) )
+//         return $query_string;
+//
+//     $post_types_to_fix = array(
+//         array(
+//             'post_type' => 'podcast',
+//             'posts_per_page' => 8
+//         ),
+//
+//         array(
+//             'post_type' => 'work',
+//             'posts_per_page' => 8
+//         ),
+//
+//     );
+//
+//     foreach( $post_types_to_fix as $fix ) {
+//         if( array_key_exists( 'post_type', $query_string )
+//             && $query_string['post_type'] == $fix['post_type']
+//         ) {
+//             $query_string['posts_per_page'] = $fix['posts_per_page'];
+//             return $query_string;
+//         }
+//     }
+//
+//     return $query_string;
+// }
+//
+// add_filter( 'request', 'toolset_fix_custom_posts_per_page' );
