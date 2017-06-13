@@ -21,9 +21,7 @@
 
 <!-- HERO!! DUH DUH DUUUUN -->
 <header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
-<?php if (is_home()) : ?>
-	<div id="videoBG"></div>
-<?php endif;?>
+<div id="videoBG"></div>
 <?php
 	if ( is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_singular( 'work' ) || is_singular( 'example' )) :
 		if(get_field('video_id')) {
