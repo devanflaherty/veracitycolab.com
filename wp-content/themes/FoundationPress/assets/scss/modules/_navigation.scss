@@ -188,6 +188,29 @@
   }
 }
 
+.nav-buttons {
+  position: absolute;
+  top: 2px;
+  right: 3rem;
+  list-style-type: none;
+  li {
+    float: left;
+    margin-left: .25rem;
+    a {
+      padding: .5rem;
+      background: rgba($black, 0.9);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: .75rem;
+      color: $white;
+      &:hover {
+        background: $black;
+      }
+    }
+  }
+}
+
 // Load Bar
 #loadBar {
   position: relative;;

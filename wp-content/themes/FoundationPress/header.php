@@ -137,6 +137,12 @@ if ( is_singular('post') || is_singular('work'))  {
 		    color: <?= $secondaryColor ?>;
 				fill: <?= $secondaryColor ?>;
 		  }
+      .nav-buttons li a {
+        background-color: <?= $primaryColor ?>;
+      }
+      .nav-buttons li a:hover {
+        background-color: <?= $secondaryColor ?>;
+      }
       #mobileMenu, #mobileMenu ul {
         background-color: <?= $primaryColor ?>;
       }
@@ -275,6 +281,7 @@ if ( is_singular('post') || is_singular('work'))  {
     				</ul>
     			</div>
     			<div class="top-bar-right">
+            <?php foundationpress_nav_buttons(); ?>
     				<?php foundationpress_top_bar_r(); ?>
     			</div>
     		</nav>

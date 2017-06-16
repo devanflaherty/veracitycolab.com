@@ -4644,6 +4644,25 @@ a::after {
         #mobileMenu ul li a:hover {
           color: #fefefe; }
 
+.nav-buttons {
+  position: absolute;
+  top: 2px;
+  right: 3rem;
+  list-style-type: none; }
+  .nav-buttons li {
+    float: left;
+    margin-left: .25rem; }
+    .nav-buttons li a {
+      padding: .5rem;
+      background: rgba(10, 10, 10, 0.9);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: .75rem;
+      color: #fefefe; }
+      .nav-buttons li a:hover {
+        background: #0a0a0a; }
+
 #loadBar {
   position: relative;
   z-index: 20;
