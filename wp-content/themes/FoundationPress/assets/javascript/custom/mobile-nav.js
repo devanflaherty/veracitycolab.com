@@ -10,6 +10,12 @@ $('#mobileToggle').click(function(){
         $(this).addClass('fade-in');
       });
   });
+	if ($('body').hasClass('contact')) {
+		$('#closeForm').removeClass('visible');
+    $('#contactForm').removeClass('contact-reveal');
+		$('.overlay').removeClass('visible');
+		$('body').removeClass('contact');
+  }
 });
 
 $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize){

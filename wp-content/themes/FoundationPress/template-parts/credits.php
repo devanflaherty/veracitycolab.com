@@ -8,9 +8,15 @@ if( have_rows('credits') ) {
         $posts = get_sub_field('team_member');
         if( $posts ){
           foreach( $posts as $p ) {
+            if (get_post_status( $p->ID ) != 'publish' ) {
+              $pStart = '<a href="';
+              $permalink = get_permalink( $p->ID );
+              $pCap = '">';
+              $pEnd = '</a>'
+            }
             $permalink = get_permalink( $p->ID );
             $name = get_the_title( $p->ID );
-            echo '<li><span>' . $title . ':</span> <a href="' . $permalink . '"><strong>' . $name . '</strong></a></li>';
+            echo '<li><span>hi'. get_post_status( $p->ID ) . $title . ':</span>' . $pStart . $permalink . $pCap .'<strong>' . $name . '</strong>'.$pEnd.'</li>';
           }
         }
     } else {
@@ -18,7 +24,7 @@ if( have_rows('credits') ) {
       $name = get_sub_field('name');
       $link = get_sub_field('link');
       if (get_sub_field('link')) {
-        echo '<li><span>' . $title . ':</span> <a href="' . $link . '"><strong>' . $name . '</strong></a></li>';
+        echo '<li><span>' . $title . ':hi</span> <a href="' . $link . '"><strong>' . $name . '</strong></a></li>';
       } else {
         echo '<li><span>' . $title . ':</span> <strong>' . $name . '</strong></li>';
       }

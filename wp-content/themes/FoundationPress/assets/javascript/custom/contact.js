@@ -1,14 +1,4 @@
 // CONTACT
-
-// Change loadbar size on contact hover
-$('a[href=#contact]').hover(
-  function() {
-    $( "#loadBar" ).addClass( "hover" );
-  }, function() {
-    $( "#loadBar" ).removeClass( "hover" );
-  }
-);
-
 // SlideToggle Contact Form
 $('a[href=#contact]').click(function(){
   // Set a class so we can see test the state of the form
@@ -17,16 +7,12 @@ $('a[href=#contact]').click(function(){
 
   // If clicked while form is hidden
   if ($('body').hasClass('contact')) {
-    // Scroll to top of page
-     $("html, body").animate({
-      scrollTop: 0
-     }, 600);
      // Slidedown form
-     $('#contactForm').addClass('reveal');
+     $('#contactForm').addClass('contact-reveal');
      $('#closeForm').addClass('visible');
   } else {
     $('#closeForm').removeClass('visible');
-    $('#contactForm').removeClass('reveal');
+    $('#contactForm').removeClass('contact-reveal');
   }
 
   if (!$('body').hasClass('mobile-nav')) {
@@ -38,7 +24,7 @@ $('a[href=#contact]').click(function(){
 $('#closeForm').click(function(){
   $('#closeForm').removeClass('visible');
   $('.overlay').removeClass('visible');
-  $('#contactForm').removeClass('reveal');
+  $('#contactForm').removeClass('contact-reveal');
   $('body').removeClass("contact");
 
   if (!$('body').hasClass('mobile-nav')) {

@@ -1,7 +1,3 @@
-$(function() {
-  $('#loadBar span').animate({ width: '100%' }, 1500, 'swing');
-});
-
 // Sequential nav color fade in
 $('.desktop-menu li').each(function(index, element) {
   $(element).delay(index*300).queue(function(){
