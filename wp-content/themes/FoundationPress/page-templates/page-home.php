@@ -36,10 +36,17 @@
              echo '<div id="logos" class="row small-up-2 medium-up-5">';
              while ( have_rows('logos') ) { the_row();
                $src = get_sub_field('logo');
-               $link = get_sub_field('link');
-               echo "<div class='columns'>";
-               echo "<a href=\"" . $link . "\"><img src=\"" . $src . "\"/></a>";
-               echo "</div>";
+
+               if(get_sub_field('link') && get_sub_field('link') != "") {
+                 $link = get_sub_field('link');
+                 echo "<div class='columns'>";
+                 echo "<a href=\"" . $link . "\"><img src=\"" . $src . "\"/></a>";
+                 echo "</div>";
+               } else {
+                 echo "<div class='columns'>";
+                 echo "<img src=\"" . $src . "\"/>";
+                 echo "</div>";
+               }
              }
              echo "</div>";
            }

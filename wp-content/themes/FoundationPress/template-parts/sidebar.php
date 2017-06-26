@@ -110,7 +110,7 @@
                     }
                   } else {
                     if($status != 'publish') {
-    				          $creditor = '<span style="font-size: 15px;">' . $name . '</span>';
+    				          $creditor = '<span class="creditor">' . $name . '</span>';
                     } else {
                       $permalink = get_permalink( $p->ID );
     				          $creditor = ' <a href="' . $permalink . '">' . $name . '</a>';

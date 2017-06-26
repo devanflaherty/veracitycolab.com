@@ -158,9 +158,12 @@
   background: $body-background;
   position: relative;
   z-index: 400;
-  height: calc(100vh - 125px);
+  height: 100%;
+  // Height set in mobile-nav.JS
+  // height: calc(100vh - 125px);
   ul {
-    height: calc(100vh - 125px);
+    // Height set in mobile-nav.JS
+    //height: calc(100vh - 125px);
     background: none;
     padding: 60px 0;
     @include flex;
@@ -224,7 +227,8 @@
 // For devices
 .iphone {
   #mobileMenu, #mobileMenu ul {
-    height: calc(100vh - 170px);
+    // Height set in mobile-nav.JS
+    //height: calc(100vh - 165px);
   }
 }
 
@@ -262,11 +266,11 @@
   &.open span {
     &:nth-child(1) {
       transform: rotate(45deg);
-      top: -3px;
+      top: -2px;
       left: 8px;
     }
     &:nth-child(2) {
-      width: 0%;
+      width: 0;
       opacity: 0;
     }
     &:nth-child(3) {
@@ -278,13 +282,13 @@
 }
 
 body.admin-bar {
-  #contactForm {
-    height: calc(100vh - 112px);
-    margin-top: calc(-100vh + 112px);
-    &.reveal {
-      margin-top: 0px;
-    }
-  }
+  // #contactForm {
+  //   height: calc(100vh - 112px);
+  //   margin-top: calc(-100vh + 112px);
+  //   &.reveal {
+  //     margin-top: 0px;
+  //   }
+  // }
   @include breakpoint(small only) {
     margin-top: 0;
     #contactForm {

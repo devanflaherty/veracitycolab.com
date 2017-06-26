@@ -1,13 +1,13 @@
 .home {
   #logos {
+    img {
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
     a {
-      img {
-        transition: all 0.5s ease;
-        opacity: 0.75;
-      }
       &:hover {
         img {
-          opacity: 1;
+          opacity: 0.75;
         }
       }
     }

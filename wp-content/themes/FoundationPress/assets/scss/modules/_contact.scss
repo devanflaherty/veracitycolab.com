@@ -1,6 +1,6 @@
 body #contactForm {
   position: relative;
-  margin-top: calc(-100vh + 80px);
+  margin-top: 0;
   z-index: 400;
   @include flex;
   @include flex-align(center, middle);
@@ -9,7 +9,9 @@ body #contactForm {
   max-width: 100%;
   transition: all 1s ease;
   border: none;
-  height: calc(100vh - 80px);
+  height: 0px;
+  // Height set in contact.js
+  //height: calc(100vh;
   padding: 0;
   @include flex;
   flex-direction: column;
@@ -22,6 +24,8 @@ body #contactForm {
     width: 100%;
   }
   &.contact-reveal {
+    //position: relative;
+    top: 0;
     margin-top: 0;
   }
   h4 {
@@ -264,7 +268,6 @@ form {
 .iphone {
   #contactForm.contact-reveal {
     padding: 40px 0px!important;
-    height: calc(100vh - 170px);
   }
   #closeForm {
     bottom: 85px;

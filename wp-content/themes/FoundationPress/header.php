@@ -222,7 +222,7 @@ if ( is_singular('post') || is_singular('work'))  {
             <?php foundationpress_contact_nav(); ?>
     			</div>
 
-          <button id="closeForm">
+          <button id="closeForm" class="show-for-medium">
             <svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
               <title>X</title>

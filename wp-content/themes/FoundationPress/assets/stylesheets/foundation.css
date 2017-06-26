@@ -4601,9 +4601,8 @@ a::after {
   background: #f5f5f5;
   position: relative;
   z-index: 400;
-  height: calc(100vh - 125px); }
+  height: 100%; }
   #mobileMenu ul {
-    height: calc(100vh - 125px);
     background: none;
     padding: 60px 0;
     display: -ms-flexbox;
@@ -4672,9 +4671,6 @@ a::after {
   #mobile-menu, .title-bar {
     display: none !important; } }
 
-.iphone #mobileMenu, .iphone #mobileMenu ul {
-  height: calc(100vh - 170px); }
-
 .menu-hamburger {
   width: 30px;
   height: 20px;
@@ -4709,22 +4705,16 @@ a::after {
   .menu-hamburger.open span:nth-child(1) {
     -ms-transform: rotate(45deg);
         transform: rotate(45deg);
-    top: -3px;
+    top: -2px;
     left: 8px; }
   .menu-hamburger.open span:nth-child(2) {
-    width: 0%;
+    width: 0;
     opacity: 0; }
   .menu-hamburger.open span:nth-child(3) {
     -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
     top: 19px;
     left: 8px; }
-
-body.admin-bar #contactForm {
-  height: calc(100vh - 112px);
-  margin-top: calc(-100vh + 112px); }
-  body.admin-bar #contactForm.reveal {
-    margin-top: 0px; }
 
 @media screen and (max-width: 39.9375em) {
   body.admin-bar {
@@ -4891,7 +4881,7 @@ body.admin-bar #contactForm {
       margin-bottom: 8px; }
       .sidebar .credits li .creditor {
         font-weight: 600;
-        color: #8c8c8c; }
+        color: #404040; }
       .sidebar .credits li a {
         font-weight: 600;
         color: #404040;
@@ -4990,7 +4980,7 @@ body.admin-bar #contactForm {
 
 body #contactForm {
   position: relative;
-  margin-top: calc(-100vh + 80px);
+  margin-top: 0;
   z-index: 400;
   display: -ms-flexbox;
   display: flex;
@@ -5003,7 +4993,7 @@ body #contactForm {
   max-width: 100%;
   transition: all 1s ease;
   border: none;
-  height: calc(100vh - 80px);
+  height: 0px;
   padding: 0;
   display: flex;
   -ms-flex-direction: column;
@@ -5022,6 +5012,7 @@ body #contactForm {
         flex: 0 1 auto;
     width: 100%; }
   body #contactForm.contact-reveal {
+    top: 0;
     margin-top: 0; }
   body #contactForm h4 {
     color: rgba(254, 254, 254, 0.9); }
@@ -5309,8 +5300,7 @@ form .hs-error-msgs {
   padding: 6px 3px; }
 
 .iphone #contactForm.contact-reveal {
-  padding: 40px 0px !important;
-  height: calc(100vh - 170px); }
+  padding: 40px 0px !important; }
 
 .iphone #closeForm {
   bottom: 85px; }
@@ -6355,12 +6345,12 @@ pre {
   #approach-page .cta:last-child:not(:first-child) {
     float: right; }
 
-.home #logos a img {
+.home #logos img {
   transition: all 0.5s ease;
-  opacity: 0.75; }
+  opacity: 1; }
 
 .home #logos a:hover img {
-  opacity: 1; }
+  opacity: 0.75; }
 
 @media screen and (min-width: 40em) {
   .home #cta .cta-blurb, .home #cta .button {

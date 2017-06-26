@@ -1,7 +1,32 @@
 // CONTACT
+var contact = $('#contactForm');
+
+function getVisibleHeight(){
+  var subtractHeight = $("#navBar").height() + $("#wpadminbar").height();
+  var vH = $(window).height() - subtractHeight;
+  return vH;
+}
+function setContactMargin() {
+  $('#contactForm').css('marginTop', getVisibleHeight() * -1);
+}
+
+function setContactHeight() {
+	$('#contactForm').height(getVisibleHeight());
+}
+
+$(function() {
+  setContactHeight();
+  setContactMargin();
+  $( window ).resize(function() {
+    setContactHeight();
+    setContactMargin();
+  });
+});
+
 // SlideToggle Contact Form
 $('a[href=#contact]').click(function(){
   // Set a class so we can see test the state of the form
+  $('#contactForm').css('marginTop', 0);
   $('body').toggleClass("contact");
   $('.overlay').toggleClass('visible');
 
@@ -11,6 +36,7 @@ $('a[href=#contact]').click(function(){
      $('#contactForm').addClass('contact-reveal');
      $('#closeForm').addClass('visible');
   } else {
+    setContactMargin();
     $('#closeForm').removeClass('visible');
     $('#contactForm').removeClass('contact-reveal');
   }
@@ -22,6 +48,7 @@ $('a[href=#contact]').click(function(){
 
 // Close Form Button
 $('#closeForm').click(function(){
+  setContactMargin();
   $('#closeForm').removeClass('visible');
   $('.overlay').removeClass('visible');
   $('#contactForm').removeClass('contact-reveal');
