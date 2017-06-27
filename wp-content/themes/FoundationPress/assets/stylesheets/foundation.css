@@ -4719,19 +4719,10 @@ a::after {
 @media screen and (max-width: 51.1875em) {
   body.admin-bar {
     margin-top: 0; }
-    body.admin-bar #contactForm {
-      height: calc(100vh - 125px);
-      margin-top: calc(-100vh + 125px); }
-      body.admin-bar #contactForm.reveal {
-        margin-top: 0px; }
     body.admin-bar #navigationContainer.peek {
       top: 46px; }
     body.admin-bar #navigationContainer.peek-hide {
-      top: -68px; }
-    body.admin-bar #mobileMenu {
-      height: calc(100vh - 165px); }
-      body.admin-bar #mobileMenu ul {
-        height: calc(100vh - 165px); } }
+      top: -68px; } }
 
 #footer-container {
   position: relative;
@@ -6899,7 +6890,7 @@ a, button {
   margin-bottom: 60px; }
 
 .animate-in {
-  transition: all 0.5s ease; }
+  transition: all 1s ease; }
 
 .present {
   transition: all 1s ease;

@@ -291,25 +291,12 @@ body.admin-bar {
   // }
   @include breakpoint(small only) {
     margin-top: 0;
-    #contactForm {
-      height: calc(100vh - 125px);
-      margin-top: calc(-100vh + 125px);
-      &.reveal {
-        margin-top: 0px;
-      }
-    }
     #navigationContainer {
       &.peek {
         top: 46px;
       }
       &.peek-hide {
         top: -68px;
-      }
-    }
-    #mobileMenu {
-      height: calc(100vh - 165px);
-      ul {
-        height: calc(100vh - 165px);
       }
     }
   }
