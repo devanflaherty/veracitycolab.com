@@ -1,24 +1,32 @@
-#contactForm {
+body #contactForm {
   position: relative;
-  top: 0px;
+  margin-top: 0;
   z-index: 400;
   @include flex;
   @include flex-align(center, middle);
-  height: 0px;
   overflow: hidden;
   width: 100%;
   max-width: 100%;
   transition: all 1s ease;
   border: none;
+  height: 0px;
+  // Height set in contact.js
+  //height: calc(100vh;
+  padding: 0;
+  @include flex;
+  flex-direction: column;
+  @include flex-align(center, middle);
   @include breakpoint(small only) {
     @include flex-align(center, top);
   }
   .row {
+    flex: 0 1 auto;
     width: 100%;
   }
-  &.reveal {
-    padding: 120px 0;
-    height: calc(100vh - 107px);
+  &.contact-reveal {
+    //position: relative;
+    top: 0;
+    margin-top: 0;
   }
   h4 {
     color: rgba($white, 0.9);
@@ -212,15 +220,16 @@ form {
   position: absolute;
   height: 80px; width: 80px;
   left: 0; right: 0;
-  bottom: 40px;
+  bottom: -120px;
   margin: 0 auto;
-  transform: translate(0px, 100px);
   opacity: 0;
-  transition: all 0.5s ease;
   background-color: none!important;
   &.visible {
-    transform: translate(0px, 0px);
+    bottom: 40px;
     opacity: 1;
+    @include breakpoint(small only) {
+      bottom: 20px;
+    }
   }
   svg {
     width: 80%;
@@ -257,9 +266,8 @@ form {
 
 //for devices
 .iphone {
-  #contactForm.reveal {
+  #contactForm.contact-reveal {
     padding: 40px 0px!important;
-    height: calc(100vh - 170px);
   }
   #closeForm {
     bottom: 85px;

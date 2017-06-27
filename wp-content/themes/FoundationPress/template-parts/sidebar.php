@@ -8,6 +8,7 @@
         $posts = get_field('team_member', 'user_'. $author_id);
         if( $posts ){
           foreach( $posts as $p ) :
+            $status = get_post_status( $p->ID );
             $permalink = get_permalink( $p->ID );
             $name = get_the_title( $p->ID );
             $title = get_field('title', $p->ID );
@@ -15,12 +16,24 @@
         		$image = $image[0];
           ?>
             <div class="columns author-image shrink">
-              <a href="<?= $permalink; ?>"><div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div></a>
+              <?php if($status != 'publish') : ?>
+                <a href="<?= $permalink; ?>">
+              <?php endif;?>
+                <div class="author-avatar" style="background-image: url(<?= $image; ?>);"></div>
+              <?php if($status != 'publish') : ?>
+                </a>
+              <?php endif;?>
             </div>
 
             <div class="columns author-meta">
               <span>Written by</span>
-              <a href="<?= $permalink; ?>"><span><strong><?= $name; ?></strong></span></a>
+              <?php if($status != 'publish') : ?>
+                <a href="<?= $permalink; ?>">
+              <?php endif;?>
+                <span><strong><?= $name; ?></strong></span>
+              <?php if($status != 'publish') : ?>
+                </a>
+              <?php endif;?>
               <span><?= $title; ?></span>
             </div>
         <?php
@@ -86,6 +99,7 @@
                 $i = 0;
                 $c = count($posts);
   							foreach( $posts as $p ) {
+                  $status = get_post_status( $p->ID );
                   $name = get_the_title( $p->ID );
                   if(get_post_type( $p->ID ) == 'creditor') {
                     $permalink = get_field( 'website', $p->ID );
@@ -95,8 +109,12 @@
                       $creditor = ' <span class="creditor">' . $name . '</span>';
                     }
                   } else {
-                    $permalink = get_permalink( $p->ID );
-  				          $creditor = ' <a href="' . $permalink . '">' . $name . '</a>';
+                    if($status != 'publish') {
+    				          $creditor = '<span class="creditor">' . $name . '</span>';
+                    } else {
+                      $permalink = get_permalink( $p->ID );
+    				          $creditor = ' <a href="' . $permalink . '">' . $name . '</a>';
+                    }
                   }
                   echo $creditor;
 

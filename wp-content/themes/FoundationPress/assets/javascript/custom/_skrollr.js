@@ -1,4 +1,8 @@
 //Activate Skrollr
+if ($('body').hasClass('home')) {
+  var s = skrollr.init();
+}
+
 window.onload = function() {
   var s = skrollr.init();
   if (s.isMobile()) {

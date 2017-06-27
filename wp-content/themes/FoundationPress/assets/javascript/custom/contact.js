@@ -1,32 +1,44 @@
 // CONTACT
+var contact = $('#contactForm');
 
-// Change loadbar size on contact hover
-$('a[href=#contact]').hover(
-  function() {
-    $( "#loadBar" ).addClass( "hover" );
-  }, function() {
-    $( "#loadBar" ).removeClass( "hover" );
-  }
-);
+function getVisibleHeight(){
+  var subtractHeight = $("#navBar").height() + $("#wpadminbar").height();
+  var vH = $(window).height() - subtractHeight;
+  return vH;
+}
+function setContactMargin() {
+  $('#contactForm').css('marginTop', getVisibleHeight() * -1);
+}
+
+function setContactHeight() {
+	$('#contactForm').height(getVisibleHeight());
+}
+
+$(function() {
+  setContactHeight();
+  setContactMargin();
+  $( window ).resize(function() {
+    setContactHeight();
+    setContactMargin();
+  });
+});
 
 // SlideToggle Contact Form
 $('a[href=#contact]').click(function(){
   // Set a class so we can see test the state of the form
+  $('#contactForm').css('marginTop', 0);
   $('body').toggleClass("contact");
   $('.overlay').toggleClass('visible');
 
   // If clicked while form is hidden
   if ($('body').hasClass('contact')) {
-    // Scroll to top of page
-     $("html, body").animate({
-      scrollTop: 0
-     }, 600);
      // Slidedown form
-     $('#contactForm').addClass('reveal');
+     $('#contactForm').addClass('contact-reveal');
      $('#closeForm').addClass('visible');
   } else {
+    setContactMargin();
     $('#closeForm').removeClass('visible');
-    $('#contactForm').removeClass('reveal');
+    $('#contactForm').removeClass('contact-reveal');
   }
 
   if (!$('body').hasClass('mobile-nav')) {
@@ -36,9 +48,10 @@ $('a[href=#contact]').click(function(){
 
 // Close Form Button
 $('#closeForm').click(function(){
+  setContactMargin();
   $('#closeForm').removeClass('visible');
   $('.overlay').removeClass('visible');
-  $('#contactForm').removeClass('reveal');
+  $('#contactForm').removeClass('contact-reveal');
   $('body').removeClass("contact");
 
   if (!$('body').hasClass('mobile-nav')) {

@@ -1,13 +1,13 @@
 .home {
   #logos {
+    img {
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
     a {
-      img {
-        transition: all 0.5s ease;
-        opacity: 0.75;
-      }
       &:hover {
         img {
-          opacity: 1;
+          opacity: 0.75;
         }
       }
     }
@@ -19,5 +19,11 @@
         line-height: 34px;
       }
     }
+  }
+  #videoBG {
+    display: block;
+    position: absolute ;
+    left: 0; right: 0;
+    width: 100%; height: 100%;
   }
 }

@@ -3,7 +3,10 @@ html, body {
   height: auto;
   //
 }
-body.fixed, body.video-fixed {
+body.fixed {
+  overflow: hidden;
+}
+body.video-fixed {
   width: 100%;
   position: fixed;
   padding-top: 0;
@@ -131,6 +134,11 @@ a, button {
 // Overlay
 .container {
   position: relative;
+  padding-top: 80px;
+  @include breakpoint(small only) {
+    padding-top: 0px;
+    margin-top: 125px;
+  }
 }
 .overlay {
   visibility: hidden;
