@@ -13,7 +13,8 @@ var del         = require('del');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = 'http://localhost:8888';
+var HOST = 'veracitycolab';
+var URL = 'http://veracitycolab:8888';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -93,6 +94,8 @@ gulp.task('browser-sync', ['build'], function() {
 
   browserSync.init(files, {
     // Proxy address
+    open: 'external',
+    host: HOST,
     proxy: URL,
 
     // Port #
