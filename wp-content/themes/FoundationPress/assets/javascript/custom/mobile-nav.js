@@ -10,13 +10,10 @@ function setMobileNavHeight() {
 }
 
 $(function() {
-	if(isiPad() || isiPhone()){
-
+	setMobileNavHeight();
+	$( window ).resize(function() {
 		setMobileNavHeight();
-		$( window ).resize(function() {
-			setMobileNavHeight();
-		});
-	}
+	});
 });
 
 
