@@ -281,6 +281,12 @@
   }
 }
 
+body.iPhone {
+  #contactForm {
+    display: none
+  }
+}
+
 body.admin-bar {
   // #contactForm {
   //   height: calc(100vh - 112px);

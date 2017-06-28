@@ -25,6 +25,8 @@ $(function() {
 
 // SlideToggle Contact Form
 $('a[href=#contact]').click(function(){
+  setContactHeight();
+  setContactMargin();
   // Set a class so we can see test the state of the form
   $('#contactForm').css('marginTop', 0);
   $('body').toggleClass("contact");

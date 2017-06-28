@@ -278,7 +278,9 @@ if ( is_singular('post') || is_singular('work'))  {
       			</div>
       			<div class="top-bar-right">
       				<?php foundationpress_top_bar_r(); ?>
-              <?php foundationpress_box_buttons(); ?>
+              <div class="show-for-medium">
+                <?php foundationpress_box_buttons(); ?>
+              </div>
       			</div>
       		</nav>
       	</header>

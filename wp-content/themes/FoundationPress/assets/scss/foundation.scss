@@ -73,6 +73,8 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
+/* Utilities */
+@import "utilities";
 
 // Modules
 @import "modules/navigation";
@@ -99,7 +101,3 @@
 @import "templates/work";
 @import "templates/team";
 @import "templates/blog";
-
-
-/* Utilities */
-@import "utilities";
