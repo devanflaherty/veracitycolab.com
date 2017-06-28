@@ -288,15 +288,11 @@ body.iPhone {
 }
 
 body.admin-bar {
-  // #contactForm {
-  //   height: calc(100vh - 112px);
-  //   margin-top: calc(-100vh + 112px);
-  //   &.reveal {
-  //     margin-top: 0px;
-  //   }
-  // }
   @include breakpoint(small only) {
     margin-top: 0;
+    .container {
+      padding-top: 125px;
+    }
     #navigationContainer {
       &.peek {
         top: 46px;

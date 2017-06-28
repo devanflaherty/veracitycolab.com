@@ -135,9 +135,6 @@ a, button {
 .container {
   position: relative;
   padding-top: 80px;
-  @include breakpoint(small only) {
-    padding-top: 125px;
-  }
 }
 .overlay {
   visibility: hidden;
@@ -286,20 +283,3 @@ a, button {
     transform: scale(1);
   }
 }
-
-// Wordpress Logged in classes
-// .admin-bar {
-//   #masthead {
-//     top: 46px;
-//     &.unstuck {
-//       top: 0!important;
-//     }
-//
-//     @include breakpoint(medium) {
-//       top: 32px;
-//       &.unstuck {
-//         top: 0!important;
-//       }
-//     }
-//   }
-// }
