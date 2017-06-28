@@ -4468,6 +4468,252 @@ table.hover tr:nth-of-type(even):hover {
   My custom styles:
   Add your scss files below to structure your project styles
 */
+/* Utilities */
+html, body {
+  height: 100% !important;
+  height: auto; }
+
+body.fixed {
+  overflow: hidden; }
+
+body.video-fixed {
+  width: 100%;
+  position: fixed;
+  padding-top: 0;
+  top: 0;
+  overflow: hidden; }
+
+.home-link path {
+  fill: black;
+  transition: fill .5s !important; }
+
+h5 {
+  letter-spacing: 1.5px; }
+  h5 strong {
+    font-weight: 600; }
+
+.upper {
+  text-transform: uppercase; }
+
+a, button {
+  transition: all 0.5s ease-in-out; }
+
+.click-to-close {
+  cursor: pointer; }
+
+.round {
+  border-radius: 100px; }
+
+.radius {
+  border-radius: 3px; }
+
+.white {
+  background-color: #fefefe;
+  color: #0a0a0a; }
+  .white.hollow {
+    border-color: #fefefe;
+    color: #fefefe;
+    background: transparent; }
+    .white.hollow:hover {
+      background: #fefefe;
+      color: #0a0a0a; }
+
+@media screen and (min-width: 51.25em) {
+  .button-jar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: center;
+        align-items: center; } }
+
+.button-jar a, .button-jar button {
+  display: block;
+  margin: 6px 0;
+  color: #BFBFBF; }
+  @media screen and (min-width: 51.25em) {
+    .button-jar a, .button-jar button {
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+      margin: 6px 0 6px 24px;
+      text-align: center; } }
+  .button-jar a.button, .button-jar button.button {
+    margin-left: 4px; }
+
+.button-jar.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media screen and (min-width: 51.25em) {
+    .button-jar.wrap a, .button-jar.wrap button {
+      margin: 6px 0 6px 0;
+      -ms-flex: 1 25%;
+          flex: 1 25%; } }
+
+.bg-body {
+  background: #f5f5f5; }
+
+.bg-white {
+  background: #fefefe; }
+
+.bg-black {
+  background: #0a0a0a; }
+
+.columns img {
+  width: 100%;
+  height: auto; }
+
+.pad {
+  padding: 30px 0; }
+
+.pad-large {
+  padding: 90px 0; }
+
+.no-marg-bottom {
+  margin-bottom: 0 !important; }
+
+.flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.expand {
+  max-width: 100% !important; }
+
+.w-control-bar {
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+.contrast-text {
+  color: #fefefe; }
+
+.container {
+  position: relative;
+  padding-top: 80px; }
+
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 200;
+  height: 100%;
+  width: 100%;
+  background: rgba(254, 254, 254, 0.8);
+  transition: all 1s ease; }
+  .overlay.visible {
+    opacity: 1;
+    visibility: visible; }
+  .overlay.load {
+    background: #f5f5f5;
+    opacity: 1;
+    visibility: visible; }
+
+.parallax-parent {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+  .parallax-parent .parallax-bg {
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    position: fixed;
+    z-index: 0;
+    opacity: 0; }
+    @media screen and (min-width: 51.25em) {
+      .parallax-parent .parallax-bg {
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); } }
+
+.ipad .parallax-parent .parallax-bg {
+  background-attachment: local;
+  background-size: 100% auto !important;
+  background-position: 50% 0px !important;
+  -ms-transform: scale(1) !important;
+      transform: scale(1) !important; }
+
+.social-nav {
+  float: left;
+  margin-top: 0px; }
+  @media screen and (min-width: 64em) {
+    .social-nav {
+      margin-top: 0; } }
+  .social-nav a {
+    font-size: 20px;
+    color: rgba(254, 254, 254, 0.85);
+    margin: 0 18px 0 0; }
+    .social-nav a:hover {
+      color: #fefefe; }
+
+#cta {
+  background: #fefefe;
+  margin: 20px 0 0; }
+  #cta .cta-blurb {
+    display: block;
+    margin: 25px 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #404040;
+    padding: 20px 40px;
+    text-align: center; }
+    @media screen and (min-width: 51.25em) {
+      #cta .cta-blurb {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0px 40px;
+        text-align: left; } }
+  #cta .button {
+    font-size: 24px;
+    line-height: 24px;
+    padding: 40px 40px;
+    background: #e6e6e6;
+    color: #ffffff;
+    margin: 0;
+    opacity: 0.9;
+    transition: all 0.5s ease; }
+    #cta .button:hover {
+      opacity: 1; }
+
+.archive #cta, .blog #cta {
+  margin-top: 0px;
+  margin-bottom: 60px; }
+
+.animate-in {
+  transition: all 1s ease; }
+
+.present {
+  transition: all 1s ease;
+  -ms-transform: translate(0, 200px);
+      transform: translate(0, 200px); }
+
+.push-down {
+  margin-top: 0 !important;
+  transition: all 0.25s ease; }
+
+.sticky-container {
+  transition: all 0.5s ease; }
+
+.push-up {
+  margin-top: -107px !important; }
+
+.blow-up {
+  -ms-transform: scale(3) !important;
+      transform: scale(3) !important;
+  opacity: 0 !important; }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
 .home-link {
   cursor: pointer; }
 
@@ -4716,9 +4962,14 @@ a::after {
     top: 19px;
     left: 8px; }
 
+body.iPhone #contactForm {
+  display: none; }
+
 @media screen and (max-width: 51.1875em) {
   body.admin-bar {
     margin-top: 0; }
+    body.admin-bar .container {
+      padding-top: 125px; }
     body.admin-bar #navigationContainer.peek {
       top: 46px; }
     body.admin-bar #navigationContainer.peek-hide {
@@ -6669,255 +6920,5 @@ pre {
         padding-right: 1.25rem; } }
     #blog .main-content:last-child:not(:first-child) {
       float: right; }
-
-/* Utilities */
-html, body {
-  height: 100% !important;
-  height: auto; }
-
-body.fixed {
-  overflow: hidden; }
-
-body.video-fixed {
-  width: 100%;
-  position: fixed;
-  padding-top: 0;
-  top: 0;
-  overflow: hidden; }
-
-.home-link path {
-  fill: black;
-  transition: fill .5s !important; }
-
-h5 {
-  letter-spacing: 1.5px; }
-  h5 strong {
-    font-weight: 600; }
-
-.upper {
-  text-transform: uppercase; }
-
-a, button {
-  transition: all 0.5s ease-in-out; }
-
-.click-to-close {
-  cursor: pointer; }
-
-.round {
-  border-radius: 100px; }
-
-.radius {
-  border-radius: 3px; }
-
-.white {
-  background-color: #fefefe;
-  color: #0a0a0a; }
-  .white.hollow {
-    border-color: #fefefe;
-    color: #fefefe;
-    background: transparent; }
-    .white.hollow:hover {
-      background: #fefefe;
-      color: #0a0a0a; }
-
-@media screen and (min-width: 51.25em) {
-  .button-jar {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: end;
-        justify-content: flex-end;
-    -ms-flex-align: center;
-        align-items: center; } }
-
-.button-jar a, .button-jar button {
-  display: block;
-  margin: 6px 0;
-  color: #BFBFBF; }
-  @media screen and (min-width: 51.25em) {
-    .button-jar a, .button-jar button {
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-      margin: 6px 0 6px 24px;
-      text-align: center; } }
-  .button-jar a.button, .button-jar button.button {
-    margin-left: 4px; }
-
-.button-jar.wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  @media screen and (min-width: 51.25em) {
-    .button-jar.wrap a, .button-jar.wrap button {
-      margin: 6px 0 6px 0;
-      -ms-flex: 1 25%;
-          flex: 1 25%; } }
-
-.bg-body {
-  background: #f5f5f5; }
-
-.bg-white {
-  background: #fefefe; }
-
-.bg-black {
-  background: #0a0a0a; }
-
-.columns img {
-  width: 100%;
-  height: auto; }
-
-.pad {
-  padding: 30px 0; }
-
-.pad-large {
-  padding: 90px 0; }
-
-.no-marg-bottom {
-  margin-bottom: 0 !important; }
-
-.flex {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center; }
-
-.expand {
-  max-width: 100% !important; }
-
-.w-control-bar {
-  display: -ms-flexbox !important;
-  display: flex !important; }
-
-.contrast-text {
-  color: #fefefe; }
-
-.container {
-  position: relative;
-  padding-top: 80px; }
-  @media screen and (max-width: 51.1875em) {
-    .container {
-      padding-top: 0px;
-      margin-top: 125px; } }
-
-.overlay {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  z-index: 200;
-  height: 100%;
-  width: 100%;
-  background: rgba(254, 254, 254, 0.8);
-  transition: all 1s ease; }
-  .overlay.visible {
-    opacity: 1;
-    visibility: visible; }
-  .overlay.load {
-    background: #f5f5f5;
-    opacity: 1;
-    visibility: visible; }
-
-.parallax-parent {
-  position: relative;
-  width: 100%;
-  overflow: hidden; }
-  .parallax-parent .parallax-bg {
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-    background-size: cover !important;
-    background-repeat: no-repeat;
-    background-position: center 0px;
-    position: fixed;
-    z-index: 0;
-    opacity: 0; }
-    @media screen and (min-width: 51.25em) {
-      .parallax-parent .parallax-bg {
-        -ms-transform: scale(1.2);
-            transform: scale(1.2); } }
-
-.ipad .parallax-parent .parallax-bg {
-  background-attachment: local;
-  background-size: 100% auto !important;
-  background-position: 50% 0px !important;
-  -ms-transform: scale(1) !important;
-      transform: scale(1) !important; }
-
-.social-nav {
-  float: left;
-  margin-top: 0px; }
-  @media screen and (min-width: 64em) {
-    .social-nav {
-      margin-top: 0; } }
-  .social-nav a {
-    font-size: 20px;
-    color: rgba(254, 254, 254, 0.85);
-    margin: 0 18px 0 0; }
-    .social-nav a:hover {
-      color: #fefefe; }
-
-#cta {
-  background: #fefefe;
-  margin: 20px 0 0; }
-  #cta .cta-blurb {
-    display: block;
-    margin: 25px 0;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 300;
-    color: #404040;
-    padding: 20px 40px;
-    text-align: center; }
-    @media screen and (min-width: 51.25em) {
-      #cta .cta-blurb {
-        font-size: 24px;
-        line-height: 28px;
-        padding: 0px 40px;
-        text-align: left; } }
-  #cta .button {
-    font-size: 24px;
-    line-height: 24px;
-    padding: 40px 40px;
-    background: #e6e6e6;
-    color: #ffffff;
-    margin: 0;
-    opacity: 0.9;
-    transition: all 0.5s ease; }
-    #cta .button:hover {
-      opacity: 1; }
-
-.archive #cta, .blog #cta {
-  margin-top: 0px;
-  margin-bottom: 60px; }
-
-.animate-in {
-  transition: all 1s ease; }
-
-.present {
-  transition: all 1s ease;
-  -ms-transform: translate(0, 200px);
-      transform: translate(0, 200px); }
-
-.push-down {
-  margin-top: 0 !important;
-  transition: all 0.25s ease; }
-
-.sticky-container {
-  transition: all 0.5s ease; }
-
-.push-up {
-  margin-top: -107px !important; }
-
-.blow-up {
-  -ms-transform: scale(3) !important;
-      transform: scale(3) !important;
-  opacity: 0 !important; }
-
-@keyframes pulse {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.1); }
-  100% {
-    transform: scale(1); } }
 
 /*# sourceMappingURL=foundation.css.map */
