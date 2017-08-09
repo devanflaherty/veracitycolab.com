@@ -38,18 +38,22 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/single-meta' ); ?>
 				<?php
 					$term = get_field('method');
-					if( $term ): ?>
-					<div class="row collapse" id="workMethod">
-						<div class="columns shrink">
-							<div class="method-icon">
-								<img class="method-icon-org" src="<?php the_field('icon', $term); ?>">
-								<img class="method-icon-hover" src="<?php the_field('icon_hover', $term); ?>">
+					if( $term ):
+						$termId = str_replace(' ', '-', strtolower($term->name))
+					?>
+					<a href="/method#<?= $termId ?>">
+						<div class="row collapse" id="workMethod">
+							<div class="columns shrink">
+								<div class="method-icon">
+									<img class="method-icon-org" src="<?php the_field('icon', $term); ?>">
+									<img class="method-icon-hover" src="<?php the_field('icon_hover', $term); ?>">
+								</div>
+							</div>
+							<div class="columns flex align-middle align-left text-left">
+								<h5 class="method-title"><?php echo $term->name; ?></h5>
 							</div>
 						</div>
-						<div class="columns flex align-middle align-left text-left">
-							<h5 class="method-title"><?php echo $term->name; ?></h5>
-						</div>
-					</div>
+					</a>
 				<?php endif; ?>
 			</header>
 

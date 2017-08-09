@@ -23,7 +23,9 @@
               // loop through the rows of data
               while ( have_rows('approach_content') ) : the_row();
                 if( get_row_layout() == 'row_no_graphic' ): ?>
-                  <div class="row">
+                  <?php $rowId = str_replace(' ', '-', strtolower(get_sub_field('headline'))) ?>
+
+                  <div class="row" id="<?= $rowId ?>">
                     <div class="small-11 columns">
                       <h2><?php the_sub_field('headline'); ?></h2>
                       <?php the_sub_field('description'); ?>
@@ -31,8 +33,10 @@
                   </div>
                 <?php elseif( get_row_layout() == 'row_w_graphic' ):
                   $graphic = get_sub_field('graphic');
+                  $rowId = str_replace(' ', '-', strtolower(get_sub_field('headline')))
+
                 ?>
-                  <div class="row expand graphic-row">
+                  <div class="row expand graphic-row" id="<?= $rowId ?>">
                     <div class="small-12 medium-5 large-4 columns">
                       <?php if( !empty($graphic) ): ?>
                         <div class="graphic-container">
