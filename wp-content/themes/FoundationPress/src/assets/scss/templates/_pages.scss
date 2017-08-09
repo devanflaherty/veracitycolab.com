@@ -1,3 +1,9 @@
+a.anchor {
+  display: block;
+  position: relative;
+  top: -150px;
+  visibility: hidden;
+}
 .full-card {
   @include flex-grid-row();
   @include flex-align(center, middle);

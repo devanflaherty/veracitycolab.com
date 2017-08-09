@@ -19,13 +19,13 @@
 
             <?php
             // check if the flexible content field has rows of data
-            if( have_rows('approach_content') ): 
+            if( have_rows('approach_content') ):
               // loop through the rows of data
               while ( have_rows('approach_content') ) : the_row();
                 if( get_row_layout() == 'row_no_graphic' ): ?>
                   <?php $rowId = str_replace(' ', '-', strtolower(get_sub_field('headline'))) ?>
-
-                  <div class="row" id="<?= $rowId ?>">
+                  <a class="anchor" id="<?= $rowId ?>"></a>
+                  <div class="row">
                     <div class="small-11 columns">
                       <h2><?php the_sub_field('headline'); ?></h2>
                       <?php the_sub_field('description'); ?>
@@ -36,7 +36,8 @@
                   $rowId = str_replace(' ', '-', strtolower(get_sub_field('headline')))
 
                 ?>
-                  <div class="row expand graphic-row" id="<?= $rowId ?>">
+                  <a class="anchor" id="<?= $rowId ?>"></a>
+                  <div class="row expand graphic-row">
                     <div class="small-12 medium-5 large-4 columns">
                       <?php if( !empty($graphic) ): ?>
                         <div class="graphic-container">
