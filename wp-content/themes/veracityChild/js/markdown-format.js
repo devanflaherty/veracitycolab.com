@@ -15,4 +15,4 @@ $(".flex-wrap").each(function(i) {
   $(this).has( "img" ).find("img").wrap( "<div class='columns'></div>" );
   $(this).has( "a" ).find("a .columns").contents().unwrap();
 });
-$(".youtube-video").addClass("flex-video widescreen");
+$(".youtube-video").addClass("responsive-embed widescreen");
