@@ -19,7 +19,7 @@
 
             <?php
             // check if the flexible content field has rows of data
-            if( have_rows('approach_content') ):
+            if( have_rows('approach_content') ): 
               // loop through the rows of data
               while ( have_rows('approach_content') ) : the_row();
                 if( get_row_layout() == 'row_no_graphic' ): ?>
