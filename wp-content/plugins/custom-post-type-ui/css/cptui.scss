@@ -1,8 +1,11 @@
+$min-tablet: "screen and (min-width: 768px)";
+$max-tablet: "screen and (max-width: 768px)";
+
 .posttypesui, .taxonomiesui {
 	.cptui-section:first-child {
 		margin-top: 30px;
 	}
-	width: 75%;
+	width: calc(100% - 300px);
 	.postbox-container {
 	  width: 100%;
 	}
@@ -20,6 +23,9 @@
 	}
 	.postbox .hndle {
 		cursor: pointer;
+	}
+	.required {
+		color: rgb(255, 0, 0);
 	}
 }
 .cptui-table {
@@ -84,9 +90,6 @@
 		position: relative;
 	}
 }
-.required {
-	color: rgb(255,0,0);
-}
 .cptui-field-description {
 	font-style: italic;
 }
@@ -122,6 +125,11 @@
 	}
 	h3 + .cptui-feature {
 		margin-top: 0;
+	}
+  	.changelog {
+	  h2 {
+		text-align: center;
+	  }
 	}
 	.feature-rest {
 		div {
@@ -184,6 +192,11 @@
   	}
 	.cptui-about-text {
 		margin-bottom: 1em !important;
+	}
+	.cptui-badge {
+		position: absolute;
+	    top: 0;
+	    right: 0;
 	}
 }
 .js {
@@ -323,6 +336,16 @@
 		-ms-flex-item-align: auto;
 		align-self: auto;
 	}
+
+	p {
+		padding: 0 5px;
+		&:nth-child(1) {
+		  padding-left: 0px;
+		}
+		&:nth-child(4) {
+		  padding-right: 0px;
+		}
+	}
 }
 .no-js {
 	#cptui_choose_icon {
@@ -343,4 +366,41 @@
 			width: 20%;
 		}
 	}
+}
+#poststuff {
+	min-width: 463px;
+}
+
+@media #{$min-tablet} {
+	.cptui-badge {
+	    padding-top: 142px;
+	    height: 50px;
+	    width: 173px;
+	    color: #fafafa;
+	    font-weight: bold;
+	    font-size: 14px;
+	    text-align: center;
+	    margin: 0 -5px;
+	    background: url(../images/cptui-icon-173x173.png) no-repeat;
+	}
+}
+
+@media #{$max-tablet} {
+  .cptui-table {
+		#description {
+		  width: 100%;
+		}
+  }
+  .wdspromos-about {
+	flex-wrap: wrap;
+	p {
+	  margin: 5px auto;
+	  &:nth-child(1) {
+		padding-left: 5px;
+	  }
+	  &:nth-child(4) {
+		padding-right: 5px;
+	  }
+	}
+  }
 }

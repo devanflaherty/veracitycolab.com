@@ -52,9 +52,43 @@
         }
       }
     }
-    // .content-col {
-    //   padding: 0 40px!important;
-    // }
+  }
+  
+  #workMethod {
+    margin: 6px 0!important;
+    cursor: pointer;
+    &:hover .method-icon-org {
+      opacity: 0;
+    }
+    &:hover .method-icon-hover {
+      opacity: 1;
+    }
+  }
+  .method-icon {
+    height: 64px;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto 0;
+      bottom: 0;
+      height: 64px;
+      width: auto;
+      transition: all 0.5s ease;
+      z-index: 0;
+      &.method-icon-hover {
+        opacity: 0;
+      }
+    }
+  }
+  .method-title {
+    margin-left: 64px;
+    margin-bottom: 0;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    flex: 1 0 auto;
+    text-transform: uppercase;
   }
 }
 
