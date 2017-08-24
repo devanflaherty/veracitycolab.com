@@ -44,7 +44,7 @@ get_header(); ?>
 					<a href="/method#<?= $termId ?>">
 						<div class="row collapse" id="workMethod">
 							<div class="columns shrink">
-								<div class="method-icon">
+								<div class="method-icon" style="width: <?php the_field('icon_width', $term) ?>">
 									<img class="method-icon-org" src="<?php the_field('icon', $term); ?>">
 									<img class="method-icon-hover" src="<?php the_field('icon_hover', $term); ?>">
 								</div>

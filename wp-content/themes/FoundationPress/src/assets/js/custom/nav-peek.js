@@ -12,7 +12,6 @@ $(window).scroll(function(event){
    } else {
      var offset = lastScrollTop - st;
      if (offset > 2) {
-       console.log(offset);
        $("#navigationContainer").removeClass('peek-hide');
        $("#navigationContainer").addClass('peek');
      }

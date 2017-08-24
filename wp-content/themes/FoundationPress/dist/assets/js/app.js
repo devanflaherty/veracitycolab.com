@@ -22892,7 +22892,6 @@ var lastScrollTop = 0;
   } else {
     var offset = lastScrollTop - st;
     if (offset > 2) {
-      console.log(offset);
       (0, _jquery2.default)("#navigationContainer").removeClass('peek-hide');
       (0, _jquery2.default)("#navigationContainer").addClass('peek');
     }
