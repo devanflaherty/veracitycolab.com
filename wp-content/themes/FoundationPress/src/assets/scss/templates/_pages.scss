@@ -57,7 +57,6 @@ a.anchor {
   }
   #cardBody {
     .row {
-      position: relative;
       padding: 0 20px;
       @include breakpoint(small only) {
         padding: 0px;
@@ -97,6 +96,8 @@ a.anchor {
       }
     }
     .graphic-row {
+      position: relative;
+
       @include flex-align(center, middle);
       @include breakpoint(medium) {
         @include flex-align(left, middle);
