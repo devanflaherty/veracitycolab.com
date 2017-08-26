@@ -1,8 +1,11 @@
 a.anchor {
   display: block;
   position: relative;
-  top: -250px;
+  top: -115px;
   visibility: hidden;
+  @include breakpoint(small only) {
+    top: -32px;
+  }
 }
 .full-card {
   @include flex-grid-row();
