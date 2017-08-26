@@ -57,6 +57,7 @@ a.anchor {
   }
   #cardBody {
     .row {
+      position: relative;
       padding: 0 20px;
       @include breakpoint(small only) {
         padding: 0px;
