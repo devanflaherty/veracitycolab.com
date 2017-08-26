@@ -1,6 +1,7 @@
 a.anchor {
   display: block;
   position: absolute;
+  height: 80px;
   top: -135px;
   visibility: hidden;
   @include breakpoint(small only) {
@@ -97,7 +98,6 @@ a.anchor {
     }
     .graphic-row {
       position: relative;
-
       @include flex-align(center, middle);
       @include breakpoint(medium) {
         @include flex-align(left, middle);
