@@ -1,6 +1,6 @@
 a.anchor {
   display: block;
-  position: relative;
+  position: absolute;
   top: -135px;
   visibility: hidden;
   @include breakpoint(small only) {
