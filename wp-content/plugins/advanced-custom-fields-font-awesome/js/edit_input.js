@@ -7,21 +7,22 @@
 		if ( $el.parent('.row-clone').length === 0 && $el.parents('.clones').length === 0 ) {
 			$( 'select.fa-select2-field', $el ).each( function() {
 				$(this).select2({
-					width : '100%'
+					width : '100%',
+					dropdownCssClass : 'fa-select2-drop'
 				});
 				update_preview( this, $(this).val() );
 			});
 		}
 
-		$( 'select.fa-select2-field' ).on( 'select2-selecting', function( object ) {
+		$( 'select.fa-select2-field' ).on( 'select2-selecting select2:selecting', function( object ) {
 			update_preview( this, object.val );
 		});
 
-		$( 'select.fa-select2-field' ).on( 'select2-highlight', function( object ) {
+		$( 'select.fa-select2-field' ).on( 'select2-highlight select2:highlight', function( object ) {
 			update_preview( this, object.val );
 		});
 
-		$( 'select.fa-select2-field' ).on( 'select2-close', function( object ) {
+		$( 'select.fa-select2-field' ).on( 'select2-close select2:close', function( object ) {
 			update_preview( this, $(this).val() );
 		});
 

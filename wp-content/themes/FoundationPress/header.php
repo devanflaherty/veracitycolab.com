@@ -93,27 +93,27 @@ if ( is_singular('post') || is_singular('work'))  {
     <meta name="twitter:url" value="<?php echo get_permalink(); ?>" />
 
     <!-- FAVICONS-->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-128.png" sizes="128x128" />
-    <link rel='mask-icon' href='<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon.svg' color='#ff0000'>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-128.png" sizes="128x128" />
+    <link rel='mask-icon' href='<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon.svg' color='#ff0000'>
     <meta name="application-name" content="&nbsp;"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-310x310.png" />
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/mstile-310x310.png" />
 
 		<?php wp_head(); ?>
 
@@ -121,9 +121,6 @@ if ( is_singular('post') || is_singular('work'))  {
 		<script src="https://use.typekit.net/kud3sdw.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script src="https://use.fontawesome.com/771c954b4a.js"></script>
-
-    <!-- wait for images -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
 
     <!-- WISTIA EMBED CODE -->
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
@@ -137,8 +134,18 @@ if ( is_singular('post') || is_singular('work'))  {
 		    color: <?= $secondaryColor ?>;
 				fill: <?= $secondaryColor ?>;
 		  }
-      #mobileMenu, #mobileMenu ul {
+      .box-buttons li a {
         background-color: <?= $primaryColor ?>;
+        opacity: 0.95;
+      }
+      .nav-buttons li a:hover {
+        opacity: 1;
+      }
+      #mobileMenu, #mobileMenu ul {
+        /*background-color: <?= $primaryColor ?>;*/
+      }
+      #mobileMenu ul li a {
+        color: <?= $primaryColor ?>;
       }
       #mobileToggle span {
         background: <?= $primaryColor ?>;
@@ -181,105 +188,111 @@ if ( is_singular('post') || is_singular('work'))  {
 
   	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-  	<!-- Contact -->
-  	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
-  		<div class="row align-center align-middle">
+    <section id="navigationContainer" class="peek">
+      <!-- Contact -->
+    	<section id="contactForm" style="background-color: <?= $primaryColor ?>;">
+    		<div class="row align-center align-middle">
 
-        <div class="small-11 medium-5 large-4 columns">
-					<span>VERACITYCOLAB</span>
-          <br><br>
+          <div class="small-11 medium-5 large-4 columns">
+  					<span>VERACITYCOLAB</span>
+            <br><br>
 
-					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
-					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
-          <br><br>
-          <div class="team-social">
-            <?php
-              if( have_rows('footer_social', 'option') ) {
-                echo "<nav class=\"social-nav\">";
-                while ( have_rows('footer_social', 'option') ) { the_row();
-                  $url = get_sub_field('url');
-                  echo "<a href=\"" . $url . "\" target=\"_blank\">";
-                  the_sub_field('icon');
-                  echo "</a>";
+  					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
+  					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
+            <br><br>
+            <div class="team-social">
+              <?php
+                if( have_rows('footer_social', 'option') ) {
+                  echo "<nav class=\"social-nav\">";
+                  while ( have_rows('footer_social', 'option') ) { the_row();
+                    $url = get_sub_field('url');
+                    echo "<a href=\"" . $url . "\" target=\"_blank\">";
+                    the_sub_field('icon');
+                    echo "</a>";
+                  }
+                  echo "</nav>";
                 }
-                echo "</nav>";
-              }
-            ?>
-          </div>
-				</div>
-        <div class="small-11 medium-5 large-4 columns">
-          <?php foundationpress_contact_nav(); ?>
-  			</div>
+              ?>
+            </div>
+  				</div>
+          <div class="small-11 medium-5 large-4 columns">
+            <?php foundationpress_contact_nav(); ?>
+    			</div>
 
-        <button id="closeForm">
-          <svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
-            <title>X</title>
-            <defs></defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-                <g id="X" stroke="#FFFFFF">
-                    <path d="M19.5,19.5 L0.5,0.5 L19.5,19.5 L38.5,0.5 L19.5,19.5 Z M19.5,19.5 L38.0033332,38.0033332 L19.5,19.5 L0.996666815,38.0033332 L19.5,19.5 Z" id="Combined-Shape"></path>
-                </g>
-            </g>
-        </svg>
-      </button>
-
-  		</div>
-  	</section>
-
-    <section id="mobileMenu" class="menu" style="display:none;">
-      <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-        <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-      <?php endif; ?>
-    </section>
-
-    <div id="navBar" data-sticky-container style="height:107px">
-    	<header id="masthead" class="site-header" role="banner" data-sticky data-options="marginTop:0;">
-        <div id="loadBar">
-      		<span style="background-color: <?= $primaryColor ?>;width: 0">&nbsp;</span>
-      	</div>
-    		<div class="title-bar" data-responsive-toggle="site-navigation">
-    			<div class="title-bar-title">
-            <a class="home-link" href="/">
-              <svg width="26px" height="35px" viewBox="0 0 26 35">
-                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
-                          <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
-                      </g>
+          <button id="closeForm" class="show-for-medium">
+            <svg width="39px" height="38px" viewBox="0 0 39 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+              <title>X</title>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="X" stroke="#FFFFFF">
+                      <path d="M19.5,19.5 L0.5,0.5 L19.5,19.5 L38.5,0.5 L19.5,19.5 Z M19.5,19.5 L38.0033332,38.0033332 L19.5,19.5 L0.996666815,38.0033332 L19.5,19.5 Z" id="Combined-Shape"></path>
                   </g>
-              </svg>
-            </a>
-    			</div>
-          <button id="mobileToggle" class="menu-hamburger" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-    		</div>
+              </g>
+          </svg>
+        </button>
 
-    		<nav id="site-navigation" class="main-navigation top-bar" role="navigation" style="width:100%">
-    			<div class="top-bar-left">
-    				<ul class="menu">
-    					<li class="home-link">
-    						<!-- LOGO -->
-    						<a href="/">
-    							<svg width="26px" height="35px" viewBox="0 0 26 35">
-    							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
-    							            <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
-    							        </g>
-    							    </g>
-    							</svg>
-    						</a>
-    				  </li>
-    				</ul>
-    			</div>
-    			<div class="top-bar-right">
-    				<?php foundationpress_top_bar_r(); ?>
-    			</div>
-    		</nav>
-    	</header>
-    </div>
+    		</div>
+    	</section>
+
+      <div id="navBar">
+      	<header id="masthead" class="site-header" role="banner">
+      		<div class="title-bar" data-responsive-toggle="site-navigation">
+      			<div class="title-bar-title">
+              <a class="home-link" href="/">
+                <svg width="22px" height="30px" viewBox="0 0 26 35">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
+                            <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
+                        </g>
+                    </g>
+                </svg>
+              </a>
+      			</div>
+            <button id="mobileToggle" class="menu-hamburger" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+      		</div>
+
+      		<nav id="site-navigation" class="main-navigation top-bar" role="navigation" style="width:100%">
+      			<div class="top-bar-left">
+      				<ul class="menu">
+      					<li class="home-link">
+      						<!-- LOGO -->
+      						<a href="/">
+      							<svg width="24px" height="30px" viewBox="0 0 26 35">
+      							    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      							        <g id="screenshot" transform="translate(-138.000000, -95.000000)" fill="#231F20">
+      							            <path d="M138.077431,95.0380317 L148.763833,95.0380317 L143.083885,120.890652 L138.077431,95.0380317 Z M153.114935,95.1115839 L163.983754,95.1115839 L156.862665,129.098589 L145.269203,129.098589 L153.114935,95.1115839 Z" id="veracityLogo" class="veracity-logo"></path>
+      							        </g>
+      							    </g>
+      							</svg>
+      						</a>
+      				  </li>
+      				</ul>
+      			</div>
+      			<div class="top-bar-right">
+      				<?php foundationpress_top_bar_r(); ?>
+              <div class="show-for-medium">
+                <?php foundationpress_box_buttons(); ?>
+              </div>
+      			</div>
+      		</nav>
+      	</header>
+      </div>
+
+      <section id="mobileMenu" class="menu" style="display:none;">
+        <?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
+          <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+        <?php endif; ?>
+      </section>
+
+      <section id="mobileBoxButton" class="hide-for-medium">
+        <?php foundationpress_box_buttons(); ?>
+      </section>
+    </section>
 
   	<section class="container">
   		<div class="overlay load"></div>

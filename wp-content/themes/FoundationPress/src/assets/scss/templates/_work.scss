@@ -1,0 +1,99 @@
+#singleWork {
+  @include flex-grid-row();
+  margin-bottom: 40px;
+  @include breakpoint(small only) {
+    padding: 0 20px;
+  }
+  @include breakpoint(medium down) {
+    @include flex-align(center);
+  }
+  article {
+    @include grid-column(12);
+    padding: 0!important;
+    @include breakpoint(medium) {
+      @include grid-column(11);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
+    }
+  }
+  .cta {
+    padding: 0!important;
+    @include grid-column(12);
+  }
+  .main-content {
+    background: $white;
+    @include breakpoint(small only) {
+      margin-top: -30px;
+    }
+    &.animate-in {
+      transition: all 1s ease;
+    }
+    .row {
+      margin-top: 0;
+    }
+    #contentBody {
+      $margin: 40px;
+      .content:first-of-type {
+        .columns {
+          & > :first-child {
+            margin-top: 0!important;
+          }
+        }
+      }
+      .content:last-of-type {
+        .columns {
+          & > :only-child {
+            margin-bottom: 0!important;
+          }
+          & > :last-child {
+            margin-bottom: 0!important;
+          }
+        }
+      }
+    }
+  }
+
+  #workMethod {
+    margin: 6px 0!important;
+    cursor: pointer;
+    &:hover .method-icon-org {
+      opacity: 0;
+    }
+    &:hover .method-icon-hover {
+      opacity: 1;
+    }
+  }
+  .method-icon {
+    height: 64px;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto 0;
+      bottom: 0;
+      height: 64px;
+      width: auto;
+      transition: all 0.5s ease;
+      z-index: 0;
+      &.method-icon-hover {
+        opacity: 0;
+      }
+    }
+  }
+  .method-title {
+    margin-left: 16px;
+    margin-bottom: 0;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    flex: 1 0 auto;
+    text-transform: uppercase;
+  }
+}
+
+#archiveWork {
+  .main-content {
+    margin-top: 0;
+  }
+}
