@@ -36,6 +36,25 @@ get_header(); ?>
 				<h6><?= $client; ?></h6>
 				<h1 class="entry-title"><?php echo $title; ?></h1>
 				<?php get_template_part( 'template-parts/single-meta' ); ?>
+				<?php
+					$term = get_field('method');
+					if( $term ):
+						$termId = str_replace(' ', '-', strtolower($term->name))
+					?>
+					<a href="/method#<?= $termId ?>">
+						<div class="row collapse" id="workMethod">
+							<div class="columns shrink">
+								<div class="method-icon" style="width: <?php the_field('icon_width', $term) ?>">
+									<img class="method-icon-org" src="<?php the_field('icon', $term); ?>">
+									<img class="method-icon-hover" src="<?php the_field('icon_hover', $term); ?>">
+								</div>
+							</div>
+							<div class="columns flex align-middle align-left text-left">
+								<h5 class="method-title"><?php echo $term->name; ?></h5>
+							</div>
+						</div>
+					</a>
+				<?php endif; ?>
 			</header>
 
 			<div id="contentBody" class="entry-content">
