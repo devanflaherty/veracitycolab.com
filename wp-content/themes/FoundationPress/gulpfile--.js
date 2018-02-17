@@ -14,7 +14,7 @@ var del         = require('del');
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
 var HOST = 'veracitycolab';
-var URL = 'veracitycolab:8888';
+var URL = 'veracitycolab.local';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
