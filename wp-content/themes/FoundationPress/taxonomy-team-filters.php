@@ -41,7 +41,7 @@ get_header(); ?>
 								} else {
 									$class = "";
 								}
-								echo "<a class=\"headline-link $class\" href=\"/filter/$slug\">$name</a> ";
+								echo "<a class=\"headline-link $class\" href=\"/team/filter/$slug\">$name</a> ";
 							}
 						}
 					?>
