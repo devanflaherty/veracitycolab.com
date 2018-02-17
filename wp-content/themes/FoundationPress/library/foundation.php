@@ -5,187 +5,173 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
 // Pagination.
 if ( ! function_exists( 'foundationpress_pagination' ) ) :
-function foundationpress_pagination() {
-	global $wp_query;
+	function foundationpress_pagination() {
+		global $wp_query;
+		$big = 999999999; // This needs to be an unlikely integer
+		// For more options and info view the docs for paginate_links()
+		// http://codex.wordpress.org/Function_Reference/paginate_links
+		$paginate_links = paginate_links(
+			array(
+				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
+				'current'   => max( 1, get_query_var( 'paged' ) ),
+				'total'     => $wp_query->max_num_pages,
+				'mid_size'  => 2,
+				'end_size' => 2,
+				'prev_next' => true,
+				'prev_next' => true,
+				'prev_text' => __( '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'foundationpress' ),
+				'next_text' => __( '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'foundationpress' ),
+				'type'      => 'list',
+			)
+		);
+	
+		// $paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );
+		// $paginate_links = str_replace( '<li><span class="page-numbers dots">', '<li><a class="dot" href="#">', $paginate_links );
+		// $paginate_links = str_replace( '<li><span class="current">', '<li class="current"><a href="#">', $paginate_links );
+		// $paginate_links = str_replace( '</span>', '</a>', $paginate_links );
+		// $paginate_links = str_replace( "<li><a href='#'>&hellip;</a></li>", "<li class='dots'>&hellip;</li>", $paginate_links );
+		// $paginate_links = preg_replace( '/\s*page-numbers/', '', $paginate_links );
+		// // Display the pagination if more than one page is found.
+		// if ( $paginate_links ) {
+		// 	echo '<div class="pagination-centered">';
+		// 	echo $paginate_links;
+		// 	echo '</div><!--// end .pagination -->';
+		// }
 
-	$big = 999999999; // This needs to be an unlikely integer
-
-	// For more options and info view the docs for paginate_links()
-	// http://codex.wordpress.org/Function_Reference/paginate_links
-	$paginate_links = paginate_links( array(
-		'base' => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
-		'current' => max( 1, get_query_var( 'paged' ) ),
-		'total' => $wp_query->max_num_pages,
-		'mid_size' => 2,
-		'end_size' => 2,
-		'prev_next' => true,
-	    'prev_text' => __( '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'foundationpress' ),
-	    'next_text' => __( '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'foundationpress' ),
-		'type' => 'list',
-	) );
-
-	$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );
-	$paginate_links = str_replace( '<li><span class="page-numbers dots">', "<li><a href='#'>", $paginate_links );
-	$paginate_links = str_replace( "<li><span class='page-numbers current'>", "<li class='current'><a href='#'>", $paginate_links );
-	$paginate_links = str_replace( '</span>', '</a>', $paginate_links );
-	$paginate_links = str_replace( "<li><a href='#'>&hellip;</a></li>", "<li class='dots'>&hellip;</li>", $paginate_links );
-	$paginate_links = preg_replace( '/\s*page-numbers/', '', $paginate_links );
-
-	// Display the pagination if more than one page is found.
-	if ( $paginate_links ) {
-		echo '<div class="pagination-centered">';
-		echo $paginate_links;
-		echo '</div><!--// end .pagination -->';
+		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination text-center' role='navigation' aria-label='Pagination'>", $paginate_links );
+		$paginate_links = str_replace( '<li><span class="page-numbers dots">', "<li><a href='#'>", $paginate_links );
+		$paginate_links = str_replace( '</span>', '</a>', $paginate_links );
+		$paginate_links = str_replace( "<li><span class='page-numbers current'>", "<li class='current'><a href='#'>", $paginate_links );
+		$paginate_links = str_replace( "<li><a href='#'>&hellip;</a></li>", "<li class='dots'>&hellip;</li>", $paginate_links );
+		$paginate_links = preg_replace( '/\s*page-numbers/', '', $paginate_links );
+		// Display the pagination if more than one page is found.
+		if ( $paginate_links ) {
+			echo '<div class="pagination-centered">';
+			echo $paginate_links;
+			echo '</div><!--// end .pagination -->';
+		}
 	}
-}
 endif;
-
 /**
  * A fallback when no navigation is selected by default.
  */
-
 if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-function foundationpress_menu_fallback() {
-	echo '<div class="alert-box secondary">';
-	// Translators 1: Link to Menus, 2: Link to Customize.
-		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
-			sprintf(  __( '<a href="%s">Menus</a>', 'foundationpress' ),
+	function foundationpress_menu_fallback() {
+		echo '<div class="alert-box secondary">';
+		/* translators: %1$s: link to menus, %2$s: link to customize. */
+		printf(
+			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+			/* translators: %s: menu url */
+			sprintf(
+				__( '<a href="%s">Menus</a>', 'foundationpress' ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 			),
-			sprintf(  __( '<a href="%s">Customize</a>', 'foundationpress' ),
+			/* translators: %s: customize url */
+			sprintf(
+				__( '<a href="%s">Customize</a>', 'foundationpress' ),
 				get_admin_url( get_current_blog_id(), 'customize.php' )
 			)
 		);
 		echo '</div>';
-}
-endif;
-
-// Add Foundation 'active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-function foundationpress_active_nav_class( $classes, $item ) {
-	if ( 1 == $item->current || true == $item->current_item_ancestor ) {
-		$classes[] = 'active';
 	}
-	return $classes;
-}
-add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
 endif;
-
+// Add Foundation 'is-active' class for the current menu item.
+if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
+	function foundationpress_active_nav_class( $classes, $item ) {
+		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
+			$classes[] = 'is-active';
+		}
+		return $classes;
+	}
+	add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+endif;
 /**
- * Use the active class of ZURB Foundation on wp_list_pages output.
+ * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
 if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-function foundationpress_active_list_pages_class( $input ) {
-
-	$pattern = '/current_page_item/';
-	$replace = 'current_page_item active';
-
-	$output = preg_replace( $pattern, $replace, $input );
-
-	return $output;
-}
-add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+	function foundationpress_active_list_pages_class( $input ) {
+		$pattern = '/current_page_item/';
+		$replace = 'current_page_item is-active';
+		$output = preg_replace( $pattern, $replace, $input );
+		return $output;
+	}
+	add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
 endif;
-
-if ( ! class_exists( 'Foundationpress_Comments' ) ) :
-class Foundationpress_Comments extends Walker_Comment{
-
-	// Init classwide variables.
-	var $tree_type = 'comment';
-	var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
-
-	/** CONSTRUCTOR
-	 * You'll have to use this if you plan to get to the top of the comments list, as
-	 * start_lvl() only goes as high as 1 deep nested comments */
-	function __construct() { ?>
-
-        <h3><?php comments_number( __( 'No Responses to', 'foundationpress' ), __( 'One Response to', 'foundationpress' ), __( '% Responses to', 'foundationpress' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
-        <ol class="comment-list">
-
-    <?php }
-
-	/** START_LVL
-	 * Starts the list before the CHILD elements are added. */
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$GLOBALS['comment_depth'] = $depth + 1; ?>
-
-                <ul class="children">
-    <?php }
-
-	/** END_LVL
-	 * Ends the children list of after the elements are added. */
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$GLOBALS['comment_depth'] = $depth + 1; ?>
-
-		</ul><!-- /.children -->
-
-    <?php }
-
-	/** START_EL */
-	function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
-		$depth++;
-		$GLOBALS['comment_depth'] = $depth;
-		$GLOBALS['comment'] = $comment;
-		$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); ?>
-
-        <li <?php comment_class( $parent_class ); ?> id="comment-<?php comment_ID() ?>">
-            <article id="comment-body-<?php comment_ID() ?>" class="comment-body">
-
-
-
-		<header class="comment-author">
-
-			<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-
-			<div class="author-meta vcard author">
-
-			<?php printf( __( '<cite class="fn">%s</cite>', 'foundationpress' ), get_comment_author_link() ) ?>
-			<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( __( '%1$s', 'foundationpress' ), get_comment_date(),  get_comment_time() ) ?></a></time>
-
-			</div><!-- /.comment-author -->
-
-		</header>
-
-                <section id="comment-content-<?php comment_ID(); ?>" class="comment">
-                    <?php if ( ! $comment->comment_approved ) : ?>
-                    		<div class="notice">
-					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
-				</div>
-                    <?php else : comment_text(); ?>
-                    <?php endif; ?>
-                </section><!-- /.comment-content -->
-
-                <div class="comment-meta comment-meta-data hide">
-                    <a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ) ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
-                </div><!-- /.comment-meta -->
-
-                <div class="reply">
-                    <?php $reply_args = array(
-						'depth' => $depth,
-						'max_depth' => $args['max_depth'],
-						);
-
-					comment_reply_link( array_merge( $args, $reply_args ) );  ?>
-                </div><!-- /.reply -->
-            </article><!-- /.comment-body -->
-
-    <?php }
-
-	function end_el(& $output, $comment, $depth = 0, $args = array() ) { ?>
-
-        </li><!-- /#comment-' . get_comment_ID() . ' -->
-
-    <?php }
-
-	/** DESTRUCTOR */
-	function __destruct() { ?>
-
-    </ol><!-- /#comment-list -->
-
-    <?php }
-}
+/**
+ * Enable Foundation responsive embeds for WP video embeds
+ */
+if ( ! function_exists( 'foundationpress_responsive_video_oembed_html' ) ) :
+	function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
+		// Whitelist of oEmbed compatible sites that **ONLY** support video.
+		// Cannot determine if embed is a video or not from sites that
+		// support multiple embed types such as Facebook.
+		// Official list can be found here https://codex.wordpress.org/Embeds
+		$video_sites = array(
+			'youtube', // first for performance
+			'collegehumor',
+			'dailymotion',
+			'funnyordie',
+			'ted',
+			'videopress',
+			'vimeo',
+		);
+		$is_video = false;
+		// Determine if embed is a video
+		foreach ( $video_sites as $site ) {
+			// Match on `$html` instead of `$url` because of
+			// shortened URLs like `youtu.be` will be missed
+			if ( strpos( $html, $site ) ) {
+				$is_video = true;
+				break;
+			}
+		}
+		// Process video embed
+		if ( true == $is_video ) {
+			// Find the `<iframe>`
+			$doc = new DOMDocument();
+			$doc->loadHTML( $html );
+			$tags = $doc->getElementsByTagName( 'iframe' );
+			// Get width and height attributes
+			foreach ( $tags as $tag ) {
+				$width  = $tag->getAttribute( 'width' );
+				$height = $tag->getAttribute( 'height' );
+				break; // should only be one
+			}
+			$class = 'responsive-embed'; // Foundation class
+			// Determine if aspect ratio is 16:9 or wider
+			if ( is_numeric( $width ) && is_numeric( $height ) && ( $width / $height >= 1.7 ) ) {
+				$class .= ' widescreen'; // space needed
+			}
+			// Wrap oEmbed markup in Foundation responsive embed
+			return '<div class="' . $class . '">' . $html . '</div>';
+		} else { // not a supported embed
+			return $html;
+		}
+	}
+	add_filter( 'embed_oembed_html', 'foundationpress_responsive_video_oembed_html', 10, 4 );
+endif;
+/**
+ * Get mobile menu ID
+ */
+if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
+	function foundationpress_mobile_menu_id() {
+		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
+			echo 'off-canvas-menu';
+		} else {
+			echo 'mobile-menu';
+		}
+	}
+endif;
+/**
+ * Get title bar responsive toggle attribute
+ */
+if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
+	function foundationpress_title_bar_responsive_toggle() {
+		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
+			echo 'data-responsive-toggle="mobile-menu"';
+		}
+	}
 endif;

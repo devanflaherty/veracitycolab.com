@@ -20,8 +20,8 @@
 ?>
 
 <!-- HERO!! DUH DUH DUUUUN -->
-<header id="featured-hero" role="banner" class="<?= $hidden; ?>" style="<?php echo $style ?>">
-<div id="videoBG"></div>
+<header id="featured-hero" role="banner" class="<?= $hidden; ?>">
+	<div class="featured-hero-image" style="<?php echo $style ?>"></div>
 <?php
 	if ( is_post_type_archive( 'work' ) || is_post_type_archive( 'podcast' ) || is_singular( 'work' ) || is_singular( 'example' )) :
 		if(get_field('video_id')) {
