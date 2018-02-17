@@ -16,33 +16,40 @@
   	</section>
   	<div id="footer-container" style="background-color: <?= $secondaryColor; ?>">
   		<footer id="footer" class="row expand">
-  			<div class="small-12 medium-9 large-9 columns">
-  				<h2><?php the_field( 'footer_headline', 'option' ); ?></h2>
-  				<div class="footer-info float-left">
-  					<span>VERACITYCOLAB</span><br><br>
-  					<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
-  					<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
-            <br><br>
-            <div class="team-social">
-    					<?php
-    						if( have_rows('footer_social', 'option') ) {
-    							echo "<nav class=\"social-nav\">";
-    							while ( have_rows('footer_social', 'option') ) { the_row();
-    								$url = get_sub_field('url');
-    								echo "<a href=\"" . $url . "\" target=\"_blank\">";
-    								the_sub_field('icon');
-    								echo "</a>";
-    							}
-    							echo "</nav>";
-    						}
-    					?>
-            </div>
-  				</div>
-  				<div class="footer-menu float-left">
-  					<?php foundationpress_footer_nav(); ?>
-  				</div>
-  			</div>
-  			<div class="small-12 medium-3 large-3 columns">
+  			<div class="small-12 medium-9 large-9 column">
+					<h2><?php the_field( 'footer_headline', 'option' ); ?></h2>
+					<div class="row">
+						<div class="column">
+							<div class="footer-info float-left">
+								<span>VERACITYCOLAB</span><br><br>
+								<span><?php the_field( 'company_address', 'option' ); ?></span><br><br>
+								<a href="tel:<?php the_field( 'phone_number', 'option' ); ?>"><?php the_field( 'phone_number', 'option' ); ?></a>
+								<br><br>
+								<div class="team-social">
+									<?php
+										if( have_rows('footer_social', 'option') ) {
+											echo "<nav class=\"social-nav\">";
+											while ( have_rows('footer_social', 'option') ) { the_row();
+												$url = get_sub_field('url');
+												echo "<a href=\"" . $url . "\" target=\"_blank\">";
+												the_sub_field('icon');
+												echo "</a>";
+											}
+											echo "</nav>";
+										}
+									?>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="footer-menu float-left">
+								<?php foundationpress_footer_nav(); ?>
+							</div>
+						</div>
+					</div>
+				</div><!-- close row-->
+				
+				<div class="small-12 medium-3 large-3 column">
           <img class="show-for-medium" src="<?php the_field( 'footer_logo', 'option' ); ?>">
   			</div>
   		</footer>

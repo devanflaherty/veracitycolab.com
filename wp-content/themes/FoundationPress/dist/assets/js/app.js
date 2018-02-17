@@ -13048,11 +13048,16 @@ function setContactHeight() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-// import jQuery from 'jquery';
 
-// jQuery( 'iframe[src*="youtube.com"]').wrap("<div class='flex-video widescreen'/>");
-// jQuery( 'iframe[src*="vimeo.com"]').wrap("<div class='flex-video widescreen vimeo'/>");
 
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)('iframe[src*="youtube.com"]').wrap("<div class='flex-video widescreen'/>");
+(0, _jquery2.default)('iframe[src*="vimeo.com"]').wrap("<div class='flex-video widescreen vimeo'/>");
 
 /***/ }),
 /* 44 */
@@ -13413,7 +13418,7 @@ function archivePlay(perma) {
   (0, _jquery2.default)("#featured-hero").addClass("click-to-close");
   (0, _jquery2.default)(".feature-overlay").addClass("animate-in");
   (0, _jquery2.default)('#navBar').addClass('push-up');
-  (0, _jquery2.default)('.main-content').addClass('push-down');
+  (0, _jquery2.default)('.wrapper').addClass('push-down');
   (0, _jquery2.default)('.feature-play').fadeOut();
 
   (0, _jquery2.default)('#seeProject').attr("href", perma);

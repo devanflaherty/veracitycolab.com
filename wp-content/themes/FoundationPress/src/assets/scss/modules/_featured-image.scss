@@ -1,16 +1,14 @@
 @include breakpoint(small) {
 	#featured-hero {
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
 		margin: 0;
 		position: relative;
 		z-index: 20;
 		height: rem-calc(350);
 		width: 100%!important;
 		transition: all 1s ease;
-		opacity: 0;
+		transform: translate(0, -80px);
 		overflow: hidden;
+		opacity: 0;
 		@include flex();
 		@include flex-align(center, middle);
 		&.video-reveal {
@@ -25,89 +23,80 @@
 			height: 2px!important;
 			opacity: 0;
 		}
-		&.device {
-			.feature-overlay {
-				opacity: .75;
-			}
-			.feature-play {
-				animation: pulse 2s infinite;
-				opacity: 1;
-				transform: scale(1);
-				i {
-					opacity: 1;
-					transform: scale(1);
-				}
-			}
+		.featured-hero-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all 1s ease;
 		}
 		.feature-overlay {
-			opacity: 0;
+			opacity: .75;
 			transition: all 0.5s ease;
 			position: absolute;
 			top: 0; left: 0;
 			width: 100%;
 			height: 100%;
-			&.animate-in {
-				opacity: 1;
-			}
-		}
-		&:hover {
-			.feature-overlay {
-				opacity: 0.75;
-				&.animate-in {
-					opacity: 1;
-				}
-			}
-			.feature-play {
-				opacity: 1;
-				transform: scale(1);
-				cursor: pointer;
-				i {
-					opacity: 1;
-					transform: scale(1);
-				}
-			}
 		}
 		.feature-play {
 			border-radius: 100px;
 			height: 100px;
 			width: 100px;
 			position: absolute;
-			top: 0; left: 0; right: 0;
-			bottom: 30px;
+			top: 80px; left: 0; right: 0;
+			bottom: 0;
 			z-index: 50;
 			margin: auto;
 			text-align: center;
 			line-height: 120px;
-			opacity: 0;
-			transform: scale(0.25);
 			transition: all 0.5s ease;
 			background: rgba($white, 0.5);
 			@include breakpoint(medium) {
 				bottom: 50px
 			}
-			&:hover {
-				animation: pulse 2s infinite;
-			}
 			i {
 				font-size: 40px;
-				opacity: 0;
 				margin-left: 4px;
-				transform: scale(0.25);
-				transition: all 0.5s ease;
-				transition-delay: 0.15s;
 				color: $white;
+
+				transition: all 0.5s .15s ease;
+			}
+		}
+		// Hero hover
+		&:hover {
+			.featured-hero-image {
+				transform: scale(1.125);
+			}
+			.feature-overlay {
+				opacity: 0;
+			}
+			.feature-play {
+				background: rgba($white, 0.6);
+				transform: scale(1.25);
+				cursor: pointer;
+				i {
+					transform: scale(1);
+				}
 			}
 		}
 	}
+
+	// IF no image
 	.no-featured-image-set {
 		height: rem-calc(16) !important;
 	}
+
+	// If we have a featured video
 	#featureVideo {
 		position: relative;
 		z-index: 60;
 		flex: 1 1 100%;
 		@include breakpoint(medium down) {
-				max-width: 100%;
+			max-width: 100%;
 		}
 		.responsive-embed {
 			margin: 0;
@@ -135,5 +124,14 @@
 		&.animate-in {
 			height: rem-calc(500);
 		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1)
+	}
+	100% {
+		transform: scale(.8)
 	}
 }

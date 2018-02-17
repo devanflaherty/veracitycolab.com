@@ -8,10 +8,26 @@ body.fixed {
 }
 body.video-fixed {
   width: 100%;
-  position: fixed;
+  // position: fixed;
+  overflow: hidden;
   padding-top: 0;
   top: 0;
   overflow: hidden;
+  &.archive {
+    #featured-hero {
+      height: 100%;
+      left: 0; right: 0;
+    }
+  }
+}
+body.archive {
+  #featured-hero {
+    position: fixed;
+    z-index: 1000;
+    height: 0;
+    top: 80px; bottom: 0;
+    left: 0; right: 0;
+  }
 }
 .home-link {
   path {

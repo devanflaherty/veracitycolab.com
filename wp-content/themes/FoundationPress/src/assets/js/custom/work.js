@@ -10,7 +10,7 @@ function archivePlay(perma) {
   $("#featured-hero").addClass("click-to-close");
   $(".feature-overlay").addClass("animate-in");
   $('#navBar').addClass('push-up');
-  $('.main-content').addClass('push-down');
+  $('.wrapper').addClass('push-down');
   $('.feature-play').fadeOut();
 
   $('#seeProject').attr("href", perma);
